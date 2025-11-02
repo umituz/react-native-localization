@@ -1,0 +1,49 @@
+{
+  "permission": {
+    "title": "Location Permission",
+    "message": "This app needs access to your location to provide location-based features.",
+    "request": "Grant Location Permission",
+    "denied": "Location permission denied",
+    "granted": "Location permission granted",
+    "unknown": "Location permission status unknown"
+  },
+  "status": {
+    "loading": "Getting your location...",
+    "success": "Location retrieved successfully",
+    "failed": "Unable to get location",
+    "unavailable": "Location services not available",
+    "cached": "Using cached location",
+    "timeout": "Location request timed out"
+  },
+  "accuracy": {
+    "high": "High accuracy",
+    "balanced": "Balanced accuracy",
+    "low": "Low accuracy",
+    "lowest": "Lowest accuracy"
+  },
+  "errors": {
+    "notAvailable": "Location services not available on this platform",
+    "permissionDenied": "Location permission denied. Please enable location access in settings.",
+    "timeout": "Location request timed out. Please try again.",
+    "unknown": "An unknown error occurred while getting location",
+    "noLocation": "Unable to determine your location"
+  },
+  "actions": {
+    "getCurrentLocation": "Get Current Location",
+    "refreshLocation": "Refresh Location",
+    "clearLocation": "Clear Location",
+    "openSettings": "Open Settings"
+  },
+  "labels": {
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "accuracy": "Accuracy",
+    "address": "Address",
+    "timestamp": "Time",
+    "coordinates": "Coordinates"
+  },
+  "units": {
+    "meters": "meters",
+    "kilometers": "kilometers"
+  }
+}

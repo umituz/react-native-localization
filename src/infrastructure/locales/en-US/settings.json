@@ -1,0 +1,65 @@
+{
+  "lightMode": "Light Mode",
+  "darkMode": "Dark Mode",
+  "language": "Language",
+  "aboutDescription": "App information and version",
+  "sections": {
+    "appearance": "Appearance",
+    "general": "General",
+    "support": "Support Development",
+    "about": "About & Legal"
+  },
+  "about": {
+    "title": "About",
+    "description": "App information and version",
+    "appInfo": "App Information",
+    "appVersion": "App Version",
+    "moreApps": "More Apps",
+    "moreAppsDescription": "Check out our other apps",
+    "contact": "Contact",
+    "contactEmail": "Contact Email",
+    "website": "Website"
+  },
+  "disclaimer": {
+    "title": "Health Disclaimer",
+    "shortMessage": "Tap to read important health information",
+    "message": "This app is for informational and wellness support purposes only. It is NOT a substitute for professional medical or mental health care.\n\nIf you're experiencing a health crisis or emergency, contact your local emergency services or healthcare provider immediately.\n\nAlways consult qualified healthcare professionals for medical advice, diagnosis, or treatment. The content in this app should not be used as a substitute for professional medical judgment.\n\nYour privacy is important. All data stays private on your device unless you explicitly choose to share it."
+  },
+  "legal": {
+    "title": "Legal",
+    "description": "Privacy policy, terms of use, and EULA",
+    "privacy": "Privacy Policy",
+    "privacyDescription": "How we handle your data",
+    "terms": "Terms of Use",
+    "termsDescription": "Terms and conditions",
+    "eula": "End User License Agreement",
+    "eulaDescription": "License agreement"
+  },
+  "version": {
+    "title": "App Version"
+  },
+  "languageSelection": {
+    "title": "Select Language",
+    "description": "Choose your preferred language",
+    "currentLanguage": "Current Language",
+    "searchPlaceholder": "Search languages"
+  },
+  "appearance": {
+    "title": "Appearance",
+    "darkMode": "Dark Mode",
+    "darkTheme": "Dark Theme",
+    "lightTheme": "Light Theme",
+    "themeDescription": "Language and theme settings"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "description": "Manage notification preferences",
+    "enableNotifications": "Enable Notifications",
+    "notificationPermission": "Notification Permission",
+    "notificationPermissionDescription": "Allow app to send notifications"
+  },
+  "donate": {
+    "title": "Support the Developer",
+    "description": "Buy me a coffee to support development"
+  }
+}
