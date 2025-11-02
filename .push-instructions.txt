@@ -1,0 +1,23 @@
+# GitHub Repo Oluşturma ve Push İşlemleri
+
+## 1. GitHub'da yeni repo oluşturun:
+   - https://github.com/new adresine gidin
+   - Repository name: react-native-localization
+   - Public seçin
+   - "Create repository" tıklayın
+
+## 2. Sonra şu komutları çalıştırın:
+   cd /Users/umituz/Desktop/Github/umituz/react-native-localization
+   git remote add origin https://github.com/umituz/react-native-localization.git
+   git push -u origin main
+   git push --tags
+
+## 3. npm'e publish için:
+   npm publish --access public
+
+## Mevcut Durum:
+   ✅ Paket hazır ve build edilmiş
+   ✅ Git commitleri yapılmış (Claude co-author YOK)
+   ✅ v1.0.0 tag'i mevcut
+   ❌ GitHub remote eklenmeli
+   ❌ npm'e publish edilmeli
