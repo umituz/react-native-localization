@@ -231,6 +231,25 @@ function MyComponent() {
 }
 ```
 
+### Locale Loaders Generation
+
+The package includes a script to automatically generate locale loader files (`index.ts`) for all language directories. This script scans all JSON translation files and creates proper TypeScript import statements.
+
+**Generate loaders for all languages:**
+
+```bash
+npm run locales:generate
+```
+
+**Generate loader for a specific language:**
+
+```bash
+npm run locales:generate:lang en-US
+npm run locales:generate:lang tr-TR
+```
+
+This will create an `index.ts` file in each locale directory that imports all JSON translation files. The generated files should not be edited manually.
+
 ### Custom Translations
 
 You can extend the translations by adding your own:
