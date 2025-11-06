@@ -11,6 +11,8 @@
     "clean": "rm -rf lib",
     "prebuild": "npm run clean",
     "prepublishOnly": "npm run build",
+    "locales:generate": "node scripts/createLocaleLoaders.js",
+    "locales:generate:lang": "node scripts/createLocaleLoaders.js",
     "version:patch": "npm version patch -m 'chore: release v%s'",
     "version:minor": "npm version minor -m 'chore: release v%s'",
     "version:major": "npm version major -m 'chore: release v%s'",
