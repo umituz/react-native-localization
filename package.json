@@ -1,6 +1,6 @@
 {
   "name": "@umituz/react-native-localization",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Universal localization system for React Native apps with i18n support",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -13,7 +13,11 @@
     "prepublishOnly": "npm run build",
     "version:patch": "npm version patch -m 'chore: release v%s'",
     "version:minor": "npm version minor -m 'chore: release v%s'",
-    "version:major": "npm version major -m 'chore: release v%s'"
+    "version:major": "npm version major -m 'chore: release v%s'",
+    "i18n:setup": "node scripts/setup-languages.js",
+    "i18n:translate": "node scripts/translate-missing.js",
+    "i18n:check": "node scripts/check-translations.js",
+    "i18n:remove-unused": "node scripts/remove-unused-keys.js"
   },
   "keywords": [
     "react-native",
@@ -58,6 +62,7 @@
   "files": [
     "lib",
     "src",
+    "scripts",
     "README.md",
     "LICENSE"
   ]

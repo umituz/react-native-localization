@@ -7,6 +7,7 @@ Universal localization system for React Native apps with i18n support. Built wit
 - **29+ Language Support**: Pre-configured support for 29 languages including RTL languages (Arabic)
 - **Automatic Device Locale Detection**: Automatically detects and applies device language on first launch
 - **Persistent Language Preferences**: Saves user's language choice using AsyncStorage
+- **Translation Management Scripts**: Built-in scripts for setup, translation, and validation
 - **Type-Safe**: Full TypeScript support with type definitions
 - **Zero Configuration**: Works out of the box with sensible defaults
 - **Production Ready**: Battle-tested in production apps
@@ -231,25 +232,64 @@ function MyComponent() {
 }
 ```
 
-### Custom Translations
+### Project-Specific Translations
 
-You can extend the translations by adding your own:
+The package includes common translations. For project-specific translations:
 
-```tsx
-import { i18n } from '@umituz/react-native-localization';
+1. **Create your translation files** in your project:
+   ```
+   src/domains/localization/infrastructure/locales/
+     en-US/
+       myFeature.json
+       auth.json
+     tr-TR/
+       myFeature.json
+       auth.json
+   ```
 
-// Add custom translations
-i18n.addResources('en-US', 'translation', {
-  myFeature: {
-    title: 'My Feature',
-    description: 'Feature description'
-  }
-});
+2. **Load project translations** in your app initialization:
+   ```tsx
+   import { i18n } from '@umituz/react-native-localization';
+   import myFeatureEnUS from './locales/en-US/myFeature.json';
+   import myFeatureTrTR from './locales/tr-TR/myFeature.json';
+   
+   // Add project translations
+   i18n.addResources('en-US', 'translation', myFeatureEnUS);
+   i18n.addResources('tr-TR', 'translation', myFeatureTrTR);
+   ```
 
-// Use in components
-const { t } = useLocalization();
-console.log(t('myFeature.title')); // 'My Feature'
+3. **Use in components**:
+   ```tsx
+   const { t } = useLocalization();
+   console.log(t('myFeature.title')); // 'My Feature'
+   ```
+
+### Translation Management Scripts
+
+The package includes scripts for managing translations:
+
+```bash
+# Setup language directories (creates all language folders from en-US)
+npm run i18n:setup
+
+# Translate missing keys using Google Translate
+npm run i18n:translate
+
+# Check translation completeness
+npm run i18n:check <language-code>
+npm run i18n:check all  # Check all languages
+
+# Remove unused translation keys
+npm run i18n:remove-unused <language-code>
+npm run i18n:remove-unused --all  # Remove from all languages
 ```
+
+**Workflow:**
+1. Add new keys to `en-US/*.json` files
+2. Run `npm run i18n:setup` to create language directories
+3. Run `npm run i18n:translate` to auto-translate missing keys
+4. Run `npm run i18n:check all` to verify completeness
+5. Review and refine translations manually if needed
 
 ## TypeScript Support
 
