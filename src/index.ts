@@ -8,6 +8,8 @@ export { useLocalization, useLocalizationStore } from './infrastructure/storage/
 
 // Components
 export { LocalizationProvider } from './infrastructure/components/LocalizationProvider';
+export { LanguageSwitcher } from './infrastructure/components/LanguageSwitcher';
+export { useLanguageNavigation } from './infrastructure/components/useLanguageNavigation';
 
 // Configuration
 export { default as i18n } from './infrastructure/config/i18n';

@@ -1,0 +1,9 @@
+{
+  "appName": "フラッシュカードメーカー",
+  "tagline": "旅へようこそ",
+  "poweredBy": "UmitUZ App Factoryによる提供",
+  "version": "バージョン {{バージョン}}",
+  "splash": {
+    "loading": "読み込み中..."
+  }
+}

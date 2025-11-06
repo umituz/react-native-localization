@@ -1,0 +1,76 @@
+{
+  "skip": "Hoppa",
+  "getStarted": "Kom igång",
+  "welcome": {
+    "title": "Välkomna!",
+    "subtitle": "Din resa börjar här",
+    "getStarted": "Kom igång",
+    "skip": "Hoppa"
+  },
+  "slides": {
+    "slide1": {
+      "title": "Upptäck fantastiska funktioner",
+      "description": "Utforska allt vår app har att erbjuda"
+    },
+    "slide2": {
+      "title": "Håll dig organiserad",
+      "description": "Håll koll på det som är viktigast"
+    },
+    "slide3": {
+      "title": "Uppnå dina mål",
+      "description": "Vi är här för att hjälpa dig att lyckas"
+    }
+  },
+  "permissions": {
+    "title": "Behörigheter",
+    "subtitle": "Vi behöver några behörigheter för att ge den bästa upplevelsen",
+    "location": {
+      "title": "Plats",
+      "description": "Tillhandahåll platsbaserade funktioner",
+      "enable": "Aktivera plats"
+    },
+    "camera": {
+      "title": "Kamera",
+      "description": "Ta foton och skanna dokument",
+      "enable": "Aktivera kamera"
+    },
+    "photos": {
+      "title": "Foton",
+      "description": "Få tillgång till ditt fotobibliotek",
+      "enable": "Aktivera Foton"
+    },
+    "later": "Jag ska göra det här senare",
+    "continue": "Fortsätta"
+  },
+  "personalization": {
+    "title": "Anpassa din upplevelse",
+    "subtitle": "Berätta om dig själv",
+    "goals": {
+      "title": "Vilka är dina mål?",
+      "options": [
+        "Håll dig frisk",
+        "Var produktiv",
+        "Lär dig nya färdigheter",
+        "Ta kontakt med andra",
+        "Ha roligt"
+      ]
+    },
+    "preferences": {
+      "title": "Ange dina preferenser",
+      "theme": "Välj Tema",
+      "language": "Välj Språk"
+    },
+    "continue": "Fortsätta"
+  },
+  "complete": {
+    "title": "Du är klar!",
+    "subtitle": "Låt oss komma igång!",
+    "startButton": "Börja använda appen"
+  },
+  "navigation": {
+    "next": "Nästa",
+    "back": "Tillbaka",
+    "skip": "Hoppa",
+    "done": "Gjort"
+  }
+}

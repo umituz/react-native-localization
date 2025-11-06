@@ -37,21 +37,63 @@ const resources = {
 
 /**
  * Initialize i18next
+ * Deferred initialization to avoid React Native renderer conflicts
  */
-i18n.use(initReactI18next).init({
-  resources,
-  lng: DEFAULT_LANGUAGE,
-  fallbackLng: DEFAULT_LANGUAGE,
+let isInitialized = false;
 
-  interpolation: {
-    escapeValue: false, // React already escapes values
-  },
+const initializeI18n = () => {
+  if (isInitialized) return;
 
-  react: {
-    useSuspense: false, // Disable suspense for React Native
-  },
+  try {
+    /* eslint-disable-next-line no-console */
+    if (__DEV__) console.log('[i18n] Initializing i18next...');
+    
+    // Check if initReactI18next is available
+    if (!initReactI18next) {
+      throw new Error('initReactI18next is undefined');
+    }
+    
+    /* eslint-disable-next-line no-console */
+    if (__DEV__) console.log('[i18n] initReactI18next found, initializing...');
+    
+    i18n.use(initReactI18next).init({
+      resources,
+      lng: DEFAULT_LANGUAGE,
+      fallbackLng: DEFAULT_LANGUAGE,
 
-  compatibilityJSON: 'v4', // Use i18next v4 JSON format
-});
+      interpolation: {
+        escapeValue: false, // React already escapes values
+      },
+
+      react: {
+        useSuspense: false, // Disable suspense for React Native
+      },
+
+      compatibilityJSON: 'v4', // Use i18next v4 JSON format
+    });
+    
+    isInitialized = true;
+    /* eslint-disable-next-line no-console */
+    if (__DEV__) console.log('[i18n] i18next initialized successfully');
+  } catch (error) {
+    /* eslint-disable-next-line no-console */
+    if (__DEV__) console.error('[i18n] Initialization error:', error);
+    // Don't throw - allow app to continue without i18n
+    /* eslint-disable-next-line no-console */
+    if (__DEV__) console.warn('[i18n] Continuing without i18n initialization');
+  }
+};
+
+// Defer initialization until React is ready
+// React Native doesn't have window, so we check for global
+if (typeof global !== 'undefined') {
+  // Use setTimeout to defer initialization
+  setTimeout(() => {
+    initializeI18n();
+  }, 0);
+} else {
+  // Fallback: initialize immediately
+  initializeI18n();
+}
 
 export default i18n;

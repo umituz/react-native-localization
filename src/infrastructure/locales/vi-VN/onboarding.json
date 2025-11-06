@@ -1,0 +1,76 @@
+{
+  "skip": "Nhảy",
+  "getStarted": "Bắt đầu",
+  "welcome": {
+    "title": "Chào mừng!",
+    "subtitle": "Cuộc hành trình của bạn bắt đầu từ đây",
+    "getStarted": "Bắt đầu",
+    "skip": "Nhảy"
+  },
+  "slides": {
+    "slide1": {
+      "title": "Khám phá các tính năng tuyệt vời",
+      "description": "Khám phá mọi thứ mà ứng dụng của chúng tôi cung cấp"
+    },
+    "slide2": {
+      "title": "Luôn ngăn nắp",
+      "description": "Theo dõi những gì quan trọng nhất"
+    },
+    "slide3": {
+      "title": "Đạt được mục tiêu của bạn",
+      "description": "Chúng tôi ở đây để giúp bạn thành công"
+    }
+  },
+  "permissions": {
+    "title": "Quyền",
+    "subtitle": "Chúng tôi cần một số quyền để cung cấp trải nghiệm tốt nhất",
+    "location": {
+      "title": "Vị trí",
+      "description": "Cung cấp các tính năng dựa trên vị trí",
+      "enable": "Bật vị trí"
+    },
+    "camera": {
+      "title": "Máy ảnh",
+      "description": "Chụp ảnh và scan tài liệu",
+      "enable": "Bật máy ảnh"
+    },
+    "photos": {
+      "title": "Ảnh",
+      "description": "Truy cập thư viện ảnh của bạn",
+      "enable": "Bật ảnh"
+    },
+    "later": "Tôi sẽ làm việc này sau",
+    "continue": "Tiếp tục"
+  },
+  "personalization": {
+    "title": "Cá nhân hóa trải nghiệm của bạn",
+    "subtitle": "Hãy cho chúng tôi biết về bạn",
+    "goals": {
+      "title": "Mục tiêu của bạn là gì?",
+      "options": [
+        "Giữ sức khỏe",
+        "Làm việc hiệu quả",
+        "Học những kỹ năng mới",
+        "Kết nối với người khác",
+        "chúc vui vẻ"
+      ]
+    },
+    "preferences": {
+      "title": "Đặt tùy chọn của bạn",
+      "theme": "Chọn chủ đề",
+      "language": "Chọn ngôn ngữ"
+    },
+    "continue": "Tiếp tục"
+  },
+  "complete": {
+    "title": "Bạn đã hoàn tất!",
+    "subtitle": "Hãy bắt đầu!",
+    "startButton": "Bắt đầu sử dụng ứng dụng"
+  },
+  "navigation": {
+    "next": "Kế tiếp",
+    "back": "Mặt sau",
+    "skip": "Nhảy",
+    "done": "Xong"
+  }
+}

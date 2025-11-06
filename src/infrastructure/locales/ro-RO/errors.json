@@ -1,0 +1,43 @@
+{
+  "validation": {
+    "required": "Acest câmp este obligatoriu",
+    "invalidEmail": "Format de e-mail nevalid",
+    "invalidPhone": "Număr de telefon nevalid",
+    "invalidUrl": "Format URL nevalid",
+    "minLength": "Lungimea minimă este de {{min}} caractere",
+    "maxLength": "Lungimea maximă este de {{max}} caractere",
+    "minValue": "Valoarea minimă este {{min}}",
+    "maxValue": "Valoarea maximă este {{max}}",
+    "mustMatch": "Câmpurile trebuie să se potrivească",
+    "invalidFormat": "Format nevalid",
+    "invalidDate": "Data nevalidă",
+    "futureDate": "Data trebuie să fie în viitor",
+    "pastDate": "Data trebuie să fie în trecut"
+  },
+  "storage": {
+    "saveFailed": "Nu s-au salvat datele",
+    "loadFailed": "Nu s-au încărcat datele",
+    "deleteFailed": "Nu s-au șters datele",
+    "notFound": "Date nu au fost găsite"
+  },
+  "permission": {
+    "denied": "Acces refuzat",
+    "notGranted": "Permisiunea nu a fost acordată",
+    "cameraNotAvailable": "Camera nu este disponibilă",
+    "locationNotAvailable": "Servicii de localizare nu sunt disponibile",
+    "microphoneNotAvailable": "Microfonul nu este disponibil",
+    "photosNotAvailable": "Biblioteca foto nu este disponibilă"
+  },
+  "common": {
+    "somethingWentWrong": "Ceva a mers prost",
+    "tryAgainLater": "Vă rugăm să încercați din nou mai târziu",
+    "unexpectedError": "A apărut o eroare neașteptată"
+  },
+  "actions": {
+    "dismiss": "Respingeți",
+    "retry": "Reîncercați",
+    "cancel": "Anula",
+    "goBack": "Întoarce-te",
+    "contactSupport": "Contactați asistența"
+  }
+}

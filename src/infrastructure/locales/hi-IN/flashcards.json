@@ -1,0 +1,287 @@
+{
+  "home": {
+    "welcome": "फ्लैशकार्ड निर्माता में आपका स्वागत है",
+    "subtitle": "इंटरैक्टिव फ़्लैशकार्ड के साथ किसी भी विषय में महारत हासिल करें",
+    "quickStudy": "त्वरित अध्ययन",
+    "quickStudyDesc": "अपने हाल के डेक का अध्ययन करना शुरू करें",
+    "createDeck": "डेक बनाएं",
+    "createDeckDesc": "एक नया फ़्लैशकार्ड डेक बनाएँ",
+    "recentActivity": "हाल की गतिविधि",
+    "noDecksYet": "आपने अभी तक कोई डेक नहीं बनाया है",
+    "browseDecks": "डेक ब्राउज़ करें",
+    "statistics": "आंकड़े",
+    "totalDecks": "कुल डेक",
+    "totalCards": "कुल कार्ड",
+    "studySessions": "अध्ययन सत्र"
+  },
+  "decks": {
+    "noDecks": "कोई डेक नहीं मिला",
+    "noDecksDesc": "आरंभ करने के लिए अपना पहला फ़्लैशकार्ड डेक बनाएं",
+    "createFirstDeck": "पहला डेक बनाएं",
+    "createDeck": "डेक बनाएं",
+    "editDeck": "डेक संपादित करें",
+    "recentlyStudied": "हाल ही में अध्ययन किया गया",
+    "allDecks": "सभी डेक",
+    "easy": "आसान",
+    "medium": "मध्यम",
+    "hard": "मुश्किल"
+  },
+  "study": {
+    "noCards": "कोई कार्ड उपलब्ध नहीं",
+    "noCardsDesc": "पढ़ाई शुरू करने के लिए डेक में कुछ कार्ड जोड़ें",
+    "browseDecks": "डेक ब्राउज़ करें",
+    "question": "सवाल",
+    "answer": "उत्तर",
+    "showQuestion": "प्रश्न दिखाएँ",
+    "showAnswer": "उत्तर दिखाने",
+    "correct": "सही",
+    "incorrect": "ग़लत",
+    "skip": "छोडना",
+    "skipped": "छोड़ा गया",
+    "studyComplete": "अध्ययन पूर्ण",
+    "wellDone": "बहुत अच्छा!",
+    "sessionComplete": "सत्र पूर्ण"
+  },
+  "create": {
+    "createDeck": "डेक बनाएं",
+    "addCards": "कार्ड जोड़ें",
+    "deckInfo": "डेक सूचना",
+    "cardInfo": "कार्ड की जानकारी",
+    "deckTitle": "डेक शीर्षक",
+    "deckTitlePlaceholder": "डेक शीर्षक दर्ज करें",
+    "deckDescription": "विवरण",
+    "deckDescriptionPlaceholder": "डेक विवरण दर्ज करें",
+    "category": "वर्ग",
+    "selectCategory": "श्रेणी चुनना",
+    "cardFront": "सामने की ओर",
+    "cardFrontPlaceholder": "प्रश्न या शब्द दर्ज करें",
+    "cardBack": "पीछे की ओर",
+    "cardBackPlaceholder": "उत्तर या परिभाषा दर्ज करें",
+    "difficulty": "कठिनाई",
+    "addCard": "कार्ड जोड़ें",
+    "addedCards": "कार्ड जोड़े गए",
+    "saveDeck": "डेक सहेजें"
+  },
+  "cards": {
+    "noCards": "कोई कार्ड नहीं मिला",
+    "noCardsDesc": "आरंभ करने के लिए अपना पहला फ़्लैशकार्ड बनाएं",
+    "createFirstCard": "पहला कार्ड बनाएं",
+    "createCard": "कार्ड बनाएं",
+    "editCard": "कार्ड संपादित करें",
+    "selectDeck": "डेक का चयन करें",
+    "selectDeckPlaceholder": "इस कार्ड के लिए एक डेक चुनें"
+  },
+  "common": {
+    "clearFilter": "फ़िल्टर साफ़ करें"
+  },
+  "studyModes": {
+    "classic": "क्लासिक",
+    "matching": "मिलान खेल",
+    "quiz": "बहुविकल्पी",
+    "writing": "लेखन विधा",
+    "timed": "समयबद्ध चुनौती",
+    "selectMode": "अध्ययन मोड का चयन करें"
+  },
+  "session": {
+    "complete": "सत्र पूर्ण",
+    "accuracy": "शुद्धता",
+    "speed": "रफ़्तार",
+    "score": "अंक",
+    "cardsPerMinute": "कार्ड/मिनट",
+    "grade": "श्रेणी",
+    "feedback": {
+      "excellent": "उत्कृष्ट कार्य! आपने इस डेक पर महारत हासिल कर ली है!",
+      "great": "अच्छा काम! अच्छा काम करते रहें!",
+      "good": "अच्छी प्रगति! सुधार के लिए अधिक अभ्यास करें.",
+      "keep_practicing": "अभ्यास करते रहो! आप वहां पहुंच रहे हैं.",
+      "keep_studying": "पढ़ते रहो! इन कार्डों की दोबारा समीक्षा करें."
+    }
+  },
+  "rating": {
+    "fail": "दोबारा",
+    "hard": "मुश्किल",
+    "good": "अच्छा",
+    "easy": "आसान",
+    "perfect": "उत्तम"
+  },
+  "srs": {
+    "dueToday": "आज देय",
+    "dueCards": "देय कार्ड",
+    "nextReview": "अगली समीक्षा",
+    "interval": "अंतराल",
+    "repetitions": "repetitions",
+    "easeFactor": "सहजता कारक",
+    "reviewHistory": "इतिहास की समीक्षा करें",
+    "retention": "अवधारण दर",
+    "again": "दोबारा",
+    "hard": "मुश्किल",
+    "good": "अच्छा",
+    "easy": "आसान"
+  },
+  "media": {
+    "image": "छवि",
+    "chooseImage": "छवि चुनें",
+    "takePhoto": "फोटो लो",
+    "permissionDenied": "फ़ोटो तक पहुंच की अनुमति अस्वीकार कर दी गई",
+    "cameraPermissionDenied": "कैमरे तक पहुंच की अनुमति नहीं दी गई",
+    "imageFailed": "छवि लोड करने में विफल",
+    "cameraFailed": "कैमरा खोलने में विफल",
+    "audio": "ऑडियो",
+    "record": "ऑडियो रिकॉर्ड करें",
+    "recording": "रिकॉर्डिंग...",
+    "stopRecording": "रिकॉर्डिंग बंद करें",
+    "play": "खेल",
+    "stop": "रुकना",
+    "speak": "बोलना",
+    "audioPermissionDenied": "ऑडियो रिकॉर्ड करने की अनुमति नहीं दी गई",
+    "recordingFailed": "ऑडियो रिकॉर्ड करने में विफल",
+    "playbackFailed": "ऑडियो चलाने में विफल",
+    "ttsFailed": "पाठ-से-वाक् विफल",
+    "noText": "बोलने के लिए कोई पाठ नहीं"
+  },
+  "import": {
+    "title": "आयात डेक",
+    "chooseFormat": "प्रारूप चुनें",
+    "csv": "सीएसवी (एक्सेल)",
+    "json": "JSON",
+    "quizlet": "Quizlet",
+    "selectFile": "फ़ाइल चुनें",
+    "importing": "आयात किया जा रहा है...",
+    "success": "{{गिनती}} कार्ड सफलतापूर्वक आयात किए गए",
+    "errors": "{{गिनती}} त्रुटियाँ हुईं",
+    "viewErrors": "त्रुटियाँ देखें"
+  },
+  "export": {
+    "title": "निर्यात डेक",
+    "chooseFormat": "प्रारूप चुनें",
+    "csv": "सीएसवी (एक्सेल)",
+    "json": "JSON (पूर्ण)",
+    "quizlet": "Quizlet",
+    "includeStats": "सांख्यिकी शामिल करें",
+    "includeMedia": "मीडिया शामिल करें",
+    "exporting": "निर्यात किया जा रहा है...",
+    "success": "डेक सफलतापूर्वक निर्यात किया गया"
+  },
+  "statistics": {
+    "title": "आंकड़े",
+    "overview": "सिंहावलोकन",
+    "totalCards": "कुल कार्ड",
+    "cardsStudied": "कार्डों का अध्ययन किया गया",
+    "totalReviews": "कुल समीक्षाएँ",
+    "correctReviews": "सही समीक्षा",
+    "accuracy": "शुद्धता",
+    "averageTimePerCard": "प्रति कार्ड औसत समय",
+    "totalStudyTime": "कुल अध्ययन समय",
+    "studySessions": "अध्ययन सत्र",
+    "streak": {
+      "current": "वर्तमान लकीर",
+      "longest": "सबसे लंबी लकीर",
+      "days": "दिन"
+    },
+    "charts": {
+      "daily": "दैनिक",
+      "weekly": "साप्ताहिक",
+      "monthly": "महीने के",
+      "performance": "प्रदर्शन",
+      "activity": "गतिविधि"
+    }
+  },
+  "sharing": {
+    "title": "डेक साझा करें",
+    "generateCode": "शेयर कोड जनरेट करें",
+    "shareCode": "कोड साझा करें",
+    "qrCode": "क्यू आर संहिता",
+    "copyCode": "कोड कॉपी करें",
+    "codeCopied": "कोड क्लिपबोर्ड पर कॉपी किया गया",
+    "shareAsFile": "फ़ाइल के रूप में साझा करें",
+    "shareAsLink": "लिंक के रूप में साझा करें",
+    "importCode": "आयात कोड",
+    "enterCode": "6-अंकीय कोड दर्ज करें",
+    "invalidCode": "अमान्य शेयर कोड",
+    "importing": "डेक आयात किया जा रहा है...",
+    "importSuccess": "डेक सफलतापूर्वक आयात किया गया",
+    "downloadCount": "डाउनलोड",
+    "makePublic": "सार्वजनिक करें",
+    "makePrivate": "निजी बनाएं"
+  },
+  "gamification": {
+    "profile": {
+      "level": "स्तर",
+      "xp": "एक्सपी",
+      "rank": "पद",
+      "progress": "अगले स्तर तक प्रगति",
+      "totalXP": "अर्जित कुल एक्सपी"
+    },
+    "ranks": {
+      "novice": "नौसिखिए",
+      "apprentice": "शिक्षु",
+      "scholar": "पंडित",
+      "expert": "विशेषज्ञ",
+      "master": "मालिक",
+      "grandmaster": "ग्रांडमास्टर",
+      "legend": "दंतकथा"
+    },
+    "achievements": {
+      "title": "उपलब्धियों",
+      "unlocked": "अनलॉक किया",
+      "locked": "बंद",
+      "progress": "प्रगति",
+      "reward": "इनाम",
+      "unlockedAt": "अनलॉक चालू",
+      "categories": {
+        "study": "अध्ययन",
+        "cards": "कार्ड",
+        "decks": "डेक्स",
+        "streak": "धारी",
+        "special": "विशेष"
+      }
+    },
+    "challenges": {
+      "title": "दैनिक चुनौतियां",
+      "today": "आज की चुनौतियाँ",
+      "completed": "पुरा होना।",
+      "inProgress": "प्रगति पर है",
+      "reward": "इनाम",
+      "goal": "लक्ष्य",
+      "progress": "प्रगति"
+    },
+    "xpRewards": {
+      "cardReviewed": "+{{राशि}} एक्सपी - कार्ड की समीक्षा की गई",
+      "cardCorrect": "+{{राशि}} एक्सपी - सही उत्तर",
+      "cardPerfect": "+{{राशि}} एक्सपी - बिल्कुल सही!",
+      "deckCreated": "+{{राशि}} एक्सपी - डेक बनाया गया",
+      "studySession": "+{{राशि}} एक्सपी - अध्ययन सत्र",
+      "dailyGoal": "+{{राशि}} एक्सपी - दैनिक लक्ष्य प्राप्त",
+      "streakDay": "+{{राशि}} एक्सपी - स्ट्रीक डे",
+      "achievementUnlocked": "+{{राशि}} एक्सपी - उपलब्धि अनलॉक"
+    }
+  },
+  "matching": {
+    "title": "मिलान खेल",
+    "instructions": "जोड़ियों को टैप करके कार्डों का मिलान करें",
+    "matches": "माचिस",
+    "attempts": "प्रयास",
+    "timeElapsed": "समय",
+    "perfect": "बहतरीन मैच!",
+    "tryAgain": "पुनः प्रयास करें"
+  },
+  "quiz": {
+    "title": "बहुविकल्पीय प्रश्नोत्तरी",
+    "question": "सवाल",
+    "chooseAnswer": "सही उत्तर का चयन करें",
+    "correct": "सही!",
+    "incorrect": "ग़लत",
+    "showAnswer": "उत्तर दिखाने",
+    "nextQuestion": "अगला सवाल"
+  },
+  "writing": {
+    "title": "लेखन विधा",
+    "instructions": "उत्तर टाइप करें",
+    "yourAnswer": "आपका उत्तर",
+    "correctAnswer": "सही जवाब",
+    "similarity": "समानता",
+    "strictMode": "सख्त मोड",
+    "fuzzyMatching": "फजी मिलान",
+    "check": "उत्तर जांचें"
+  }
+}

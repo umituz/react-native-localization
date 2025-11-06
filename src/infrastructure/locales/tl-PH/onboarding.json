@@ -1,0 +1,76 @@
+{
+  "skip": "Laktawan",
+  "getStarted": "Magsimula",
+  "welcome": {
+    "title": "Maligayang pagdating!",
+    "subtitle": "Magsisimula ang iyong paglalakbay dito",
+    "getStarted": "Magsimula",
+    "skip": "Laktawan"
+  },
+  "slides": {
+    "slide1": {
+      "title": "Tuklasin ang mga kamangha -manghang tampok",
+      "description": "Galugarin ang lahat ng nag -aalok ng aming app"
+    },
+    "slide2": {
+      "title": "Manatiling maayos",
+      "description": "Subaybayan kung ano ang pinakamahalaga"
+    },
+    "slide3": {
+      "title": "Makamit ang iyong mga layunin",
+      "description": "Narito kami upang matulungan kang magtagumpay"
+    }
+  },
+  "permissions": {
+    "title": "Mga Pahintulot",
+    "subtitle": "Kailangan namin ng ilang mga pahintulot upang magbigay ng pinakamahusay na karanasan",
+    "location": {
+      "title": "Lokasyon",
+      "description": "Magbigay ng mga tampok na batay sa lokasyon",
+      "enable": "Paganahin ang lokasyon"
+    },
+    "camera": {
+      "title": "Camera",
+      "description": "Kumuha ng mga larawan at pag -scan ng mga dokumento",
+      "enable": "Paganahin ang camera"
+    },
+    "photos": {
+      "title": "Mga larawan",
+      "description": "I -access ang iyong library ng larawan",
+      "enable": "Paganahin ang mga larawan"
+    },
+    "later": "Gagawin ko ito mamaya",
+    "continue": "Magpatuloy"
+  },
+  "personalization": {
+    "title": "Isapersonal ang iyong karanasan",
+    "subtitle": "Sabihin sa amin ang tungkol sa iyong sarili",
+    "goals": {
+      "title": "Ano ang iyong mga layunin?",
+      "options": [
+        "Manatiling malusog",
+        "Maging produktibo",
+        "Alamin ang mga bagong kasanayan",
+        "Kumonekta sa iba",
+        "Magsaya"
+      ]
+    },
+    "preferences": {
+      "title": "Itakda ang iyong mga kagustuhan",
+      "theme": "Piliin ang tema",
+      "language": "Pumili ng wika"
+    },
+    "continue": "Magpatuloy"
+  },
+  "complete": {
+    "title": "Nakatakda kayong lahat!",
+    "subtitle": "Magsimula tayo!",
+    "startButton": "Simulan ang paggamit ng app"
+  },
+  "navigation": {
+    "next": "Susunod",
+    "back": "Balik",
+    "skip": "Laktawan",
+    "done": "Tapos na"
+  }
+}

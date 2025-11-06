@@ -1,0 +1,83 @@
+{
+  "home": {
+    "welcome": "Welcome to Flashcard Maker",
+    "subtitle": "Master any subject with interactive flashcards",
+    "quickStudy": "Quick Study",
+    "quickStudyDesc": "Start studying your recent decks",
+    "createDeck": "Create Deck",
+    "createDeckDesc": "Build a new flashcard deck",
+    "recentActivity": "Recent Activity",
+    "noDecksYet": "You haven't created any decks yet",
+    "browseDecks": "Browse Decks",
+    "statistics": "Statistics",
+    "totalDecks": "Total Decks",
+    "totalCards": "Total Cards",
+    "studySessions": "Study Sessions"
+  },
+  "decks": {
+    "noDecks": "No Decks Found",
+    "noDecksDesc": "Create your first flashcard deck to get started",
+    "createFirstDeck": "Create First Deck",
+    "createDeck": "Create Deck",
+    "editDeck": "Edit Deck",
+    "recentlyStudied": "Recently Studied",
+    "allDecks": "All Decks",
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard"
+  },
+  "study": {
+    "noCards": "No Cards Available",
+    "noCardsDesc": "Add some cards to a deck to start studying",
+    "browseDecks": "Browse Decks",
+    "question": "Question",
+    "answer": "Answer",
+    "showQuestion": "Show Question",
+    "showAnswer": "Show Answer",
+    "correct": "Correct",
+    "incorrect": "Incorrect",
+    "skip": "Skip",
+    "skipped": "Skipped",
+    "studyComplete": "Study Complete",
+    "wellDone": "Well done!",
+    "sessionComplete": "Session Complete"
+  },
+  "create": {
+    "createDeck": "Create Deck",
+    "addCards": "Add Cards",
+    "deckInfo": "Deck Information",
+    "cardInfo": "Card Information",
+    "deckTitle": "Deck Title",
+    "deckTitlePlaceholder": "Enter deck title",
+    "deckDescription": "Description",
+    "deckDescriptionPlaceholder": "Enter deck description",
+    "category": "Category",
+    "selectCategory": "Select category",
+    "cardFront": "Front Side",
+    "cardFrontPlaceholder": "Enter question or term",
+    "cardBack": "Back Side",
+    "cardBackPlaceholder": "Enter answer or definition",
+    "difficulty": "Difficulty",
+    "addCard": "Add Card",
+    "addedCards": "Added Cards",
+    "saveDeck": "Save Deck"
+  },
+  "cards": {
+    "noCards": "No Cards Found",
+    "noCardsDesc": "Create your first flashcard to get started",
+    "createFirstCard": "Create First Card",
+    "createCard": "Create Card",
+    "editCard": "Edit Card",
+    "selectDeck": "Select Deck",
+    "selectDeckPlaceholder": "Choose a deck for this card"
+  },
+  "common": {
+    "clearFilter": "Clear Filter"
+  }
+}
+
+
+
+
+
+

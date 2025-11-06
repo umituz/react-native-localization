@@ -1,0 +1,53 @@
+{
+  "lightMode": "Mod cahaya",
+  "darkMode": "Mod gelap",
+  "language": "Bahasa",
+  "aboutDescription": "Maklumat dan versi aplikasi",
+  "about": {
+    "title": "Mengenai",
+    "description": "Maklumat dan versi aplikasi",
+    "appVersion": "Versi aplikasi",
+    "moreApps": "Lebih banyak aplikasi",
+    "moreAppsDescription": "Lihat aplikasi kami yang lain",
+    "contactEmail": "Hubungi e -mel",
+    "website": "Laman web"
+  },
+  "disclaimer": {
+    "title": "Penafian Kesihatan",
+    "shortMessage": "Ketik untuk membaca maklumat kesihatan yang penting",
+    "message": "Aplikasi ini adalah untuk tujuan sokongan maklumat dan kesejahteraan sahaja. Ia bukan pengganti penjagaan kesihatan perubatan atau mental profesional.\n\nJika anda mengalami krisis kesihatan atau kecemasan, hubungi perkhidmatan kecemasan tempatan atau penyedia penjagaan kesihatan anda dengan segera.\n\nSentiasa berunding dengan profesional penjagaan kesihatan yang berkelayakan untuk nasihat, diagnosis, atau rawatan perubatan. Kandungan dalam aplikasi ini tidak boleh digunakan sebagai pengganti penghakiman perubatan profesional.\n\nPrivasi anda penting. Semua data tetap peribadi pada peranti anda melainkan jika anda secara jelas memilih untuk membaginya."
+  },
+  "legal": {
+    "title": "Undang -undang",
+    "description": "Dasar Privasi, Syarat Penggunaan, dan Eula",
+    "privacy": "Dasar Privasi",
+    "privacyDescription": "Bagaimana Kami Mengendalikan Data Anda",
+    "terms": "Syarat Penggunaan",
+    "termsDescription": "Terma dan Syarat",
+    "eula": "Perjanjian Lesen Pengguna Akhir",
+    "eulaDescription": "Perjanjian Lesen"
+  },
+  "version": {
+    "title": "Versi aplikasi"
+  },
+  "languageSelection": {
+    "title": "Pilih bahasa",
+    "description": "Pilih bahasa pilihan anda",
+    "currentLanguage": "Bahasa semasa",
+    "searchPlaceholder": "Cari bahasa"
+  },
+  "appearance": {
+    "title": "Penampilan",
+    "darkMode": "Mod gelap",
+    "darkTheme": "Tema gelap",
+    "lightTheme": "Tema ringan",
+    "themeDescription": "Tetapan Bahasa dan Tema"
+  },
+  "notifications": {
+    "title": "Pemberitahuan",
+    "description": "Menguruskan keutamaan pemberitahuan",
+    "enableNotifications": "Membolehkan pemberitahuan",
+    "notificationPermission": "Kebenaran pemberitahuan",
+    "notificationPermissionDescription": "Benarkan aplikasi menghantar pemberitahuan"
+  }
+}

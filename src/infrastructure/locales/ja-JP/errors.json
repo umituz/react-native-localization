@@ -1,0 +1,43 @@
+{
+  "validation": {
+    "required": "この項目は必須です",
+    "invalidEmail": "無効な電子メール形式",
+    "invalidPhone": "無効な電話番号",
+    "invalidUrl": "無効な URL 形式",
+    "minLength": "最小長は {{min}} 文字です",
+    "maxLength": "最大長は {{max}} 文字です",
+    "minValue": "最小値は {{min}} です",
+    "maxValue": "最大値は {{max}} です",
+    "mustMatch": "フィールドは一致する必要があります",
+    "invalidFormat": "無効な形式",
+    "invalidDate": "無効な日付",
+    "futureDate": "日付は将来のものである必要があります",
+    "pastDate": "日付は過去のものである必要があります"
+  },
+  "storage": {
+    "saveFailed": "データの保存に失敗しました",
+    "loadFailed": "データのロードに失敗しました",
+    "deleteFailed": "データの削除に失敗しました",
+    "notFound": "データが見つかりません"
+  },
+  "permission": {
+    "denied": "許可が拒否されました",
+    "notGranted": "許可が与えられませんでした",
+    "cameraNotAvailable": "カメラが使用できません",
+    "locationNotAvailable": "位置情報サービスは利用できません",
+    "microphoneNotAvailable": "マイクが使用できません",
+    "photosNotAvailable": "フォトライブラリは利用できません"
+  },
+  "common": {
+    "somethingWentWrong": "何か問題が発生しました",
+    "tryAgainLater": "後でもう一度試してください",
+    "unexpectedError": "予期しないエラーが発生しました"
+  },
+  "actions": {
+    "dismiss": "却下する",
+    "retry": "リトライ",
+    "cancel": "キャンセル",
+    "goBack": "戻る",
+    "contactSupport": "サポートに連絡する"
+  }
+}

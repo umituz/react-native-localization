@@ -1,0 +1,9 @@
+{
+  "appName": "Flashcard-maker",
+  "tagline": "Welkom op je reis",
+  "poweredBy": "Mogelijk gemaakt door UmitUZ App Factory",
+  "version": "Versie {{versie}}",
+  "splash": {
+    "loading": "Laden..."
+  }
+}

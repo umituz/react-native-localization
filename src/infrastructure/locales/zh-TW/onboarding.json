@@ -1,0 +1,76 @@
+{
+  "skip": "跳過",
+  "getStarted": "開始使用",
+  "welcome": {
+    "title": "歡迎！",
+    "subtitle": "您的旅程從這裡開始",
+    "getStarted": "開始使用",
+    "skip": "跳過"
+  },
+  "slides": {
+    "slide1": {
+      "title": "發現驚人的功能",
+      "description": "探索我們的應用程序提供的一切"
+    },
+    "slide2": {
+      "title": "保持井井有條",
+      "description": "跟踪最重要的事情"
+    },
+    "slide3": {
+      "title": "實現你的目標",
+      "description": "我們隨時幫助您取得成功"
+    }
+  },
+  "permissions": {
+    "title": "權限",
+    "subtitle": "我們需要一些權限才能提供最佳體驗",
+    "location": {
+      "title": "地點",
+      "description": "提供基於位置的功能",
+      "enable": "啟用位置"
+    },
+    "camera": {
+      "title": "相機",
+      "description": "拍照並掃描文件",
+      "enable": "啟用相機"
+    },
+    "photos": {
+      "title": "照片",
+      "description": "訪問您的照片庫",
+      "enable": "啟用照片"
+    },
+    "later": "我稍後會做這個",
+    "continue": "繼續"
+  },
+  "personalization": {
+    "title": "個性化您的體驗",
+    "subtitle": "告訴我們你自己",
+    "goals": {
+      "title": "你的目標是什麼？",
+      "options": [
+        "保持健康",
+        "保持高效",
+        "學習新技能",
+        "與他人聯繫",
+        "玩得開心"
+      ]
+    },
+    "preferences": {
+      "title": "設置您的偏好",
+      "theme": "選擇主題",
+      "language": "選擇語言"
+    },
+    "continue": "繼續"
+  },
+  "complete": {
+    "title": "一切就緒！",
+    "subtitle": "讓我們開始吧！",
+    "startButton": "開始使用應用程序"
+  },
+  "navigation": {
+    "next": "下一個",
+    "back": "後退",
+    "skip": "跳過",
+    "done": "完畢"
+  }
+}

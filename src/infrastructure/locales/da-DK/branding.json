@@ -1,0 +1,9 @@
+{
+  "appName": "Flashkort Maker",
+  "tagline": "Velkommen til din rejse",
+  "poweredBy": "Drevet af UmitUZ App Factory",
+  "version": "Version {{version}}",
+  "splash": {
+    "loading": "Indlæser..."
+  }
+}

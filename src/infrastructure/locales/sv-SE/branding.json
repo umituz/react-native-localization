@@ -1,0 +1,9 @@
+{
+  "appName": "Flashcard Maker",
+  "tagline": "Välkommen till din resa",
+  "poweredBy": "Drivs av UmitUZ App Factory",
+  "version": "Version {{version}}",
+  "splash": {
+    "loading": "Belastning..."
+  }
+}

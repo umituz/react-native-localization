@@ -1,0 +1,76 @@
+{
+  "skip": "Overslaan",
+  "getStarted": "Aan de slag",
+  "welcome": {
+    "title": "Welkom!",
+    "subtitle": "Jouw reis begint hier",
+    "getStarted": "Aan de slag",
+    "skip": "Overslaan"
+  },
+  "slides": {
+    "slide1": {
+      "title": "Ontdek geweldige functies",
+      "description": "Ontdek alles wat onze app te bieden heeft"
+    },
+    "slide2": {
+      "title": "Blijf georganiseerd",
+      "description": "Houd bij wat het belangrijkst is"
+    },
+    "slide3": {
+      "title": "Bereik uw doelen",
+      "description": "Wij zijn hier om u te helpen slagen"
+    }
+  },
+  "permissions": {
+    "title": "Machtigingen",
+    "subtitle": "We hebben enkele machtigingen nodig om de beste ervaring te bieden",
+    "location": {
+      "title": "Locatie",
+      "description": "Bied locatiegebaseerde functies aan",
+      "enable": "Locatie inschakelen"
+    },
+    "camera": {
+      "title": "Camera",
+      "description": "Maak foto's en scan documenten",
+      "enable": "Camera inschakelen"
+    },
+    "photos": {
+      "title": "Foto's",
+      "description": "Toegang tot uw fotobibliotheek",
+      "enable": "Schakel Foto's in"
+    },
+    "later": "Ik zal dit later doen",
+    "continue": "Doorgaan"
+  },
+  "personalization": {
+    "title": "Personaliseer uw ervaring",
+    "subtitle": "Vertel ons over jezelf",
+    "goals": {
+      "title": "Wat zijn je doelen?",
+      "options": [
+        "Blijf gezond",
+        "Wees productief",
+        "Leer nieuwe vaardigheden",
+        "Maak contact met anderen",
+        "Veel plezier"
+      ]
+    },
+    "preferences": {
+      "title": "Stel uw voorkeuren in",
+      "theme": "Kies Thema",
+      "language": "Kies Taal"
+    },
+    "continue": "Doorgaan"
+  },
+  "complete": {
+    "title": "Je bent helemaal klaar!",
+    "subtitle": "Laten we beginnen!",
+    "startButton": "Begin met het gebruiken van de app"
+  },
+  "navigation": {
+    "next": "Volgende",
+    "back": "Rug",
+    "skip": "Overslaan",
+    "done": "Klaar"
+  }
+}

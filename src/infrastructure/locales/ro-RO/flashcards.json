@@ -1,0 +1,287 @@
+{
+  "home": {
+    "welcome": "Bun venit la Flashcard Maker",
+    "subtitle": "Stăpânește orice subiect cu carduri interactive",
+    "quickStudy": "Studiu rapid",
+    "quickStudyDesc": "Începe să studiezi pachetele tale recente",
+    "createDeck": "Creați Deck",
+    "createDeckDesc": "Construiește un nou pachet de carduri",
+    "recentActivity": "Activitate recentă",
+    "noDecksYet": "Nu ai creat încă niciun pachet",
+    "browseDecks": "Răsfoiți punțile",
+    "statistics": "Statistici",
+    "totalDecks": "Total Deck-uri",
+    "totalCards": "Total carduri",
+    "studySessions": "Sesiuni de studiu"
+  },
+  "decks": {
+    "noDecks": "Nu s-au găsit pachete",
+    "noDecksDesc": "Creați-vă primul pachet de carduri pentru a începe",
+    "createFirstDeck": "Creați primul pachet",
+    "createDeck": "Creați Deck",
+    "editDeck": "Editează pachetul",
+    "recentlyStudied": "Studiat recent",
+    "allDecks": "Toate punțile",
+    "easy": "Uşor",
+    "medium": "Mediu",
+    "hard": "Greu"
+  },
+  "study": {
+    "noCards": "Nu există carduri disponibile",
+    "noCardsDesc": "Adăugați câteva cărți într-un pachet pentru a începe să studiați",
+    "browseDecks": "Răsfoiți punțile",
+    "question": "Întrebare",
+    "answer": "Răspuns",
+    "showQuestion": "Afișați întrebarea",
+    "showAnswer": "Arată răspunsul",
+    "correct": "Corecta",
+    "incorrect": "Incorect",
+    "skip": "Sari peste",
+    "skipped": "Sărit",
+    "studyComplete": "Studiu finalizat",
+    "wellDone": "Bine făcut!",
+    "sessionComplete": "Sesiune finalizată"
+  },
+  "create": {
+    "createDeck": "Creați Deck",
+    "addCards": "Adăugați carduri",
+    "deckInfo": "Informații despre punte",
+    "cardInfo": "Informații card",
+    "deckTitle": "Titlul pachetului",
+    "deckTitlePlaceholder": "Introduceți titlul pachetului",
+    "deckDescription": "Descriere",
+    "deckDescriptionPlaceholder": "Introduceți descrierea punții",
+    "category": "Categorie",
+    "selectCategory": "Selectați categoria",
+    "cardFront": "Partea din față",
+    "cardFrontPlaceholder": "Introduceți întrebarea sau termenul",
+    "cardBack": "Partea din spate",
+    "cardBackPlaceholder": "Introduceți răspunsul sau definiția",
+    "difficulty": "Dificultate",
+    "addCard": "Adăugați card",
+    "addedCards": "Cărți adăugate",
+    "saveDeck": "Save Deck"
+  },
+  "cards": {
+    "noCards": "Nu s-au găsit carduri",
+    "noCardsDesc": "Creați-vă primul flashcard pentru a începe",
+    "createFirstCard": "Creați primul card",
+    "createCard": "Creați card",
+    "editCard": "Editați cardul",
+    "selectDeck": "Selectați Deck",
+    "selectDeckPlaceholder": "Alegeți un pachet pentru această carte"
+  },
+  "common": {
+    "clearFilter": "Șterge filtrul"
+  },
+  "studyModes": {
+    "classic": "Clasic",
+    "matching": "Joc de potrivire",
+    "quiz": "Alegere Multiplă",
+    "writing": "Modul de scriere",
+    "timed": "Provocare cronometrată",
+    "selectMode": "Selectați modul de studiu"
+  },
+  "session": {
+    "complete": "Sesiune finalizată",
+    "accuracy": "Precizie",
+    "speed": "Viteză",
+    "score": "Scor",
+    "cardsPerMinute": "carduri/min",
+    "grade": "Nota",
+    "feedback": {
+      "excellent": "Excelent lucru! Ai stăpânit acest pachet!",
+      "great": "Mare treabă! Continuați treaba bună!",
+      "good": "Un progres bun! Practicați mai mult pentru a vă îmbunătăți.",
+      "keep_practicing": "Continuă să exersezi! Ajungi acolo.",
+      "keep_studying": "Continuă să studiezi! Examinați din nou aceste carduri."
+    }
+  },
+  "rating": {
+    "fail": "Din nou",
+    "hard": "Greu",
+    "good": "Bun",
+    "easy": "Uşor",
+    "perfect": "Perfect"
+  },
+  "srs": {
+    "dueToday": "Datorită azi",
+    "dueCards": "Carduri datorate",
+    "nextReview": "Următoarea recenzie",
+    "interval": "Interval",
+    "repetitions": "Repetări",
+    "easeFactor": "Factorul de ușurință",
+    "reviewHistory": "Examinați istoricul",
+    "retention": "Rata de retenție",
+    "again": "Din nou",
+    "hard": "Greu",
+    "good": "Bun",
+    "easy": "Uşor"
+  },
+  "media": {
+    "image": "Imagine",
+    "chooseImage": "Alegeți Imagine",
+    "takePhoto": "Faceți o fotografie",
+    "permissionDenied": "Permisiunea refuzată pentru accesarea fotografiilor",
+    "cameraPermissionDenied": "Permisiune refuzată pentru a accesa camera",
+    "imageFailed": "Nu s-a putut încărca imaginea",
+    "cameraFailed": "Nu s-a putut deschide camera",
+    "audio": "Audio",
+    "record": "Înregistrare audio",
+    "recording": "Înregistrare...",
+    "stopRecording": "Opriți înregistrarea",
+    "play": "Juca",
+    "stop": "Stop",
+    "speak": "Vorbi",
+    "audioPermissionDenied": "Permisiunea refuzată pentru înregistrarea audio",
+    "recordingFailed": "Nu s-a putut înregistra sunetul",
+    "playbackFailed": "Audio eșuat",
+    "ttsFailed": "Transpunerea textului în vorbire a eșuat",
+    "noText": "Niciun text de vorbit"
+  },
+  "import": {
+    "title": "Import Deck",
+    "chooseFormat": "Alegeți Format",
+    "csv": "CSV (Excel)",
+    "json": "JSON",
+    "quizlet": "Quizlet",
+    "selectFile": "Selectați Fișier",
+    "importing": "Se importă...",
+    "success": "Au fost importate {{count}} carduri",
+    "errors": "Au apărut {{count}} erori",
+    "viewErrors": "Vedeți erorile"
+  },
+  "export": {
+    "title": "Export Deck",
+    "chooseFormat": "Alegeți Format",
+    "csv": "CSV (Excel)",
+    "json": "JSON (complet)",
+    "quizlet": "Quizlet",
+    "includeStats": "Includeți statistici",
+    "includeMedia": "Includeți media",
+    "exporting": "Exportator...",
+    "success": "Pachetul a fost exportat cu succes"
+  },
+  "statistics": {
+    "title": "Statistici",
+    "overview": "Prezentare generală",
+    "totalCards": "Total carduri",
+    "cardsStudied": "Cărți studiate",
+    "totalReviews": "Total recenzii",
+    "correctReviews": "Recenzii corecte",
+    "accuracy": "Precizie",
+    "averageTimePerCard": "Timp mediu pe card",
+    "totalStudyTime": "Timp total de studiu",
+    "studySessions": "Sesiuni de studiu",
+    "streak": {
+      "current": "Serie curentă",
+      "longest": "Cea mai lungă serie",
+      "days": "zile"
+    },
+    "charts": {
+      "daily": "Zilnic",
+      "weekly": "Săptămânal",
+      "monthly": "Lunar",
+      "performance": "Performanţă",
+      "activity": "Activitate"
+    }
+  },
+  "sharing": {
+    "title": "Share Deck",
+    "generateCode": "Generați codul de distribuire",
+    "shareCode": "Partajați codul",
+    "qrCode": "Cod QR",
+    "copyCode": "Copiați codul",
+    "codeCopied": "Cod copiat în clipboard",
+    "shareAsFile": "Partajați ca fișier",
+    "shareAsLink": "Distribuie ca link",
+    "importCode": "Cod de import",
+    "enterCode": "Introdu codul din 6 cifre",
+    "invalidCode": "Cod de partajare nevalid",
+    "importing": "Se importă pachetul...",
+    "importSuccess": "Pachetul a fost importat cu succes",
+    "downloadCount": "Descărcări",
+    "makePublic": "Faceți public",
+    "makePrivate": "Faceți privat"
+  },
+  "gamification": {
+    "profile": {
+      "level": "Nivel",
+      "xp": "XP",
+      "rank": "Rang",
+      "progress": "Progresul la nivelul următor",
+      "totalXP": "XP total câștigat"
+    },
+    "ranks": {
+      "novice": "Novice",
+      "apprentice": "Ucenic",
+      "scholar": "Savant",
+      "expert": "Expert",
+      "master": "Maestru",
+      "grandmaster": "Mare maestru",
+      "legend": "Legendă"
+    },
+    "achievements": {
+      "title": "Realizări",
+      "unlocked": "Deblocat",
+      "locked": "Blocat",
+      "progress": "Progres",
+      "reward": "Răsplată",
+      "unlockedAt": "Deblocat activat",
+      "categories": {
+        "study": "Studiu",
+        "cards": "Carduri",
+        "decks": "Punțile",
+        "streak": "Streak",
+        "special": "Special"
+      }
+    },
+    "challenges": {
+      "title": "Provocări zilnice",
+      "today": "Provocările de azi",
+      "completed": "Terminat",
+      "inProgress": "În curs",
+      "reward": "Răsplată",
+      "goal": "Gol",
+      "progress": "Progres"
+    },
+    "xpRewards": {
+      "cardReviewed": "+{{amount}} XP - Card revizuit",
+      "cardCorrect": "+{{amount}} XP - Răspuns corect",
+      "cardPerfect": "+{{amount}} XP - Perfect!",
+      "deckCreated": "+{{amount}} XP - Pachetul creat",
+      "studySession": "+{{amount}} XP - Sesiune de studiu",
+      "dailyGoal": "+{{amount}} XP - Obiectiv zilnic atins",
+      "streakDay": "+{{amount}} XP - Ziua streak",
+      "achievementUnlocked": "+{{amount}} XP - Realizare deblocată"
+    }
+  },
+  "matching": {
+    "title": "Joc de potrivire",
+    "instructions": "Potriviți cărțile atingând perechi",
+    "matches": "Chibrituri",
+    "attempts": "Încercări",
+    "timeElapsed": "Timp",
+    "perfect": "Potrivire perfectă!",
+    "tryAgain": "Încearcă din nou"
+  },
+  "quiz": {
+    "title": "Test cu alegeri multiple",
+    "question": "Întrebare",
+    "chooseAnswer": "Alegeți răspunsul corect",
+    "correct": "Corecta!",
+    "incorrect": "Incorect",
+    "showAnswer": "Arată răspunsul",
+    "nextQuestion": "Următoarea întrebare"
+  },
+  "writing": {
+    "title": "Modul de scriere",
+    "instructions": "Tastați răspunsul",
+    "yourAnswer": "Răspunsul dvs.",
+    "correctAnswer": "Răspuns corect",
+    "similarity": "Similitudine",
+    "strictMode": "Modul strict",
+    "fuzzyMatching": "Potrivire neclară",
+    "check": "Verificați răspunsul"
+  }
+}

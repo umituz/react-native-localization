@@ -1,0 +1,43 @@
+{
+  "validation": {
+    "required": "Ovo polje je obavezno",
+    "invalidEmail": "Nevažeći format e-pošte",
+    "invalidPhone": "Nevažeći telefonski broj",
+    "invalidUrl": "Nevažeći format URL-a",
+    "minLength": "Minimalna duljina je {{min}} znakova",
+    "maxLength": "Maksimalna duljina je {{max}} znakova",
+    "minValue": "Minimalna vrijednost je {{min}}",
+    "maxValue": "Maksimalna vrijednost je {{max}}",
+    "mustMatch": "Polja se moraju podudarati",
+    "invalidFormat": "Nevažeći format",
+    "invalidDate": "Nevažeći datum",
+    "futureDate": "Datum mora biti u budućnosti",
+    "pastDate": "Datum mora biti u prošlosti"
+  },
+  "storage": {
+    "saveFailed": "Spremanje podataka nije uspjelo",
+    "loadFailed": "Učitavanje podataka nije uspjelo",
+    "deleteFailed": "Brisanje podataka nije uspjelo",
+    "notFound": "Podaci nisu pronađeni"
+  },
+  "permission": {
+    "denied": "Dopuštenje odbijeno",
+    "notGranted": "Dozvola nije dana",
+    "cameraNotAvailable": "Kamera nije dostupna",
+    "locationNotAvailable": "Usluge lokacije nisu dostupne",
+    "microphoneNotAvailable": "Mikrofon nije dostupan",
+    "photosNotAvailable": "Biblioteka fotografija nije dostupna"
+  },
+  "common": {
+    "somethingWentWrong": "Nešto nije u redu",
+    "tryAgainLater": "Pokušajte ponovno kasnije",
+    "unexpectedError": "Došlo je do neočekivane pogreške"
+  },
+  "actions": {
+    "dismiss": "Odbaciti",
+    "retry": "Pokušaj ponovo",
+    "cancel": "Otkazati",
+    "goBack": "Idi natrag",
+    "contactSupport": "Obratite se podršci"
+  }
+}

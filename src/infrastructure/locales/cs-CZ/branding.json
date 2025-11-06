@@ -1,0 +1,9 @@
+{
+  "appName": "Tvůrce kartičky",
+  "tagline": "Vítejte na vaší cestě",
+  "poweredBy": "Běží na UmitUZ App Factory",
+  "version": "Verze {{version}}",
+  "splash": {
+    "loading": "Načítání..."
+  }
+}

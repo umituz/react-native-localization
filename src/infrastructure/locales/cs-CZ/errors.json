@@ -1,0 +1,43 @@
+{
+  "validation": {
+    "required": "Toto pole je povinné",
+    "invalidEmail": "Neplatný formát e-mailu",
+    "invalidPhone": "Neplatné telefonní číslo",
+    "invalidUrl": "Neplatný formát adresy URL",
+    "minLength": "Minimální délka je {{min}} znaků",
+    "maxLength": "Maximální délka je {{max}} znaků",
+    "minValue": "Minimální hodnota je {{min}}",
+    "maxValue": "Maximální hodnota je {{max}}",
+    "mustMatch": "Pole se musí shodovat",
+    "invalidFormat": "Neplatný formát",
+    "invalidDate": "Neplatné datum",
+    "futureDate": "Datum musí být v budoucnosti",
+    "pastDate": "Datum musí být v minulosti"
+  },
+  "storage": {
+    "saveFailed": "Data se nepodařilo uložit",
+    "loadFailed": "Data se nepodařilo načíst",
+    "deleteFailed": "Smazání dat se nezdařilo",
+    "notFound": "Data nenalezena"
+  },
+  "permission": {
+    "denied": "Povolení odepřeno",
+    "notGranted": "Povolení nebylo uděleno",
+    "cameraNotAvailable": "Kamera není k dispozici",
+    "locationNotAvailable": "Lokalizační služby nejsou k dispozici",
+    "microphoneNotAvailable": "Mikrofon není k dispozici",
+    "photosNotAvailable": "Knihovna fotografií není k dispozici"
+  },
+  "common": {
+    "somethingWentWrong": "Něco se pokazilo",
+    "tryAgainLater": "Zkuste to znovu později",
+    "unexpectedError": "Došlo k neočekávané chybě"
+  },
+  "actions": {
+    "dismiss": "Propustit",
+    "retry": "Zkuste to znovu",
+    "cancel": "Zrušit",
+    "goBack": "Vraťte se zpět",
+    "contactSupport": "Kontaktujte podporu"
+  }
+}

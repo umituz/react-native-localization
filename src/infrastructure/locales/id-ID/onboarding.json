@@ -1,0 +1,76 @@
+{
+  "skip": "Melewati",
+  "getStarted": "Memulai",
+  "welcome": {
+    "title": "Selamat datang!",
+    "subtitle": "Perjalanan Anda dimulai di sini",
+    "getStarted": "Memulai",
+    "skip": "Melewati"
+  },
+  "slides": {
+    "slide1": {
+      "title": "Temukan Fitur Luar Biasa",
+      "description": "Jelajahi semua yang ditawarkan aplikasi kami"
+    },
+    "slide2": {
+      "title": "Tetap Terorganisir",
+      "description": "Pantau hal-hal yang paling penting"
+    },
+    "slide3": {
+      "title": "Capai Tujuan Anda",
+      "description": "Kami di sini untuk membantu Anda sukses"
+    }
+  },
+  "permissions": {
+    "title": "Izin",
+    "subtitle": "Kami memerlukan beberapa izin untuk memberikan pengalaman terbaik",
+    "location": {
+      "title": "Lokasi",
+      "description": "Menyediakan fitur berbasis lokasi",
+      "enable": "Aktifkan Lokasi"
+    },
+    "camera": {
+      "title": "Kamera",
+      "description": "Ambil foto dan pindai dokumen",
+      "enable": "Aktifkan Kamera"
+    },
+    "photos": {
+      "title": "Foto",
+      "description": "Akses perpustakaan foto Anda",
+      "enable": "Aktifkan Foto"
+    },
+    "later": "Aku akan melakukannya nanti",
+    "continue": "Melanjutkan"
+  },
+  "personalization": {
+    "title": "Personalisasikan Pengalaman Anda",
+    "subtitle": "Ceritakan kepada kami tentang diri Anda",
+    "goals": {
+      "title": "Apa tujuan Anda?",
+      "options": [
+        "Jaga kesehatan",
+        "Jadilah produktif",
+        "Pelajari keterampilan baru",
+        "Terhubung dengan orang lain",
+        "Selamat bersenang-senang"
+      ]
+    },
+    "preferences": {
+      "title": "Tetapkan preferensi Anda",
+      "theme": "Pilih Tema",
+      "language": "Pilih Bahasa"
+    },
+    "continue": "Melanjutkan"
+  },
+  "complete": {
+    "title": "Anda sudah siap!",
+    "subtitle": "Mari kita mulai!",
+    "startButton": "Mulai Menggunakan Aplikasi"
+  },
+  "navigation": {
+    "next": "Berikutnya",
+    "back": "Kembali",
+    "skip": "Melewati",
+    "done": "Selesai"
+  }
+}

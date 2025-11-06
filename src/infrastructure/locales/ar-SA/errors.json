@@ -1,0 +1,43 @@
+{
+  "validation": {
+    "required": "هذه الخانة مطلوبه",
+    "invalidEmail": "تنسيق البريد الإلكتروني غير صالح",
+    "invalidPhone": "رقم الهاتف غير صالح",
+    "invalidUrl": "تنسيق عنوان URL غير صالح",
+    "minLength": "الحد الأدنى للطول هو {{min}} حرفًا",
+    "maxLength": "الحد الأقصى للطول هو {{max}} حرفًا",
+    "minValue": "الحد الأدنى للقيمة هو {{دقيقة}}",
+    "maxValue": "الحد الأقصى للقيمة هو {{max}}",
+    "mustMatch": "يجب أن تتطابق الحقول",
+    "invalidFormat": "التنسيق غير صالح",
+    "invalidDate": "تاريخ غير صالح",
+    "futureDate": "يجب أن يكون التاريخ في المستقبل",
+    "pastDate": "يجب أن يكون التاريخ في الماضي"
+  },
+  "storage": {
+    "saveFailed": "فشل في حفظ البيانات",
+    "loadFailed": "فشل تحميل البيانات",
+    "deleteFailed": "فشل في حذف البيانات",
+    "notFound": "لم يتم العثور على البيانات"
+  },
+  "permission": {
+    "denied": "تم رفض الإذن",
+    "notGranted": "لم يتم منح الإذن",
+    "cameraNotAvailable": "الكاميرا غير متوفرة",
+    "locationNotAvailable": "خدمات الموقع غير متوفرة",
+    "microphoneNotAvailable": "الميكروفون غير متوفر",
+    "photosNotAvailable": "مكتبة الصور غير متوفرة"
+  },
+  "common": {
+    "somethingWentWrong": "حدث خطأ ما",
+    "tryAgainLater": "يرجى المحاولة مرة أخرى في وقت لاحق",
+    "unexpectedError": "حدث خطأ غير متوقع"
+  },
+  "actions": {
+    "dismiss": "رفض",
+    "retry": "أعد المحاولة",
+    "cancel": "يلغي",
+    "goBack": "عُد",
+    "contactSupport": "اتصل بالدعم"
+  }
+}

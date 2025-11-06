@@ -1,0 +1,9 @@
+{
+  "appName": "Creador de tarjetas didácticas",
+  "tagline": "Bienvenido a tu viaje",
+  "poweredBy": "Desarrollado por UmitUZ App Factory",
+  "version": "Versión {{versión}}",
+  "splash": {
+    "loading": "Cargando..."
+  }
+}

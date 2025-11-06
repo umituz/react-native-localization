@@ -1,0 +1,43 @@
+{
+  "validation": {
+    "required": "Dette felt er obligatorisk",
+    "invalidEmail": "Ugyldigt e-mail-format",
+    "invalidPhone": "Ugyldigt telefonnummer",
+    "invalidUrl": "Ugyldigt URL-format",
+    "minLength": "Minimumlængde er {{min}} tegn",
+    "maxLength": "Den maksimale længde er {{max}} tegn",
+    "minValue": "Minimumsværdi er {{min}}",
+    "maxValue": "Maksimal værdi er {{max}}",
+    "mustMatch": "Felter skal matche",
+    "invalidFormat": "Ugyldigt format",
+    "invalidDate": "Ugyldig dato",
+    "futureDate": "Datoen skal ligge i fremtiden",
+    "pastDate": "Datoen skal ligge i fortiden"
+  },
+  "storage": {
+    "saveFailed": "Kunne ikke gemme data",
+    "loadFailed": "Kunne ikke indlæse data",
+    "deleteFailed": "Kunne ikke slette data",
+    "notFound": "Data ikke fundet"
+  },
+  "permission": {
+    "denied": "Tilladelse nægtet",
+    "notGranted": "Tilladelse ikke givet",
+    "cameraNotAvailable": "Kamera ikke tilgængeligt",
+    "locationNotAvailable": "Placeringstjenester er ikke tilgængelige",
+    "microphoneNotAvailable": "Mikrofon ikke tilgængelig",
+    "photosNotAvailable": "Fotobibliotek er ikke tilgængeligt"
+  },
+  "common": {
+    "somethingWentWrong": "Noget gik galt",
+    "tryAgainLater": "Prøv venligst igen senere",
+    "unexpectedError": "Der opstod en uventet fejl"
+  },
+  "actions": {
+    "dismiss": "Afskedige",
+    "retry": "Prøv igen",
+    "cancel": "Ophæve",
+    "goBack": "Gå tilbage",
+    "contactSupport": "Kontakt support"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "validation": {
+    "required": "此字段是必需的",
+    "invalidEmail": "电子邮件格式无效",
+    "invalidPhone": "电话号码无效",
+    "invalidUrl": "网址格式无效",
+    "minLength": "最小长度为 {{min}} 个字符",
+    "maxLength": "最大长度为 {{max}} 个字符",
+    "minValue": "最小值为 {{min}}",
+    "maxValue": "最大值为{{max}}",
+    "mustMatch": "字段必须匹配",
+    "invalidFormat": "格式无效",
+    "invalidDate": "无效日期",
+    "futureDate": "日期必须是将来的日期",
+    "pastDate": "日期必须是过去的日期"
+  },
+  "storage": {
+    "saveFailed": "保存数据失败",
+    "loadFailed": "加载数据失败",
+    "deleteFailed": "删除数据失败",
+    "notFound": "未找到数据"
+  },
+  "permission": {
+    "denied": "没有权限",
+    "notGranted": "未授予许可",
+    "cameraNotAvailable": "相机不可用",
+    "locationNotAvailable": "定位服务不可用",
+    "microphoneNotAvailable": "麦克风不可用",
+    "photosNotAvailable": "照片库不可用"
+  },
+  "common": {
+    "somethingWentWrong": "出了点问题",
+    "tryAgainLater": "请稍后重试",
+    "unexpectedError": "发生意外错误"
+  },
+  "actions": {
+    "dismiss": "解雇",
+    "retry": "重试",
+    "cancel": "取消",
+    "goBack": "回去",
+    "contactSupport": "联系支持人员"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "appName": "플래시카드 메이커",
+  "tagline": "당신의 여행에 오신 것을 환영합니다",
+  "poweredBy": "UmitUZ 앱 팩토리에서 제공",
+  "version": "버전 {{버전}}",
+  "splash": {
+    "loading": "로드 중..."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "appName": "Pembuat Kartu Flash",
+  "tagline": "Selamat datang di perjalanan Anda",
+  "poweredBy": "Didukung oleh Pabrik Aplikasi UmitUZ",
+  "version": "Versi {{versi}}",
+  "splash": {
+    "loading": "Memuat..."
+  }
+}

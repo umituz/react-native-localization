@@ -1,0 +1,76 @@
+{
+  "skip": "Saltare",
+  "getStarted": "Inizia",
+  "welcome": {
+    "title": "Benvenuto!",
+    "subtitle": "Il tuo viaggio inizia qui",
+    "getStarted": "Inizia",
+    "skip": "Saltare"
+  },
+  "slides": {
+    "slide1": {
+      "title": "Scopri funzionalità sorprendenti",
+      "description": "Esplora tutto ciò che la nostra app ha da offrire"
+    },
+    "slide2": {
+      "title": "Rimani organizzato",
+      "description": "Tieni traccia di ciò che conta di più"
+    },
+    "slide3": {
+      "title": "Raggiungi i tuoi obiettivi",
+      "description": "Siamo qui per aiutarti ad avere successo"
+    }
+  },
+  "permissions": {
+    "title": "Autorizzazioni",
+    "subtitle": "Abbiamo bisogno di alcune autorizzazioni per fornire la migliore esperienza",
+    "location": {
+      "title": "Posizione",
+      "description": "Fornire funzionalità basate sulla posizione",
+      "enable": "Abilita posizione"
+    },
+    "camera": {
+      "title": "Telecamera",
+      "description": "Scatta foto e scansiona documenti",
+      "enable": "Abilita fotocamera"
+    },
+    "photos": {
+      "title": "Foto",
+      "description": "Accedi alla tua libreria di foto",
+      "enable": "Abilita foto"
+    },
+    "later": "Lo farò più tardi",
+    "continue": "Continuare"
+  },
+  "personalization": {
+    "title": "Personalizza la tua esperienza",
+    "subtitle": "Raccontaci di te",
+    "goals": {
+      "title": "Quali sono i tuoi obiettivi?",
+      "options": [
+        "Rimani in salute",
+        "Sii produttivo",
+        "Impara nuove abilità",
+        "Connettiti con gli altri",
+        "Divertiti"
+      ]
+    },
+    "preferences": {
+      "title": "Imposta le tue preferenze",
+      "theme": "Scegli Tema",
+      "language": "Scegli la lingua"
+    },
+    "continue": "Continuare"
+  },
+  "complete": {
+    "title": "Sei tutto pronto!",
+    "subtitle": "Iniziamo!",
+    "startButton": "Inizia a utilizzare l'app"
+  },
+  "navigation": {
+    "next": "Prossimo",
+    "back": "Indietro",
+    "skip": "Saltare",
+    "done": "Fatto"
+  }
+}

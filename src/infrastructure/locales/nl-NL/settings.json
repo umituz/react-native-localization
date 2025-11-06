@@ -1,0 +1,53 @@
+{
+  "lightMode": "Lichte modus",
+  "darkMode": "Donkere modus",
+  "language": "Taal",
+  "aboutDescription": "App-informatie en versie",
+  "about": {
+    "title": "Over",
+    "description": "App-informatie en versie",
+    "appVersion": "App-versie",
+    "moreApps": "Meer apps",
+    "moreAppsDescription": "Bekijk ook onze andere apps",
+    "contactEmail": "Neem contact op met E-mail",
+    "website": "Website"
+  },
+  "disclaimer": {
+    "title": "Gezondheidsdisclaimer",
+    "shortMessage": "Tik om belangrijke gezondheidsinformatie te lezen",
+    "message": "Deze app is alleen bedoeld voor informatieve en welzijnsondersteuningsdoeleinden. Het is GEEN vervanging voor professionele medische of geestelijke gezondheidszorg.\n\nAls u een gezondheidscrisis of noodsituatie ervaart, neem dan onmiddellijk contact op met uw plaatselijke hulpdiensten of zorgverlener.\n\nRaadpleeg altijd gekwalificeerde beroepsbeoefenaren in de gezondheidszorg voor medisch advies, diagnose of behandeling. De inhoud van deze app mag niet worden gebruikt als vervanging voor professioneel medisch oordeel.\n\nUw privacy is belangrijk. Alle gegevens blijven privé op uw apparaat, tenzij u er expliciet voor kiest deze te delen."
+  },
+  "legal": {
+    "title": "Legaal",
+    "description": "Privacybeleid, gebruiksvoorwaarden en EULA",
+    "privacy": "Privacybeleid",
+    "privacyDescription": "Hoe wij met uw gegevens omgaan",
+    "terms": "Gebruiksvoorwaarden",
+    "termsDescription": "Algemene voorwaarden",
+    "eula": "Licentieovereenkomst voor eindgebruikers",
+    "eulaDescription": "Licentieovereenkomst"
+  },
+  "version": {
+    "title": "App-versie"
+  },
+  "languageSelection": {
+    "title": "Selecteer Taal",
+    "description": "Kies uw voorkeurstaal",
+    "currentLanguage": "Huidige taal",
+    "searchPlaceholder": "Zoek talen"
+  },
+  "appearance": {
+    "title": "Verschijning",
+    "darkMode": "Donkere modus",
+    "darkTheme": "Donker thema",
+    "lightTheme": "Licht thema",
+    "themeDescription": "Taal- en thema-instellingen"
+  },
+  "notifications": {
+    "title": "Meldingen",
+    "description": "Beheer meldingsvoorkeuren",
+    "enableNotifications": "Meldingen inschakelen",
+    "notificationPermission": "Meldingstoestemming",
+    "notificationPermissionDescription": "Toestaan ​​dat de app meldingen verzendt"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "lightMode": "Ljusläge",
+  "darkMode": "Mörkt läge",
+  "language": "Språk",
+  "aboutDescription": "Appinformation och version",
+  "about": {
+    "title": "Om",
+    "description": "Appinformation och version",
+    "appVersion": "Appversion",
+    "moreApps": "Fler appar",
+    "moreAppsDescription": "Kolla in våra andra appar",
+    "contactEmail": "Kontakt E-post",
+    "website": "Webbplats"
+  },
+  "disclaimer": {
+    "title": "Friskrivningsklausul för hälsa",
+    "shortMessage": "Tryck för att läsa viktig hälsoinformation",
+    "message": "Denna app är endast avsedd för informations- och hälsostödsändamål. Det är INTE ett substitut för professionell medicinsk eller mental hälsovård.\n\nOm du upplever en hälsokris eller nödsituation, kontakta din lokala räddningstjänst eller vårdgivare omedelbart.\n\nRådgör alltid med kvalificerad vårdpersonal för medicinsk rådgivning, diagnos eller behandling. Innehållet i denna app ska inte användas som ersättning för professionell medicinsk bedömning.\n\nDin integritet är viktig. All data förblir privat på din enhet om du inte uttryckligen väljer att dela den."
+  },
+  "legal": {
+    "title": "Rättslig",
+    "description": "Sekretesspolicy, användarvillkor och EULA",
+    "privacy": "Sekretesspolicy",
+    "privacyDescription": "Hur vi hanterar dina uppgifter",
+    "terms": "Användarvillkor",
+    "termsDescription": "Villkor",
+    "eula": "Slutanvändarlicensavtal",
+    "eulaDescription": "Licensavtal"
+  },
+  "version": {
+    "title": "Appversion"
+  },
+  "languageSelection": {
+    "title": "Välj Språk",
+    "description": "Välj önskat språk",
+    "currentLanguage": "Aktuellt språk",
+    "searchPlaceholder": "Sök efter språk"
+  },
+  "appearance": {
+    "title": "Utseende",
+    "darkMode": "Mörkt läge",
+    "darkTheme": "mörkt tema",
+    "lightTheme": "Lätt tema",
+    "themeDescription": "Språk och temainställningar"
+  },
+  "notifications": {
+    "title": "Aviseringar",
+    "description": "Hantera aviseringsinställningar",
+    "enableNotifications": "Aktivera aviseringar",
+    "notificationPermission": "Notifieringstillstånd",
+    "notificationPermissionDescription": "Tillåt appen att skicka aviseringar"
+  }
+}

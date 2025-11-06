@@ -1,0 +1,287 @@
+{
+  "home": {
+    "welcome": "歡迎使用抽認卡製作工具",
+    "subtitle": "使用交互式抽認卡掌握任何主題",
+    "quickStudy": "快速學習",
+    "quickStudyDesc": "開始研究你最近的套牌",
+    "createDeck": "創建套牌",
+    "createDeckDesc": "構建新的抽認卡組",
+    "recentActivity": "最近的活動",
+    "noDecksYet": "您還沒有創建任何套牌",
+    "browseDecks": "瀏覽套牌",
+    "statistics": "統計數據",
+    "totalDecks": "總套牌數",
+    "totalCards": "總牌數",
+    "studySessions": "學習課程"
+  },
+  "decks": {
+    "noDecks": "未找到套牌",
+    "noDecksDesc": "創建您的第一個抽認卡組以開始使用",
+    "createFirstDeck": "創建第一套牌",
+    "createDeck": "創建套牌",
+    "editDeck": "編輯牌組",
+    "recentlyStudied": "最近學習",
+    "allDecks": "所有套牌",
+    "easy": "簡單的",
+    "medium": "中等的",
+    "hard": "難的"
+  },
+  "study": {
+    "noCards": "沒有可用卡",
+    "noCardsDesc": "將一些卡片添加到牌庫中以開始學習",
+    "browseDecks": "瀏覽套牌",
+    "question": "問題",
+    "answer": "回答",
+    "showQuestion": "顯示問題",
+    "showAnswer": "顯示答案",
+    "correct": "正確的",
+    "incorrect": "不正確",
+    "skip": "跳過",
+    "skipped": "跳過",
+    "studyComplete": "學習完成",
+    "wellDone": "幹得好！",
+    "sessionComplete": "會話完成"
+  },
+  "create": {
+    "createDeck": "創建套牌",
+    "addCards": "添加卡片",
+    "deckInfo": "甲板信息",
+    "cardInfo": "卡信息",
+    "deckTitle": "卡組標題",
+    "deckTitlePlaceholder": "輸入牌組標題",
+    "deckDescription": "描述",
+    "deckDescriptionPlaceholder": "輸入牌組描述",
+    "category": "類別",
+    "selectCategory": "選擇類別",
+    "cardFront": "正面",
+    "cardFrontPlaceholder": "輸入問題或術語",
+    "cardBack": "背面",
+    "cardBackPlaceholder": "輸入答案或定義",
+    "difficulty": "困難",
+    "addCard": "添加卡",
+    "addedCards": "添加的卡片",
+    "saveDeck": "保存套牌"
+  },
+  "cards": {
+    "noCards": "未找到卡片",
+    "noCardsDesc": "創建您的第一張抽認卡以開始使用",
+    "createFirstCard": "創建第一張卡",
+    "createCard": "創建卡片",
+    "editCard": "編輯卡",
+    "selectDeck": "選擇牌組",
+    "selectDeckPlaceholder": "為這張卡選擇一副牌組"
+  },
+  "common": {
+    "clearFilter": "清除過濾器"
+  },
+  "studyModes": {
+    "classic": "經典的",
+    "matching": "配對遊戲",
+    "quiz": "多項選擇",
+    "writing": "書寫模式",
+    "timed": "限時挑戰",
+    "selectMode": "選擇學習模式"
+  },
+  "session": {
+    "complete": "會話完成",
+    "accuracy": "準確性",
+    "speed": "速度",
+    "score": "分數",
+    "cardsPerMinute": "卡/分鐘",
+    "grade": "年級",
+    "feedback": {
+      "excellent": "佳作！你已經掌握了這套牌！",
+      "great": "幹得好！繼續做好工作！",
+      "good": "進展順利！多練習才能提高。",
+      "keep_practicing": "繼續練習！你快到了。",
+      "keep_studying": "繼續學習！再次查看這些卡片。"
+    }
+  },
+  "rating": {
+    "fail": "再次",
+    "hard": "難的",
+    "good": "好的",
+    "easy": "簡單的",
+    "perfect": "完美的"
+  },
+  "srs": {
+    "dueToday": "今天到期",
+    "dueCards": "到期卡",
+    "nextReview": "下一篇評論",
+    "interval": "間隔",
+    "repetitions": "重複次數",
+    "easeFactor": "輕鬆因素",
+    "reviewHistory": "回顧歷史",
+    "retention": "保留率",
+    "again": "再次",
+    "hard": "難的",
+    "good": "好的",
+    "easy": "簡單的"
+  },
+  "media": {
+    "image": "圖像",
+    "chooseImage": "選擇圖片",
+    "takePhoto": "拍照",
+    "permissionDenied": "訪問照片的權限被拒絕",
+    "cameraPermissionDenied": "訪問攝像頭的權限被拒絕",
+    "imageFailed": "加載圖像失敗",
+    "cameraFailed": "無法打開相機",
+    "audio": "聲音的",
+    "record": "錄製音頻",
+    "recording": "記錄...",
+    "stopRecording": "停止錄音",
+    "play": "玩",
+    "stop": "停止",
+    "speak": "說話",
+    "audioPermissionDenied": "錄音權限被拒絕",
+    "recordingFailed": "錄音失敗",
+    "playbackFailed": "無法播放音頻",
+    "ttsFailed": "文字轉語音失敗",
+    "noText": "沒有文字可講"
+  },
+  "import": {
+    "title": "進口甲板",
+    "chooseFormat": "選擇格式",
+    "csv": "CSV（Excel）",
+    "json": "JSON",
+    "quizlet": "小測驗",
+    "selectFile": "選擇文件",
+    "importing": "輸入...",
+    "success": "已成功導入 {{count}} 張卡",
+    "errors": "發生了 {{count}} 個錯誤",
+    "viewErrors": "查看錯誤"
+  },
+  "export": {
+    "title": "出口甲板",
+    "chooseFormat": "選擇格式",
+    "csv": "CSV（Excel）",
+    "json": "JSON（完整）",
+    "quizlet": "小測驗",
+    "includeStats": "包括統計數據",
+    "includeMedia": "包括媒體",
+    "exporting": "出口...",
+    "success": "甲板導出成功"
+  },
+  "statistics": {
+    "title": "統計數據",
+    "overview": "概述",
+    "totalCards": "總牌數",
+    "cardsStudied": "學習過的卡片",
+    "totalReviews": "總評論",
+    "correctReviews": "正確的評論",
+    "accuracy": "準確性",
+    "averageTimePerCard": "每張卡的平均時間",
+    "totalStudyTime": "總學習時間",
+    "studySessions": "學習課程",
+    "streak": {
+      "current": "當前連勝",
+      "longest": "最長連續紀錄",
+      "days": "天"
+    },
+    "charts": {
+      "daily": "日常的",
+      "weekly": "每週",
+      "monthly": "每月",
+      "performance": "表現",
+      "activity": "活動"
+    }
+  },
+  "sharing": {
+    "title": "共享甲板",
+    "generateCode": "生成分享代碼",
+    "shareCode": "分享代碼",
+    "qrCode": "QR 圖碼",
+    "copyCode": "複製代碼",
+    "codeCopied": "代碼已復製到剪貼板",
+    "shareAsFile": "共享為文件",
+    "shareAsLink": "分享為鏈接",
+    "importCode": "導入代碼",
+    "enterCode": "輸入 6 位數字代碼",
+    "invalidCode": "分享代碼無效",
+    "importing": "正在導入卡組...",
+    "importSuccess": "卡組導入成功",
+    "downloadCount": "下載",
+    "makePublic": "公開",
+    "makePrivate": "設為私有"
+  },
+  "gamification": {
+    "profile": {
+      "level": "等級",
+      "xp": "XP",
+      "rank": "秩",
+      "progress": "進步到下一個水平",
+      "totalXP": "獲得的總經驗值"
+    },
+    "ranks": {
+      "novice": "新手",
+      "apprentice": "學徒",
+      "scholar": "學者",
+      "expert": "專家",
+      "master": "掌握",
+      "grandmaster": "棋聖",
+      "legend": "傳奇"
+    },
+    "achievements": {
+      "title": "成就",
+      "unlocked": "解鎖",
+      "locked": "鎖定",
+      "progress": "進步",
+      "reward": "報酬",
+      "unlockedAt": "解鎖於",
+      "categories": {
+        "study": "學習",
+        "cards": "牌",
+        "decks": "甲板",
+        "streak": "條紋",
+        "special": "特別的"
+      }
+    },
+    "challenges": {
+      "title": "每日挑戰",
+      "today": "今天的挑戰",
+      "completed": "完全的",
+      "inProgress": "進行中",
+      "reward": "報酬",
+      "goal": "目標",
+      "progress": "進步"
+    },
+    "xpRewards": {
+      "cardReviewed": "+{{amount}} XP - 卡已審核",
+      "cardCorrect": "+{{amount}} XP - 正確答案",
+      "cardPerfect": "+{{amount}} XP - 完美！",
+      "deckCreated": "+{{amount}} XP - 牌組已創建",
+      "studySession": "+{{amount}} XP - 學習課程",
+      "dailyGoal": "+{{amount}} XP - 達到每日目標",
+      "streakDay": "+{{amount}} XP - 連胜日",
+      "achievementUnlocked": "+{{amount}} XP - 成就已解鎖"
+    }
+  },
+  "matching": {
+    "title": "配對遊戲",
+    "instructions": "通過點擊配對來匹配卡片",
+    "matches": "火柴",
+    "attempts": "嘗試",
+    "timeElapsed": "時間",
+    "perfect": "完美搭配！",
+    "tryAgain": "再試一次"
+  },
+  "quiz": {
+    "title": "多項選擇測驗",
+    "question": "問題",
+    "chooseAnswer": "選擇正確答案",
+    "correct": "正確的！",
+    "incorrect": "不正確",
+    "showAnswer": "顯示答案",
+    "nextQuestion": "下一個問題"
+  },
+  "writing": {
+    "title": "書寫模式",
+    "instructions": "輸入答案",
+    "yourAnswer": "您的答案",
+    "correctAnswer": "正確答案",
+    "similarity": "相似",
+    "strictMode": "嚴格模式",
+    "fuzzyMatching": "模糊匹配",
+    "check": "檢查答案"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "appName": "Creatore di flashcard",
+  "tagline": "Benvenuto nel tuo viaggio",
+  "poweredBy": "Alimentato da UmitUZ App Factory",
+  "version": "Versione {{versione}}",
+  "splash": {
+    "loading": "Caricamento..."
+  }
+}

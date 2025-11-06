@@ -1,0 +1,43 @@
+{
+  "validation": {
+    "required": "Kinakailangan ang patlang na ito",
+    "invalidEmail": "Di -wastong format ng email",
+    "invalidPhone": "Di -wastong numero ng telepono",
+    "invalidUrl": "Hindi wastong format ng URL",
+    "minLength": "Ang minimum na haba ay {{min}} character",
+    "maxLength": "Ang maximum na haba ay {{max}} character",
+    "minValue": "Ang pinakamababang halaga ay {{min}}",
+    "maxValue": "Ang maximum na halaga ay {{max}}",
+    "mustMatch": "Dapat tumugma ang mga patlang",
+    "invalidFormat": "Di -wastong format",
+    "invalidDate": "Di -wastong petsa",
+    "futureDate": "Ang petsa ay dapat na sa hinaharap",
+    "pastDate": "Ang petsa ay dapat na sa nakaraan"
+  },
+  "storage": {
+    "saveFailed": "Nabigong makatipid ng data",
+    "loadFailed": "Nabigong mag -load ng data",
+    "deleteFailed": "Nabigong tanggalin ang data",
+    "notFound": "Hindi natagpuan ang data"
+  },
+  "permission": {
+    "denied": "Tinanggihan ang pahintulot",
+    "notGranted": "Hindi ipinagkaloob ang pahintulot",
+    "cameraNotAvailable": "Hindi magagamit ang camera",
+    "locationNotAvailable": "Hindi magagamit ang mga serbisyo sa lokasyon",
+    "microphoneNotAvailable": "Hindi magagamit ang mikropono",
+    "photosNotAvailable": "Hindi magagamit ang library ng larawan"
+  },
+  "common": {
+    "somethingWentWrong": "May mali",
+    "tryAgainLater": "Mangyaring subukang muli mamaya",
+    "unexpectedError": "Naganap ang isang hindi inaasahang error"
+  },
+  "actions": {
+    "dismiss": "Tanggalin",
+    "retry": "Muling",
+    "cancel": "Kanselahin",
+    "goBack": "Bumalik ka",
+    "contactSupport": "Makipag -ugnay sa suporta"
+  }
+}

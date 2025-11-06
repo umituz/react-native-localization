@@ -1,0 +1,9 @@
+{
+  "appName": "Δημιουργός flashcard",
+  "tagline": "Καλώς ήρθατε στο ταξίδι σας",
+  "poweredBy": "Με την υποστήριξη του UmitUZ App Factory",
+  "version": "Έκδοση {{έκδοση}}",
+  "splash": {
+    "loading": "Φόρτωση..."
+  }
+}

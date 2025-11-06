@@ -1,0 +1,287 @@
+{
+  "home": {
+    "welcome": "Selamat Datang ke Flashcard Maker",
+    "subtitle": "Menguasai mana -mana subjek dengan flashcard interaktif",
+    "quickStudy": "Kajian cepat",
+    "quickStudyDesc": "Mula mempelajari dek baru -baru ini",
+    "createDeck": "Buat dek",
+    "createDeckDesc": "Bina dek flashcard baru",
+    "recentActivity": "Aktiviti terkini",
+    "noDecksYet": "Anda belum membuat dek",
+    "browseDecks": "Semak imbas dek",
+    "statistics": "Statistik",
+    "totalDecks": "Jumlah dek",
+    "totalCards": "Jumlah kad",
+    "studySessions": "Sesi kajian"
+  },
+  "decks": {
+    "noDecks": "Tiada dek dijumpai",
+    "noDecksDesc": "Buat dek flashcard pertama anda untuk memulakan",
+    "createFirstDeck": "Buat dek pertama",
+    "createDeck": "Buat dek",
+    "editDeck": "Edit dek",
+    "recentlyStudied": "Baru -baru ini belajar",
+    "allDecks": "Semua dek",
+    "easy": "Mudah",
+    "medium": "Medium",
+    "hard": "Keras"
+  },
+  "study": {
+    "noCards": "Tiada kad yang tersedia",
+    "noCardsDesc": "Tambahkan beberapa kad ke dek untuk mula belajar",
+    "browseDecks": "Semak imbas dek",
+    "question": "Soalan",
+    "answer": "Jawapan",
+    "showQuestion": "Tunjukkan soalan",
+    "showAnswer": "Tunjukkan jawapan",
+    "correct": "Betul",
+    "incorrect": "Tidak betul",
+    "skip": "Langkau",
+    "skipped": "Dilangkau",
+    "studyComplete": "Belajar lengkap",
+    "wellDone": "Baiklah!",
+    "sessionComplete": "Sesi selesai"
+  },
+  "create": {
+    "createDeck": "Buat dek",
+    "addCards": "Tambah kad",
+    "deckInfo": "Maklumat dek",
+    "cardInfo": "Maklumat kad",
+    "deckTitle": "Gelaran dek",
+    "deckTitlePlaceholder": "Masukkan gelaran dek",
+    "deckDescription": "Penerangan",
+    "deckDescriptionPlaceholder": "Masukkan keterangan dek",
+    "category": "Kategori",
+    "selectCategory": "Pilih kategori",
+    "cardFront": "Sebelah depan",
+    "cardFrontPlaceholder": "Masukkan soalan atau istilah",
+    "cardBack": "Bahagian belakang",
+    "cardBackPlaceholder": "Masukkan jawapan atau definisi",
+    "difficulty": "Kesukaran",
+    "addCard": "Tambah kad",
+    "addedCards": "Menambah kad",
+    "saveDeck": "Simpan dek"
+  },
+  "cards": {
+    "noCards": "Tiada kad yang dijumpai",
+    "noCardsDesc": "Buat kad flash pertama anda untuk memulakan",
+    "createFirstCard": "Buat kad pertama",
+    "createCard": "Buat kad",
+    "editCard": "Edit kad",
+    "selectDeck": "Pilih dek",
+    "selectDeckPlaceholder": "Pilih dek untuk kad ini"
+  },
+  "common": {
+    "clearFilter": "Penapis jelas"
+  },
+  "studyModes": {
+    "classic": "Klasik",
+    "matching": "Permainan yang sepadan",
+    "quiz": "Pelbagai pilihan",
+    "writing": "Mod penulisan",
+    "timed": "Cabaran masa",
+    "selectMode": "Pilih mod kajian"
+  },
+  "session": {
+    "complete": "Sesi selesai",
+    "accuracy": "Ketepatan",
+    "speed": "Kelajuan",
+    "score": "Skor",
+    "cardsPerMinute": "kad/min",
+    "grade": "Gred",
+    "feedback": {
+      "excellent": "Kerja yang sangat baik! Anda telah menguasai dek ini!",
+      "great": "Kerja bagus! Teruskan usaha yang baik!",
+      "good": "Kemajuan yang baik! Berlatih lebih banyak untuk memperbaiki.",
+      "keep_practicing": "Terus berlatih! Anda sampai di sana.",
+      "keep_studying": "Terus belajar! Semak kad ini sekali lagi."
+    }
+  },
+  "rating": {
+    "fail": "Sekali lagi",
+    "hard": "Keras",
+    "good": "Baik",
+    "easy": "Mudah",
+    "perfect": "Sempurna"
+  },
+  "srs": {
+    "dueToday": "HARI HARI INI",
+    "dueCards": "Kad yang sewajarnya",
+    "nextReview": "Kajian seterusnya",
+    "interval": "Selang",
+    "repetitions": "Pengulangan",
+    "easeFactor": "Faktor mudah",
+    "reviewHistory": "Semak sejarah",
+    "retention": "Kadar pengekalan",
+    "again": "Sekali lagi",
+    "hard": "Keras",
+    "good": "Baik",
+    "easy": "Mudah"
+  },
+  "media": {
+    "image": "Imej",
+    "chooseImage": "Pilih gambar",
+    "takePhoto": "Ambil gambar",
+    "permissionDenied": "Kebenaran ditolak untuk mengakses foto",
+    "cameraPermissionDenied": "Kebenaran ditolak untuk mengakses kamera",
+    "imageFailed": "Gagal memuatkan gambar",
+    "cameraFailed": "Gagal membuka kamera",
+    "audio": "Audio",
+    "record": "Rekod audio",
+    "recording": "Rakaman ...",
+    "stopRecording": "Berhenti rakaman",
+    "play": "Bermain",
+    "stop": "Berhenti",
+    "speak": "Bercakap",
+    "audioPermissionDenied": "Kebenaran ditolak untuk merakam audio",
+    "recordingFailed": "Gagal merakam audio",
+    "playbackFailed": "Gagal bermain audio",
+    "ttsFailed": "Teks-ke-ucapan gagal",
+    "noText": "Tiada teks untuk bercakap"
+  },
+  "import": {
+    "title": "Dek Import",
+    "chooseFormat": "Pilih Format",
+    "csv": "CSV (Excel)",
+    "json": "Json",
+    "quizlet": "Quizlet",
+    "selectFile": "Pilih fail",
+    "importing": "Mengimport ...",
+    "success": "Berjaya diimport {{count}} kad",
+    "errors": "{{Count}} Kesalahan berlaku",
+    "viewErrors": "Lihat kesilapan"
+  },
+  "export": {
+    "title": "Dek Eksport",
+    "chooseFormat": "Pilih Format",
+    "csv": "CSV (Excel)",
+    "json": "Json (lengkap)",
+    "quizlet": "Quizlet",
+    "includeStats": "Termasuk statistik",
+    "includeMedia": "Termasuk media",
+    "exporting": "Mengeksport ...",
+    "success": "Dek berjaya dieksport"
+  },
+  "statistics": {
+    "title": "Statistik",
+    "overview": "Gambaran Keseluruhan",
+    "totalCards": "Jumlah kad",
+    "cardsStudied": "Kad yang dikaji",
+    "totalReviews": "Jumlah ulasan",
+    "correctReviews": "Ulasan yang betul",
+    "accuracy": "Ketepatan",
+    "averageTimePerCard": "Masa avg setiap kad",
+    "totalStudyTime": "Jumlah masa belajar",
+    "studySessions": "Sesi kajian",
+    "streak": {
+      "current": "Coretan semasa",
+      "longest": "Coretan terpanjang",
+      "days": "hari"
+    },
+    "charts": {
+      "daily": "Setiap hari",
+      "weekly": "Mingguan",
+      "monthly": "Bulanan",
+      "performance": "Prestasi",
+      "activity": "Aktiviti"
+    }
+  },
+  "sharing": {
+    "title": "Kongsi Deck",
+    "generateCode": "Menjana kod saham",
+    "shareCode": "Kongsi Kongsi",
+    "qrCode": "Kod QR",
+    "copyCode": "Kod salin",
+    "codeCopied": "Kod disalin ke papan klip",
+    "shareAsFile": "Berkongsi sebagai fail",
+    "shareAsLink": "Berkongsi sebagai pautan",
+    "importCode": "Kod import",
+    "enterCode": "Masukkan kod 6 digit",
+    "invalidCode": "Kod saham tidak sah",
+    "importing": "Mengimport dek ...",
+    "importSuccess": "Deck diimport dengan jayanya",
+    "downloadCount": "Muat turun",
+    "makePublic": "Buat awam",
+    "makePrivate": "Buat peribadi"
+  },
+  "gamification": {
+    "profile": {
+      "level": "Tahap",
+      "xp": "XP",
+      "rank": "Pangkat",
+      "progress": "Kemajuan ke peringkat seterusnya",
+      "totalXP": "Jumlah XP yang diperolehi"
+    },
+    "ranks": {
+      "novice": "Novice",
+      "apprentice": "Perantis",
+      "scholar": "Sarjana",
+      "expert": "Pakar",
+      "master": "Tuan",
+      "grandmaster": "Grandmaster",
+      "legend": "Legenda"
+    },
+    "achievements": {
+      "title": "Pencapaian",
+      "unlocked": "Dibuka",
+      "locked": "Dikunci",
+      "progress": "Kemajuan",
+      "reward": "Ganjaran",
+      "unlockedAt": "Dibuka",
+      "categories": {
+        "study": "Kajian",
+        "cards": "Kad",
+        "decks": "Dek",
+        "streak": "Coretan",
+        "special": "Khas"
+      }
+    },
+    "challenges": {
+      "title": "Cabaran harian",
+      "today": "Cabaran hari ini",
+      "completed": "Selesai",
+      "inProgress": "Sedang berjalan",
+      "reward": "Ganjaran",
+      "goal": "Matlamat",
+      "progress": "Kemajuan"
+    },
+    "xpRewards": {
+      "cardReviewed": "+{{amaun}} xp - kad dikaji semula",
+      "cardCorrect": "+{{amaun}} xp - Jawapan yang betul",
+      "cardPerfect": "+{{amaL}} xp - sempurna!",
+      "deckCreated": "+{{amaun}} xp - dek dibuat",
+      "studySession": "+{{amaun}} xp - sesi belajar",
+      "dailyGoal": "+{{amaun}} xp - Matlamat harian bertemu",
+      "streakDay": "+{{amaun}} xp - Hari coretan",
+      "achievementUnlocked": "+{{amaun}} xp - Pencapaian dibuka"
+    }
+  },
+  "matching": {
+    "title": "Permainan yang sepadan",
+    "instructions": "Padankan kad dengan mengetuk pasangan",
+    "matches": "Perlawanan",
+    "attempts": "Percubaan",
+    "timeElapsed": "Masa",
+    "perfect": "Perlawanan sempurna!",
+    "tryAgain": "Cuba lagi"
+  },
+  "quiz": {
+    "title": "Kuiz Pilihan Pelbagai",
+    "question": "Soalan",
+    "chooseAnswer": "Pilih jawapan yang betul",
+    "correct": "Betul!",
+    "incorrect": "Tidak betul",
+    "showAnswer": "Tunjukkan jawapan",
+    "nextQuestion": "Soalan seterusnya"
+  },
+  "writing": {
+    "title": "Mod penulisan",
+    "instructions": "Taipkan jawapannya",
+    "yourAnswer": "Jawapan anda",
+    "correctAnswer": "Jawapan yang betul",
+    "similarity": "Persamaan",
+    "strictMode": "Mod yang ketat",
+    "fuzzyMatching": "Pencocokan kabur",
+    "check": "Periksa jawapan"
+  }
+}

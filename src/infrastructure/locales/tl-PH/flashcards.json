@@ -1,0 +1,287 @@
+{
+  "home": {
+    "welcome": "Maligayang pagdating sa Flashcard Maker",
+    "subtitle": "Master ang anumang paksa na may mga interactive na flashcards",
+    "quickStudy": "Mabilis na pag -aaral",
+    "quickStudyDesc": "Simulan ang pag -aaral ng iyong kamakailang mga deck",
+    "createDeck": "Lumikha ng kubyerta",
+    "createDeckDesc": "Bumuo ng isang bagong deck ng Flashcard",
+    "recentActivity": "Kamakailang aktibidad",
+    "noDecksYet": "Hindi ka pa lumikha ng anumang mga deck",
+    "browseDecks": "Mag -browse ng mga deck",
+    "statistics": "Istatistika",
+    "totalDecks": "Kabuuang mga deck",
+    "totalCards": "Kabuuang mga kard",
+    "studySessions": "Mga sesyon sa pag -aaral"
+  },
+  "decks": {
+    "noDecks": "Walang nahanap na deck",
+    "noDecksDesc": "Lumikha ng iyong unang flashcard deck upang makapagsimula",
+    "createFirstDeck": "Lumikha ng unang kubyerta",
+    "createDeck": "Lumikha ng kubyerta",
+    "editDeck": "I -edit ang kubyerta",
+    "recentlyStudied": "Kamakailan lamang ay nag -aral",
+    "allDecks": "Lahat ng mga deck",
+    "easy": "Madali",
+    "medium": "Katamtaman",
+    "hard": "Mahirap"
+  },
+  "study": {
+    "noCards": "Walang magagamit na mga kard",
+    "noCardsDesc": "Magdagdag ng ilang mga kard sa isang kubyerta upang simulan ang pag -aaral",
+    "browseDecks": "Mag -browse ng mga deck",
+    "question": "Tanong",
+    "answer": "Sagot",
+    "showQuestion": "Magpakita ng tanong",
+    "showAnswer": "Ipakita ang sagot",
+    "correct": "Tama",
+    "incorrect": "Maling",
+    "skip": "Laktawan",
+    "skipped": "Nilaktawan",
+    "studyComplete": "Kumpletuhin ang pag -aaral",
+    "wellDone": "Magaling!",
+    "sessionComplete": "Kumpletuhin ang session"
+  },
+  "create": {
+    "createDeck": "Lumikha ng kubyerta",
+    "addCards": "Magdagdag ng mga kard",
+    "deckInfo": "Impormasyon sa Deck",
+    "cardInfo": "Impormasyon sa Card",
+    "deckTitle": "Pamagat ng deck",
+    "deckTitlePlaceholder": "Ipasok ang pamagat ng deck",
+    "deckDescription": "Paglalarawan",
+    "deckDescriptionPlaceholder": "Ipasok ang paglalarawan ng deck",
+    "category": "Kategorya",
+    "selectCategory": "Piliin ang kategorya",
+    "cardFront": "Harap na bahagi",
+    "cardFrontPlaceholder": "Ipasok ang tanong o termino",
+    "cardBack": "Bumalik na bahagi",
+    "cardBackPlaceholder": "Ipasok ang sagot o kahulugan",
+    "difficulty": "Kahirapan",
+    "addCard": "Magdagdag ng card",
+    "addedCards": "Nagdagdag ng mga kard",
+    "saveDeck": "I -save ang kubyerta"
+  },
+  "cards": {
+    "noCards": "Walang nahanap na mga kard",
+    "noCardsDesc": "Lumikha ng iyong unang flashcard upang makapagsimula",
+    "createFirstCard": "Lumikha ng unang card",
+    "createCard": "Lumikha ng card",
+    "editCard": "I -edit ang card",
+    "selectDeck": "Piliin ang Deck",
+    "selectDeckPlaceholder": "Pumili ng isang deck para sa kard na ito"
+  },
+  "common": {
+    "clearFilter": "Malinaw na filter"
+  },
+  "studyModes": {
+    "classic": "Klasiko",
+    "matching": "Pagtutugma ng laro",
+    "quiz": "Maramihang pagpipilian",
+    "writing": "Mode ng pagsusulat",
+    "timed": "Nag -time na hamon",
+    "selectMode": "Piliin ang mode ng pag -aaral"
+  },
+  "session": {
+    "complete": "Kumpletuhin ang session",
+    "accuracy": "Kawastuhan",
+    "speed": "Bilis",
+    "score": "Iskor",
+    "cardsPerMinute": "Mga Card/Min",
+    "grade": "Grado",
+    "feedback": {
+      "excellent": "Mahusay na trabaho! Pinagkadalubhasaan mo ang deck na ito!",
+      "great": "Mahusay na trabaho! Ipagpatuloy ang mabuting gawain!",
+      "good": "Magandang pag -unlad! Magsanay nang higit pa upang mapabuti.",
+      "keep_practicing": "Patuloy na magsanay! Dumating ka doon.",
+      "keep_studying": "Patuloy na mag -aral! Suriin muli ang mga kard na ito."
+    }
+  },
+  "rating": {
+    "fail": "Muli",
+    "hard": "Mahirap",
+    "good": "Mabuti",
+    "easy": "Madali",
+    "perfect": "Perpekto"
+  },
+  "srs": {
+    "dueToday": "Dahil sa ngayon",
+    "dueCards": "Dahil sa mga kard",
+    "nextReview": "Susunod na pagsusuri",
+    "interval": "Agwat",
+    "repetitions": "Mga pag -uulit",
+    "easeFactor": "Kadalian factor",
+    "reviewHistory": "Suriin ang Kasaysayan",
+    "retention": "Rate ng pagpapanatili",
+    "again": "Muli",
+    "hard": "Mahirap",
+    "good": "Mabuti",
+    "easy": "Madali"
+  },
+  "media": {
+    "image": "Imahe",
+    "chooseImage": "Pumili ng imahe",
+    "takePhoto": "Kumuha ng litrato",
+    "permissionDenied": "Ang pahintulot ay tinanggihan upang ma -access ang mga larawan",
+    "cameraPermissionDenied": "Ang pahintulot ay tinanggihan upang ma -access ang camera",
+    "imageFailed": "Nabigong mag -load ng imahe",
+    "cameraFailed": "Nabigong buksan ang camera",
+    "audio": "Audio",
+    "record": "Magtala ng audio",
+    "recording": "Pag -record ...",
+    "stopRecording": "Itigil ang pag -record",
+    "play": "Maglaro",
+    "stop": "Huminto",
+    "speak": "Magsalita",
+    "audioPermissionDenied": "Tinanggihan ang pahintulot upang mag -record ng audio",
+    "recordingFailed": "Nabigong i -record ang audio",
+    "playbackFailed": "Nabigong maglaro ng audio",
+    "ttsFailed": "Nabigo ang text-to-speech",
+    "noText": "Walang teksto upang magsalita"
+  },
+  "import": {
+    "title": "I -import ang kubyerta",
+    "chooseFormat": "Piliin ang Format",
+    "csv": "CSV (Excel)",
+    "json": "JSON",
+    "quizlet": "Quizlet",
+    "selectFile": "Piliin ang File",
+    "importing": "Pag -import ...",
+    "success": "Matagumpay na na -import ang mga card na {{count}}",
+    "errors": "{{count}} naganap ang mga error",
+    "viewErrors": "Tingnan ang mga error"
+  },
+  "export": {
+    "title": "I -export ang deck",
+    "chooseFormat": "Piliin ang Format",
+    "csv": "CSV (Excel)",
+    "json": "Json (kumpleto)",
+    "quizlet": "Quizlet",
+    "includeStats": "Isama ang mga istatistika",
+    "includeMedia": "Isama ang media",
+    "exporting": "Pag -export ...",
+    "success": "Matagumpay na na -export ang deck"
+  },
+  "statistics": {
+    "title": "Istatistika",
+    "overview": "Pangkalahatang -ideya",
+    "totalCards": "Kabuuang mga kard",
+    "cardsStudied": "Pinag -aralan ang mga kard",
+    "totalReviews": "Kabuuang mga pagsusuri",
+    "correctReviews": "Tamang mga pagsusuri",
+    "accuracy": "Kawastuhan",
+    "averageTimePerCard": "Oras ng AVG bawat card",
+    "totalStudyTime": "Kabuuang oras ng pag -aaral",
+    "studySessions": "Mga sesyon sa pag -aaral",
+    "streak": {
+      "current": "Kasalukuyang Streak",
+      "longest": "Pinakamahabang guhitan",
+      "days": "araw"
+    },
+    "charts": {
+      "daily": "Araw -araw",
+      "weekly": "Lingguhan",
+      "monthly": "Buwanang",
+      "performance": "Pagganap",
+      "activity": "Aktibidad"
+    }
+  },
+  "sharing": {
+    "title": "Magbahagi ng kubyerta",
+    "generateCode": "Bumuo ng pagbabahagi code",
+    "shareCode": "Magbahagi ng code",
+    "qrCode": "QR Code",
+    "copyCode": "Kopyahin ang code",
+    "codeCopied": "Ang code na kinopya sa clipboard",
+    "shareAsFile": "Ibahagi bilang file",
+    "shareAsLink": "Ibahagi bilang link",
+    "importCode": "I -import ang code",
+    "enterCode": "Ipasok ang 6-digit na code",
+    "invalidCode": "Hindi wastong pagbabahagi ng code",
+    "importing": "Pag -import ng deck ...",
+    "importSuccess": "Matagumpay na na -import ang deck",
+    "downloadCount": "Mga pag -download",
+    "makePublic": "Gumawa ng publiko",
+    "makePrivate": "Gumawa ng pribado"
+  },
+  "gamification": {
+    "profile": {
+      "level": "Antas",
+      "xp": "XP",
+      "rank": "Ranggo",
+      "progress": "Pag -unlad sa susunod na antas",
+      "totalXP": "Kabuuang XP Kinita"
+    },
+    "ranks": {
+      "novice": "Baguhan",
+      "apprentice": "Apprentice",
+      "scholar": "Scholar",
+      "expert": "Dalubhasa",
+      "master": "Master",
+      "grandmaster": "Grandmaster",
+      "legend": "Alamat"
+    },
+    "achievements": {
+      "title": "Mga nakamit",
+      "unlocked": "Naka -lock",
+      "locked": "Naka -lock",
+      "progress": "Pag -unlad",
+      "reward": "Gantimpala",
+      "unlockedAt": "Naka -lock sa",
+      "categories": {
+        "study": "Pag -aaral",
+        "cards": "Mga Card",
+        "decks": "Mga deck",
+        "streak": "Streak",
+        "special": "Espesyal"
+      }
+    },
+    "challenges": {
+      "title": "Pang -araw -araw na mga hamon",
+      "today": "Mga hamon ngayon",
+      "completed": "Nakumpleto",
+      "inProgress": "Sa pag -unlad",
+      "reward": "Gantimpala",
+      "goal": "Layunin",
+      "progress": "Pag -unlad"
+    },
+    "xpRewards": {
+      "cardReviewed": "+{{halaga}} XP - Sinuri ang card",
+      "cardCorrect": "+{{halaga}} xp - tamang sagot",
+      "cardPerfect": "+{{halaga}} xp - perpekto!",
+      "deckCreated": "+{{halaga}} xp - nilikha ang deck",
+      "studySession": "+{{halaga}} xp - session ng pag -aaral",
+      "dailyGoal": "+{{halaga}} xp - Nakatagpo ang pang -araw -araw na layunin",
+      "streakDay": "+{{halaga}} xp - araw ng guhit",
+      "achievementUnlocked": "+{{halaga}} xp - Nakamit ang naka -lock"
+    }
+  },
+  "matching": {
+    "title": "Pagtutugma ng laro",
+    "instructions": "Itugma ang mga kard sa pamamagitan ng pag -tap sa mga pares",
+    "matches": "Mga tugma",
+    "attempts": "Mga pagtatangka",
+    "timeElapsed": "Oras",
+    "perfect": "Perpektong tugma!",
+    "tryAgain": "Subukang muli"
+  },
+  "quiz": {
+    "title": "Maramihang pagpili ng pagsusulit",
+    "question": "Tanong",
+    "chooseAnswer": "Piliin ang tamang sagot",
+    "correct": "Tama!",
+    "incorrect": "Maling",
+    "showAnswer": "Ipakita ang sagot",
+    "nextQuestion": "Susunod na tanong"
+  },
+  "writing": {
+    "title": "Mode ng pagsusulat",
+    "instructions": "I -type ang sagot",
+    "yourAnswer": "Ang sagot mo",
+    "correctAnswer": "Tamang sagot",
+    "similarity": "Pagkakapareho",
+    "strictMode": "Mahigpit na mode",
+    "fuzzyMatching": "Malabo na pagtutugma",
+    "check": "Suriin ang sagot"
+  }
+}

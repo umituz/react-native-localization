@@ -1,0 +1,140 @@
+{
+  "days": {
+    "full": {
+      "monday": "luni",
+      "tuesday": "marţi",
+      "wednesday": "miercuri",
+      "thursday": "joi",
+      "friday": "vineri",
+      "saturday": "sâmbătă",
+      "sunday": "duminică"
+    },
+    "short": {
+      "mon": "Lun",
+      "tue": "mar",
+      "wed": "mier",
+      "thu": "joi",
+      "fri": "vineri",
+      "sat": "sat",
+      "sun": "Soare"
+    },
+    "abbreviated": {
+      "m": "M",
+      "t": "T",
+      "w": "W",
+      "th": "Th",
+      "f": "F",
+      "sa": "Sa",
+      "su": "Su"
+    }
+  },
+  "months": {
+    "full": {
+      "january": "ianuarie",
+      "february": "februarie",
+      "march": "martie",
+      "april": "aprilie",
+      "may": "mai",
+      "june": "iunie",
+      "july": "iulie",
+      "august": "august",
+      "september": "septembrie",
+      "october": "octombrie",
+      "november": "noiembrie",
+      "december": "decembrie"
+    },
+    "short": {
+      "jan": "ian",
+      "feb": "feb",
+      "mar": "Mar",
+      "apr": "Aprilie",
+      "may": "mai",
+      "jun": "Iunie",
+      "jul": "iul",
+      "aug": "aug",
+      "sep": "sept",
+      "oct": "oct",
+      "nov": "nov",
+      "dec": "Dec"
+    }
+  },
+  "relative": {
+    "now": "Acum",
+    "justNow": "Chiar acum",
+    "today": "Astăzi",
+    "yesterday": "Ieri",
+    "tomorrow": "Mâine",
+    "thisWeek": "În această săptămână",
+    "lastWeek": "Săptămâna trecută",
+    "nextWeek": "Săptămâna viitoare",
+    "thisMonth": "Luna aceasta",
+    "lastMonth": "Luna trecută",
+    "nextMonth": "Luna viitoare",
+    "thisYear": "Anul acesta",
+    "lastYear": "Anul trecut",
+    "nextYear": "Anul viitor",
+    "ago": "în urmă",
+    "fromNow": "de acum",
+    "in": "în"
+  },
+  "units": {
+    "singular": {
+      "second": "doilea",
+      "minute": "minut",
+      "hour": "oră",
+      "day": "zi",
+      "week": "săptămână",
+      "month": "lună",
+      "year": "an"
+    },
+    "plural": {
+      "seconds": "secunde",
+      "minutes": "minute",
+      "hours": "ore",
+      "days": "zile",
+      "weeks": "săptămâni",
+      "months": "luni",
+      "years": "ani"
+    },
+    "short": {
+      "s": "s",
+      "m": "m",
+      "h": "h",
+      "d": "d",
+      "w": "w",
+      "mo": "lu",
+      "y": "y"
+    }
+  },
+  "periods": {
+    "am": "A.M",
+    "pm": "P.M",
+    "morning": "Dimineaţă",
+    "afternoon": "după-amiază",
+    "evening": "Seară",
+    "night": "Noapte",
+    "midnight": "Miezul nopţii",
+    "noon": "Amiază"
+  },
+  "formats": {
+    "date": "Data",
+    "time": "Timp",
+    "datetime": "Data și ora",
+    "duration": "Durată",
+    "startDate": "Data de începere",
+    "endDate": "Data de încheiere",
+    "startTime": "Ora de începere",
+    "endTime": "Ora Sfârșitului",
+    "selectDate": "Selectați Data",
+    "selectTime": "Selectați Ora"
+  },
+  "actions": {
+    "setDate": "Setează data",
+    "setTime": "Setați Ora",
+    "clearDate": "Șterge data",
+    "clearTime": "Timp clar",
+    "confirmDate": "Confirmați data",
+    "confirmTime": "Confirmați ora",
+    "cancel": "Anula"
+  }
+}

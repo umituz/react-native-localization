@@ -1,0 +1,276 @@
+{
+  "home": {
+    "welcome": "Добро пожаловать в создатель флэш-карточек",
+    "subtitle": "Освойте любой предмет с помощью интерактивных карточек",
+    "quickStudy": "Быстрое исследование",
+    "quickStudyDesc": "Начните изучать свои последние колоды",
+    "createDeck": "Создать колоду",
+    "createDeckDesc": "Создайте новую колоду карточек.",
+    "recentActivity": "Недавняя активность",
+    "noDecksYet": "Вы еще не создали ни одной колоды",
+    "browseDecks": "Просмотр колод",
+    "statistics": "Статистика",
+    "totalDecks": "Всего колод",
+    "totalCards": "Всего карт",
+    "studySessions": "Учебные занятия"
+  },
+  "decks": {
+    "noDecks": "Колоды не найдены",
+    "noDecksDesc": "Создайте свою первую колоду карточек, чтобы начать",
+    "createFirstDeck": "Создать первую колоду",
+    "createDeck": "Создать колоду",
+    "editDeck": "Редактировать колоду",
+    "recentlyStudied": "Недавно изученный",
+    "allDecks": "Все колоды",
+    "easy": "Легкий",
+    "medium": "Середина",
+    "hard": "Жесткий"
+  },
+  "study": {
+    "noCards": "Нет доступных карт",
+    "noCardsDesc": "Добавьте несколько карт в колоду, чтобы начать изучение",
+    "browseDecks": "Просмотр колод",
+    "question": "Вопрос",
+    "answer": "Отвечать",
+    "showQuestion": "Показать вопрос",
+    "showAnswer": "Показать ответ",
+    "correct": "Правильный",
+    "incorrect": "Неправильный",
+    "skip": "Пропускать",
+    "skipped": "Пропущено",
+    "studyComplete": "Исследование завершено",
+    "wellDone": "Отличная работа!",
+    "sessionComplete": "Сеанс завершен"
+  },
+  "create": {
+    "createDeck": "Создать колоду",
+    "addCards": "Добавить карты",
+    "deckInfo": "Информация о колоде",
+    "cardInfo": "Информация о карте",
+    "deckTitle": "Название колоды",
+    "deckTitlePlaceholder": "Введите название колоды",
+    "deckDescription": "Описание",
+    "deckDescriptionPlaceholder": "Введите описание колоды",
+    "category": "Категория",
+    "selectCategory": "Выберите категорию",
+    "cardFront": "Лицевая сторона",
+    "cardFrontPlaceholder": "Введите вопрос или термин",
+    "cardBack": "Задняя сторона",
+    "cardBackPlaceholder": "Введите ответ или определение",
+    "difficulty": "Сложность",
+    "addCard": "Добавить карту",
+    "addedCards": "Добавлены карты",
+    "saveDeck": "Сохранить колоду"
+  },
+  "cards": {
+    "noCards": "Карты не найдены",
+    "noCardsDesc": "Создайте свою первую карточку, чтобы начать",
+    "createFirstCard": "Создать первую карту",
+    "createCard": "Создать карту",
+    "editCard": "Редактировать карту",
+    "selectDeck": "Выбрать колоду",
+    "selectDeckPlaceholder": "Выберите колоду для этой карты"
+  },
+  "common": {
+    "clearFilter": "Очистить фильтр"
+  },
+  "studyModes": {
+    "classic": "Классический",
+    "matching": "Комбинационная игра",
+    "quiz": "Множественный выбор",
+    "writing": "Режим записи",
+    "timed": "Вызов на время",
+    "selectMode": "Выберите режим обучения"
+  },
+  "session": {
+    "complete": "Сеанс завершен",
+    "accuracy": "Точность",
+    "speed": "Скорость",
+    "score": "Счет",
+    "cardsPerMinute": "карт/мин",
+    "grade": "Оценка",
+    "feedback": {
+      "excellent": "Отличная работа! Вы освоили эту колоду!",
+      "great": "Отличная работа! Продолжайте в том же духе!",
+      "good": "Хороший прогресс! Практикуйтесь больше, чтобы стать лучше.",
+      "keep_practicing": "Продолжайте практиковаться! Вы добираетесь туда.",
+      "keep_studying": "Продолжайте учиться! Просмотрите эти карточки еще раз."
+    }
+  },
+  "rating": {
+    "fail": "Снова",
+    "hard": "Жесткий",
+    "good": "Хороший",
+    "easy": "Легкий",
+    "perfect": "Идеальный"
+  },
+  "srs": {
+    "dueToday": "Срок оплаты сегодня",
+    "dueCards": "Платежные карты",
+    "nextReview": "Следующий обзор",
+    "interval": "Интервал",
+    "repetitions": "Повторения",
+    "easeFactor": "Фактор легкости",
+    "reviewHistory": "История отзывов",
+    "retention": "Уровень удержания",
+    "again": "Снова",
+    "hard": "Жесткий",
+    "good": "Хороший",
+    "easy": "Легкий"
+  },
+  "media": {
+    "image": "Изображение",
+    "chooseImage": "Выберите изображение",
+    "takePhoto": "Сфотографироваться",
+    "permissionDenied": "В доступе к фотографиям отказано",
+    "cameraPermissionDenied": "Отказано в доступе к камере",
+    "imageFailed": "Не удалось загрузить изображение",
+    "cameraFailed": "Не удалось открыть камеру",
+    "audio": "Аудио",
+    "record": "Запись аудио",
+    "recording": "Запись...",
+    "stopRecording": "Остановить запись",
+    "play": "Играть",
+    "stop": "Останавливаться",
+    "speak": "Говорить",
+    "audioPermissionDenied": "Отказано в разрешении на запись звука",
+    "recordingFailed": "Не удалось записать звук",
+    "playbackFailed": "Не удалось воспроизвести аудио",
+    "ttsFailed": "Преобразование текста в речь не удалось",
+    "noText": "Нет текста для разговора"
+  },
+  "import": {
+    "title": "Импортировать колоду",
+    "chooseFormat": "Выберите формат",
+    "csv": "CSV (Эксель)",
+    "json": "JSON",
+    "quizlet": "Викторина",
+    "selectFile": "Выберите файл",
+    "importing": "Импорт...",
+    "viewErrors": "Просмотр ошибок"
+  },
+  "export": {
+    "title": "Экспортировать колоду",
+    "chooseFormat": "Выберите формат",
+    "csv": "CSV (Эксель)",
+    "json": "JSON (полный)",
+    "quizlet": "Викторина",
+    "includeStats": "Включить статистику",
+    "includeMedia": "Включить медиа",
+    "exporting": "Экспорт...",
+    "success": "Колода успешно экспортирована"
+  },
+  "statistics": {
+    "title": "Статистика",
+    "overview": "Обзор",
+    "totalCards": "Всего карт",
+    "cardsStudied": "Карты изучены",
+    "totalReviews": "Всего отзывов",
+    "correctReviews": "Правильные отзывы",
+    "accuracy": "Точность",
+    "averageTimePerCard": "Среднее время на карту",
+    "totalStudyTime": "Общее время обучения",
+    "studySessions": "Учебные занятия",
+    "streak": {
+      "current": "Текущая серия",
+      "longest": "Самая длинная серия",
+      "days": "дни"
+    },
+    "charts": {
+      "daily": "Ежедневно",
+      "weekly": "Еженедельно",
+      "monthly": "Ежемесячно",
+      "performance": "Производительность",
+      "activity": "Активность"
+    }
+  },
+  "sharing": {
+    "title": "Поделиться колодой",
+    "generateCode": "Создать общий код",
+    "shareCode": "Поделиться кодом",
+    "qrCode": "QR-код",
+    "copyCode": "Копировать код",
+    "codeCopied": "Код скопирован в буфер обмена",
+    "shareAsFile": "Поделиться как файл",
+    "shareAsLink": "Поделиться как ссылкой",
+    "importCode": "Код импорта",
+    "enterCode": "Введите 6-значный код",
+    "invalidCode": "Неверный общий код",
+    "importing": "Импорт колоды...",
+    "importSuccess": "Колода успешно импортирована",
+    "downloadCount": "Загрузки",
+    "makePublic": "Сделать общедоступным",
+    "makePrivate": "Сделать личным"
+  },
+  "gamification": {
+    "profile": {
+      "level": "Уровень",
+      "xp": "Опыт",
+      "rank": "Классифицировать",
+      "progress": "Переход на следующий уровень",
+      "totalXP": "Всего заработанного опыта"
+    },
+    "ranks": {
+      "novice": "Новичок",
+      "apprentice": "Ученик",
+      "scholar": "ученый",
+      "expert": "Эксперт",
+      "master": "Владелец",
+      "grandmaster": "Гроссмейстер",
+      "legend": "Легенда"
+    },
+    "achievements": {
+      "title": "Достижения",
+      "unlocked": "Разблокировано",
+      "locked": "Заблокировано",
+      "progress": "Прогресс",
+      "reward": "Награда",
+      "unlockedAt": "Разблокировано",
+      "categories": {
+        "study": "Изучать",
+        "cards": "Карты",
+        "decks": "колоды",
+        "streak": "Полоса",
+        "special": "Особенный"
+      }
+    },
+    "challenges": {
+      "title": "Ежедневные испытания",
+      "today": "Сегодняшние вызовы",
+      "completed": "Завершенный",
+      "inProgress": "В ходе выполнения",
+      "reward": "Награда",
+      "goal": "Цель",
+      "progress": "Прогресс"
+    },
+    "xpRewards": {}
+  },
+  "matching": {
+    "title": "Комбинационная игра",
+    "instructions": "Сопоставьте карты, нажимая пары",
+    "matches": "Матчи",
+    "attempts": "Попытки",
+    "timeElapsed": "Время",
+    "perfect": "Идеальное совпадение!",
+    "tryAgain": "Попробуйте еще раз"
+  },
+  "quiz": {
+    "title": "Викторина с множественным выбором",
+    "question": "Вопрос",
+    "chooseAnswer": "Выберите правильный ответ",
+    "correct": "Правильный!",
+    "incorrect": "Неправильный",
+    "showAnswer": "Показать ответ",
+    "nextQuestion": "Следующий вопрос"
+  },
+  "writing": {
+    "title": "Режим записи",
+    "instructions": "Введите ответ",
+    "yourAnswer": "Ваш ответ",
+    "correctAnswer": "Правильный ответ",
+    "similarity": "Сходство",
+    "strictMode": "Строгий режим",
+    "fuzzyMatching": "Нечеткое сопоставление",
+    "check": "Проверить ответ"
+  }
+}

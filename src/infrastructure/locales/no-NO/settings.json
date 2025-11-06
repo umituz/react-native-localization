@@ -1,0 +1,53 @@
+{
+  "lightMode": "Lysmodus",
+  "darkMode": "Mørk modus",
+  "language": "Språk",
+  "aboutDescription": "Appinformasjon og versjon",
+  "about": {
+    "title": "Om",
+    "description": "Appinformasjon og versjon",
+    "appVersion": "App-versjon",
+    "moreApps": "Flere apper",
+    "moreAppsDescription": "Sjekk ut våre andre apper",
+    "contactEmail": "Kontakt e-post",
+    "website": "Nettsted"
+  },
+  "disclaimer": {
+    "title": "Helse Ansvarsfraskrivelse",
+    "shortMessage": "Trykk for å lese viktig helseinformasjon",
+    "message": "Denne appen er kun for informasjons- og velværestøtteformål. Det er IKKE en erstatning for profesjonell medisinsk eller psykisk helsehjelp.\n\nHvis du opplever en helsekrise eller nødsituasjon, kontakt din lokale nødtjeneste eller helsepersonell umiddelbart.\n\nRådfør deg alltid med kvalifisert helsepersonell for medisinsk råd, diagnose eller behandling. Innholdet i denne appen skal ikke brukes som en erstatning for profesjonell medisinsk vurdering.\n\nPersonvernet ditt er viktig. Alle data forblir private på enheten din med mindre du eksplisitt velger å dele dem."
+  },
+  "legal": {
+    "title": "Lovlig",
+    "description": "Personvernerklæring, vilkår for bruk og EULA",
+    "privacy": "Personvernerklæring",
+    "privacyDescription": "Hvordan vi håndterer dataene dine",
+    "terms": "Vilkår for bruk",
+    "termsDescription": "Vilkår og betingelser",
+    "eula": "Sluttbrukerlisensavtale",
+    "eulaDescription": "Lisensavtale"
+  },
+  "version": {
+    "title": "App-versjon"
+  },
+  "languageSelection": {
+    "title": "Velg Språk",
+    "description": "Velg ditt foretrukne språk",
+    "currentLanguage": "Nåværende språk",
+    "searchPlaceholder": "Søk etter språk"
+  },
+  "appearance": {
+    "title": "Utseende",
+    "darkMode": "Mørk modus",
+    "darkTheme": "Mørkt tema",
+    "lightTheme": "Lys tema",
+    "themeDescription": "Språk- og temainnstillinger"
+  },
+  "notifications": {
+    "title": "Varsler",
+    "description": "Administrer varslingspreferanser",
+    "enableNotifications": "Aktiver varsler",
+    "notificationPermission": "Varslingstillatelse",
+    "notificationPermissionDescription": "Tillat appen å sende varsler"
+  }
+}

@@ -1,0 +1,287 @@
+{
+  "home": {
+    "welcome": "フラッシュカード メーカーへようこそ",
+    "subtitle": "インタラクティブなフラッシュカードであらゆるテーマをマスターしましょう",
+    "quickStudy": "簡単な学習",
+    "quickStudyDesc": "最近のデッキを研究し始める",
+    "createDeck": "デッキの作成",
+    "createDeckDesc": "新しいフラッシュカードデッキを作成する",
+    "recentActivity": "最近の活動",
+    "noDecksYet": "まだデッキを作成していません",
+    "browseDecks": "デッキを閲覧する",
+    "statistics": "統計",
+    "totalDecks": "総デッキ数",
+    "totalCards": "カードの合計数",
+    "studySessions": "勉強会"
+  },
+  "decks": {
+    "noDecks": "デッキが見つかりません",
+    "noDecksDesc": "最初のフラッシュカードデッキを作成して始めましょう",
+    "createFirstDeck": "最初のデッキを作成する",
+    "createDeck": "デッキの作成",
+    "editDeck": "デッキを編集する",
+    "recentlyStudied": "最近勉強したこと",
+    "allDecks": "すべてのデッキ",
+    "easy": "簡単",
+    "medium": "中くらい",
+    "hard": "難しい"
+  },
+  "study": {
+    "noCards": "利用可能なカードがありません",
+    "noCardsDesc": "デッキにカードを追加して勉強を始めましょう",
+    "browseDecks": "デッキを閲覧する",
+    "question": "質問",
+    "answer": "答え",
+    "showQuestion": "質問を表示",
+    "showAnswer": "答えを表示",
+    "correct": "正しい",
+    "incorrect": "正しくない",
+    "skip": "スキップ",
+    "skipped": "スキップされました",
+    "studyComplete": "研究完了",
+    "wellDone": "よくやった！",
+    "sessionComplete": "セッションが完了しました"
+  },
+  "create": {
+    "createDeck": "デッキの作成",
+    "addCards": "カードを追加する",
+    "deckInfo": "デッキ情報",
+    "cardInfo": "カード情報",
+    "deckTitle": "デッキタイトル",
+    "deckTitlePlaceholder": "デッキタイトルを入力してください",
+    "deckDescription": "説明",
+    "deckDescriptionPlaceholder": "デッキの説明を入力してください",
+    "category": "カテゴリ",
+    "selectCategory": "カテゴリを選択してください",
+    "cardFront": "前面",
+    "cardFrontPlaceholder": "質問または用語を入力してください",
+    "cardBack": "裏面",
+    "cardBackPlaceholder": "答えまたは定義を入力してください",
+    "difficulty": "困難",
+    "addCard": "カードを追加",
+    "addedCards": "追加されたカード",
+    "saveDeck": "デッキを保存"
+  },
+  "cards": {
+    "noCards": "カードが見つかりません",
+    "noCardsDesc": "最初のフラッシュカードを作成して始めましょう",
+    "createFirstCard": "最初のカードを作成する",
+    "createCard": "カードの作成",
+    "editCard": "カードの編集",
+    "selectDeck": "デッキの選択",
+    "selectDeckPlaceholder": "このカードのデッキを選択してください"
+  },
+  "common": {
+    "clearFilter": "クリアフィルター"
+  },
+  "studyModes": {
+    "classic": "クラシック",
+    "matching": "マッチングゲーム",
+    "quiz": "多肢選択",
+    "writing": "書き込みモード",
+    "timed": "時限チャレンジ",
+    "selectMode": "学習モードを選択してください"
+  },
+  "session": {
+    "complete": "セッションが完了しました",
+    "accuracy": "正確さ",
+    "speed": "スピード",
+    "score": "スコア",
+    "cardsPerMinute": "カード/分",
+    "grade": "学年",
+    "feedback": {
+      "excellent": "素晴らしい出来です！あなたはこのデッキをマスターしました!",
+      "great": "素晴らしい仕事だ！これからも頑張ってください！",
+      "good": "良い進歩です！上達するにはもっと練習してください。",
+      "keep_practicing": "練習を続けてください！そこに到達しています。",
+      "keep_studying": "勉強を続けてください！これらのカードをもう一度確認してください。"
+    }
+  },
+  "rating": {
+    "fail": "また",
+    "hard": "難しい",
+    "good": "良い",
+    "easy": "簡単",
+    "perfect": "完璧"
+  },
+  "srs": {
+    "dueToday": "今日が期限",
+    "dueCards": "期限のカード",
+    "nextReview": "次のレビュー",
+    "interval": "間隔",
+    "repetitions": "繰り返し",
+    "easeFactor": "イーズファクター",
+    "reviewHistory": "レビュー履歴",
+    "retention": "定着率",
+    "again": "また",
+    "hard": "難しい",
+    "good": "良い",
+    "easy": "簡単"
+  },
+  "media": {
+    "image": "画像",
+    "chooseImage": "画像の選択",
+    "takePhoto": "写真を撮る",
+    "permissionDenied": "写真へのアクセス許可が拒否されました",
+    "cameraPermissionDenied": "カメラへのアクセス許可が拒否されました",
+    "imageFailed": "画像のロードに失敗しました",
+    "cameraFailed": "カメラを開けませんでした",
+    "audio": "オーディオ",
+    "record": "音声を録音する",
+    "recording": "録音中...",
+    "stopRecording": "録音を停止する",
+    "play": "遊ぶ",
+    "stop": "停止",
+    "speak": "話す",
+    "audioPermissionDenied": "音声を録音する許可が拒否されました",
+    "recordingFailed": "音声の録音に失敗しました",
+    "playbackFailed": "オーディオの再生に失敗しました",
+    "ttsFailed": "テキスト読み上げに失敗しました",
+    "noText": "話すテキストがありません"
+  },
+  "import": {
+    "title": "インポートデッキ",
+    "chooseFormat": "フォーマットの選択",
+    "csv": "CSV（エクセル）",
+    "json": "JSON",
+    "quizlet": "クイズレット",
+    "selectFile": "ファイルの選択",
+    "importing": "インポート中...",
+    "success": "{{count}} 枚のカードを正常にインポートしました",
+    "errors": "{{count}} 個のエラーが発生しました",
+    "viewErrors": "エラーを表示する"
+  },
+  "export": {
+    "title": "デッキのエクスポート",
+    "chooseFormat": "フォーマットの選択",
+    "csv": "CSV（エクセル）",
+    "json": "JSON (完全)",
+    "quizlet": "クイズレット",
+    "includeStats": "統計を含める",
+    "includeMedia": "メディアを含める",
+    "exporting": "エクスポート中...",
+    "success": "デッキは正常にエクスポートされました"
+  },
+  "statistics": {
+    "title": "統計",
+    "overview": "概要",
+    "totalCards": "カードの合計数",
+    "cardsStudied": "研究したカード",
+    "totalReviews": "総レビュー数",
+    "correctReviews": "正しいレビュー",
+    "accuracy": "正確さ",
+    "averageTimePerCard": "カードあたりの平均時間",
+    "totalStudyTime": "総学習時間",
+    "studySessions": "勉強会",
+    "streak": {
+      "current": "現在の連続数",
+      "longest": "最長連続記録",
+      "days": "日"
+    },
+    "charts": {
+      "daily": "毎日",
+      "weekly": "毎週",
+      "monthly": "毎月",
+      "performance": "パフォーマンス",
+      "activity": "活動"
+    }
+  },
+  "sharing": {
+    "title": "デッキを共有する",
+    "generateCode": "共有コードの生成",
+    "shareCode": "コードを共有する",
+    "qrCode": "QRコード",
+    "copyCode": "コードをコピーする",
+    "codeCopied": "コードをクリップボードにコピーしました",
+    "shareAsFile": "ファイルとして共有",
+    "shareAsLink": "リンクとして共有",
+    "importCode": "コードをインポートする",
+    "enterCode": "6桁のコードを入力してください",
+    "invalidCode": "無効な共有コードです",
+    "importing": "デッキをインポート中...",
+    "importSuccess": "デッキが正常にインポートされました",
+    "downloadCount": "ダウンロード",
+    "makePublic": "公開する",
+    "makePrivate": "非公開にする"
+  },
+  "gamification": {
+    "profile": {
+      "level": "レベル",
+      "xp": "XP",
+      "rank": "ランク",
+      "progress": "次のレベルに進む",
+      "totalXP": "獲得した合計 XP"
+    },
+    "ranks": {
+      "novice": "初心者",
+      "apprentice": "見習い",
+      "scholar": "学者",
+      "expert": "専門家",
+      "master": "マスター",
+      "grandmaster": "グランドマスター",
+      "legend": "伝説"
+    },
+    "achievements": {
+      "title": "業績",
+      "unlocked": "ロック解除済み",
+      "locked": "ロックされています",
+      "progress": "進捗",
+      "reward": "褒美",
+      "unlockedAt": "ロック解除済み",
+      "categories": {
+        "study": "勉強",
+        "cards": "カード",
+        "decks": "デッキ",
+        "streak": "ストリーク",
+        "special": "特別"
+      }
+    },
+    "challenges": {
+      "title": "毎日の課題",
+      "today": "今日の課題",
+      "completed": "完了",
+      "inProgress": "進行中",
+      "reward": "褒美",
+      "goal": "ゴール",
+      "progress": "進捗"
+    },
+    "xpRewards": {
+      "cardReviewed": "+{{amount}} XP - カードの確認済み",
+      "cardCorrect": "+{{amount}} XP - 正解",
+      "cardPerfect": "+{{amount}} XP - 完璧です!",
+      "deckCreated": "+{{amount}} XP - デッキの作成",
+      "studySession": "+{{amount}} XP - 勉強会",
+      "dailyGoal": "+{{amount}} XP - 毎日の目標達成",
+      "streakDay": "+{{amount}} XP - 連続デー",
+      "achievementUnlocked": "+{{amount}} XP - 実績のロックが解除されました"
+    }
+  },
+  "matching": {
+    "title": "マッチングゲーム",
+    "instructions": "ペアをタップしてカードを合わせます",
+    "matches": "一致",
+    "attempts": "試み",
+    "timeElapsed": "時間",
+    "perfect": "パーフェクトマッチ！",
+    "tryAgain": "もう一度やり直してください"
+  },
+  "quiz": {
+    "title": "多肢選択クイズ",
+    "question": "質問",
+    "chooseAnswer": "正しい答えを選択してください",
+    "correct": "正しい！",
+    "incorrect": "正しくない",
+    "showAnswer": "答えを表示",
+    "nextQuestion": "次の質問"
+  },
+  "writing": {
+    "title": "書き込みモード",
+    "instructions": "答えを入力してください",
+    "yourAnswer": "あなたの答え",
+    "correctAnswer": "正解",
+    "similarity": "類似性",
+    "strictMode": "ストリクトモード",
+    "fuzzyMatching": "ファジーマッチング",
+    "check": "答えを確認する"
+  }
+}

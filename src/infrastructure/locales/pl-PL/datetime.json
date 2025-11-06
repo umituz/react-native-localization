@@ -1,0 +1,140 @@
+{
+  "days": {
+    "full": {
+      "monday": "Poniedziałek",
+      "tuesday": "Wtorek",
+      "wednesday": "Środa",
+      "thursday": "Czwartek",
+      "friday": "Piątek",
+      "saturday": "Sobota",
+      "sunday": "Niedziela"
+    },
+    "short": {
+      "mon": "pon",
+      "tue": "wt",
+      "wed": "Poślubić",
+      "thu": "czw",
+      "fri": "piątek",
+      "sat": "sob",
+      "sun": "Słoneczny"
+    },
+    "abbreviated": {
+      "m": "M",
+      "t": "T",
+      "w": "W",
+      "th": "Cz",
+      "f": "F",
+      "sa": "Sa",
+      "su": "Su"
+    }
+  },
+  "months": {
+    "full": {
+      "january": "Styczeń",
+      "february": "Luty",
+      "march": "marzec",
+      "april": "Kwiecień",
+      "may": "Móc",
+      "june": "Czerwiec",
+      "july": "Lipiec",
+      "august": "Sierpień",
+      "september": "Wrzesień",
+      "october": "Październik",
+      "november": "Listopad",
+      "december": "Grudzień"
+    },
+    "short": {
+      "jan": "styczeń",
+      "feb": "luty",
+      "mar": "Zniszczyć",
+      "apr": "kwiecień",
+      "may": "Móc",
+      "jun": "czerwca",
+      "jul": "lipiec",
+      "aug": "sierpień",
+      "sep": "wrzesień",
+      "oct": "paź",
+      "nov": "listopad",
+      "dec": "grudzień"
+    }
+  },
+  "relative": {
+    "now": "Teraz",
+    "justNow": "Właśnie",
+    "today": "Dzisiaj",
+    "yesterday": "Wczoraj",
+    "tomorrow": "Jutro",
+    "thisWeek": "W tym tygodniu",
+    "lastWeek": "Ostatni tydzień",
+    "nextWeek": "Przyszły tydzień",
+    "thisMonth": "W tym miesiącu",
+    "lastMonth": "Ostatni miesiąc",
+    "nextMonth": "Przyszły miesiąc",
+    "thisYear": "W tym roku",
+    "lastYear": "W ubiegłym roku",
+    "nextYear": "Przyszły rok",
+    "ago": "temu",
+    "fromNow": "od teraz",
+    "in": "W"
+  },
+  "units": {
+    "singular": {
+      "second": "drugi",
+      "minute": "chwila",
+      "hour": "godzina",
+      "day": "dzień",
+      "week": "tydzień",
+      "month": "miesiąc",
+      "year": "rok"
+    },
+    "plural": {
+      "seconds": "towary drugiej jakości",
+      "minutes": "protokół",
+      "hours": "godziny",
+      "days": "dni",
+      "weeks": "tygodnie",
+      "months": "miesiące",
+      "years": "lata"
+    },
+    "short": {
+      "s": "S",
+      "m": "M",
+      "h": "H",
+      "d": "D",
+      "w": "w",
+      "mo": "mo",
+      "y": "y"
+    }
+  },
+  "periods": {
+    "am": "JESTEM",
+    "pm": "PO POŁUDNIU",
+    "morning": "Poranek",
+    "afternoon": "Popołudnie",
+    "evening": "Wieczór",
+    "night": "Noc",
+    "midnight": "Północ",
+    "noon": "Południe"
+  },
+  "formats": {
+    "date": "Data",
+    "time": "Czas",
+    "datetime": "Data i godzina",
+    "duration": "Czas trwania",
+    "startDate": "Data rozpoczęcia",
+    "endDate": "Data zakończenia",
+    "startTime": "Czas rozpoczęcia",
+    "endTime": "Czas zakończenia",
+    "selectDate": "Wybierz opcję Data",
+    "selectTime": "Wybierz Czas"
+  },
+  "actions": {
+    "setDate": "Ustaw datę",
+    "setTime": "Ustaw czas",
+    "clearDate": "Wyczyść datę",
+    "clearTime": "Wyczyść czas",
+    "confirmDate": "Potwierdź datę",
+    "confirmTime": "Potwierdź czas",
+    "cancel": "Anulować"
+  }
+}

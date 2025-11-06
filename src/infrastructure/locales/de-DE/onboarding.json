@@ -1,0 +1,76 @@
+{
+  "skip": "Überspringen",
+  "getStarted": "Legen Sie los",
+  "welcome": {
+    "title": "Willkommen!",
+    "subtitle": "Ihre Reise beginnt hier",
+    "getStarted": "Legen Sie los",
+    "skip": "Überspringen"
+  },
+  "slides": {
+    "slide1": {
+      "title": "Entdecken Sie erstaunliche Funktionen",
+      "description": "Entdecken Sie alles, was unsere App zu bieten hat"
+    },
+    "slide2": {
+      "title": "Bleiben Sie organisiert",
+      "description": "Behalten Sie den Überblick über das Wesentliche"
+    },
+    "slide3": {
+      "title": "Erreichen Sie Ihre Ziele",
+      "description": "Wir sind hier, um Ihnen zum Erfolg zu verhelfen"
+    }
+  },
+  "permissions": {
+    "title": "Berechtigungen",
+    "subtitle": "Wir benötigen einige Berechtigungen, um das bestmögliche Erlebnis zu bieten",
+    "location": {
+      "title": "Standort",
+      "description": "Stellen Sie standortbasierte Funktionen bereit",
+      "enable": "Standort aktivieren"
+    },
+    "camera": {
+      "title": "Kamera",
+      "description": "Machen Sie Fotos und scannen Sie Dokumente",
+      "enable": "Kamera aktivieren"
+    },
+    "photos": {
+      "title": "Fotos",
+      "description": "Greifen Sie auf Ihre Fotobibliothek zu",
+      "enable": "Fotos aktivieren"
+    },
+    "later": "Ich mache das später",
+    "continue": "Weitermachen"
+  },
+  "personalization": {
+    "title": "Personalisieren Sie Ihr Erlebnis",
+    "subtitle": "Erzählen Sie uns etwas über sich",
+    "goals": {
+      "title": "Was sind Ihre Ziele?",
+      "options": [
+        "Gesund bleiben",
+        "Seien Sie produktiv",
+        "Erlernen Sie neue Fähigkeiten",
+        "Verbinde dich mit anderen",
+        "Viel Spaß"
+      ]
+    },
+    "preferences": {
+      "title": "Legen Sie Ihre Präferenzen fest",
+      "theme": "Wählen Sie Thema",
+      "language": "Wählen Sie Sprache"
+    },
+    "continue": "Weitermachen"
+  },
+  "complete": {
+    "title": "Sie sind bereit!",
+    "subtitle": "Fangen wir an!",
+    "startButton": "Beginnen Sie mit der Nutzung der App"
+  },
+  "navigation": {
+    "next": "Nächste",
+    "back": "Zurück",
+    "skip": "Überspringen",
+    "done": "Erledigt"
+  }
+}

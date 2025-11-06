@@ -1,0 +1,140 @@
+{
+  "days": {
+    "full": {
+      "monday": "Lunedi",
+      "tuesday": "Martedì",
+      "wednesday": "Mercoledì",
+      "thursday": "Giovedì",
+      "friday": "Venerdì",
+      "saturday": "Sabato",
+      "sunday": "Domenica"
+    },
+    "short": {
+      "mon": "Lun",
+      "tue": "Mar",
+      "wed": "Mercoledì",
+      "thu": "Gio",
+      "fri": "Ven",
+      "sat": "Sab",
+      "sun": "Sole"
+    },
+    "abbreviated": {
+      "m": "M",
+      "t": "T",
+      "w": "W",
+      "th": "Gi",
+      "f": "F",
+      "sa": "Sa",
+      "su": "Su"
+    }
+  },
+  "months": {
+    "full": {
+      "january": "Gennaio",
+      "february": "Febbraio",
+      "march": "Marzo",
+      "april": "aprile",
+      "may": "Maggio",
+      "june": "Giugno",
+      "july": "Luglio",
+      "august": "agosto",
+      "september": "settembre",
+      "october": "ottobre",
+      "november": "novembre",
+      "december": "Dicembre"
+    },
+    "short": {
+      "jan": "Gen",
+      "feb": "Febbraio",
+      "mar": "Mar",
+      "apr": "aprile",
+      "may": "Maggio",
+      "jun": "giugno",
+      "jul": "Lug",
+      "aug": "Agosto",
+      "sep": "Settembre",
+      "oct": "ottobre",
+      "nov": "novembre",
+      "dec": "dicembre"
+    }
+  },
+  "relative": {
+    "now": "Ora",
+    "justNow": "Proprio adesso",
+    "today": "Oggi",
+    "yesterday": "Ieri",
+    "tomorrow": "Domani",
+    "thisWeek": "Questa settimana",
+    "lastWeek": "La settimana scorsa",
+    "nextWeek": "La prossima settimana",
+    "thisMonth": "Questo mese",
+    "lastMonth": "Il mese scorso",
+    "nextMonth": "Il mese prossimo",
+    "thisYear": "Quest'anno",
+    "lastYear": "L'anno scorso",
+    "nextYear": "L'anno prossimo",
+    "ago": "fa",
+    "fromNow": "da adesso",
+    "in": "In"
+  },
+  "units": {
+    "singular": {
+      "second": "secondo",
+      "minute": "minuto",
+      "hour": "ora",
+      "day": "giorno",
+      "week": "settimana",
+      "month": "mese",
+      "year": "anno"
+    },
+    "plural": {
+      "seconds": "secondi",
+      "minutes": "minuti",
+      "hours": "ore",
+      "days": "giorni",
+      "weeks": "settimane",
+      "months": "mesi",
+      "years": "anni"
+    },
+    "short": {
+      "s": "S",
+      "m": "M",
+      "h": "H",
+      "d": "D",
+      "w": "w",
+      "mo": "mo",
+      "y": "sì"
+    }
+  },
+  "periods": {
+    "am": "SONO",
+    "pm": "PM",
+    "morning": "Mattina",
+    "afternoon": "Pomeriggio",
+    "evening": "Sera",
+    "night": "Notte",
+    "midnight": "Mezzanotte",
+    "noon": "Mezzogiorno"
+  },
+  "formats": {
+    "date": "Data",
+    "time": "Tempo",
+    "datetime": "Data e ora",
+    "duration": "Durata",
+    "startDate": "Data di inizio",
+    "endDate": "Data di fine",
+    "startTime": "Ora di inizio",
+    "endTime": "Ora di fine",
+    "selectDate": "Seleziona Data",
+    "selectTime": "Seleziona Ora"
+  },
+  "actions": {
+    "setDate": "Imposta data",
+    "setTime": "Imposta ora",
+    "clearDate": "Cancella data",
+    "clearTime": "Tempo chiaro",
+    "confirmDate": "Conferma data",
+    "confirmTime": "Conferma l'ora",
+    "cancel": "Cancellare"
+  }
+}

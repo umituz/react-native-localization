@@ -1,0 +1,9 @@
+{
+  "appName": "Pembuat flashcard",
+  "tagline": "Selamat datang ke Perjalanan Anda",
+  "poweredBy": "Dikuasakan oleh Kilang Aplikasi Umituz",
+  "version": "Versi {{versi}}",
+  "splash": {
+    "loading": "Memuatkan ..."
+  }
+}

@@ -1,0 +1,287 @@
+{
+  "home": {
+    "welcome": "Vítejte v aplikaci Flashcard Maker",
+    "subtitle": "Zvládněte jakýkoli předmět pomocí interaktivních kartiček",
+    "quickStudy": "Rychlé studium",
+    "quickStudyDesc": "Začněte studovat své nedávné balíčky",
+    "createDeck": "Vytvořit balíček",
+    "createDeckDesc": "Sestavte nový balíček karet",
+    "recentActivity": "Nedávná aktivita",
+    "noDecksYet": "Ještě jste nevytvořili žádné balíčky",
+    "browseDecks": "Procházet balíčky",
+    "statistics": "Statistika",
+    "totalDecks": "Celkem paluby",
+    "totalCards": "Celkem karet",
+    "studySessions": "Studijní sezení"
+  },
+  "decks": {
+    "noDecks": "Nebyly nalezeny žádné paluby",
+    "noDecksDesc": "Začněte vytvořením prvního balíčku karet",
+    "createFirstDeck": "Vytvořte první balíček",
+    "createDeck": "Vytvořit balíček",
+    "editDeck": "Upravit balíček",
+    "recentlyStudied": "Nedávno studoval",
+    "allDecks": "Všechny paluby",
+    "easy": "Snadný",
+    "medium": "Střední",
+    "hard": "Tvrdý"
+  },
+  "study": {
+    "noCards": "Nejsou k dispozici žádné karty",
+    "noCardsDesc": "Chcete-li začít studovat, přidejte do balíčku několik karet",
+    "browseDecks": "Procházet balíčky",
+    "question": "Otázka",
+    "answer": "Odpověď",
+    "showQuestion": "Zobrazit otázku",
+    "showAnswer": "Zobrazit odpověď",
+    "correct": "Opravit",
+    "incorrect": "Nesprávný",
+    "skip": "Přeskočit",
+    "skipped": "Přeskočeno",
+    "studyComplete": "Studie dokončena",
+    "wellDone": "Dobrá práce!",
+    "sessionComplete": "Relace dokončena"
+  },
+  "create": {
+    "createDeck": "Vytvořit balíček",
+    "addCards": "Přidat karty",
+    "deckInfo": "Informace o palubě",
+    "cardInfo": "Informace o kartě",
+    "deckTitle": "Název paluby",
+    "deckTitlePlaceholder": "Zadejte název balíčku",
+    "deckDescription": "Popis",
+    "deckDescriptionPlaceholder": "Zadejte popis paluby",
+    "category": "Kategorie",
+    "selectCategory": "Vyberte kategorii",
+    "cardFront": "Přední strana",
+    "cardFrontPlaceholder": "Zadejte otázku nebo výraz",
+    "cardBack": "Zadní strana",
+    "cardBackPlaceholder": "Zadejte odpověď nebo definici",
+    "difficulty": "Obtížnost",
+    "addCard": "Přidat kartu",
+    "addedCards": "Přidané karty",
+    "saveDeck": "Uložit balíček"
+  },
+  "cards": {
+    "noCards": "Nebyly nalezeny žádné karty",
+    "noCardsDesc": "Začněte vytvořením první kartičky",
+    "createFirstCard": "Vytvořte první kartu",
+    "createCard": "Vytvořit kartu",
+    "editCard": "Upravit kartu",
+    "selectDeck": "Vyberte Deck",
+    "selectDeckPlaceholder": "Vyberte balíček pro tuto kartu"
+  },
+  "common": {
+    "clearFilter": "Vymazat filtr"
+  },
+  "studyModes": {
+    "classic": "Klasický",
+    "matching": "Odpovídající hra",
+    "quiz": "Vícenásobná volba",
+    "writing": "Režim psaní",
+    "timed": "Časovaná výzva",
+    "selectMode": "Vyberte režim studia"
+  },
+  "session": {
+    "complete": "Relace dokončena",
+    "accuracy": "Přesnost",
+    "speed": "Rychlost",
+    "score": "Skóre",
+    "cardsPerMinute": "karty/min",
+    "grade": "Stupeň",
+    "feedback": {
+      "excellent": "Skvělá práce! Tento balíček jste zvládli!",
+      "great": "Skvělá práce! Pokračujte v dobré práci!",
+      "good": "Dobrý pokrok! Cvičte více, abyste se zlepšili.",
+      "keep_practicing": "Pokračujte ve cvičení! Dostáváš se tam.",
+      "keep_studying": "Pokračujte ve studiu! Zkontrolujte tyto karty znovu."
+    }
+  },
+  "rating": {
+    "fail": "Znovu",
+    "hard": "Tvrdý",
+    "good": "Dobrý",
+    "easy": "Snadný",
+    "perfect": "Perfektní"
+  },
+  "srs": {
+    "dueToday": "Splatné dnes",
+    "dueCards": "Splatné karty",
+    "nextReview": "Další recenze",
+    "interval": "Interval",
+    "repetitions": "Opakování",
+    "easeFactor": "Snadný faktor",
+    "reviewHistory": "Historie recenzí",
+    "retention": "Míra uchování",
+    "again": "Znovu",
+    "hard": "Tvrdý",
+    "good": "Dobrý",
+    "easy": "Snadný"
+  },
+  "media": {
+    "image": "Obraz",
+    "chooseImage": "Vyberte Obrázek",
+    "takePhoto": "Vyfotit",
+    "permissionDenied": "Přístup k fotografiím odepřen",
+    "cameraPermissionDenied": "Přístup ke kameře odepřen",
+    "imageFailed": "Načtení obrázku se nezdařilo",
+    "cameraFailed": "Fotoaparát se nepodařilo otevřít",
+    "audio": "Zvuk",
+    "record": "Záznam zvuku",
+    "recording": "Záznam...",
+    "stopRecording": "Zastavit nahrávání",
+    "play": "Hrát",
+    "stop": "Zastávka",
+    "speak": "Mluvit",
+    "audioPermissionDenied": "Povolení k nahrávání zvuku odepřeno",
+    "recordingFailed": "Záznam zvuku se nezdařil",
+    "playbackFailed": "Zvuk se nepodařilo přehrát",
+    "ttsFailed": "Převod textu na řeč se nezdařil",
+    "noText": "Žádný text k mluvení"
+  },
+  "import": {
+    "title": "Import Deck",
+    "chooseFormat": "Zvolte Formát",
+    "csv": "CSV (Excel)",
+    "json": "JSON",
+    "quizlet": "Quizlet",
+    "selectFile": "Vyberte Soubor",
+    "importing": "Import...",
+    "success": "Počet úspěšně importovaných karet: {{count}}",
+    "errors": "Došlo k {{count}} chybám",
+    "viewErrors": "Zobrazit chyby"
+  },
+  "export": {
+    "title": "Exportní paluba",
+    "chooseFormat": "Zvolte Formát",
+    "csv": "CSV (Excel)",
+    "json": "JSON (kompletní)",
+    "quizlet": "Quizlet",
+    "includeStats": "Zahrnout statistiky",
+    "includeMedia": "Zahrnout média",
+    "exporting": "Exportování...",
+    "success": "Balíček byl úspěšně exportován"
+  },
+  "statistics": {
+    "title": "Statistika",
+    "overview": "Přehled",
+    "totalCards": "Celkem karet",
+    "cardsStudied": "Karty studoval",
+    "totalReviews": "Celkový počet recenzí",
+    "correctReviews": "Správné recenze",
+    "accuracy": "Přesnost",
+    "averageTimePerCard": "Průměrný čas na kartu",
+    "totalStudyTime": "Celková doba studia",
+    "studySessions": "Studijní sezení",
+    "streak": {
+      "current": "Aktuální pruh",
+      "longest": "Nejdelší série",
+      "days": "dní"
+    },
+    "charts": {
+      "daily": "Denní",
+      "weekly": "Týdně",
+      "monthly": "Měsíční",
+      "performance": "Výkon",
+      "activity": "Aktivita"
+    }
+  },
+  "sharing": {
+    "title": "Sdílet balíček",
+    "generateCode": "Vygenerovat sdílený kód",
+    "shareCode": "Share Code",
+    "qrCode": "QR kód",
+    "copyCode": "Kopírovat kód",
+    "codeCopied": "Kód byl zkopírován do schránky",
+    "shareAsFile": "Sdílet jako soubor",
+    "shareAsLink": "Sdílet jako odkaz",
+    "importCode": "Importní kód",
+    "enterCode": "Zadejte 6místný kód",
+    "invalidCode": "Neplatný kód sdílení",
+    "importing": "Import balíčku...",
+    "importSuccess": "Deck byl úspěšně importován",
+    "downloadCount": "Stahování",
+    "makePublic": "Zveřejnit",
+    "makePrivate": "Označit jako soukromé"
+  },
+  "gamification": {
+    "profile": {
+      "level": "Úroveň",
+      "xp": "XP",
+      "rank": "Pořadí",
+      "progress": "Postup do další úrovně",
+      "totalXP": "Celkem vydělané XP"
+    },
+    "ranks": {
+      "novice": "Nováček",
+      "apprentice": "Učeň",
+      "scholar": "Učenec",
+      "expert": "Expert",
+      "master": "Zvládnout",
+      "grandmaster": "velmistr",
+      "legend": "Legenda"
+    },
+    "achievements": {
+      "title": "Úspěchy",
+      "unlocked": "Odemčený",
+      "locked": "Zamčeno",
+      "progress": "Pokrok",
+      "reward": "Odměna",
+      "unlockedAt": "Odemčeno",
+      "categories": {
+        "study": "Studie",
+        "cards": "Karty",
+        "decks": "Paluby",
+        "streak": "Pruh",
+        "special": "Speciální"
+      }
+    },
+    "challenges": {
+      "title": "Denní výzvy",
+      "today": "Dnešní výzvy",
+      "completed": "Dokončeno",
+      "inProgress": "Probíhá",
+      "reward": "Odměna",
+      "goal": "Gól",
+      "progress": "Pokrok"
+    },
+    "xpRewards": {
+      "cardReviewed": "+{{amount}} XP – karta zkontrolována",
+      "cardCorrect": "+{{amount}} XP – správná odpověď",
+      "cardPerfect": "+{{amount}} XP – Perfektní!",
+      "deckCreated": "+{{amount}} XP – balíček vytvořen",
+      "studySession": "+{{amount}} XP – studijní setkání",
+      "dailyGoal": "+{{amount}} XP – splněný denní cíl",
+      "streakDay": "+{{amount}} XP – Den série",
+      "achievementUnlocked": "+{{amount}} XP – úspěch odemčen"
+    }
+  },
+  "matching": {
+    "title": "Odpovídající hra",
+    "instructions": "Spojte karty poklepáním na dvojice",
+    "matches": "Zápasy",
+    "attempts": "Pokusy",
+    "timeElapsed": "Čas",
+    "perfect": "Perfektní zápas!",
+    "tryAgain": "Zkuste to znovu"
+  },
+  "quiz": {
+    "title": "Kvíz s více možnostmi",
+    "question": "Otázka",
+    "chooseAnswer": "Vyberte správnou odpověď",
+    "correct": "Opravit!",
+    "incorrect": "Nesprávný",
+    "showAnswer": "Zobrazit odpověď",
+    "nextQuestion": "Další otázka"
+  },
+  "writing": {
+    "title": "Režim psaní",
+    "instructions": "Napište odpověď",
+    "yourAnswer": "Vaše odpověď",
+    "correctAnswer": "Správná odpověď",
+    "similarity": "Podobnost",
+    "strictMode": "Přísný režim",
+    "fuzzyMatching": "Fuzzy Matching",
+    "check": "Zkontrolujte odpověď"
+  }
+}

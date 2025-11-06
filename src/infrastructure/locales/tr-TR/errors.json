@@ -1,0 +1,43 @@
+{
+  "validation": {
+    "required": "Bu alan zorunludur",
+    "invalidEmail": "Geçersiz e-posta biçimi",
+    "invalidPhone": "Geçersiz telefon numarası",
+    "invalidUrl": "Geçersiz URL biçimi",
+    "minLength": "Minimum uzunluk {{min}} karakterdir",
+    "maxLength": "Maksimum uzunluk {{max}} karakterdir",
+    "minValue": "Minimum değer {{min}}",
+    "maxValue": "Maksimum değer: {{max}}",
+    "mustMatch": "Alanlar eşleşmelidir",
+    "invalidFormat": "Geçersiz biçim",
+    "invalidDate": "Geçersiz tarih",
+    "futureDate": "Tarih gelecekte olmalıdır",
+    "pastDate": "Tarih geçmişte olmalıdır"
+  },
+  "storage": {
+    "saveFailed": "Veriler kaydedilemedi",
+    "loadFailed": "Veriler yüklenemedi",
+    "deleteFailed": "Veriler silinemedi",
+    "notFound": "Veri bulunamadı"
+  },
+  "permission": {
+    "denied": "İzin reddedildi",
+    "notGranted": "İzin verilmedi",
+    "cameraNotAvailable": "Kamera mevcut değil",
+    "locationNotAvailable": "Konum hizmetleri kullanılamıyor",
+    "microphoneNotAvailable": "Mikrofon kullanılamıyor",
+    "photosNotAvailable": "Fotoğraf kitaplığı kullanılamıyor"
+  },
+  "common": {
+    "somethingWentWrong": "Bir şeyler ters gitti",
+    "tryAgainLater": "Lütfen daha sonra tekrar deneyin",
+    "unexpectedError": "Beklenmeyen bir hata oluştu"
+  },
+  "actions": {
+    "dismiss": "Azletmek",
+    "retry": "Yeniden dene",
+    "cancel": "İptal etmek",
+    "goBack": "Geri gitmek",
+    "contactSupport": "Destek Ekibiyle İletişime Geçin"
+  }
+}

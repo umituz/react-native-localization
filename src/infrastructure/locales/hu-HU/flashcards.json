@@ -1,0 +1,287 @@
+{
+  "home": {
+    "welcome": "Üdvözöljük a Flashcard Maker alkalmazásban",
+    "subtitle": "Sajátítson el bármilyen témát interaktív kártyákkal",
+    "quickStudy": "Gyors tanulmány",
+    "quickStudyDesc": "Kezdje el tanulmányozni legutóbbi paklijait",
+    "createDeck": "Készítsen fedélzetet",
+    "createDeckDesc": "Hozz létre egy új kártyacsomagot",
+    "recentActivity": "Legutóbbi tevékenység",
+    "noDecksYet": "Még nem hozott létre paklit",
+    "browseDecks": "Böngésszen a Deckek között",
+    "statistics": "Statisztika",
+    "totalDecks": "Összes fedélzet",
+    "totalCards": "Összes kártya",
+    "studySessions": "Tanulmányi ülések"
+  },
+  "decks": {
+    "noDecks": "Nem találhatók fedélzetek",
+    "noDecksDesc": "A kezdéshez hozza létre az első kártyacsomagját",
+    "createFirstDeck": "Első fedélzet létrehozása",
+    "createDeck": "Készítsen fedélzetet",
+    "editDeck": "Edit Deck",
+    "recentlyStudied": "Nemrég tanult",
+    "allDecks": "Minden fedélzet",
+    "easy": "Könnyen",
+    "medium": "Közepes",
+    "hard": "Kemény"
+  },
+  "study": {
+    "noCards": "Nem állnak rendelkezésre kártyák",
+    "noCardsDesc": "A tanulás megkezdéséhez adj hozzá néhány kártyát a paklihoz",
+    "browseDecks": "Böngésszen a Deckek között",
+    "question": "Kérdés",
+    "answer": "Válasz",
+    "showQuestion": "Kérdés megjelenítése",
+    "showAnswer": "Válasz megjelenítése",
+    "correct": "Helyes",
+    "incorrect": "Helytelen",
+    "skip": "Kihagyás",
+    "skipped": "Kihagyva",
+    "studyComplete": "A tanulmány befejeződött",
+    "wellDone": "Gratulálok!",
+    "sessionComplete": "Munkamenet kész"
+  },
+  "create": {
+    "createDeck": "Készítsen fedélzetet",
+    "addCards": "Kártyák hozzáadása",
+    "deckInfo": "Fedélzeti információk",
+    "cardInfo": "Kártyainformációk",
+    "deckTitle": "Pakli címe",
+    "deckTitlePlaceholder": "Adja meg a pakli címét",
+    "deckDescription": "Leírás",
+    "deckDescriptionPlaceholder": "Adja meg a fedélzet leírását",
+    "category": "Kategória",
+    "selectCategory": "Válasszon kategóriát",
+    "cardFront": "Elülső oldal",
+    "cardFrontPlaceholder": "Írja be a kérdést vagy a kifejezést",
+    "cardBack": "Hátsó oldal",
+    "cardBackPlaceholder": "Adja meg a választ vagy a meghatározást",
+    "difficulty": "Nehézség",
+    "addCard": "Kártya hozzáadása",
+    "addedCards": "Hozzáadott kártyák",
+    "saveDeck": "Mentés Deck"
+  },
+  "cards": {
+    "noCards": "Nem található kártya",
+    "noCardsDesc": "A kezdéshez hozza létre az első tanulókártyáját",
+    "createFirstCard": "Első kártya létrehozása",
+    "createCard": "Kártya létrehozása",
+    "editCard": "Kártya szerkesztése",
+    "selectDeck": "Válassza a Deck lehetőséget",
+    "selectDeckPlaceholder": "Válassz egy paklit ehhez a kártyához"
+  },
+  "common": {
+    "clearFilter": "Szűrő törlése"
+  },
+  "studyModes": {
+    "classic": "Klasszikus",
+    "matching": "Matching Game",
+    "quiz": "Többszörös választás",
+    "writing": "Írásmód",
+    "timed": "Időzített kihívás",
+    "selectMode": "Válassza a Tanulmányi módot"
+  },
+  "session": {
+    "complete": "Munkamenet kész",
+    "accuracy": "Pontosság",
+    "speed": "Sebesség",
+    "score": "Pontszám",
+    "cardsPerMinute": "kártya/perc",
+    "grade": "Fokozat",
+    "feedback": {
+      "excellent": "Kiváló munka! Elsajátítottad ezt a paklit!",
+      "great": "Remek munka! Csak így tovább!",
+      "good": "Jó előrelépést! Gyakorolj többet, hogy fejlődj.",
+      "keep_practicing": "Gyakorolj tovább! Odaérsz.",
+      "keep_studying": "Tanulj tovább! Tekintse át újra ezeket a kártyákat."
+    }
+  },
+  "rating": {
+    "fail": "Újra",
+    "hard": "Kemény",
+    "good": "Jó",
+    "easy": "Könnyen",
+    "perfect": "Tökéletes"
+  },
+  "srs": {
+    "dueToday": "Ma esedékes",
+    "dueCards": "Esedékes kártyák",
+    "nextReview": "Következő áttekintés",
+    "interval": "Intervallum",
+    "repetitions": "Ismétlések",
+    "easeFactor": "Könnyűségi faktor",
+    "reviewHistory": "Review History",
+    "retention": "Megtartási arány",
+    "again": "Újra",
+    "hard": "Kemény",
+    "good": "Jó",
+    "easy": "Könnyen"
+  },
+  "media": {
+    "image": "Kép",
+    "chooseImage": "Válassza a Kép lehetőséget",
+    "takePhoto": "Fotó készítése",
+    "permissionDenied": "A fényképekhez való hozzáférés megtagadva",
+    "cameraPermissionDenied": "A kamera hozzáférési engedélye megtagadva",
+    "imageFailed": "Nem sikerült betölteni a képet",
+    "cameraFailed": "Nem sikerült megnyitni a kamerát",
+    "audio": "Hang",
+    "record": "Hang rögzítése",
+    "recording": "Felvétel...",
+    "stopRecording": "Felvétel leállítása",
+    "play": "Játék",
+    "stop": "Stop",
+    "speak": "Beszél",
+    "audioPermissionDenied": "Hangrögzítési engedély megtagadva",
+    "recordingFailed": "Nem sikerült rögzíteni a hangot",
+    "playbackFailed": "Nem sikerült lejátszani a hangot",
+    "ttsFailed": "A szövegfelolvasó nem sikerült",
+    "noText": "Nincs szöveg"
+  },
+  "import": {
+    "title": "Import Deck",
+    "chooseFormat": "Válassza a Formátum lehetőséget",
+    "csv": "CSV (Excel)",
+    "json": "JSON",
+    "quizlet": "Quizlet",
+    "selectFile": "Válassza a Fájl lehetőséget",
+    "importing": "Importálás...",
+    "success": "Sikeresen importált {{count}} kártya",
+    "errors": "{{count}} hiba történt",
+    "viewErrors": "Hibák megtekintése"
+  },
+  "export": {
+    "title": "Export fedélzet",
+    "chooseFormat": "Válassza a Formátum lehetőséget",
+    "csv": "CSV (Excel)",
+    "json": "JSON (teljes)",
+    "quizlet": "Quizlet",
+    "includeStats": "Tartalmazza a statisztikákat",
+    "includeMedia": "Tartalmazza a médiát",
+    "exporting": "Exportálás...",
+    "success": "A fedélzet sikeresen exportálva"
+  },
+  "statistics": {
+    "title": "Statisztika",
+    "overview": "Áttekintés",
+    "totalCards": "Összes kártya",
+    "cardsStudied": "Tanulmányozott kártyák",
+    "totalReviews": "Összes értékelés",
+    "correctReviews": "Helyes vélemények",
+    "accuracy": "Pontosság",
+    "averageTimePerCard": "Átl. idő kártyánként",
+    "totalStudyTime": "Teljes tanulási idő",
+    "studySessions": "Tanulmányi ülések",
+    "streak": {
+      "current": "Aktuális sorozat",
+      "longest": "Leghosszabb sorozat",
+      "days": "napokon"
+    },
+    "charts": {
+      "daily": "Napi",
+      "weekly": "Heti",
+      "monthly": "Havi",
+      "performance": "Teljesítmény",
+      "activity": "Tevékenység"
+    }
+  },
+  "sharing": {
+    "title": "Share Deck",
+    "generateCode": "Megosztási kód generálása",
+    "shareCode": "Share Code",
+    "qrCode": "QR-kód",
+    "copyCode": "Kód másolása",
+    "codeCopied": "A kód a vágólapra másolva",
+    "shareAsFile": "Megosztás fájlként",
+    "shareAsLink": "Megosztás linkként",
+    "importCode": "Kód importálása",
+    "enterCode": "Írja be a 6 számjegyű kódot",
+    "invalidCode": "Érvénytelen megosztási kód",
+    "importing": "Pack importálása...",
+    "importSuccess": "A fedélzet sikeresen importálva",
+    "downloadCount": "Letöltések",
+    "makePublic": "Nyilvánossá tétele",
+    "makePrivate": "Tedd priváttá"
+  },
+  "gamification": {
+    "profile": {
+      "level": "Szint",
+      "xp": "XP",
+      "rank": "Rang",
+      "progress": "Haladás a következő szintre",
+      "totalXP": "Összes szerzett XP"
+    },
+    "ranks": {
+      "novice": "Kezdő",
+      "apprentice": "Tanítvány",
+      "scholar": "Tudós",
+      "expert": "Szakértő",
+      "master": "Fő",
+      "grandmaster": "nagymester",
+      "legend": "Legenda"
+    },
+    "achievements": {
+      "title": "Eredmények",
+      "unlocked": "Feloldva",
+      "locked": "Bezárt",
+      "progress": "Előrehalad",
+      "reward": "Jutalom",
+      "unlockedAt": "Feloldva",
+      "categories": {
+        "study": "Tanulmány",
+        "cards": "Kártyák",
+        "decks": "Fedélzetek",
+        "streak": "Csík",
+        "special": "Különleges"
+      }
+    },
+    "challenges": {
+      "title": "Napi kihívások",
+      "today": "A mai nap kihívásai",
+      "completed": "Befejezve",
+      "inProgress": "Folyamatban van",
+      "reward": "Jutalom",
+      "goal": "Cél",
+      "progress": "Előrehalad"
+    },
+    "xpRewards": {
+      "cardReviewed": "+{{amount}} XP - Kártya felülvizsgálva",
+      "cardCorrect": "+{{amount}} XP - Helyes válasz",
+      "cardPerfect": "+{{amount}} XP - Tökéletes!",
+      "deckCreated": "+{{amount}} XP - Pakli létrehozva",
+      "studySession": "+{{amount}} XP - Tanulmányi munkamenet",
+      "dailyGoal": "+{{amount}} XP – Napi cél elérése",
+      "streakDay": "+{{amount}} XP - Streak Day",
+      "achievementUnlocked": "+{{amount}} XP – Eredmény feloldva"
+    }
+  },
+  "matching": {
+    "title": "Matching Game",
+    "instructions": "Párosítsa össze a kártyákat a párok megérintésével",
+    "matches": "Gyufa",
+    "attempts": "Kísérletek",
+    "timeElapsed": "Idő",
+    "perfect": "Tökéletes egyezés!",
+    "tryAgain": "Próbáld újra"
+  },
+  "quiz": {
+    "title": "Feleletválasztós kvíz",
+    "question": "Kérdés",
+    "chooseAnswer": "Válassza ki a helyes választ",
+    "correct": "Helyes!",
+    "incorrect": "Helytelen",
+    "showAnswer": "Válasz megjelenítése",
+    "nextQuestion": "Következő kérdés"
+  },
+  "writing": {
+    "title": "Írásmód",
+    "instructions": "Írja be a választ",
+    "yourAnswer": "Az Ön válasza",
+    "correctAnswer": "Helyes válasz",
+    "similarity": "Hasonlóság",
+    "strictMode": "Szigorú mód",
+    "fuzzyMatching": "Fuzzy Matching",
+    "check": "Ellenőrizze a választ"
+  }
+}

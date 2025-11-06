@@ -1,0 +1,76 @@
+{
+  "skip": "スキップ",
+  "getStarted": "始めましょう",
+  "welcome": {
+    "title": "いらっしゃいませ！",
+    "subtitle": "あなたの旅はここから始まります",
+    "getStarted": "始めましょう",
+    "skip": "スキップ"
+  },
+  "slides": {
+    "slide1": {
+      "title": "素晴らしい機能を発見してください",
+      "description": "私たちのアプリが提供するすべてを探索してください"
+    },
+    "slide2": {
+      "title": "整理整頓を保つ",
+      "description": "最も重要なことを追跡する"
+    },
+    "slide3": {
+      "title": "目標を達成する",
+      "description": "私たちはあなたの成功をお手伝いします"
+    }
+  },
+  "permissions": {
+    "title": "権限",
+    "subtitle": "最高のエクスペリエンスを提供するにはいくつかの許可が必要です",
+    "location": {
+      "title": "位置",
+      "description": "位置情報ベースの機能を提供する",
+      "enable": "位置情報を有効にする"
+    },
+    "camera": {
+      "title": "カメラ",
+      "description": "写真を撮って書類をスキャンする",
+      "enable": "カメラを有効にする"
+    },
+    "photos": {
+      "title": "写真",
+      "description": "写真ライブラリにアクセスする",
+      "enable": "写真を有効にする"
+    },
+    "later": "これは後でやります",
+    "continue": "続く"
+  },
+  "personalization": {
+    "title": "エクスペリエンスをパーソナライズする",
+    "subtitle": "あなた自身について教えてください",
+    "goals": {
+      "title": "あなたの目標は何ですか?",
+      "options": [
+        "健康を保つ",
+        "生産性を高める",
+        "新しいスキルを学ぶ",
+        "他の人とつながる",
+        "楽しむ"
+      ]
+    },
+    "preferences": {
+      "title": "好みの設定をする",
+      "theme": "テーマの選択",
+      "language": "言語を選択してください"
+    },
+    "continue": "続く"
+  },
+  "complete": {
+    "title": "準備は完了です!",
+    "subtitle": "始めましょう!",
+    "startButton": "アプリの使用を開始する"
+  },
+  "navigation": {
+    "next": "次",
+    "back": "戻る",
+    "skip": "スキップ",
+    "done": "終わり"
+  }
+}

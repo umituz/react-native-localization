@@ -1,0 +1,140 @@
+{
+  "days": {
+    "full": {
+      "monday": "सोमवार",
+      "tuesday": "मंगलवार",
+      "wednesday": "बुधवार",
+      "thursday": "गुरुवार",
+      "friday": "शुक्रवार",
+      "saturday": "शनिवार",
+      "sunday": "रविवार"
+    },
+    "short": {
+      "mon": "सोम",
+      "tue": "मंगल",
+      "wed": "बुध",
+      "thu": "गुरु",
+      "fri": "शुक्र",
+      "sat": "बैठा",
+      "sun": "सूरज"
+    },
+    "abbreviated": {
+      "m": "एम",
+      "t": "टी",
+      "w": "डब्ल्यू",
+      "th": "वां",
+      "f": "एफ",
+      "sa": "एसए",
+      "su": "र"
+    }
+  },
+  "months": {
+    "full": {
+      "january": "जनवरी",
+      "february": "फ़रवरी",
+      "march": "मार्च",
+      "april": "अप्रैल",
+      "may": "मई",
+      "june": "जून",
+      "july": "जुलाई",
+      "august": "अगस्त",
+      "september": "सितम्बर",
+      "october": "अक्टूबर",
+      "november": "नवंबर",
+      "december": "दिसंबर"
+    },
+    "short": {
+      "jan": "जनवरी",
+      "feb": "फ़रवरी",
+      "mar": "मार्च",
+      "apr": "अप्रैल",
+      "may": "मई",
+      "jun": "जून",
+      "jul": "जुलाई",
+      "aug": "अगस्त",
+      "sep": "सितम्बर",
+      "oct": "अक्टूबर",
+      "nov": "नवंबर",
+      "dec": "दिसम्बर"
+    }
+  },
+  "relative": {
+    "now": "अब",
+    "justNow": "बस अब",
+    "today": "आज",
+    "yesterday": "कल",
+    "tomorrow": "कल",
+    "thisWeek": "इस सप्ताह",
+    "lastWeek": "पिछले सप्ताह",
+    "nextWeek": "अगले सप्ताह",
+    "thisMonth": "इस महीने",
+    "lastMonth": "पिछला महीना",
+    "nextMonth": "अगले महीने",
+    "thisYear": "इस साल",
+    "lastYear": "पिछले साल",
+    "nextYear": "अगले साल",
+    "ago": "पहले",
+    "fromNow": "अभी से",
+    "in": "में"
+  },
+  "units": {
+    "singular": {
+      "second": "दूसरा",
+      "minute": "मिनट",
+      "hour": "घंटा",
+      "day": "दिन",
+      "week": "सप्ताह",
+      "month": "महीना",
+      "year": "वर्ष"
+    },
+    "plural": {
+      "seconds": "सेकंड",
+      "minutes": "मिनट",
+      "hours": "घंटे",
+      "days": "दिन",
+      "weeks": "हफ्तों",
+      "months": "महीने",
+      "years": "साल"
+    },
+    "short": {
+      "s": "एस",
+      "m": "एम",
+      "h": "एच",
+      "d": "डी",
+      "w": "डब्ल्यू",
+      "mo": "एमओ",
+      "y": "य"
+    }
+  },
+  "periods": {
+    "am": "पूर्वाह्न",
+    "pm": "बजे",
+    "morning": "सुबह",
+    "afternoon": "दोपहर",
+    "evening": "शाम",
+    "night": "रात",
+    "midnight": "मध्यरात्रि",
+    "noon": "दोपहर"
+  },
+  "formats": {
+    "date": "तारीख",
+    "time": "समय",
+    "datetime": "दिनांक समय",
+    "duration": "अवधि",
+    "startDate": "आरंभ करने की तिथि",
+    "endDate": "अंतिम तिथि",
+    "startTime": "समय शुरू",
+    "endTime": "अंत समय",
+    "selectDate": "तारीख़ चुनें",
+    "selectTime": "समय चुनें"
+  },
+  "actions": {
+    "setDate": "तिथि निर्धारित करें",
+    "setTime": "निर्धारित समय",
+    "clearDate": "स्पष्ट तिथि",
+    "clearTime": "साफ़ समय",
+    "confirmDate": "दिनांक की पुष्टि करें",
+    "confirmTime": "समय की पुष्टि करें",
+    "cancel": "रद्द करना"
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "days": {
+    "full": {
+      "monday": "måndag",
+      "tuesday": "tisdag",
+      "wednesday": "onsdag",
+      "thursday": "torsdag",
+      "friday": "fredag",
+      "saturday": "lördag",
+      "sunday": "söndag"
+    },
+    "short": {
+      "mon": "mån",
+      "tue": "tis",
+      "wed": "ons",
+      "thu": "tors",
+      "fri": "fre",
+      "sat": "lö",
+      "sun": "Sol"
+    },
+    "abbreviated": {
+      "m": "M",
+      "t": "T",
+      "w": "W",
+      "th": "Th",
+      "f": "F",
+      "sa": "Sa",
+      "su": "Su"
+    }
+  },
+  "months": {
+    "full": {
+      "january": "januari",
+      "february": "februari",
+      "march": "mars",
+      "april": "april",
+      "may": "maj",
+      "june": "juni",
+      "july": "juli",
+      "august": "augusti",
+      "september": "september",
+      "october": "oktober",
+      "november": "november",
+      "december": "december"
+    },
+    "short": {
+      "jan": "Jan",
+      "feb": "feb",
+      "mar": "Mar",
+      "apr": "apr",
+      "may": "maj",
+      "jun": "jun",
+      "jul": "jul",
+      "aug": "aug",
+      "sep": "sep",
+      "oct": "okt",
+      "nov": "nov",
+      "dec": "dec"
+    }
+  },
+  "relative": {
+    "now": "Nu",
+    "justNow": "Just nu",
+    "today": "I dag",
+    "yesterday": "I går",
+    "tomorrow": "I morgon",
+    "thisWeek": "Denna vecka",
+    "lastWeek": "Förra veckan",
+    "nextWeek": "Nästa vecka",
+    "thisMonth": "Denna månad",
+    "lastMonth": "Förra månaden",
+    "nextMonth": "Nästa månad",
+    "thisYear": "I år",
+    "lastYear": "Förra året",
+    "nextYear": "Nästa år",
+    "ago": "sedan",
+    "fromNow": "från och med nu",
+    "in": "i"
+  },
+  "units": {
+    "singular": {
+      "second": "andra",
+      "minute": "minut",
+      "hour": "timme",
+      "day": "dag",
+      "week": "vecka",
+      "month": "månad",
+      "year": "år"
+    },
+    "plural": {
+      "seconds": "sekunder",
+      "minutes": "minuter",
+      "hours": "timmar",
+      "days": "dagar",
+      "weeks": "veckor",
+      "months": "månader",
+      "years": "år"
+    },
+    "short": {
+      "s": "s",
+      "m": "m",
+      "h": "h",
+      "d": "d",
+      "w": "w",
+      "mo": "mo",
+      "y": "y"
+    }
+  },
+  "periods": {
+    "am": "AM",
+    "pm": "PM",
+    "morning": "Morgon",
+    "afternoon": "Eftermiddag",
+    "evening": "Kväll",
+    "night": "Natt",
+    "midnight": "Midnatt",
+    "noon": "Middag"
+  },
+  "formats": {
+    "date": "Datum",
+    "time": "Tid",
+    "datetime": "Datum & tid",
+    "duration": "Varaktighet",
+    "startDate": "Startdatum",
+    "endDate": "Slutdatum",
+    "startTime": "Starttid",
+    "endTime": "Sluttid",
+    "selectDate": "Välj Datum",
+    "selectTime": "Välj Tid"
+  },
+  "actions": {
+    "setDate": "Ställ in datum",
+    "setTime": "Ställ in tid",
+    "clearDate": "Rensa datum",
+    "clearTime": "Rensa tid",
+    "confirmDate": "Bekräfta datum",
+    "confirmTime": "Bekräfta tid",
+    "cancel": "Avboka"
+  }
+}

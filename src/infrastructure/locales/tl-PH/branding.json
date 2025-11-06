@@ -1,0 +1,9 @@
+{
+  "appName": "Flashcard Maker",
+  "tagline": "Maligayang pagdating sa iyong paglalakbay",
+  "poweredBy": "Pinapagana ng pabrika ng umituz app",
+  "version": "Bersyon {{bersyon}}",
+  "splash": {
+    "loading": "Naglo -load ..."
+  }
+}

@@ -1,0 +1,287 @@
+{
+  "home": {
+    "welcome": "Bienvenue dans Flashcard Maker",
+    "subtitle": "Maîtrisez n'importe quel sujet avec des flashcards interactives",
+    "quickStudy": "Étude rapide",
+    "quickStudyDesc": "Commencez à étudier vos decks récents",
+    "createDeck": "Créer un deck",
+    "createDeckDesc": "Construisez un nouveau jeu de cartes mémoire",
+    "recentActivity": "Activité récente",
+    "noDecksYet": "Vous n'avez pas encore créé de decks",
+    "browseDecks": "Parcourir les platines",
+    "statistics": "Statistiques",
+    "totalDecks": "Total des ponts",
+    "totalCards": "Total des cartes",
+    "studySessions": "Séances d'étude"
+  },
+  "decks": {
+    "noDecks": "Aucun deck trouvé",
+    "noDecksDesc": "Créez votre premier jeu de cartes mémoire pour commencer",
+    "createFirstDeck": "Créer le premier deck",
+    "createDeck": "Créer un deck",
+    "editDeck": "Modifier le deck",
+    "recentlyStudied": "Récemment étudié",
+    "allDecks": "Tous les decks",
+    "easy": "Facile",
+    "medium": "Moyen",
+    "hard": "Dur"
+  },
+  "study": {
+    "noCards": "Aucune carte disponible",
+    "noCardsDesc": "Ajoutez quelques cartes à un jeu pour commencer à étudier",
+    "browseDecks": "Parcourir les platines",
+    "question": "Question",
+    "answer": "Répondre",
+    "showQuestion": "Afficher la question",
+    "showAnswer": "Afficher la réponse",
+    "correct": "Correct",
+    "incorrect": "Incorrect",
+    "skip": "Sauter",
+    "skipped": "Sauté",
+    "studyComplete": "Étude terminée",
+    "wellDone": "Bien joué!",
+    "sessionComplete": "Séance terminée"
+  },
+  "create": {
+    "createDeck": "Créer un deck",
+    "addCards": "Ajouter des cartes",
+    "deckInfo": "Informations sur le pont",
+    "cardInfo": "Informations sur la carte",
+    "deckTitle": "Titre du pont",
+    "deckTitlePlaceholder": "Entrez le titre du deck",
+    "deckDescription": "Description",
+    "deckDescriptionPlaceholder": "Entrez la description du deck",
+    "category": "Catégorie",
+    "selectCategory": "Sélectionnez la catégorie",
+    "cardFront": "Face avant",
+    "cardFrontPlaceholder": "Entrez une question ou un terme",
+    "cardBack": "Face arrière",
+    "cardBackPlaceholder": "Entrez la réponse ou la définition",
+    "difficulty": "Difficulté",
+    "addCard": "Ajouter une carte",
+    "addedCards": "Cartes ajoutées",
+    "saveDeck": "Enregistrer le deck"
+  },
+  "cards": {
+    "noCards": "Aucune carte trouvée",
+    "noCardsDesc": "Créez votre première flashcard pour commencer",
+    "createFirstCard": "Créer la première carte",
+    "createCard": "Créer une carte",
+    "editCard": "Modifier la carte",
+    "selectDeck": "Sélectionnez le pont",
+    "selectDeckPlaceholder": "Choisissez un deck pour cette carte"
+  },
+  "common": {
+    "clearFilter": "Effacer le filtre"
+  },
+  "studyModes": {
+    "classic": "Classique",
+    "matching": "Jeu d'association",
+    "quiz": "Choix multiples",
+    "writing": "Mode d'écriture",
+    "timed": "Défi chronométré",
+    "selectMode": "Sélectionnez le mode étude"
+  },
+  "session": {
+    "complete": "Séance terminée",
+    "accuracy": "Précision",
+    "speed": "Vitesse",
+    "score": "Score",
+    "cardsPerMinute": "cartes/min",
+    "grade": "Grade",
+    "feedback": {
+      "excellent": "Excellent travail ! Vous maîtrisez ce deck !",
+      "great": "Super travail ! Continuez votre bon travail !",
+      "good": "Bon progrès ! Entraînez-vous davantage pour vous améliorer.",
+      "keep_practicing": "Continuez à vous entraîner ! Vous y arrivez.",
+      "keep_studying": "Continuez à étudier ! Relisez ces cartes."
+    }
+  },
+  "rating": {
+    "fail": "Encore",
+    "hard": "Dur",
+    "good": "Bien",
+    "easy": "Facile",
+    "perfect": "Parfait"
+  },
+  "srs": {
+    "dueToday": "À rendre aujourd'hui",
+    "dueCards": "Cartes dues",
+    "nextReview": "Examen suivant",
+    "interval": "Intervalle",
+    "repetitions": "Répétitions",
+    "easeFactor": "Facteur de facilité",
+    "reviewHistory": "Historique des examens",
+    "retention": "Taux de rétention",
+    "again": "Encore",
+    "hard": "Dur",
+    "good": "Bien",
+    "easy": "Facile"
+  },
+  "media": {
+    "image": "Image",
+    "chooseImage": "Choisir une image",
+    "takePhoto": "Prendre une photo",
+    "permissionDenied": "Autorisation refusée pour accéder aux photos",
+    "cameraPermissionDenied": "Autorisation refusée pour accéder à la caméra",
+    "imageFailed": "Échec du chargement de l'image",
+    "cameraFailed": "Impossible d'ouvrir la caméra",
+    "audio": "Audio",
+    "record": "Enregistrer l'audio",
+    "recording": "Enregistrement...",
+    "stopRecording": "Arrêter l'enregistrement",
+    "play": "Jouer",
+    "stop": "Arrêt",
+    "speak": "Parler",
+    "audioPermissionDenied": "Autorisation refusée pour enregistrer de l'audio",
+    "recordingFailed": "Échec de l'enregistrement audio",
+    "playbackFailed": "Échec de la lecture audio",
+    "ttsFailed": "La synthèse vocale a échoué",
+    "noText": "Pas de texte pour parler"
+  },
+  "import": {
+    "title": "Importer une plate-forme",
+    "chooseFormat": "Choisir le format",
+    "csv": "CSV (Excel)",
+    "json": "JSON",
+    "quizlet": "Quizlet",
+    "selectFile": "Sélectionnez un fichier",
+    "importing": "Importation...",
+    "success": "{{count}} cartes importées avec succès",
+    "errors": "{{count}} erreurs se sont produites",
+    "viewErrors": "Afficher les erreurs"
+  },
+  "export": {
+    "title": "Exporter la plate-forme",
+    "chooseFormat": "Choisir le format",
+    "csv": "CSV (Excel)",
+    "json": "JSON (complet)",
+    "quizlet": "Quizlet",
+    "includeStats": "Inclure les statistiques",
+    "includeMedia": "Inclure les médias",
+    "exporting": "Exportation...",
+    "success": "Deck exporté avec succès"
+  },
+  "statistics": {
+    "title": "Statistiques",
+    "overview": "Aperçu",
+    "totalCards": "Total des cartes",
+    "cardsStudied": "Cartes étudiées",
+    "totalReviews": "Total des avis",
+    "correctReviews": "Commentaires corrects",
+    "accuracy": "Précision",
+    "averageTimePerCard": "Temps moyen par carte",
+    "totalStudyTime": "Durée totale d'étude",
+    "studySessions": "Séances d'étude",
+    "streak": {
+      "current": "Série actuelle",
+      "longest": "La plus longue séquence",
+      "days": "jours"
+    },
+    "charts": {
+      "daily": "Tous les jours",
+      "weekly": "Hebdomadaire",
+      "monthly": "Mensuel",
+      "performance": "Performance",
+      "activity": "Activité"
+    }
+  },
+  "sharing": {
+    "title": "Partager le pont",
+    "generateCode": "Générer un code de partage",
+    "shareCode": "Partager le code",
+    "qrCode": "Code QR",
+    "copyCode": "Copier le code",
+    "codeCopied": "Code copié dans le presse-papier",
+    "shareAsFile": "Partager en tant que fichier",
+    "shareAsLink": "Partager sous forme de lien",
+    "importCode": "Code d'importation",
+    "enterCode": "Entrez le code à 6 chiffres",
+    "invalidCode": "Code de partage invalide",
+    "importing": "Importation du deck...",
+    "importSuccess": "Deck importé avec succès",
+    "downloadCount": "Téléchargements",
+    "makePublic": "Rendre public",
+    "makePrivate": "Rendre privé"
+  },
+  "gamification": {
+    "profile": {
+      "level": "Niveau",
+      "xp": "XP",
+      "rank": "Rang",
+      "progress": "Progression vers le niveau suivant",
+      "totalXP": "XP total gagné"
+    },
+    "ranks": {
+      "novice": "Novice",
+      "apprentice": "Apprenti",
+      "scholar": "Savant",
+      "expert": "Expert",
+      "master": "Maître",
+      "grandmaster": "Grand maître",
+      "legend": "Légende"
+    },
+    "achievements": {
+      "title": "Réalisations",
+      "unlocked": "Débloqué",
+      "locked": "Fermé",
+      "progress": "Progrès",
+      "reward": "Récompense",
+      "unlockedAt": "Débloqué le",
+      "categories": {
+        "study": "Étude",
+        "cards": "Cartes",
+        "decks": "Ponts",
+        "streak": "Traînée",
+        "special": "Spécial"
+      }
+    },
+    "challenges": {
+      "title": "Défis quotidiens",
+      "today": "Les défis d'aujourd'hui",
+      "completed": "Complété",
+      "inProgress": "En cours",
+      "reward": "Récompense",
+      "goal": "But",
+      "progress": "Progrès"
+    },
+    "xpRewards": {
+      "cardReviewed": "+{{amount}} XP – Carte révisée",
+      "cardCorrect": "+{{amount}} XP – Bonne réponse",
+      "cardPerfect": "+{{amount}} XP - Parfait !",
+      "deckCreated": "+{{amount}} XP - Deck créé",
+      "studySession": "+{{amount}} XP – Séance d'étude",
+      "dailyGoal": "+{{amount}} XP – Objectif quotidien atteint",
+      "streakDay": "+{{amount}} XP – Jour de séquence",
+      "achievementUnlocked": "+{{amount}} XP – Succès débloqué"
+    }
+  },
+  "matching": {
+    "title": "Jeu d'association",
+    "instructions": "Faites correspondre les cartes en appuyant sur des paires",
+    "matches": "Matchs",
+    "attempts": "Tentatives",
+    "timeElapsed": "Temps",
+    "perfect": "Correspondance parfaite !",
+    "tryAgain": "Essayer à nouveau"
+  },
+  "quiz": {
+    "title": "Quiz à choix multiples",
+    "question": "Question",
+    "chooseAnswer": "Choisissez la bonne réponse",
+    "correct": "Correct!",
+    "incorrect": "Incorrect",
+    "showAnswer": "Afficher la réponse",
+    "nextQuestion": "Question suivante"
+  },
+  "writing": {
+    "title": "Mode d'écriture",
+    "instructions": "Tapez la réponse",
+    "yourAnswer": "Votre Réponse",
+    "correctAnswer": "Bonne réponse",
+    "similarity": "Similarité",
+    "strictMode": "Mode strict",
+    "fuzzyMatching": "Correspondance floue",
+    "check": "Vérifier la réponse"
+  }
+}

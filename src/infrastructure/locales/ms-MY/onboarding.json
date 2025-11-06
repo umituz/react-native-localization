@@ -1,0 +1,76 @@
+{
+  "skip": "Langkau",
+  "getStarted": "Bermula",
+  "welcome": {
+    "title": "Selamat datang!",
+    "subtitle": "Perjalanan anda bermula di sini",
+    "getStarted": "Bermula",
+    "skip": "Langkau"
+  },
+  "slides": {
+    "slide1": {
+      "title": "Cari ciri -ciri yang menakjubkan",
+      "description": "Terokai semua aplikasi kami yang ditawarkan"
+    },
+    "slide2": {
+      "title": "Tetap teratur",
+      "description": "Menjejaki apa yang paling penting"
+    },
+    "slide3": {
+      "title": "Mencapai matlamat anda",
+      "description": "Kami di sini untuk membantu anda berjaya"
+    }
+  },
+  "permissions": {
+    "title": "Keizinan",
+    "subtitle": "Kami memerlukan beberapa kebenaran untuk memberikan pengalaman terbaik",
+    "location": {
+      "title": "Lokasi",
+      "description": "Menyediakan ciri-ciri berasaskan lokasi",
+      "enable": "Dayakan Lokasi"
+    },
+    "camera": {
+      "title": "Kamera",
+      "description": "Ambil gambar dan imbas dokumen",
+      "enable": "Dayakan kamera"
+    },
+    "photos": {
+      "title": "Gambar",
+      "description": "Akses perpustakaan foto anda",
+      "enable": "Dayakan gambar"
+    },
+    "later": "Saya akan buat ini kemudian",
+    "continue": "Teruskan"
+  },
+  "personalization": {
+    "title": "Peribadikan pengalaman anda",
+    "subtitle": "Beritahu kami mengenai diri anda",
+    "goals": {
+      "title": "Apakah matlamat anda?",
+      "options": [
+        "Tetap sihat",
+        "Menjadi produktif",
+        "Belajar kemahiran baru",
+        "Berhubung dengan orang lain",
+        "Bersenang -senang"
+      ]
+    },
+    "preferences": {
+      "title": "Tetapkan keutamaan anda",
+      "theme": "Pilih tema",
+      "language": "Pilih bahasa"
+    },
+    "continue": "Teruskan"
+  },
+  "complete": {
+    "title": "Anda sudah siap!",
+    "subtitle": "Mari mulakan!",
+    "startButton": "Mula menggunakan aplikasi"
+  },
+  "navigation": {
+    "next": "Seterusnya",
+    "back": "Kembali",
+    "skip": "Langkau",
+    "done": "Selesai"
+  }
+}

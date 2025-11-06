@@ -1,0 +1,9 @@
+{
+  "appName": "Trình tạo Flashcard",
+  "tagline": "Chào mừng đến với cuộc hành trình của bạn",
+  "poweredBy": "Được cung cấp bởi Nhà máy ứng dụng UmitUZ",
+  "version": "Phiên bản {{version}}",
+  "splash": {
+    "loading": "Đang tải..."
+  }
+}

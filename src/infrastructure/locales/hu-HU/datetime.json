@@ -1,0 +1,140 @@
+{
+  "days": {
+    "full": {
+      "monday": "hétfő",
+      "tuesday": "kedd",
+      "wednesday": "szerda",
+      "thursday": "csütörtök",
+      "friday": "péntek",
+      "saturday": "szombat",
+      "sunday": "vasárnap"
+    },
+    "short": {
+      "mon": "Hétfő",
+      "tue": "kedd",
+      "wed": "Házasodik",
+      "thu": "cs",
+      "fri": "Péntek",
+      "sat": "Ült",
+      "sun": "Nap"
+    },
+    "abbreviated": {
+      "m": "M",
+      "t": "T",
+      "w": "W",
+      "th": "Th",
+      "f": "F",
+      "sa": "Sa",
+      "su": "Su"
+    }
+  },
+  "months": {
+    "full": {
+      "january": "január",
+      "february": "február",
+      "march": "március",
+      "april": "április",
+      "may": "május",
+      "june": "június",
+      "july": "július",
+      "august": "augusztus",
+      "september": "szeptember",
+      "october": "október",
+      "november": "november",
+      "december": "december"
+    },
+    "short": {
+      "jan": "jan",
+      "feb": "Február",
+      "mar": "márc",
+      "apr": "Április",
+      "may": "május",
+      "jun": "Június",
+      "jul": "Július",
+      "aug": "Augusztus",
+      "sep": "szept",
+      "oct": "Október",
+      "nov": "November",
+      "dec": "December"
+    }
+  },
+  "relative": {
+    "now": "Jelenleg",
+    "justNow": "Éppen most",
+    "today": "Ma",
+    "yesterday": "Tegnap",
+    "tomorrow": "Holnap",
+    "thisWeek": "Ezen a héten",
+    "lastWeek": "Múlt héten",
+    "nextWeek": "Jövő héten",
+    "thisMonth": "Ebben a hónapban",
+    "lastMonth": "Múlt hónapban",
+    "nextMonth": "Következő hónapban",
+    "thisYear": "Idén",
+    "lastYear": "Tavaly",
+    "nextYear": "Jövőre",
+    "ago": "ezelőtt",
+    "fromNow": "mostantól fogva",
+    "in": "be"
+  },
+  "units": {
+    "singular": {
+      "second": "második",
+      "minute": "perc",
+      "hour": "óra",
+      "day": "nap",
+      "week": "hét",
+      "month": "hónap",
+      "year": "év"
+    },
+    "plural": {
+      "seconds": "másodpercig",
+      "minutes": "jegyzőkönyv",
+      "hours": "óra",
+      "days": "napokon",
+      "weeks": "hétig",
+      "months": "hónap",
+      "years": "év"
+    },
+    "short": {
+      "s": "s",
+      "m": "m",
+      "h": "h",
+      "d": "d",
+      "w": "w",
+      "mo": "mo",
+      "y": "y"
+    }
+  },
+  "periods": {
+    "am": "AM",
+    "pm": "PM",
+    "morning": "Reggel",
+    "afternoon": "Délután",
+    "evening": "Este",
+    "night": "Éjszaka",
+    "midnight": "Éjfél",
+    "noon": "Dél"
+  },
+  "formats": {
+    "date": "Dátum",
+    "time": "Idő",
+    "datetime": "Dátum és idő",
+    "duration": "Időtartam",
+    "startDate": "Kezdés dátuma",
+    "endDate": "Befejezés dátuma",
+    "startTime": "Kezdési idő",
+    "endTime": "Vége",
+    "selectDate": "Válassza a Dátum lehetőséget",
+    "selectTime": "Válassza az Idő lehetőséget"
+  },
+  "actions": {
+    "setDate": "Dátum beállítása",
+    "setTime": "Idő beállítása",
+    "clearDate": "Dátum törlése",
+    "clearTime": "Tiszta idő",
+    "confirmDate": "Dátum megerősítése",
+    "confirmTime": "Erősítse meg az időt",
+    "cancel": "Mégse"
+  }
+}

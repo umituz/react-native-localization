@@ -1,0 +1,287 @@
+{
+  "home": {
+    "welcome": "Tervetuloa Flashcard Makeriin",
+    "subtitle": "Hallitse mitä tahansa aihetta interaktiivisilla muistikorteilla",
+    "quickStudy": "Pikatutkimus",
+    "quickStudyDesc": "Aloita viimeisimpien kansiesi tutkiminen",
+    "createDeck": "Luo kansi",
+    "createDeckDesc": "Rakenna uusi korttipakka",
+    "recentActivity": "Viimeaikainen toiminta",
+    "noDecksYet": "Et ole vielä luonut yhtään pakkaa",
+    "browseDecks": "Selaa kansia",
+    "statistics": "Tilastot",
+    "totalDecks": "Pakkoja yhteensä",
+    "totalCards": "Kortteja yhteensä",
+    "studySessions": "Opintojaksot"
+  },
+  "decks": {
+    "noDecks": "Dekkejä ei löytynyt",
+    "noDecksDesc": "Aloita luomalla ensimmäinen muistikorttipakkasi",
+    "createFirstDeck": "Luo ensimmäinen kansi",
+    "createDeck": "Luo kansi",
+    "editDeck": "Muokkaa pakkaa",
+    "recentlyStudied": "Äskettäin opiskellut",
+    "allDecks": "Kaikki kannet",
+    "easy": "Helppo",
+    "medium": "Keskikokoinen",
+    "hard": "Kovaa"
+  },
+  "study": {
+    "noCards": "Ei kortteja saatavilla",
+    "noCardsDesc": "Lisää kortteja pakkaan aloittaaksesi opiskelun",
+    "browseDecks": "Selaa kansia",
+    "question": "Kysymys",
+    "answer": "Vastaus",
+    "showQuestion": "Näytä kysymys",
+    "showAnswer": "Näytä vastaus",
+    "correct": "Korjata",
+    "incorrect": "Väärin",
+    "skip": "Ohita",
+    "skipped": "Ohitettu",
+    "studyComplete": "Tutkimus valmis",
+    "wellDone": "Hyvin tehty!",
+    "sessionComplete": "Istunto valmis"
+  },
+  "create": {
+    "createDeck": "Luo kansi",
+    "addCards": "Lisää kortteja",
+    "deckInfo": "Kannen tiedot",
+    "cardInfo": "Kortin tiedot",
+    "deckTitle": "Kannen otsikko",
+    "deckTitlePlaceholder": "Anna kannen otsikko",
+    "deckDescription": "Kuvaus",
+    "deckDescriptionPlaceholder": "Anna kannen kuvaus",
+    "category": "Luokka",
+    "selectCategory": "Valitse kategoria",
+    "cardFront": "Etupuoli",
+    "cardFrontPlaceholder": "Kirjoita kysymys tai termi",
+    "cardBack": "Takapuoli",
+    "cardBackPlaceholder": "Anna vastaus tai määritelmä",
+    "difficulty": "Vaikeus",
+    "addCard": "Lisää kortti",
+    "addedCards": "Lisätyt kortit",
+    "saveDeck": "Tallenna kansi"
+  },
+  "cards": {
+    "noCards": "Kortteja ei löytynyt",
+    "noCardsDesc": "Aloita luomalla ensimmäinen muistikorttisi",
+    "createFirstCard": "Luo ensimmäinen kortti",
+    "createCard": "Luo kortti",
+    "editCard": "Muokkaa korttia",
+    "selectDeck": "Valitse Deck",
+    "selectDeckPlaceholder": "Valitse tälle kortille pakka"
+  },
+  "common": {
+    "clearFilter": "Tyhjennä suodatin"
+  },
+  "studyModes": {
+    "classic": "Klassinen",
+    "matching": "Vastaava peli",
+    "quiz": "Monivalinta",
+    "writing": "Kirjoitustila",
+    "timed": "Ajastettu haaste",
+    "selectMode": "Valitse Opiskelutila"
+  },
+  "session": {
+    "complete": "Istunto valmis",
+    "accuracy": "Tarkkuus",
+    "speed": "Nopeus",
+    "score": "Pisteet",
+    "cardsPerMinute": "kortit/min",
+    "grade": "Luokka",
+    "feedback": {
+      "excellent": "Erinomaista työtä! Olet hallinnut tämän kannen!",
+      "great": "Hienoa työtä! Jatka samaan malliin!",
+      "good": "Hyvää edistystä! Harjoittele enemmän parantaaksesi.",
+      "keep_practicing": "Jatka harjoittelua! Olet tulossa perille.",
+      "keep_studying": "Jatka opiskelua! Tarkista nämä kortit uudelleen."
+    }
+  },
+  "rating": {
+    "fail": "Uudelleen",
+    "hard": "Kovaa",
+    "good": "Hyvä",
+    "easy": "Helppo",
+    "perfect": "Täydellinen"
+  },
+  "srs": {
+    "dueToday": "Eräpäivä tänään",
+    "dueCards": "Erääntyvät kortit",
+    "nextReview": "Seuraava arvostelu",
+    "interval": "Intervalli",
+    "repetitions": "Toistoja",
+    "easeFactor": "Helppoustekijä",
+    "reviewHistory": "Tarkista historia",
+    "retention": "Säilytysprosentti",
+    "again": "Uudelleen",
+    "hard": "Kovaa",
+    "good": "Hyvä",
+    "easy": "Helppo"
+  },
+  "media": {
+    "image": "Kuva",
+    "chooseImage": "Valitse Kuva",
+    "takePhoto": "Ota valokuva",
+    "permissionDenied": "Kuvien käyttölupa evätty",
+    "cameraPermissionDenied": "Kameran käyttölupa evätty",
+    "imageFailed": "Kuvan lataaminen epäonnistui",
+    "cameraFailed": "Kameran avaaminen epäonnistui",
+    "audio": "Audio",
+    "record": "Äänitä ääni",
+    "recording": "Tallennetaan...",
+    "stopRecording": "Lopeta tallennus",
+    "play": "Pelata",
+    "stop": "Stop",
+    "speak": "Puhua",
+    "audioPermissionDenied": "Äänen tallennus evätty",
+    "recordingFailed": "Äänen tallennus epäonnistui",
+    "playbackFailed": "Äänen toistaminen epäonnistui",
+    "ttsFailed": "Tekstistä puheeksi - epäonnistui",
+    "noText": "Ei tekstiä puhuttavaksi"
+  },
+  "import": {
+    "title": "Tuo kansi",
+    "chooseFormat": "Valitse Muoto",
+    "csv": "CSV (Excel)",
+    "json": "JSON",
+    "quizlet": "Quizlet",
+    "selectFile": "Valitse Tiedosto",
+    "importing": "Tuodaan...",
+    "success": "{{count}} kortin tuonti onnistui",
+    "errors": "Tapahtui {{count}} virhettä",
+    "viewErrors": "Näytä virheet"
+  },
+  "export": {
+    "title": "Vie kansi",
+    "chooseFormat": "Valitse Muoto",
+    "csv": "CSV (Excel)",
+    "json": "JSON (täydellinen)",
+    "quizlet": "Quizlet",
+    "includeStats": "Sisällytä tilastot",
+    "includeMedia": "Sisällytä media",
+    "exporting": "Viedään...",
+    "success": "Kannen vienti onnistui"
+  },
+  "statistics": {
+    "title": "Tilastot",
+    "overview": "Yleiskatsaus",
+    "totalCards": "Kortteja yhteensä",
+    "cardsStudied": "Kortit opiskellut",
+    "totalReviews": "Arvostelut yhteensä",
+    "correctReviews": "Oikeat arvostelut",
+    "accuracy": "Tarkkuus",
+    "averageTimePerCard": "Keskimääräinen aika korttia kohti",
+    "totalStudyTime": "Opiskeluaika yhteensä",
+    "studySessions": "Opintojaksot",
+    "streak": {
+      "current": "Nykyinen putki",
+      "longest": "Pisin putki",
+      "days": "päivää"
+    },
+    "charts": {
+      "daily": "Päivittäin",
+      "weekly": "Viikoittain",
+      "monthly": "Kuukausittain",
+      "performance": "Suorituskyky",
+      "activity": "Toiminta"
+    }
+  },
+  "sharing": {
+    "title": "Jaa kansi",
+    "generateCode": "Luo jakokoodi",
+    "shareCode": "Jaa koodi",
+    "qrCode": "QR-koodi",
+    "copyCode": "Kopioi koodi",
+    "codeCopied": "Koodi kopioitu leikepöydälle",
+    "shareAsFile": "Jaa tiedostona",
+    "shareAsLink": "Jaa linkkinä",
+    "importCode": "Tuo koodi",
+    "enterCode": "Syötä 6-numeroinen koodi",
+    "invalidCode": "Virheellinen jakokoodi",
+    "importing": "Tuodaan pakkaa...",
+    "importSuccess": "Pakan tuonti onnistui",
+    "downloadCount": "Lataukset",
+    "makePublic": "Julkistaa",
+    "makePrivate": "Tee yksityiseksi"
+  },
+  "gamification": {
+    "profile": {
+      "level": "Taso",
+      "xp": "XP",
+      "rank": "Sijoitus",
+      "progress": "Edistyminen seuraavalle tasolle",
+      "totalXP": "Ansaittu XP yhteensä"
+    },
+    "ranks": {
+      "novice": "Noviisi",
+      "apprentice": "Oppipoika",
+      "scholar": "Tutkija",
+      "expert": "Asiantuntija",
+      "master": "Hallita",
+      "grandmaster": "Suurmestari",
+      "legend": "Legenda"
+    },
+    "achievements": {
+      "title": "Saavutukset",
+      "unlocked": "Avattu",
+      "locked": "Lukittu",
+      "progress": "Edistyminen",
+      "reward": "Palkkio",
+      "unlockedAt": "Avattu päälle",
+      "categories": {
+        "study": "Opiskelu",
+        "cards": "Kortit",
+        "decks": "Kannet",
+        "streak": "Viiva",
+        "special": "Erityinen"
+      }
+    },
+    "challenges": {
+      "title": "Päivittäiset haasteet",
+      "today": "Tämän päivän haasteet",
+      "completed": "Valmis",
+      "inProgress": "Käynnissä",
+      "reward": "Palkkio",
+      "goal": "Maali",
+      "progress": "Edistyminen"
+    },
+    "xpRewards": {
+      "cardReviewed": "+{{amount}} XP - kortti tarkistettu",
+      "cardCorrect": "+{{amount}} XP - Oikea vastaus",
+      "cardPerfect": "+{{amount}} XP - täydellinen!",
+      "deckCreated": "+{{amount}} XP - Pakki luotu",
+      "studySession": "+{{amount}} XP - Opintojakso",
+      "dailyGoal": "+{{amount}} XP - Päivittäinen tavoite saavutettu",
+      "streakDay": "+{{amount}} XP - putkipäivä",
+      "achievementUnlocked": "+{{amount}} XP - saavutus avattu"
+    }
+  },
+  "matching": {
+    "title": "Vastaava peli",
+    "instructions": "Yhdistä kortit napauttamalla pareja",
+    "matches": "Ottelut",
+    "attempts": "Yritykset",
+    "timeElapsed": "Aika",
+    "perfect": "Täydellinen ottelu!",
+    "tryAgain": "Yritä uudelleen"
+  },
+  "quiz": {
+    "title": "Monivalintakilpailu",
+    "question": "Kysymys",
+    "chooseAnswer": "Valitse oikea vastaus",
+    "correct": "Korjata!",
+    "incorrect": "Väärin",
+    "showAnswer": "Näytä vastaus",
+    "nextQuestion": "Seuraava kysymys"
+  },
+  "writing": {
+    "title": "Kirjoitustila",
+    "instructions": "Kirjoita vastaus",
+    "yourAnswer": "Sinun vastauksesi",
+    "correctAnswer": "Oikea vastaus",
+    "similarity": "Samankaltaisuus",
+    "strictMode": "Tiukka tila",
+    "fuzzyMatching": "Sumea vastaavuus",
+    "check": "Tarkista vastaus"
+  }
+}

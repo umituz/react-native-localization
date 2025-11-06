@@ -1,0 +1,76 @@
+{
+  "skip": "Sauter",
+  "getStarted": "Commencer",
+  "welcome": {
+    "title": "Accueillir!",
+    "subtitle": "Votre voyage commence ici",
+    "getStarted": "Commencer",
+    "skip": "Sauter"
+  },
+  "slides": {
+    "slide1": {
+      "title": "Découvrez des fonctionnalités étonnantes",
+      "description": "Explorez tout ce que notre application a à offrir"
+    },
+    "slide2": {
+      "title": "Restez organisé",
+      "description": "Gardez une trace de ce qui compte le plus"
+    },
+    "slide3": {
+      "title": "Atteignez vos objectifs",
+      "description": "Nous sommes là pour vous aider à réussir"
+    }
+  },
+  "permissions": {
+    "title": "Autorisations",
+    "subtitle": "Nous avons besoin de certaines autorisations pour offrir la meilleure expérience",
+    "location": {
+      "title": "Emplacement",
+      "description": "Fournir des fonctionnalités basées sur la localisation",
+      "enable": "Activer la localisation"
+    },
+    "camera": {
+      "title": "Caméra",
+      "description": "Prendre des photos et numériser des documents",
+      "enable": "Activer la caméra"
+    },
+    "photos": {
+      "title": "Photos",
+      "description": "Accédez à votre photothèque",
+      "enable": "Activer les photos"
+    },
+    "later": "je ferai ça plus tard",
+    "continue": "Continuer"
+  },
+  "personalization": {
+    "title": "Personnalisez votre expérience",
+    "subtitle": "Parlez-nous de vous",
+    "goals": {
+      "title": "Quels sont vos objectifs ?",
+      "options": [
+        "Restez en bonne santé",
+        "Soyez productif",
+        "Acquérir de nouvelles compétences",
+        "Connectez-vous avec les autres",
+        "Amusez-vous"
+      ]
+    },
+    "preferences": {
+      "title": "Définissez vos préférences",
+      "theme": "Choisir un thème",
+      "language": "Choisir la langue"
+    },
+    "continue": "Continuer"
+  },
+  "complete": {
+    "title": "Vous êtes prêt !",
+    "subtitle": "Commençons !",
+    "startButton": "Commencez à utiliser l'application"
+  },
+  "navigation": {
+    "next": "Suivant",
+    "back": "Dos",
+    "skip": "Sauter",
+    "done": "Fait"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "skip": "Pular",
+  "getStarted": "Comece",
+  "welcome": {
+    "title": "Bem-vindo!",
+    "subtitle": "Sua jornada começa aqui",
+    "getStarted": "Comece",
+    "skip": "Pular"
+  },
+  "slides": {
+    "slide1": {
+      "title": "Descubra recursos incríveis",
+      "description": "Explore tudo o que nosso aplicativo tem a oferecer"
+    },
+    "slide2": {
+      "title": "Mantenha-se organizado",
+      "description": "Acompanhe o que é mais importante"
+    },
+    "slide3": {
+      "title": "Alcance seus objetivos",
+      "description": "Estamos aqui para ajudá-lo a ter sucesso"
+    }
+  },
+  "permissions": {
+    "title": "Permissões",
+    "subtitle": "Precisamos de algumas permissões para fornecer a melhor experiência",
+    "location": {
+      "title": "Localização",
+      "description": "Fornece recursos baseados em localização",
+      "enable": "Ativar localização"
+    },
+    "camera": {
+      "title": "Câmera",
+      "description": "Tire fotos e digitalize documentos",
+      "enable": "Ativar câmera"
+    },
+    "photos": {
+      "title": "Fotos",
+      "description": "Acesse sua biblioteca de fotos",
+      "enable": "Ativar fotos"
+    },
+    "later": "Farei isso mais tarde",
+    "continue": "Continuar"
+  },
+  "personalization": {
+    "title": "Personalize sua experiência",
+    "subtitle": "Conte-nos sobre você",
+    "goals": {
+      "title": "Quais são seus objetivos?",
+      "options": [
+        "Mantenha-se saudável",
+        "Seja produtivo",
+        "Aprenda novas habilidades",
+        "Conecte-se com outras pessoas",
+        "Divirta-se"
+      ]
+    },
+    "preferences": {
+      "title": "Defina suas preferências",
+      "theme": "Escolha o tema",
+      "language": "Escolha o idioma"
+    },
+    "continue": "Continuar"
+  },
+  "complete": {
+    "title": "Está tudo pronto!",
+    "subtitle": "Vamos começar!",
+    "startButton": "Comece a usar o aplicativo"
+  },
+  "navigation": {
+    "next": "Próximo",
+    "back": "Voltar",
+    "skip": "Pular",
+    "done": "Feito"
+  }
+}

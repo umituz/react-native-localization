@@ -1,0 +1,43 @@
+{
+  "validation": {
+    "required": "Ezt a mezőt kötelező kitölteni",
+    "invalidEmail": "Érvénytelen e-mail formátum",
+    "invalidPhone": "Érvénytelen telefonszám",
+    "invalidUrl": "Érvénytelen URL-formátum",
+    "minLength": "A minimális hossz {{min}} karakter",
+    "maxLength": "A maximális hossza {{max}} karakter",
+    "minValue": "A minimális érték {{min}}",
+    "maxValue": "A maximális érték {{max}}",
+    "mustMatch": "A mezőknek egyeznie kell",
+    "invalidFormat": "Érvénytelen formátum",
+    "invalidDate": "Érvénytelen dátum",
+    "futureDate": "A dátumnak a jövőben kell lennie",
+    "pastDate": "A dátumnak a múltban kell lennie"
+  },
+  "storage": {
+    "saveFailed": "Nem sikerült menteni az adatokat",
+    "loadFailed": "Nem sikerült betölteni az adatokat",
+    "deleteFailed": "Nem sikerült törölni az adatokat",
+    "notFound": "Adat nem található"
+  },
+  "permission": {
+    "denied": "Engedély megtagadva",
+    "notGranted": "Az engedély nem adott",
+    "cameraNotAvailable": "A fényképezőgép nem elérhető",
+    "locationNotAvailable": "A helymeghatározási szolgáltatások nem érhetők el",
+    "microphoneNotAvailable": "Mikrofon nem elérhető",
+    "photosNotAvailable": "A fotótár nem érhető el"
+  },
+  "common": {
+    "somethingWentWrong": "Valami elromlott",
+    "tryAgainLater": "Kérjük, próbálja újra később",
+    "unexpectedError": "Váratlan hiba történt"
+  },
+  "actions": {
+    "dismiss": "Elvetés",
+    "retry": "Próbálja újra",
+    "cancel": "Mégse",
+    "goBack": "Menj vissza",
+    "contactSupport": "Lépjen kapcsolatba az ügyfélszolgálattal"
+  }
+}

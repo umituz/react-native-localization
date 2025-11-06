@@ -1,0 +1,76 @@
+{
+  "skip": "Atlamak",
+  "getStarted": "Başlayın",
+  "welcome": {
+    "title": "Hoş geldin!",
+    "subtitle": "Yolculuğunuz burada başlıyor",
+    "getStarted": "Başlayın",
+    "skip": "Atlamak"
+  },
+  "slides": {
+    "slide1": {
+      "title": "Şaşırtıcı Özellikleri Keşfedin",
+      "description": "Uygulamamızın sunduğu her şeyi keşfedin"
+    },
+    "slide2": {
+      "title": "Düzenli Kalın",
+      "description": "En önemli şeyleri takip edin"
+    },
+    "slide3": {
+      "title": "Hedeflerinize Ulaşın",
+      "description": "Başarılı olmanıza yardımcı olmak için buradayız"
+    }
+  },
+  "permissions": {
+    "title": "İzinler",
+    "subtitle": "En iyi deneyimi sağlamak için bazı izinlere ihtiyacımız var",
+    "location": {
+      "title": "Konum",
+      "description": "Konum tabanlı özellikler sağlayın",
+      "enable": "Konumu Etkinleştir"
+    },
+    "camera": {
+      "title": "Kamera",
+      "description": "Fotoğraf çekin ve belgeleri tarayın",
+      "enable": "Kamerayı Etkinleştir"
+    },
+    "photos": {
+      "title": "Fotoğraflar",
+      "description": "Fotoğraf kitaplığınıza erişin",
+      "enable": "Fotoğrafları Etkinleştir"
+    },
+    "later": "Bunu daha sonra yapacağım",
+    "continue": "Devam etmek"
+  },
+  "personalization": {
+    "title": "Deneyiminizi Kişiselleştirin",
+    "subtitle": "Bize kendinizden bahsedin",
+    "goals": {
+      "title": "Hedefleriniz neler?",
+      "options": [
+        "Sağlıklı kalın",
+        "Üretken olun",
+        "Yeni beceriler öğrenin",
+        "Başkalarıyla bağlantı kurun",
+        "İyi eğlenceler"
+      ]
+    },
+    "preferences": {
+      "title": "Tercihlerinizi ayarlayın",
+      "theme": "Tema Seç",
+      "language": "Dil Seçin"
+    },
+    "continue": "Devam etmek"
+  },
+  "complete": {
+    "title": "Tamamen Hazırsınız!",
+    "subtitle": "Hadi başlayalım!",
+    "startButton": "Uygulamayı Kullanmaya Başlayın"
+  },
+  "navigation": {
+    "next": "Sonraki",
+    "back": "Geri",
+    "skip": "Atlamak",
+    "done": "Tamamlamak"
+  }
+}

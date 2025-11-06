@@ -1,0 +1,287 @@
+{
+  "home": {
+    "welcome": "Chào mừng bạn đến với Flashcard Maker",
+    "subtitle": "Nắm vững bất kỳ chủ đề nào với thẻ ghi chú tương tác",
+    "quickStudy": "Học nhanh",
+    "quickStudyDesc": "Bắt đầu nghiên cứu các bộ bài gần đây của bạn",
+    "createDeck": "Tạo bộ bài",
+    "createDeckDesc": "Xây dựng một bộ thẻ flashcard mới",
+    "recentActivity": "Hoạt động gần đây",
+    "noDecksYet": "Bạn chưa tạo bộ bài nào",
+    "browseDecks": "Duyệt qua bộ bài",
+    "statistics": "Thống kê",
+    "totalDecks": "Tổng số bộ bài",
+    "totalCards": "Tổng số thẻ",
+    "studySessions": "Buổi học"
+  },
+  "decks": {
+    "noDecks": "Không tìm thấy bộ bài nào",
+    "noDecksDesc": "Tạo bộ bài flashcard đầu tiên của bạn để bắt đầu",
+    "createFirstDeck": "Tạo bộ bài đầu tiên",
+    "createDeck": "Tạo bộ bài",
+    "editDeck": "Chỉnh sửa bộ bài",
+    "recentlyStudied": "Đã học gần đây",
+    "allDecks": "Tất cả các bộ bài",
+    "easy": "Dễ",
+    "medium": "Trung bình",
+    "hard": "Cứng"
+  },
+  "study": {
+    "noCards": "Không có thẻ nào",
+    "noCardsDesc": "Thêm một số thẻ vào bộ bài để bắt đầu học",
+    "browseDecks": "Duyệt qua bộ bài",
+    "question": "Câu hỏi",
+    "answer": "Trả lời",
+    "showQuestion": "Hiển thị câu hỏi",
+    "showAnswer": "Hiển thị câu trả lời",
+    "correct": "Chính xác",
+    "incorrect": "Không đúng",
+    "skip": "Nhảy",
+    "skipped": "Đã bỏ qua",
+    "studyComplete": "Nghiên cứu hoàn thành",
+    "wellDone": "Làm tốt!",
+    "sessionComplete": "Phiên hoàn thành"
+  },
+  "create": {
+    "createDeck": "Tạo bộ bài",
+    "addCards": "Thêm thẻ",
+    "deckInfo": "Thông tin bộ bài",
+    "cardInfo": "Thông tin thẻ",
+    "deckTitle": "Tiêu đề bộ bài",
+    "deckTitlePlaceholder": "Nhập tiêu đề bộ bài",
+    "deckDescription": "Sự miêu tả",
+    "deckDescriptionPlaceholder": "Nhập mô tả bộ bài",
+    "category": "Loại",
+    "selectCategory": "Chọn danh mục",
+    "cardFront": "Mặt trước",
+    "cardFrontPlaceholder": "Nhập câu hỏi hoặc thuật ngữ",
+    "cardBack": "Mặt sau",
+    "cardBackPlaceholder": "Nhập câu trả lời hoặc định nghĩa",
+    "difficulty": "Khó khăn",
+    "addCard": "Thêm thẻ",
+    "addedCards": "Thẻ đã thêm",
+    "saveDeck": "Lưu bộ bài"
+  },
+  "cards": {
+    "noCards": "Không tìm thấy thẻ",
+    "noCardsDesc": "Tạo flashcard đầu tiên của bạn để bắt đầu",
+    "createFirstCard": "Tạo thẻ đầu tiên",
+    "createCard": "Tạo thẻ",
+    "editCard": "Chỉnh sửa thẻ",
+    "selectDeck": "Chọn bộ bài",
+    "selectDeckPlaceholder": "Chọn một bộ bài cho lá bài này"
+  },
+  "common": {
+    "clearFilter": "Xóa bộ lọc"
+  },
+  "studyModes": {
+    "classic": "Cổ điển",
+    "matching": "Trò chơi ghép hình",
+    "quiz": "Trắc nghiệm",
+    "writing": "Chế độ viết",
+    "timed": "Thử thách tính giờ",
+    "selectMode": "Chọn chế độ học"
+  },
+  "session": {
+    "complete": "Phiên hoàn thành",
+    "accuracy": "Sự chính xác",
+    "speed": "Tốc độ",
+    "score": "Điểm",
+    "cardsPerMinute": "thẻ/phút",
+    "grade": "Cấp",
+    "feedback": {
+      "excellent": "Công việc tuyệt vời! Bạn đã làm chủ được bộ bài này!",
+      "great": "Làm tốt lắm! Hãy tiếp tục làm tốt công việc của mình nhé!",
+      "good": "Tiến triển tốt! Hãy luyện tập nhiều hơn để tiến bộ hơn.",
+      "keep_practicing": "Hãy tiếp tục luyện tập! Bạn đang đến đó.",
+      "keep_studying": "Hãy tiếp tục học tập! Xem lại các thẻ này một lần nữa."
+    }
+  },
+  "rating": {
+    "fail": "Lại",
+    "hard": "Cứng",
+    "good": "Tốt",
+    "easy": "Dễ",
+    "perfect": "Hoàn hảo"
+  },
+  "srs": {
+    "dueToday": "Đến hạn hôm nay",
+    "dueCards": "Thẻ đến hạn",
+    "nextReview": "Đánh giá tiếp theo",
+    "interval": "Khoảng thời gian",
+    "repetitions": "Sự lặp lại",
+    "easeFactor": "Yếu tố dễ dàng",
+    "reviewHistory": "Xem lại lịch sử",
+    "retention": "Tỷ lệ duy trì",
+    "again": "Lại",
+    "hard": "Cứng",
+    "good": "Tốt",
+    "easy": "Dễ"
+  },
+  "media": {
+    "image": "Hình ảnh",
+    "chooseImage": "Chọn hình ảnh",
+    "takePhoto": "Chụp ảnh",
+    "permissionDenied": "Quyền bị từ chối truy cập ảnh",
+    "cameraPermissionDenied": "Quyền bị từ chối truy cập vào máy ảnh",
+    "imageFailed": "Không thể tải hình ảnh",
+    "cameraFailed": "Không mở được camera",
+    "audio": "Âm thanh",
+    "record": "Ghi âm thanh",
+    "recording": "Đang ghi...",
+    "stopRecording": "Dừng ghi",
+    "play": "Chơi",
+    "stop": "Dừng lại",
+    "speak": "Nói chuyện",
+    "audioPermissionDenied": "Quyền bị từ chối ghi âm thanh",
+    "recordingFailed": "Không thể ghi âm thanh",
+    "playbackFailed": "Không thể phát âm thanh",
+    "ttsFailed": "Chuyển văn bản thành giọng nói không thành công",
+    "noText": "Không có văn bản để nói"
+  },
+  "import": {
+    "title": "Nhập bộ bài",
+    "chooseFormat": "Chọn định dạng",
+    "csv": "CSV (Excel)",
+    "json": "JSON",
+    "quizlet": "Quizlet",
+    "selectFile": "Chọn tệp",
+    "importing": "Đang nhập khẩu...",
+    "success": "Đã nhập thành công {{count}} thẻ",
+    "errors": "Đã xảy ra {{count}} lỗi",
+    "viewErrors": "Xem lỗi"
+  },
+  "export": {
+    "title": "Xuất sàn",
+    "chooseFormat": "Chọn định dạng",
+    "csv": "CSV (Excel)",
+    "json": "JSON (Hoàn thành)",
+    "quizlet": "Quizlet",
+    "includeStats": "Bao gồm số liệu thống kê",
+    "includeMedia": "Bao gồm phương tiện",
+    "exporting": "Đang xuất...",
+    "success": "Đã xuất thành công bộ bài"
+  },
+  "statistics": {
+    "title": "Thống kê",
+    "overview": "Tổng quan",
+    "totalCards": "Tổng số thẻ",
+    "cardsStudied": "Thẻ đã học",
+    "totalReviews": "Tổng số đánh giá",
+    "correctReviews": "Đánh giá đúng",
+    "accuracy": "Sự chính xác",
+    "averageTimePerCard": "Thời gian trung bình trên mỗi thẻ",
+    "totalStudyTime": "Tổng thời gian học",
+    "studySessions": "Buổi học",
+    "streak": {
+      "current": "Chuỗi hiện tại",
+      "longest": "Vệt dài nhất",
+      "days": "ngày"
+    },
+    "charts": {
+      "daily": "Hằng ngày",
+      "weekly": "hàng tuần",
+      "monthly": "hàng tháng",
+      "performance": "Hiệu suất",
+      "activity": "Hoạt động"
+    }
+  },
+  "sharing": {
+    "title": "Chia sẻ sàn",
+    "generateCode": "Tạo mã chia sẻ",
+    "shareCode": "Mã chia sẻ",
+    "qrCode": "Mã QR",
+    "copyCode": "Sao chép mã",
+    "codeCopied": "Đã sao chép mã vào bảng nhớ tạm",
+    "shareAsFile": "Chia sẻ dưới dạng tệp",
+    "shareAsLink": "Chia sẻ dưới dạng liên kết",
+    "importCode": "Mã nhập khẩu",
+    "enterCode": "Nhập mã gồm 6 chữ số",
+    "invalidCode": "Mã chia sẻ không hợp lệ",
+    "importing": "Đang nhập sàn...",
+    "importSuccess": "Bộ bài đã được nhập thành công",
+    "downloadCount": "Tải xuống",
+    "makePublic": "Công khai",
+    "makePrivate": "Đặt ở chế độ riêng tư"
+  },
+  "gamification": {
+    "profile": {
+      "level": "Mức độ",
+      "xp": "XP",
+      "rank": "Thứ hạng",
+      "progress": "Tiến tới cấp độ tiếp theo",
+      "totalXP": "Tổng XP kiếm được"
+    },
+    "ranks": {
+      "novice": "Người mới",
+      "apprentice": "người học việc",
+      "scholar": "học giả",
+      "expert": "Chuyên gia",
+      "master": "Bậc thầy",
+      "grandmaster": "Đại kiện tướng",
+      "legend": "Huyền thoại"
+    },
+    "achievements": {
+      "title": "Thành tích",
+      "unlocked": "Đã mở khóa",
+      "locked": "Đã khóa",
+      "progress": "Tiến triển",
+      "reward": "Phần thưởng",
+      "unlockedAt": "Đã mở khóa vào",
+      "categories": {
+        "study": "Học",
+        "cards": "Thẻ",
+        "decks": "Bộ bài",
+        "streak": "Vệt",
+        "special": "Đặc biệt"
+      }
+    },
+    "challenges": {
+      "title": "Thử thách hàng ngày",
+      "today": "Những thách thức ngày nay",
+      "completed": "Hoàn thành",
+      "inProgress": "Đang tiến hành",
+      "reward": "Phần thưởng",
+      "goal": "Mục tiêu",
+      "progress": "Tiến triển"
+    },
+    "xpRewards": {
+      "cardReviewed": "+{{amount}} XP - Đã xem xét thẻ",
+      "cardCorrect": "+{{số tiền}} XP - Câu trả lời đúng",
+      "cardPerfect": "+{{số tiền}} XP - Hoàn hảo!",
+      "deckCreated": "+{{amount}} XP - Đã tạo bộ bài",
+      "studySession": "+{{amount}} XP - Buổi học",
+      "dailyGoal": "+{{amount}} XP - Đã đạt được mục tiêu hàng ngày",
+      "streakDay": "+{{số tiền}} XP - Ngày liên tiếp",
+      "achievementUnlocked": "+{{amount}} XP - Đã mở khóa thành tích"
+    }
+  },
+  "matching": {
+    "title": "Trò chơi ghép hình",
+    "instructions": "Ghép các thẻ bằng cách chạm vào các cặp",
+    "matches": "Trận đấu",
+    "attempts": "Nỗ lực",
+    "timeElapsed": "Thời gian",
+    "perfect": "Trận đấu hoàn hảo!",
+    "tryAgain": "Thử lại"
+  },
+  "quiz": {
+    "title": "Trắc nghiệm trắc nghiệm",
+    "question": "Câu hỏi",
+    "chooseAnswer": "Chọn câu trả lời đúng",
+    "correct": "Chính xác!",
+    "incorrect": "Không đúng",
+    "showAnswer": "Hiển thị câu trả lời",
+    "nextQuestion": "Câu hỏi tiếp theo"
+  },
+  "writing": {
+    "title": "Chế độ viết",
+    "instructions": "Nhập câu trả lời",
+    "yourAnswer": "Câu trả lời của bạn",
+    "correctAnswer": "Câu trả lời đúng",
+    "similarity": "Sự tương đồng",
+    "strictMode": "Chế độ nghiêm ngặt",
+    "fuzzyMatching": "Kết hợp mờ",
+    "check": "Kiểm tra câu trả lời"
+  }
+}

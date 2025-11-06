@@ -1,0 +1,9 @@
+{
+  "appName": "Flashcard Maker",
+  "tagline": "Bun venit în călătoria ta",
+  "poweredBy": "Produs de UmitUZ App Factory",
+  "version": "Versiunea {{versiunea}}",
+  "splash": {
+    "loading": "Încărcare..."
+  }
+}

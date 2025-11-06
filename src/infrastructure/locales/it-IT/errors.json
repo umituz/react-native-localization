@@ -1,0 +1,43 @@
+{
+  "validation": {
+    "required": "Questo campo è obbligatorio",
+    "invalidEmail": "Formato email non valido",
+    "invalidPhone": "Numero di telefono non valido",
+    "invalidUrl": "Formato URL non valido",
+    "minLength": "La lunghezza minima è di {{min}} caratteri",
+    "maxLength": "La lunghezza massima è di {{max}} caratteri",
+    "minValue": "Il valore minimo è {{min}}",
+    "maxValue": "Il valore massimo è {{max}}",
+    "mustMatch": "I campi devono corrispondere",
+    "invalidFormat": "Formato non valido",
+    "invalidDate": "Data non valida",
+    "futureDate": "La data deve essere futura",
+    "pastDate": "La data deve essere nel passato"
+  },
+  "storage": {
+    "saveFailed": "Impossibile salvare i dati",
+    "loadFailed": "Impossibile caricare i dati",
+    "deleteFailed": "Impossibile eliminare i dati",
+    "notFound": "Dati non trovati"
+  },
+  "permission": {
+    "denied": "Autorizzazione negata",
+    "notGranted": "Autorizzazione non concessa",
+    "cameraNotAvailable": "Fotocamera non disponibile",
+    "locationNotAvailable": "Servizi di localizzazione non disponibili",
+    "microphoneNotAvailable": "Microfono non disponibile",
+    "photosNotAvailable": "Libreria fotografica non disponibile"
+  },
+  "common": {
+    "somethingWentWrong": "Qualcosa è andato storto",
+    "tryAgainLater": "Per favore riprova più tardi",
+    "unexpectedError": "Si è verificato un errore imprevisto"
+  },
+  "actions": {
+    "dismiss": "Congedare",
+    "retry": "Riprova",
+    "cancel": "Cancellare",
+    "goBack": "Torna indietro",
+    "contactSupport": "Contatta l'assistenza"
+  }
+}

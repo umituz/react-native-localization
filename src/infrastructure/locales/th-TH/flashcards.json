@@ -1,0 +1,287 @@
+{
+  "home": {
+    "welcome": "ยินดีต้อนรับสู่ Flashcard Maker",
+    "subtitle": "ฝึกฝนวิชาต่างๆ ด้วยบัตรคำศัพท์แบบโต้ตอบ",
+    "quickStudy": "การศึกษาอย่างรวดเร็ว",
+    "quickStudyDesc": "เริ่มศึกษาเด็คล่าสุดของคุณ",
+    "createDeck": "สร้างเด็ค",
+    "createDeckDesc": "สร้างสำรับแฟลชการ์ดใหม่",
+    "recentActivity": "กิจกรรมล่าสุด",
+    "noDecksYet": "คุณยังไม่ได้สร้างสำรับใดๆ",
+    "browseDecks": "เรียกดูเด็ค",
+    "statistics": "สถิติ",
+    "totalDecks": "เด็ครวม",
+    "totalCards": "บัตรทั้งหมด",
+    "studySessions": "เซสชันการศึกษา"
+  },
+  "decks": {
+    "noDecks": "ไม่พบสำรับ",
+    "noDecksDesc": "สร้างสำรับแฟลชการ์ดชุดแรกของคุณเพื่อเริ่มต้น",
+    "createFirstDeck": "สร้างสำรับแรก",
+    "createDeck": "สร้างเด็ค",
+    "editDeck": "แก้ไขเด็ค",
+    "recentlyStudied": "เพิ่งเรียน",
+    "allDecks": "เด็คทั้งหมด",
+    "easy": "ง่าย",
+    "medium": "ปานกลาง",
+    "hard": "แข็ง"
+  },
+  "study": {
+    "noCards": "ไม่มีการ์ดให้เลือก",
+    "noCardsDesc": "เพิ่มการ์ดลงในสำรับเพื่อเริ่มเรียน",
+    "browseDecks": "เรียกดูเด็ค",
+    "question": "คำถาม",
+    "answer": "คำตอบ",
+    "showQuestion": "แสดงคำถาม",
+    "showAnswer": "แสดงคำตอบ",
+    "correct": "ถูกต้อง",
+    "incorrect": "ไม่ถูกต้อง",
+    "skip": "ข้าม",
+    "skipped": "ข้ามไป",
+    "studyComplete": "การศึกษาเสร็จสมบูรณ์",
+    "wellDone": "ทำได้ดี!",
+    "sessionComplete": "เซสชันเสร็จสมบูรณ์"
+  },
+  "create": {
+    "createDeck": "สร้างเด็ค",
+    "addCards": "เพิ่มการ์ด",
+    "deckInfo": "ข้อมูลเด็ค",
+    "cardInfo": "ข้อมูลบัตร",
+    "deckTitle": "ชื่อเด็ค",
+    "deckTitlePlaceholder": "ป้อนชื่อสำรับ",
+    "deckDescription": "คำอธิบาย",
+    "deckDescriptionPlaceholder": "ป้อนคำอธิบายเด็ค",
+    "category": "หมวดหมู่",
+    "selectCategory": "เลือกหมวดหมู่",
+    "cardFront": "ด้านหน้า",
+    "cardFrontPlaceholder": "ป้อนคำถามหรือคำศัพท์",
+    "cardBack": "ด้านหลัง",
+    "cardBackPlaceholder": "ป้อนคำตอบหรือคำจำกัดความ",
+    "difficulty": "ความยาก",
+    "addCard": "เพิ่มการ์ด",
+    "addedCards": "การ์ดที่เพิ่มเข้ามา",
+    "saveDeck": "บันทึกเด็ค"
+  },
+  "cards": {
+    "noCards": "ไม่พบการ์ด",
+    "noCardsDesc": "สร้างแฟลชการ์ดใบแรกของคุณเพื่อเริ่มต้น",
+    "createFirstCard": "สร้างการ์ดใบแรก",
+    "createCard": "สร้างการ์ด",
+    "editCard": "แก้ไขการ์ด",
+    "selectDeck": "เลือกเด็ค",
+    "selectDeckPlaceholder": "เลือกสำรับสำหรับการ์ดใบนี้"
+  },
+  "common": {
+    "clearFilter": "ล้างตัวกรอง"
+  },
+  "studyModes": {
+    "classic": "คลาสสิค",
+    "matching": "เกมจับคู่",
+    "quiz": "หลายทางเลือก",
+    "writing": "โหมดการเขียน",
+    "timed": "ความท้าทายแบบหมดเวลา",
+    "selectMode": "เลือกโหมดการศึกษา"
+  },
+  "session": {
+    "complete": "เซสชันเสร็จสมบูรณ์",
+    "accuracy": "ความแม่นยำ",
+    "speed": "ความเร็ว",
+    "score": "คะแนน",
+    "cardsPerMinute": "บัตร/นาที",
+    "grade": "ระดับ",
+    "feedback": {
+      "excellent": "ผลงานเยี่ยมมาก! คุณเชี่ยวชาญเด็คนี้แล้ว!",
+      "great": "เยี่ยมมาก! ติดตามการทำงานที่ดี!",
+      "good": "ก้าวหน้าดี! ฝึกฝนให้มากขึ้นเพื่อปรับปรุง",
+      "keep_practicing": "ฝึกซ้อมต่อไป! คุณกำลังไปถึงที่นั่น",
+      "keep_studying": "ศึกษาต่อ! ตรวจสอบการ์ดเหล่านี้อีกครั้ง"
+    }
+  },
+  "rating": {
+    "fail": "อีกครั้ง",
+    "hard": "แข็ง",
+    "good": "ดี",
+    "easy": "ง่าย",
+    "perfect": "สมบูรณ์แบบ"
+  },
+  "srs": {
+    "dueToday": "ครบกำหนดวันนี้",
+    "dueCards": "บัตรครบกำหนด",
+    "nextReview": "รีวิวครั้งต่อไป",
+    "interval": "ช่วงเวลา",
+    "repetitions": "การทำซ้ำ",
+    "easeFactor": "ปัจจัยความง่าย",
+    "reviewHistory": "ตรวจสอบประวัติ",
+    "retention": "อัตราการเก็บรักษา",
+    "again": "อีกครั้ง",
+    "hard": "แข็ง",
+    "good": "ดี",
+    "easy": "ง่าย"
+  },
+  "media": {
+    "image": "ภาพ",
+    "chooseImage": "เลือกรูปภาพ",
+    "takePhoto": "ถ่ายภาพ",
+    "permissionDenied": "การอนุญาตถูกปฏิเสธในการเข้าถึงภาพถ่าย",
+    "cameraPermissionDenied": "การอนุญาตถูกปฏิเสธในการเข้าถึงกล้อง",
+    "imageFailed": "โหลดรูปภาพไม่สำเร็จ",
+    "cameraFailed": "ไม่สามารถเปิดกล้องได้",
+    "audio": "เสียง",
+    "record": "บันทึกเสียง",
+    "recording": "กำลังบันทึก...",
+    "stopRecording": "หยุดการบันทึก",
+    "play": "เล่น",
+    "stop": "หยุด",
+    "speak": "พูด",
+    "audioPermissionDenied": "ไม่อนุญาตให้บันทึกเสียง",
+    "recordingFailed": "ไม่สามารถบันทึกเสียงได้",
+    "playbackFailed": "ไม่สามารถเล่นเสียงได้",
+    "ttsFailed": "การอ่านออกเสียงข้อความล้มเหลว",
+    "noText": "ไม่มีข้อความที่จะพูด"
+  },
+  "import": {
+    "title": "นำเข้าดาดฟ้า",
+    "chooseFormat": "เลือกรูปแบบ",
+    "csv": "ซีเอสวี (Excel)",
+    "json": "เจสัน",
+    "quizlet": "แบบทดสอบ",
+    "selectFile": "เลือกไฟล์",
+    "importing": "กำลังนำเข้า...",
+    "success": "นำเข้าการ์ด {{count}} ใบสำเร็จแล้ว",
+    "errors": "เกิดข้อผิดพลาด {{count}} รายการ",
+    "viewErrors": "ดูข้อผิดพลาด"
+  },
+  "export": {
+    "title": "ส่งออกดาดฟ้า",
+    "chooseFormat": "เลือกรูปแบบ",
+    "csv": "ซีเอสวี (Excel)",
+    "json": "JSON (เสร็จสมบูรณ์)",
+    "quizlet": "แบบทดสอบ",
+    "includeStats": "รวมสถิติ",
+    "includeMedia": "รวมสื่อ",
+    "exporting": "กำลังส่งออก...",
+    "success": "ส่งออกสำรับสำเร็จแล้ว"
+  },
+  "statistics": {
+    "title": "สถิติ",
+    "overview": "ภาพรวม",
+    "totalCards": "บัตรทั้งหมด",
+    "cardsStudied": "การ์ดที่ศึกษา",
+    "totalReviews": "รีวิวทั้งหมด",
+    "correctReviews": "รีวิวที่ถูกต้อง",
+    "accuracy": "ความแม่นยำ",
+    "averageTimePerCard": "เวลาเฉลี่ยต่อบัตร",
+    "totalStudyTime": "เวลาเรียนทั้งหมด",
+    "studySessions": "เซสชันการศึกษา",
+    "streak": {
+      "current": "สตรีคปัจจุบัน",
+      "longest": "สตรีคที่ยาวที่สุด",
+      "days": "วัน"
+    },
+    "charts": {
+      "daily": "รายวัน",
+      "weekly": "รายสัปดาห์",
+      "monthly": "รายเดือน",
+      "performance": "ผลงาน",
+      "activity": "กิจกรรม"
+    }
+  },
+  "sharing": {
+    "title": "แบ่งปันเด็ค",
+    "generateCode": "สร้างรหัสแบ่งปัน",
+    "shareCode": "รหัสแบ่งปัน",
+    "qrCode": "คิวอาร์โค้ด",
+    "copyCode": "คัดลอกรหัส",
+    "codeCopied": "คัดลอกโค้ดไปยังคลิปบอร์ดแล้ว",
+    "shareAsFile": "แชร์เป็นไฟล์",
+    "shareAsLink": "แชร์เป็นลิงก์",
+    "importCode": "รหัสนำเข้า",
+    "enterCode": "กรอกรหัส 6 หลัก",
+    "invalidCode": "รหัสแบ่งปันไม่ถูกต้อง",
+    "importing": "กำลังนำเข้าดาดฟ้า...",
+    "importSuccess": "นำเข้าเด็คเรียบร้อยแล้ว",
+    "downloadCount": "ดาวน์โหลด",
+    "makePublic": "ทำให้เป็นสาธารณะ",
+    "makePrivate": "ทำให้เป็นส่วนตัว"
+  },
+  "gamification": {
+    "profile": {
+      "level": "ระดับ",
+      "xp": "ประสบการณ์",
+      "rank": "อันดับ",
+      "progress": "ก้าวหน้าไปอีกระดับ",
+      "totalXP": "XP ทั้งหมดที่ได้รับ"
+    },
+    "ranks": {
+      "novice": "สามเณร",
+      "apprentice": "เด็กฝึกงาน",
+      "scholar": "นักวิชาการ",
+      "expert": "ผู้เชี่ยวชาญ",
+      "master": "ผู้เชี่ยวชาญ",
+      "grandmaster": "ปรมาจารย์",
+      "legend": "ตำนาน"
+    },
+    "achievements": {
+      "title": "ความสำเร็จ",
+      "unlocked": "ปลดล็อคแล้ว",
+      "locked": "ล็อคแล้ว",
+      "progress": "ความคืบหน้า",
+      "reward": "รางวัล",
+      "unlockedAt": "ปลดล็อคแล้ว",
+      "categories": {
+        "study": "ศึกษา",
+        "cards": "การ์ด",
+        "decks": "สำรับ",
+        "streak": "ริ้ว",
+        "special": "พิเศษ"
+      }
+    },
+    "challenges": {
+      "title": "ความท้าทายรายวัน",
+      "today": "ความท้าทายในวันนี้",
+      "completed": "สมบูรณ์",
+      "inProgress": "อยู่ระหว่างดำเนินการ",
+      "reward": "รางวัล",
+      "goal": "เป้าหมาย",
+      "progress": "ความคืบหน้า"
+    },
+    "xpRewards": {
+      "cardReviewed": "+{{amount}} XP - ตรวจสอบการ์ดแล้ว",
+      "cardCorrect": "+{{amount}} XP - คำตอบที่ถูกต้อง",
+      "cardPerfect": "+{{amount}} XP - สมบูรณ์แบบ!",
+      "deckCreated": "+{{amount}} XP - สร้างสำรับแล้ว",
+      "studySession": "+{{amount}} XP - ช่วงการศึกษา",
+      "dailyGoal": "+{{amount}} XP - บรรลุเป้าหมายรายวัน",
+      "streakDay": "+{{amount}} XP - วันต่อเนื่อง",
+      "achievementUnlocked": "+{{amount}} XP - ปลดล็อคความสำเร็จแล้ว"
+    }
+  },
+  "matching": {
+    "title": "เกมจับคู่",
+    "instructions": "จับคู่ไพ่โดยการแตะคู่",
+    "matches": "ไม้ขีด",
+    "attempts": "ความพยายาม",
+    "timeElapsed": "เวลา",
+    "perfect": "แมทช์ลงตัว!",
+    "tryAgain": "ลองอีกครั้ง"
+  },
+  "quiz": {
+    "title": "แบบทดสอบปรนัย",
+    "question": "คำถาม",
+    "chooseAnswer": "เลือกคำตอบที่ถูกต้อง",
+    "correct": "ถูกต้อง!",
+    "incorrect": "ไม่ถูกต้อง",
+    "showAnswer": "แสดงคำตอบ",
+    "nextQuestion": "คำถามต่อไป"
+  },
+  "writing": {
+    "title": "โหมดการเขียน",
+    "instructions": "พิมพ์คำตอบ",
+    "yourAnswer": "คำตอบของคุณ",
+    "correctAnswer": "คำตอบที่ถูกต้อง",
+    "similarity": "ความคล้ายคลึงกัน",
+    "strictMode": "โหมดเข้มงวด",
+    "fuzzyMatching": "การจับคู่คลุมเครือ",
+    "check": "ตรวจสอบคำตอบ"
+  }
+}

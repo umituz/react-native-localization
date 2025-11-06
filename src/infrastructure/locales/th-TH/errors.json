@@ -1,0 +1,43 @@
+{
+  "validation": {
+    "required": "ต้องระบุข้อมูลในช่องนี้",
+    "invalidEmail": "รูปแบบอีเมลไม่ถูกต้อง",
+    "invalidPhone": "หมายเลขโทรศัพท์ไม่ถูกต้อง",
+    "invalidUrl": "รูปแบบ URL ไม่ถูกต้อง",
+    "minLength": "ความยาวขั้นต่ำคือ {{min}} อักขระ",
+    "maxLength": "ความยาวสูงสุดคือ {{max}} อักขระ",
+    "minValue": "ค่าต่ำสุดคือ {{min}}",
+    "maxValue": "ค่าสูงสุดคือ {{max}}",
+    "mustMatch": "ช่องจะต้องตรงกัน",
+    "invalidFormat": "รูปแบบไม่ถูกต้อง",
+    "invalidDate": "วันที่ไม่ถูกต้อง",
+    "futureDate": "วันที่จะต้องอยู่ในอนาคต",
+    "pastDate": "วันที่จะต้องเป็นวันที่ผ่านมาแล้ว"
+  },
+  "storage": {
+    "saveFailed": "บันทึกข้อมูลไม่สำเร็จ",
+    "loadFailed": "โหลดข้อมูลไม่สำเร็จ",
+    "deleteFailed": "ลบข้อมูลไม่สำเร็จ",
+    "notFound": "ไม่พบข้อมูล"
+  },
+  "permission": {
+    "denied": "การอนุญาตถูกปฏิเสธ",
+    "notGranted": "ไม่ได้รับอนุญาต",
+    "cameraNotAvailable": "กล้องไม่พร้อมใช้งาน",
+    "locationNotAvailable": "ไม่มีบริการระบุตำแหน่ง",
+    "microphoneNotAvailable": "ไมโครโฟนไม่พร้อมใช้งาน",
+    "photosNotAvailable": "คลังรูปภาพไม่พร้อมใช้งาน"
+  },
+  "common": {
+    "somethingWentWrong": "มีบางอย่างผิดพลาด",
+    "tryAgainLater": "โปรดลองอีกครั้งในภายหลัง",
+    "unexpectedError": "เกิดข้อผิดพลาดที่ไม่คาดคิด"
+  },
+  "actions": {
+    "dismiss": "อนุญาตให้ออกไป",
+    "retry": "ลองอีกครั้ง",
+    "cancel": "ยกเลิก",
+    "goBack": "กลับไป",
+    "contactSupport": "ติดต่อฝ่ายสนับสนุน"
+  }
+}

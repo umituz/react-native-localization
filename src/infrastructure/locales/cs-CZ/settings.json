@@ -1,0 +1,53 @@
+{
+  "lightMode": "Světelný režim",
+  "darkMode": "Tmavý režim",
+  "language": "Jazyk",
+  "aboutDescription": "Informace o aplikaci a verze",
+  "about": {
+    "title": "O",
+    "description": "Informace o aplikaci a verze",
+    "appVersion": "Verze aplikace",
+    "moreApps": "Další aplikace",
+    "moreAppsDescription": "Podívejte se na naše další aplikace",
+    "contactEmail": "Kontaktní e-mail",
+    "website": "webové stránky"
+  },
+  "disclaimer": {
+    "title": "Zřeknutí se odpovědnosti za zdraví",
+    "shortMessage": "Klepnutím si přečtěte důležité zdravotní informace",
+    "message": "Tato aplikace je určena pouze pro informační a wellness účely. NENÍ náhražkou odborné lékařské nebo duševní péče.\n\nPokud zažíváte zdravotní krizi nebo pohotovost, okamžitě kontaktujte místní pohotovostní službu nebo poskytovatele zdravotní péče.\n\nVždy se poraďte s kvalifikovaným zdravotnickým personálem ohledně lékařské rady, diagnózy nebo léčby. Obsah v této aplikaci by neměl být používán jako náhrada za odborný lékařský úsudek.\n\nVaše soukromí je důležité. Všechna data zůstanou ve vašem zařízení soukromá, pokud se je výslovně nerozhodnete sdílet."
+  },
+  "legal": {
+    "title": "Právní",
+    "description": "Zásady ochrany osobních údajů, podmínky použití a EULA",
+    "privacy": "Zásady ochrany osobních údajů",
+    "privacyDescription": "Jak nakládáme s vašimi údaji",
+    "terms": "Podmínky použití",
+    "termsDescription": "Smluvní podmínky",
+    "eula": "Licenční smlouva s koncovým uživatelem",
+    "eulaDescription": "Licenční smlouva"
+  },
+  "version": {
+    "title": "Verze aplikace"
+  },
+  "languageSelection": {
+    "title": "Vyberte Jazyk",
+    "description": "Vyberte preferovaný jazyk",
+    "currentLanguage": "Aktuální jazyk",
+    "searchPlaceholder": "Hledat jazyky"
+  },
+  "appearance": {
+    "title": "Vzhled",
+    "darkMode": "Tmavý režim",
+    "darkTheme": "Temné téma",
+    "lightTheme": "Světlé téma",
+    "themeDescription": "Nastavení jazyka a motivu"
+  },
+  "notifications": {
+    "title": "Oznámení",
+    "description": "Spravujte předvolby oznámení",
+    "enableNotifications": "Povolit oznámení",
+    "notificationPermission": "Oprávnění k oznámení",
+    "notificationPermissionDescription": "Povolit aplikaci odesílat upozornění"
+  }
+}

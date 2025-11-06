@@ -1,0 +1,140 @@
+{
+  "days": {
+    "full": {
+      "monday": "pondělí",
+      "tuesday": "úterý",
+      "wednesday": "středa",
+      "thursday": "čtvrtek",
+      "friday": "pátek",
+      "saturday": "sobota",
+      "sunday": "neděle"
+    },
+    "short": {
+      "mon": "Po",
+      "tue": "út",
+      "wed": "St",
+      "thu": "Čt",
+      "fri": "pá",
+      "sat": "So",
+      "sun": "Slunce"
+    },
+    "abbreviated": {
+      "m": "M",
+      "t": "T",
+      "w": "W",
+      "th": "Th",
+      "f": "F",
+      "sa": "so",
+      "su": "Ne"
+    }
+  },
+  "months": {
+    "full": {
+      "january": "leden",
+      "february": "únor",
+      "march": "Pochod",
+      "april": "duben",
+      "may": "květen",
+      "june": "červen",
+      "july": "červenec",
+      "august": "srpen",
+      "september": "září",
+      "october": "říjen",
+      "november": "listopad",
+      "december": "prosinec"
+    },
+    "short": {
+      "jan": "Jan",
+      "feb": "února",
+      "mar": "Mar",
+      "apr": "dubna",
+      "may": "květen",
+      "jun": "června",
+      "jul": "července",
+      "aug": "Aug",
+      "sep": "září",
+      "oct": "Oct",
+      "nov": "listopad",
+      "dec": "prosinec"
+    }
+  },
+  "relative": {
+    "now": "Teď",
+    "justNow": "Právě teď",
+    "today": "Dnes",
+    "yesterday": "Včera",
+    "tomorrow": "Zítra",
+    "thisWeek": "Tento týden",
+    "lastWeek": "Minulý týden",
+    "nextWeek": "Příští týden",
+    "thisMonth": "Tento měsíc",
+    "lastMonth": "Minulý měsíc",
+    "nextMonth": "Příští měsíc",
+    "thisYear": "Letos",
+    "lastYear": "Loni",
+    "nextYear": "Příští rok",
+    "ago": "před",
+    "fromNow": "od teď",
+    "in": "v"
+  },
+  "units": {
+    "singular": {
+      "second": "druhý",
+      "minute": "minuta",
+      "hour": "hodina",
+      "day": "den",
+      "week": "týden",
+      "month": "měsíc",
+      "year": "rok"
+    },
+    "plural": {
+      "seconds": "sekundy",
+      "minutes": "zápis",
+      "hours": "hodin",
+      "days": "dní",
+      "weeks": "týdnů",
+      "months": "měsíce",
+      "years": "let"
+    },
+    "short": {
+      "s": "s",
+      "m": "m",
+      "h": "h",
+      "d": "d",
+      "w": "w",
+      "mo": "mo",
+      "y": "y"
+    }
+  },
+  "periods": {
+    "am": "DOPOLEDNE",
+    "pm": "ODPOLEDNE",
+    "morning": "Ráno",
+    "afternoon": "Odpoledne",
+    "evening": "Večer",
+    "night": "Noc",
+    "midnight": "Půlnoc",
+    "noon": "Poledne"
+  },
+  "formats": {
+    "date": "Datum",
+    "time": "Čas",
+    "datetime": "Datum a čas",
+    "duration": "Trvání",
+    "startDate": "Datum zahájení",
+    "endDate": "Datum ukončení",
+    "startTime": "Čas zahájení",
+    "endTime": "Čas ukončení",
+    "selectDate": "Vyberte Datum",
+    "selectTime": "Vyberte Čas"
+  },
+  "actions": {
+    "setDate": "Nastavit datum",
+    "setTime": "Nastavit čas",
+    "clearDate": "Vymazat datum",
+    "clearTime": "Vymazat čas",
+    "confirmDate": "Potvrďte datum",
+    "confirmTime": "Potvrďte čas",
+    "cancel": "Zrušit"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "validation": {
+    "required": "Това поле е задължително",
+    "invalidEmail": "Невалиден имейл формат",
+    "invalidPhone": "Невалиден телефонен номер",
+    "invalidUrl": "Невалиден URL формат",
+    "minLength": "Минималната дължина е {{min}} знака",
+    "maxLength": "Максималната дължина е {{max}} знака",
+    "minValue": "Минималната стойност е {{min}}",
+    "maxValue": "Максималната стойност е {{max}}",
+    "mustMatch": "Полетата трябва да съвпадат",
+    "invalidFormat": "Невалиден формат",
+    "invalidDate": "Невалидна дата",
+    "futureDate": "Датата трябва да е в бъдещето",
+    "pastDate": "Датата трябва да е в миналото"
+  },
+  "storage": {
+    "saveFailed": "Неуспешно запазване на данните",
+    "loadFailed": "Неуспешно зареждане на данни",
+    "deleteFailed": "Неуспешно изтриване на данни",
+    "notFound": "Данните не са намерени"
+  },
+  "permission": {
+    "denied": "Разрешението е отказано",
+    "notGranted": "Разрешението не е дадено",
+    "cameraNotAvailable": "Камерата не е налична",
+    "locationNotAvailable": "Услугите за местоположение не са налични",
+    "microphoneNotAvailable": "Микрофонът не е наличен",
+    "photosNotAvailable": "Библиотеката със снимки не е налична"
+  },
+  "common": {
+    "somethingWentWrong": "Нещо се обърка",
+    "tryAgainLater": "Моля, опитайте отново по-късно",
+    "unexpectedError": "Възникна неочаквана грешка"
+  },
+  "actions": {
+    "dismiss": "Отхвърляне",
+    "retry": "Опитайте отново",
+    "cancel": "Отказ",
+    "goBack": "Върни се назад",
+    "contactSupport": "Свържете се с поддръжката"
+  }
+}

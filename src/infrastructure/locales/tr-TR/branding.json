@@ -1,0 +1,9 @@
+{
+  "appName": "Bilgi Kartı Oluşturucu",
+  "tagline": "Yolculuğunuza hoş geldiniz",
+  "poweredBy": "ÜmitUZ Uygulama Fabrikası tarafından desteklenmektedir",
+  "version": "Sürüm {{sürüm}}",
+  "splash": {
+    "loading": "Yükleniyor..."
+  }
+}

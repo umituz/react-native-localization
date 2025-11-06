@@ -1,0 +1,43 @@
+{
+  "validation": {
+    "required": "Bidang ini wajib diisi",
+    "invalidEmail": "Format email tidak valid",
+    "invalidPhone": "Nomor telepon tidak valid",
+    "invalidUrl": "Format URL tidak valid",
+    "minLength": "Panjang minimum adalah {{min}} karakter",
+    "maxLength": "Panjang maksimum adalah {{max}} karakter",
+    "minValue": "Nilai minimumnya adalah {{min}}",
+    "maxValue": "Nilai maksimumnya adalah {{max}}",
+    "mustMatch": "Bidang harus cocok",
+    "invalidFormat": "Formatnya tidak valid",
+    "invalidDate": "Tanggal tidak valid",
+    "futureDate": "Tanggal harus di masa depan",
+    "pastDate": "Tanggal harus di masa lalu"
+  },
+  "storage": {
+    "saveFailed": "Gagal menyimpan data",
+    "loadFailed": "Gagal memuat data",
+    "deleteFailed": "Gagal menghapus data",
+    "notFound": "Data tidak ditemukan"
+  },
+  "permission": {
+    "denied": "Izin ditolak",
+    "notGranted": "Izin tidak diberikan",
+    "cameraNotAvailable": "Kamera tidak tersedia",
+    "locationNotAvailable": "Layanan lokasi tidak tersedia",
+    "microphoneNotAvailable": "Mikrofon tidak tersedia",
+    "photosNotAvailable": "Perpustakaan foto tidak tersedia"
+  },
+  "common": {
+    "somethingWentWrong": "Ada yang tidak beres",
+    "tryAgainLater": "Silakan coba lagi nanti",
+    "unexpectedError": "Terjadi kesalahan yang tidak terduga"
+  },
+  "actions": {
+    "dismiss": "Membubarkan",
+    "retry": "Mencoba kembali",
+    "cancel": "Membatalkan",
+    "goBack": "Kembali",
+    "contactSupport": "Hubungi Dukungan"
+  }
+}

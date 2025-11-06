@@ -1,0 +1,140 @@
+{
+  "days": {
+    "full": {
+      "monday": "Senin",
+      "tuesday": "Selasa",
+      "wednesday": "Rabu",
+      "thursday": "Kamis",
+      "friday": "Jumat",
+      "saturday": "Sabtu",
+      "sunday": "Minggu"
+    },
+    "short": {
+      "mon": "Senin",
+      "tue": "Selasa",
+      "wed": "Menikahi",
+      "thu": "Kam",
+      "fri": "Jumat",
+      "sat": "Duduk",
+      "sun": "Matahari"
+    },
+    "abbreviated": {
+      "m": "M",
+      "t": "T",
+      "w": "W",
+      "th": "Th",
+      "f": "F",
+      "sa": "Sa",
+      "su": "Su"
+    }
+  },
+  "months": {
+    "full": {
+      "january": "Januari",
+      "february": "Februari",
+      "march": "Berbaris",
+      "april": "April",
+      "may": "Mungkin",
+      "june": "Juni",
+      "july": "Juli",
+      "august": "Agustus",
+      "september": "September",
+      "october": "Oktober",
+      "november": "November",
+      "december": "Desember"
+    },
+    "short": {
+      "jan": "Januari",
+      "feb": "Februari",
+      "mar": "Merusak",
+      "apr": "April",
+      "may": "Mungkin",
+      "jun": "Juni",
+      "jul": "Juli",
+      "aug": "Agustus",
+      "sep": "September",
+      "oct": "Oktober",
+      "nov": "November",
+      "dec": "Desember"
+    }
+  },
+  "relative": {
+    "now": "Sekarang",
+    "justNow": "Baru saja",
+    "today": "Hari ini",
+    "yesterday": "Kemarin",
+    "tomorrow": "Besok",
+    "thisWeek": "Minggu ini",
+    "lastWeek": "Minggu lalu",
+    "nextWeek": "Minggu depan",
+    "thisMonth": "Bulan ini",
+    "lastMonth": "Bulan lalu",
+    "nextMonth": "Bulan depan",
+    "thisYear": "tahun ini",
+    "lastYear": "Tahun lalu",
+    "nextYear": "Tahun depan",
+    "ago": "yang lalu",
+    "fromNow": "mulai sekarang",
+    "in": "di dalam"
+  },
+  "units": {
+    "singular": {
+      "second": "Kedua",
+      "minute": "menit",
+      "hour": "jam",
+      "day": "hari",
+      "week": "pekan",
+      "month": "bulan",
+      "year": "tahun"
+    },
+    "plural": {
+      "seconds": "detik",
+      "minutes": "menit",
+      "hours": "jam",
+      "days": "hari",
+      "weeks": "minggu",
+      "months": "bulan",
+      "years": "bertahun-tahun"
+    },
+    "short": {
+      "s": "S",
+      "m": "M",
+      "h": "H",
+      "d": "D",
+      "w": "w",
+      "mo": "bulan",
+      "y": "kamu"
+    }
+  },
+  "periods": {
+    "am": "PAGI",
+    "pm": "PM",
+    "morning": "Pagi",
+    "afternoon": "Sore",
+    "evening": "Malam",
+    "night": "Malam",
+    "midnight": "Tengah malam",
+    "noon": "Siang"
+  },
+  "formats": {
+    "date": "Tanggal",
+    "time": "Waktu",
+    "datetime": "Tanggal & Waktu",
+    "duration": "Lamanya",
+    "startDate": "Tanggal Mulai",
+    "endDate": "Tanggal Berakhir",
+    "startTime": "Waktu Mulai",
+    "endTime": "Akhir Waktu",
+    "selectDate": "Pilih Tanggal",
+    "selectTime": "Pilih Waktu"
+  },
+  "actions": {
+    "setDate": "Tetapkan Tanggal",
+    "setTime": "Atur Waktu",
+    "clearDate": "Hapus Tanggal",
+    "clearTime": "Waktu Jernih",
+    "confirmDate": "Konfirmasi Tanggal",
+    "confirmTime": "Konfirmasikan Waktu",
+    "cancel": "Membatalkan"
+  }
+}

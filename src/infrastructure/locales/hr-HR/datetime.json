@@ -1,0 +1,140 @@
+{
+  "days": {
+    "full": {
+      "monday": "ponedjeljak",
+      "tuesday": "utorak",
+      "wednesday": "srijeda",
+      "thursday": "četvrtak",
+      "friday": "petak",
+      "saturday": "subota",
+      "sunday": "nedjelja"
+    },
+    "short": {
+      "mon": "pon",
+      "tue": "uto",
+      "wed": "sri",
+      "thu": "čet",
+      "fri": "pet",
+      "sat": "sub",
+      "sun": "Sunce"
+    },
+    "abbreviated": {
+      "m": "M",
+      "t": "T",
+      "w": "W",
+      "th": "Th",
+      "f": "F",
+      "sa": "Sa",
+      "su": "su"
+    }
+  },
+  "months": {
+    "full": {
+      "january": "siječnja",
+      "february": "veljača",
+      "march": "ožujak",
+      "april": "travanj",
+      "may": "svibanj",
+      "june": "lipanj",
+      "july": "srpanj",
+      "august": "kolovoz",
+      "september": "rujan",
+      "october": "listopad",
+      "november": "studeni",
+      "december": "prosinac"
+    },
+    "short": {
+      "jan": "siječanj",
+      "feb": "velj",
+      "mar": "ožujak",
+      "apr": "tra",
+      "may": "svibanj",
+      "jun": "lipnja",
+      "jul": "srp",
+      "aug": "kolovoz",
+      "sep": "ruj",
+      "oct": "lis",
+      "nov": "nov",
+      "dec": "pro"
+    }
+  },
+  "relative": {
+    "now": "Sada",
+    "justNow": "Upravo sada",
+    "today": "Danas",
+    "yesterday": "Jučer",
+    "tomorrow": "Sutra",
+    "thisWeek": "Ovaj tjedan",
+    "lastWeek": "Prošli tjedan",
+    "nextWeek": "Sljedeći tjedan",
+    "thisMonth": "Ovaj mjesec",
+    "lastMonth": "Prošli mjesec",
+    "nextMonth": "Sljedeći mjesec",
+    "thisYear": "Ove godine",
+    "lastYear": "Prošle godine",
+    "nextYear": "Sljedeće godine",
+    "ago": "prije",
+    "fromNow": "od sada",
+    "in": "u"
+  },
+  "units": {
+    "singular": {
+      "second": "drugi",
+      "minute": "minuta",
+      "hour": "sat",
+      "day": "dan",
+      "week": "tjedan",
+      "month": "mjesec",
+      "year": "godina"
+    },
+    "plural": {
+      "seconds": "sekundi",
+      "minutes": "minuta",
+      "hours": "sati",
+      "days": "dana",
+      "weeks": "tjedana",
+      "months": "mjeseca",
+      "years": "godina"
+    },
+    "short": {
+      "s": "s",
+      "m": "m",
+      "h": "h",
+      "d": "d",
+      "w": "w",
+      "mo": "mj",
+      "y": "g"
+    }
+  },
+  "periods": {
+    "am": "AM",
+    "pm": "PM",
+    "morning": "Jutro",
+    "afternoon": "Poslijepodne",
+    "evening": "Večer",
+    "night": "Noć",
+    "midnight": "Ponoć",
+    "noon": "Podne"
+  },
+  "formats": {
+    "date": "Datum",
+    "time": "Vrijeme",
+    "datetime": "Datum i vrijeme",
+    "duration": "Trajanje",
+    "startDate": "Datum početka",
+    "endDate": "Datum završetka",
+    "startTime": "Vrijeme početka",
+    "endTime": "Vrijeme završetka",
+    "selectDate": "Odaberite Datum",
+    "selectTime": "Odaberite vrijeme"
+  },
+  "actions": {
+    "setDate": "Postavite datum",
+    "setTime": "Postavite vrijeme",
+    "clearDate": "Očisti datum",
+    "clearTime": "Čisto vrijeme",
+    "confirmDate": "Potvrdi datum",
+    "confirmTime": "Potvrdi vrijeme",
+    "cancel": "Otkazati"
+  }
+}

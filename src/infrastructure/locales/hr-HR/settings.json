@@ -1,0 +1,53 @@
+{
+  "lightMode": "Način svjetla",
+  "darkMode": "Tamni način rada",
+  "language": "Jezik",
+  "aboutDescription": "Podaci o aplikaciji i verzija",
+  "about": {
+    "title": "Oko",
+    "description": "Podaci o aplikaciji i verzija",
+    "appVersion": "Verzija aplikacije",
+    "moreApps": "Više aplikacija",
+    "moreAppsDescription": "Provjerite naše druge aplikacije",
+    "contactEmail": "Kontakt Email",
+    "website": "Web stranica"
+  },
+  "disclaimer": {
+    "title": "Odricanje od odgovornosti za zdravlje",
+    "shortMessage": "Dodirnite za čitanje važnih zdravstvenih informacija",
+    "message": "Ova je aplikacija samo u informativne svrhe i u svrhu podrške dobrobiti. NIJE zamjena za profesionalnu medicinsku ili mentalnu skrb.\n\nAko ste u zdravstvenoj krizi ili hitnom slučaju, odmah kontaktirajte svoju lokalnu hitnu službu ili pružatelja zdravstvenih usluga.\n\nZa medicinski savjet, dijagnozu ili liječenje uvijek se obratite kvalificiranom zdravstvenom osoblju. Sadržaj u ovoj aplikaciji ne smije se koristiti kao zamjena za profesionalnu liječničku procjenu.\n\nVaša privatnost je važna. Svi podaci ostaju privatni na vašem uređaju osim ako ih izričito ne odlučite dijeliti."
+  },
+  "legal": {
+    "title": "Pravno",
+    "description": "Politika privatnosti, uvjeti korištenja i EULA",
+    "privacy": "Politika privatnosti",
+    "privacyDescription": "Kako postupamo s vašim podacima",
+    "terms": "Uvjeti korištenja",
+    "termsDescription": "Odredbe i uvjeti",
+    "eula": "Licencni ugovor za krajnjeg korisnika",
+    "eulaDescription": "Ugovor o licenci"
+  },
+  "version": {
+    "title": "Verzija aplikacije"
+  },
+  "languageSelection": {
+    "title": "Odaberite jezik",
+    "description": "Odaberite željeni jezik",
+    "currentLanguage": "Trenutačni jezik",
+    "searchPlaceholder": "Traži jezike"
+  },
+  "appearance": {
+    "title": "Izgled",
+    "darkMode": "Tamni način rada",
+    "darkTheme": "Tamna tema",
+    "lightTheme": "Lagana tema",
+    "themeDescription": "Postavke jezika i teme"
+  },
+  "notifications": {
+    "title": "Obavijesti",
+    "description": "Upravljanje postavkama obavijesti",
+    "enableNotifications": "Omogući obavijesti",
+    "notificationPermission": "Dopuštenje za obavijesti",
+    "notificationPermissionDescription": "Dopusti aplikaciji slanje obavijesti"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "lightMode": "Fény mód",
+  "darkMode": "Sötét mód",
+  "language": "Nyelv",
+  "aboutDescription": "Az alkalmazás adatai és verziója",
+  "about": {
+    "title": "Körülbelül",
+    "description": "Az alkalmazás adatai és verziója",
+    "appVersion": "Alkalmazás verziója",
+    "moreApps": "További alkalmazások",
+    "moreAppsDescription": "Tekintse meg a többi alkalmazásunkat",
+    "contactEmail": "Kapcsolatfelvételi e-mail",
+    "website": "Weboldal"
+  },
+  "disclaimer": {
+    "title": "Egészségügyi Jogi nyilatkozat",
+    "shortMessage": "Érintse meg a fontos egészségügyi információk elolvasásához",
+    "message": "Ez az alkalmazás csak tájékoztatási és wellness-támogatási célokat szolgál. NEM helyettesíti a professzionális orvosi vagy mentális egészségügyi ellátást.\n\nHa egészségügyi válságot vagy vészhelyzetet tapasztal, azonnal forduljon a helyi sürgősségi szolgálathoz vagy egészségügyi szolgáltatóhoz.\n\nMindig forduljon szakképzett egészségügyi szakemberhez orvosi tanácsért, diagnózisért vagy kezelésért. Az alkalmazás tartalma nem helyettesítheti a szakmai orvosi véleményt.\n\nAz Ön magánélete fontos. Minden adat privát marad az eszközén, hacsak nem választja kifejezetten megosztását."
+  },
+  "legal": {
+    "title": "Jogi",
+    "description": "Adatvédelmi szabályzat, használati feltételek és EULA",
+    "privacy": "Adatvédelmi szabályzat",
+    "privacyDescription": "Hogyan kezeljük adatait",
+    "terms": "Felhasználási feltételek",
+    "termsDescription": "Feltételek",
+    "eula": "Végfelhasználói licencszerződés",
+    "eulaDescription": "Licencszerződés"
+  },
+  "version": {
+    "title": "Alkalmazás verziója"
+  },
+  "languageSelection": {
+    "title": "Válassza a Nyelv lehetőséget",
+    "description": "Válassza ki a kívánt nyelvet",
+    "currentLanguage": "Jelenlegi nyelv",
+    "searchPlaceholder": "Nyelvek keresése"
+  },
+  "appearance": {
+    "title": "Megjelenés",
+    "darkMode": "Sötét mód",
+    "darkTheme": "Sötét téma",
+    "lightTheme": "Fény téma",
+    "themeDescription": "Nyelvi és témabeállítások"
+  },
+  "notifications": {
+    "title": "Értesítések",
+    "description": "Értesítési beállítások kezelése",
+    "enableNotifications": "Értesítések engedélyezése",
+    "notificationPermission": "Értesítési engedély",
+    "notificationPermissionDescription": "Az alkalmazás értesítések küldésének engedélyezése"
+  }
+}

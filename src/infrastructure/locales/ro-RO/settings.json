@@ -1,0 +1,53 @@
+{
+  "lightMode": "Modul de lumină",
+  "darkMode": "Modul întunecat",
+  "language": "Limbă",
+  "aboutDescription": "Informații despre aplicație și versiune",
+  "about": {
+    "title": "Despre",
+    "description": "Informații despre aplicație și versiune",
+    "appVersion": "Versiunea aplicației",
+    "moreApps": "Mai multe aplicații",
+    "moreAppsDescription": "Consultați celelalte aplicații ale noastre",
+    "contactEmail": "E-mail de contact",
+    "website": "Site-ul web"
+  },
+  "disclaimer": {
+    "title": "Declinarea răspunderii pentru sănătate",
+    "shortMessage": "Atingeți pentru a citi informații importante despre sănătate",
+    "message": "Această aplicație este doar în scop informativ și de asistență pentru sănătate. NU este un substitut pentru îngrijirea medicală profesională sau de sănătate mintală.\n\nDacă vă confruntați cu o criză de sănătate sau o urgență, contactați imediat serviciile locale de urgență sau furnizorul de asistență medicală.\n\nConsultați întotdeauna profesioniști calificați din domeniul sănătății pentru sfaturi medicale, diagnostic sau tratament. Conținutul din această aplicație nu trebuie utilizat ca un substitut pentru judecata medicală profesională.\n\nIntimitatea ta este importantă. Toate datele rămân private pe dispozitivul dvs., cu excepția cazului în care alegeți în mod explicit să le partajați."
+  },
+  "legal": {
+    "title": "Legal",
+    "description": "Politica de confidențialitate, termenii de utilizare și EULA",
+    "privacy": "Politica de confidențialitate",
+    "privacyDescription": "Cum gestionăm datele dvs",
+    "terms": "Termeni de utilizare",
+    "termsDescription": "Termeni și condiții",
+    "eula": "Acord de licență pentru utilizatorul final",
+    "eulaDescription": "Acord de licență"
+  },
+  "version": {
+    "title": "Versiunea aplicației"
+  },
+  "languageSelection": {
+    "title": "Selectați Limbă",
+    "description": "Alegeți limba preferată",
+    "currentLanguage": "Limba curentă",
+    "searchPlaceholder": "Căutați limbi"
+  },
+  "appearance": {
+    "title": "Aspect",
+    "darkMode": "Modul întunecat",
+    "darkTheme": "Tema întunecată",
+    "lightTheme": "Tema ușoară",
+    "themeDescription": "Setări de limbă și temă"
+  },
+  "notifications": {
+    "title": "Notificări",
+    "description": "Gestionați preferințele de notificare",
+    "enableNotifications": "Activați notificările",
+    "notificationPermission": "Permisiune de notificare",
+    "notificationPermissionDescription": "Permite aplicației să trimită notificări"
+  }
+}

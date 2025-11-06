@@ -1,0 +1,287 @@
+{
+  "home": {
+    "welcome": "Velkommen til Flashcard Maker",
+    "subtitle": "Mestre ethvert emne med interaktive flashcards",
+    "quickStudy": "Rask studie",
+    "quickStudyDesc": "Begynn å studere de siste kortstokkene dine",
+    "createDeck": "Lag dekk",
+    "createDeckDesc": "Bygg en ny kortstokk",
+    "recentActivity": "Nylig aktivitet",
+    "noDecksYet": "Du har ikke laget noen kortstokker ennå",
+    "browseDecks": "Bla gjennom dekk",
+    "statistics": "Statistikk",
+    "totalDecks": "Totalt dekk",
+    "totalCards": "Totalt antall kort",
+    "studySessions": "Studieøkter"
+  },
+  "decks": {
+    "noDecks": "Ingen dekk funnet",
+    "noDecksDesc": "Lag din første kortstokk for å komme i gang",
+    "createFirstDeck": "Lag første kortstokk",
+    "createDeck": "Lag dekk",
+    "editDeck": "Rediger kortstokk",
+    "recentlyStudied": "Nylig studert",
+    "allDecks": "Alle dekk",
+    "easy": "Lett",
+    "medium": "Medium",
+    "hard": "Hard"
+  },
+  "study": {
+    "noCards": "Ingen kort tilgjengelig",
+    "noCardsDesc": "Legg noen kort til en kortstokk for å begynne å studere",
+    "browseDecks": "Bla gjennom dekk",
+    "question": "Spørsmål",
+    "answer": "Svare",
+    "showQuestion": "Vis spørsmål",
+    "showAnswer": "Vis svar",
+    "correct": "Korrekt",
+    "incorrect": "Uriktig",
+    "skip": "Hopp over",
+    "skipped": "Hoppet over",
+    "studyComplete": "Studie fullført",
+    "wellDone": "Godt gjort!",
+    "sessionComplete": "Økt fullført"
+  },
+  "create": {
+    "createDeck": "Lag dekk",
+    "addCards": "Legg til kort",
+    "deckInfo": "Dekkinformasjon",
+    "cardInfo": "Kortinformasjon",
+    "deckTitle": "Dekktittel",
+    "deckTitlePlaceholder": "Skriv inn kortstokktittel",
+    "deckDescription": "Beskrivelse",
+    "deckDescriptionPlaceholder": "Skriv inn dekkbeskrivelse",
+    "category": "Kategori",
+    "selectCategory": "Velg kategori",
+    "cardFront": "Forside",
+    "cardFrontPlaceholder": "Skriv inn spørsmål eller term",
+    "cardBack": "Bakside",
+    "cardBackPlaceholder": "Skriv inn svar eller definisjon",
+    "difficulty": "Vanskelighet",
+    "addCard": "Legg til kort",
+    "addedCards": "Lagt til kort",
+    "saveDeck": "Lagre dekk"
+  },
+  "cards": {
+    "noCards": "Ingen kort funnet",
+    "noCardsDesc": "Lag ditt første flashkort for å komme i gang",
+    "createFirstCard": "Lag første kort",
+    "createCard": "Lag kort",
+    "editCard": "Rediger kort",
+    "selectDeck": "Velg Deck",
+    "selectDeckPlaceholder": "Velg en kortstokk for dette kortet"
+  },
+  "common": {
+    "clearFilter": "Tøm filter"
+  },
+  "studyModes": {
+    "classic": "Klassisk",
+    "matching": "Matchende spill",
+    "quiz": "Flervalg",
+    "writing": "Skrivemodus",
+    "timed": "Tidsbestemt utfordring",
+    "selectMode": "Velg Studiemodus"
+  },
+  "session": {
+    "complete": "Økt fullført",
+    "accuracy": "Nøyaktighet",
+    "speed": "Fart",
+    "score": "Score",
+    "cardsPerMinute": "kort/min",
+    "grade": "Karakter",
+    "feedback": {
+      "excellent": "Utmerket arbeid! Du har mestret denne kortstokken!",
+      "great": "Flott jobb! Fortsett med det gode arbeidet!",
+      "good": "God fremgang! Øv mer for å forbedre deg.",
+      "keep_practicing": "Fortsett å øve! Du kommer dit.",
+      "keep_studying": "Fortsett å studere! Se gjennom disse kortene på nytt."
+    }
+  },
+  "rating": {
+    "fail": "Igjen",
+    "hard": "Hard",
+    "good": "God",
+    "easy": "Lett",
+    "perfect": "Perfekt"
+  },
+  "srs": {
+    "dueToday": "Har termin i dag",
+    "dueCards": "Forfallskort",
+    "nextReview": "Neste anmeldelse",
+    "interval": "Intervall",
+    "repetitions": "Repetisjoner",
+    "easeFactor": "Enkelhetsfaktor",
+    "reviewHistory": "Gjennomgå historikk",
+    "retention": "Oppbevaringsgrad",
+    "again": "Igjen",
+    "hard": "Hard",
+    "good": "God",
+    "easy": "Lett"
+  },
+  "media": {
+    "image": "Bilde",
+    "chooseImage": "Velg Bilde",
+    "takePhoto": "Ta bilde",
+    "permissionDenied": "Tillatelse nektet tilgang til bilder",
+    "cameraPermissionDenied": "Tillatelse nektet tilgang til kamera",
+    "imageFailed": "Kunne ikke laste inn bildet",
+    "cameraFailed": "Kunne ikke åpne kameraet",
+    "audio": "Lyd",
+    "record": "Ta opp lyd",
+    "recording": "Innspilling...",
+    "stopRecording": "Stopp opptak",
+    "play": "Spille",
+    "stop": "Stoppe",
+    "speak": "Snakke",
+    "audioPermissionDenied": "Tillatelse nektet til å ta opp lyd",
+    "recordingFailed": "Kunne ikke ta opp lyd",
+    "playbackFailed": "Kunne ikke spille av lyd",
+    "ttsFailed": "Tekst-til-tale mislyktes",
+    "noText": "Ingen tekst å snakke"
+  },
+  "import": {
+    "title": "Import Deck",
+    "chooseFormat": "Velg Format",
+    "csv": "CSV (Excel)",
+    "json": "JSON",
+    "quizlet": "Quizlet",
+    "selectFile": "Velg Fil",
+    "importing": "Importerer...",
+    "success": "Vellykket importert {{count}} kort",
+    "errors": "{{count}} feil oppstod",
+    "viewErrors": "Vis feil"
+  },
+  "export": {
+    "title": "Eksportdekk",
+    "chooseFormat": "Velg Format",
+    "csv": "CSV (Excel)",
+    "json": "JSON (fullstendig)",
+    "quizlet": "Quizlet",
+    "includeStats": "Inkluder statistikk",
+    "includeMedia": "Inkluder media",
+    "exporting": "Eksporterer...",
+    "success": "Dekk ble eksportert"
+  },
+  "statistics": {
+    "title": "Statistikk",
+    "overview": "Oversikt",
+    "totalCards": "Totalt antall kort",
+    "cardsStudied": "Kort studert",
+    "totalReviews": "Totalt antall anmeldelser",
+    "correctReviews": "Korrekte anmeldelser",
+    "accuracy": "Nøyaktighet",
+    "averageTimePerCard": "Gjennomsnittlig tid per kort",
+    "totalStudyTime": "Total studietid",
+    "studySessions": "Studieøkter",
+    "streak": {
+      "current": "Nåværende strek",
+      "longest": "Lengste strek",
+      "days": "dager"
+    },
+    "charts": {
+      "daily": "Daglig",
+      "weekly": "Ukentlig",
+      "monthly": "Månedlig",
+      "performance": "Ytelse",
+      "activity": "Aktivitet"
+    }
+  },
+  "sharing": {
+    "title": "Del dekk",
+    "generateCode": "Generer delekode",
+    "shareCode": "Del kode",
+    "qrCode": "QR-kode",
+    "copyCode": "Kopier kode",
+    "codeCopied": "Koden er kopiert til utklippstavlen",
+    "shareAsFile": "Del som fil",
+    "shareAsLink": "Del som lenke",
+    "importCode": "Importer kode",
+    "enterCode": "Skriv inn 6-sifret kode",
+    "invalidCode": "Ugyldig delingskode",
+    "importing": "Importerer kortstokk...",
+    "importSuccess": "Dekk importert",
+    "downloadCount": "Nedlastinger",
+    "makePublic": "Gjør offentlig",
+    "makePrivate": "Gjør privat"
+  },
+  "gamification": {
+    "profile": {
+      "level": "Nivå",
+      "xp": "XP",
+      "rank": "Rang",
+      "progress": "Gå videre til neste nivå",
+      "totalXP": "Totalt opptjent XP"
+    },
+    "ranks": {
+      "novice": "Nybegynner",
+      "apprentice": "Lærling",
+      "scholar": "Lærd",
+      "expert": "Ekspert",
+      "master": "Herre",
+      "grandmaster": "Stormester",
+      "legend": "Legende"
+    },
+    "achievements": {
+      "title": "Prestasjoner",
+      "unlocked": "Ulåst",
+      "locked": "Låst",
+      "progress": "Framgang",
+      "reward": "Belønne",
+      "unlockedAt": "Låst opp på",
+      "categories": {
+        "study": "Studere",
+        "cards": "Kort",
+        "decks": "Dekk",
+        "streak": "Streke",
+        "special": "Spesiell"
+      }
+    },
+    "challenges": {
+      "title": "Daglige utfordringer",
+      "today": "Dagens utfordringer",
+      "completed": "Fullført",
+      "inProgress": "Pågår",
+      "reward": "Belønne",
+      "goal": "Mål",
+      "progress": "Framgang"
+    },
+    "xpRewards": {
+      "cardReviewed": "+{{amount}} XP - Kort gjennomgått",
+      "cardCorrect": "+{{amount}} XP - Riktig svar",
+      "cardPerfect": "+{{amount}} XP - Perfekt!",
+      "deckCreated": "+{{amount}} XP - Dekk opprettet",
+      "studySession": "+{{amount}} XP - Studieøkt",
+      "dailyGoal": "+{{amount}} XP - Daglig mål nådd",
+      "streakDay": "+{{amount}} XP - Strekdag",
+      "achievementUnlocked": "+{{amount}} XP - Prestasjon låst opp"
+    }
+  },
+  "matching": {
+    "title": "Matchende spill",
+    "instructions": "Match kortene ved å trykke på par",
+    "matches": "Matcher",
+    "attempts": "Forsøk",
+    "timeElapsed": "Tid",
+    "perfect": "Perfekt match!",
+    "tryAgain": "Prøv igjen"
+  },
+  "quiz": {
+    "title": "Flervalgsquiz",
+    "question": "Spørsmål",
+    "chooseAnswer": "Velg riktig svar",
+    "correct": "Korrekt!",
+    "incorrect": "Uriktig",
+    "showAnswer": "Vis svar",
+    "nextQuestion": "Neste spørsmål"
+  },
+  "writing": {
+    "title": "Skrivemodus",
+    "instructions": "Skriv inn svaret",
+    "yourAnswer": "Ditt svar",
+    "correctAnswer": "Riktig svar",
+    "similarity": "Likhet",
+    "strictMode": "Strenge modus",
+    "fuzzyMatching": "Fuzzy Matching",
+    "check": "Sjekk Svar"
+  }
+}

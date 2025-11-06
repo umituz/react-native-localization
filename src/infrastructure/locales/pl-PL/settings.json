@@ -1,0 +1,53 @@
+{
+  "lightMode": "Tryb światła",
+  "darkMode": "Tryb ciemny",
+  "language": "Język",
+  "aboutDescription": "Informacje o aplikacji i jej wersja",
+  "about": {
+    "title": "O",
+    "description": "Informacje o aplikacji i jej wersja",
+    "appVersion": "Wersja aplikacji",
+    "moreApps": "Więcej aplikacji",
+    "moreAppsDescription": "Sprawdź nasze inne aplikacje",
+    "contactEmail": "Kontakt e-mail",
+    "website": "Strona internetowa"
+  },
+  "disclaimer": {
+    "title": "Zastrzeżenie dotyczące zdrowia",
+    "shortMessage": "Kliknij, aby przeczytać ważne informacje zdrowotne",
+    "message": "Ta aplikacja służy wyłącznie do celów informacyjnych i wsparcia dobrego samopoczucia. NIE zastępuje profesjonalnej opieki medycznej ani psychicznej.\n\nJeśli doświadczasz kryzysu zdrowotnego lub nagłej sytuacji, natychmiast skontaktuj się z lokalnymi służbami ratunkowymi lub placówką medyczną.\n\nZawsze konsultuj się z wykwalifikowanymi pracownikami służby zdrowia w celu uzyskania porady lekarskiej, diagnozy lub leczenia. Treści zawarte w tej aplikacji nie powinny zastępować profesjonalnej oceny lekarskiej.\n\nTwoja prywatno��ć jest ważna. Wszystkie dane pozostają prywatne na Twoim urządzeniu, chyba że wyraźnie zdecydujesz się je udostępnić."
+  },
+  "legal": {
+    "title": "Prawny",
+    "description": "Polityka prywatności, warunki użytkowania i umowa EULA",
+    "privacy": "Polityka prywatności",
+    "privacyDescription": "Jak postępujemy z Twoimi danymi",
+    "terms": "Warunki użytkowania",
+    "termsDescription": "Warunki",
+    "eula": "Umowa licencyjna użytkownika końcowego",
+    "eulaDescription": "Umowa licencyjna"
+  },
+  "version": {
+    "title": "Wersja aplikacji"
+  },
+  "languageSelection": {
+    "title": "Wybierz Język",
+    "description": "Wybierz preferowany język",
+    "currentLanguage": "Aktualny język",
+    "searchPlaceholder": "Wyszukaj języki"
+  },
+  "appearance": {
+    "title": "Wygląd",
+    "darkMode": "Tryb ciemny",
+    "darkTheme": "Ciemny motyw",
+    "lightTheme": "Lekki motyw",
+    "themeDescription": "Ustawienia języka i motywu"
+  },
+  "notifications": {
+    "title": "Powiadomienia",
+    "description": "Zarządzaj preferencjami powiadomień",
+    "enableNotifications": "Włącz powiadomienia",
+    "notificationPermission": "Zezwolenie na powiadomienie",
+    "notificationPermissionDescription": "Zezwalaj aplikacji na wysyłanie powiadomień"
+  }
+}

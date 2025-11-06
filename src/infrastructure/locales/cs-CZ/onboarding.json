@@ -1,0 +1,76 @@
+{
+  "skip": "Přeskočit",
+  "getStarted": "Začněte",
+  "welcome": {
+    "title": "Vítejte!",
+    "subtitle": "Vaše cesta začíná zde",
+    "getStarted": "Začněte",
+    "skip": "Přeskočit"
+  },
+  "slides": {
+    "slide1": {
+      "title": "Objevte úžasné funkce",
+      "description": "Prozkoumejte vše, co naše aplikace nabízí"
+    },
+    "slide2": {
+      "title": "Zůstaňte organizovaní",
+      "description": "Sledujte, co je nejdůležitější"
+    },
+    "slide3": {
+      "title": "Dosáhněte svých cílů",
+      "description": "Jsme tu, abychom vám pomohli uspět"
+    }
+  },
+  "permissions": {
+    "title": "Oprávnění",
+    "subtitle": "Potřebujeme určitá oprávnění, abychom mohli poskytovat co nejlepší zážitek",
+    "location": {
+      "title": "Umístění",
+      "description": "Poskytujte funkce založené na poloze",
+      "enable": "Povolit polohu"
+    },
+    "camera": {
+      "title": "Fotoaparát",
+      "description": "Fotografujte a skenujte dokumenty",
+      "enable": "Povolit fotoaparát"
+    },
+    "photos": {
+      "title": "Fotografie",
+      "description": "Získejte přístup ke své knihovně fotografií",
+      "enable": "Povolit Fotky"
+    },
+    "later": "Udělám to později",
+    "continue": "Pokračovat"
+  },
+  "personalization": {
+    "title": "Přizpůsobte si svůj zážitek",
+    "subtitle": "Řekněte nám o sobě",
+    "goals": {
+      "title": "jaké jsou vaše cíle?",
+      "options": [
+        "Zůstaňte zdraví",
+        "Buďte produktivní",
+        "Naučte se nové dovednosti",
+        "Spojte se s ostatními",
+        "Bavte se"
+      ]
+    },
+    "preferences": {
+      "title": "Nastavte si své preference",
+      "theme": "Vyberte téma",
+      "language": "Vyberte Jazyk"
+    },
+    "continue": "Pokračovat"
+  },
+  "complete": {
+    "title": "Vše je připraveno!",
+    "subtitle": "Začněme!",
+    "startButton": "Začněte používat aplikaci"
+  },
+  "navigation": {
+    "next": "Další",
+    "back": "Zadní",
+    "skip": "Přeskočit",
+    "done": "Hotovo"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "skip": "Kihagyás",
+  "getStarted": "Kezdje el",
+  "welcome": {
+    "title": "Üdvözöljük!",
+    "subtitle": "Az utazásod itt kezdődik",
+    "getStarted": "Kezdje el",
+    "skip": "Kihagyás"
+  },
+  "slides": {
+    "slide1": {
+      "title": "Fedezze fel a csodálatos funkciókat",
+      "description": "Fedezze fel mindazt, amit alkalmazásunk kínál"
+    },
+    "slide2": {
+      "title": "Maradjon szervezett",
+      "description": "Kövesse nyomon, mi a legfontosabb"
+    },
+    "slide3": {
+      "title": "Érje el céljait",
+      "description": "Azért vagyunk itt, hogy segítsünk a sikerben"
+    }
+  },
+  "permissions": {
+    "title": "Engedélyek",
+    "subtitle": "A legjobb élmény biztosításához bizonyos engedélyekre van szükségünk",
+    "location": {
+      "title": "Elhelyezkedés",
+      "description": "Helyalapú funkciók biztosítása",
+      "enable": "Hely engedélyezése"
+    },
+    "camera": {
+      "title": "Kamera",
+      "description": "Készítsen fényképeket és szkenneljen be dokumentumokat",
+      "enable": "Kamera engedélyezése"
+    },
+    "photos": {
+      "title": "Fényképek",
+      "description": "Fényképtár elérése",
+      "enable": "Fotók engedélyezése"
+    },
+    "later": "Ezt később megteszem",
+    "continue": "Folytatás"
+  },
+  "personalization": {
+    "title": "Személyre szabhatja élményét",
+    "subtitle": "Mesélj magadról",
+    "goals": {
+      "title": "Mik a céljaid?",
+      "options": [
+        "Maradj egészséges",
+        "Legyen produktív",
+        "Tanuljon új készségeket",
+        "Csatlakozzon másokhoz",
+        "Jó szórakozást"
+      ]
+    },
+    "preferences": {
+      "title": "Állítsa be a preferenciáit",
+      "theme": "Válassza a Témát",
+      "language": "Válassza a Nyelv lehetőséget"
+    },
+    "continue": "Folytatás"
+  },
+  "complete": {
+    "title": "Minden készen áll!",
+    "subtitle": "Kezdjük is!",
+    "startButton": "Kezdje el az alkalmazás használatát"
+  },
+  "navigation": {
+    "next": "Következő",
+    "back": "Vissza",
+    "skip": "Kihagyás",
+    "done": "Kész"
+  }
+}

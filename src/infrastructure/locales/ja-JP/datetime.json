@@ -1,0 +1,140 @@
+{
+  "days": {
+    "full": {
+      "monday": "月曜日",
+      "tuesday": "火曜日",
+      "wednesday": "水曜日",
+      "thursday": "木曜日",
+      "friday": "金曜日",
+      "saturday": "土曜日",
+      "sunday": "日曜日"
+    },
+    "short": {
+      "mon": "月",
+      "tue": "火",
+      "wed": "水",
+      "thu": "木",
+      "fri": "金",
+      "sat": "土",
+      "sun": "太陽"
+    },
+    "abbreviated": {
+      "m": "M",
+      "t": "T",
+      "w": "W",
+      "th": "Th",
+      "f": "F",
+      "sa": "サ",
+      "su": "スー"
+    }
+  },
+  "months": {
+    "full": {
+      "january": "1月",
+      "february": "2月",
+      "march": "行進",
+      "april": "4月",
+      "may": "5月",
+      "june": "6月",
+      "july": "7月",
+      "august": "8月",
+      "september": "9月",
+      "october": "10月",
+      "november": "11月",
+      "december": "12月"
+    },
+    "short": {
+      "jan": "1月",
+      "feb": "2月",
+      "mar": "3月",
+      "apr": "4月",
+      "may": "5月",
+      "jun": "ジュン",
+      "jul": "7月",
+      "aug": "8月",
+      "sep": "9月",
+      "oct": "10月",
+      "nov": "11月",
+      "dec": "12月"
+    }
+  },
+  "relative": {
+    "now": "今",
+    "justNow": "ちょうど今",
+    "today": "今日",
+    "yesterday": "昨日",
+    "tomorrow": "明日",
+    "thisWeek": "今週",
+    "lastWeek": "先週",
+    "nextWeek": "来週",
+    "thisMonth": "今月",
+    "lastMonth": "先月",
+    "nextMonth": "来月",
+    "thisYear": "今年",
+    "lastYear": "去年",
+    "nextYear": "来年",
+    "ago": "前",
+    "fromNow": "今から",
+    "in": "で"
+  },
+  "units": {
+    "singular": {
+      "second": "2番",
+      "minute": "分",
+      "hour": "時間",
+      "day": "日",
+      "week": "週",
+      "month": "月",
+      "year": "年"
+    },
+    "plural": {
+      "seconds": "秒",
+      "minutes": "分",
+      "hours": "時間",
+      "days": "日",
+      "weeks": "週",
+      "months": "月",
+      "years": "年"
+    },
+    "short": {
+      "s": "s",
+      "m": "メートル",
+      "h": "h",
+      "d": "d",
+      "w": "w",
+      "mo": "も",
+      "y": "y"
+    }
+  },
+  "periods": {
+    "am": "午前",
+    "pm": "午後",
+    "morning": "朝",
+    "afternoon": "午後",
+    "evening": "夕方",
+    "night": "夜",
+    "midnight": "夜中",
+    "noon": "正午"
+  },
+  "formats": {
+    "date": "日付",
+    "time": "時間",
+    "datetime": "日付と時刻",
+    "duration": "間隔",
+    "startDate": "開始日",
+    "endDate": "終了日",
+    "startTime": "開始時間",
+    "endTime": "終了時間",
+    "selectDate": "日付を選択してください",
+    "selectTime": "時間を選択してください"
+  },
+  "actions": {
+    "setDate": "日付の設定",
+    "setTime": "時間を設定する",
+    "clearDate": "クリア日付",
+    "clearTime": "クリアタイム",
+    "confirmDate": "日付の確認",
+    "confirmTime": "時間を確認する",
+    "cancel": "キャンセル"
+  }
+}

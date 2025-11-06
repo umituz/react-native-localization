@@ -1,0 +1,76 @@
+{
+  "skip": "Sari peste",
+  "getStarted": "Începeți",
+  "welcome": {
+    "title": "Bun venit!",
+    "subtitle": "Călătoria ta începe aici",
+    "getStarted": "Începeți",
+    "skip": "Sari peste"
+  },
+  "slides": {
+    "slide1": {
+      "title": "Descoperiți caracteristici uimitoare",
+      "description": "Explorați tot ce are de oferit aplicația noastră"
+    },
+    "slide2": {
+      "title": "Rămâi organizat",
+      "description": "Urmăriți ceea ce contează cel mai mult"
+    },
+    "slide3": {
+      "title": "Atinge-ți obiectivele",
+      "description": "Suntem aici pentru a vă ajuta să reușiți"
+    }
+  },
+  "permissions": {
+    "title": "Permisiuni",
+    "subtitle": "Avem nevoie de niște permisiuni pentru a oferi cea mai bună experiență",
+    "location": {
+      "title": "Locaţie",
+      "description": "Furnizați funcții bazate pe locație",
+      "enable": "Activați locația"
+    },
+    "camera": {
+      "title": "Camera foto",
+      "description": "Faceți fotografii și scanați documente",
+      "enable": "Activați Camera"
+    },
+    "photos": {
+      "title": "Fotografii",
+      "description": "Accesați biblioteca dvs. de fotografii",
+      "enable": "Activați Fotografii"
+    },
+    "later": "Voi face asta mai târziu",
+    "continue": "Continua"
+  },
+  "personalization": {
+    "title": "Personalizați-vă experiența",
+    "subtitle": "Povestește-ne despre tine",
+    "goals": {
+      "title": "Care sunt obiectivele tale?",
+      "options": [
+        "Rămâi sănătos",
+        "Fii productiv",
+        "Învață noi abilități",
+        "Conectați-vă cu ceilalți",
+        "A se distra"
+      ]
+    },
+    "preferences": {
+      "title": "Setați-vă preferințele",
+      "theme": "Alegeți Tema",
+      "language": "Alegeți limba"
+    },
+    "continue": "Continua"
+  },
+  "complete": {
+    "title": "Ești gata!",
+    "subtitle": "Să începem!",
+    "startButton": "Începeți să utilizați aplicația"
+  },
+  "navigation": {
+    "next": "Următorul",
+    "back": "Spate",
+    "skip": "Sari peste",
+    "done": "Făcut"
+  }
+}
