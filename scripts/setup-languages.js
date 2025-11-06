@@ -54,11 +54,40 @@ async function setupLanguages() {
 
   console.log("🚀 Setting up language directories and files...\n");
 
-  // Check if en-US directory exists
+  // Create en-US directory if it doesn't exist
   if (!fs.existsSync(enUSDir)) {
-    console.error("❌ en-US directory not found!");
-    console.error("   Expected path:", enUSDir);
-    process.exit(1);
+    fs.mkdirSync(enUSDir, { recursive: true });
+    console.log(`📁 Created en-US directory: ${enUSDir}`);
+  }
+
+  // Get default files from localization package
+  const packageRoot = path.dirname(require.resolve('@umituz/react-native-localization/package.json'));
+  const packageEnUSDir = path.join(packageRoot, 'src/infrastructure/locales/en-US');
+  const defaultFiles = [
+    'auth.json',
+    'branding.json',
+    'datetime.json',
+    'errors.json',
+    'general.json',
+    'navigation.json',
+    'onboarding.json',
+    'settings.json',
+  ];
+
+  // Copy default files from package if they don't exist in project
+  let copiedFiles = 0;
+  if (fs.existsSync(packageEnUSDir)) {
+    for (const file of defaultFiles) {
+      const packageFile = path.join(packageEnUSDir, file);
+      const projectFile = path.join(enUSDir, file);
+      
+      if (fs.existsSync(packageFile) && !fs.existsSync(projectFile)) {
+        const content = fs.readFileSync(packageFile, "utf8");
+        fs.writeFileSync(projectFile, content);
+        console.log(`📄 Copied default file: en-US/${file}`);
+        copiedFiles++;
+      }
+    }
   }
 
   // Automatically discover all JSON files in en-US directory
@@ -69,6 +98,7 @@ async function setupLanguages() {
 
   if (files.length === 0) {
     console.error("❌ No JSON files found in en-US directory!");
+    console.error("   Please add translation files to:", enUSDir);
     process.exit(1);
   }
 

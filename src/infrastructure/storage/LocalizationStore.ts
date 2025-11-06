@@ -32,37 +32,100 @@ export const useLocalizationStore = create<LocalizationState>((set, get) => ({
    * - Fallback: English (en-US) if device locale not supported
    */
   initialize: async () => {
-    // ✅ CRITICAL FIX: Don't reset isInitialized if already initialized
-    // This prevents UI flash on re-initialization
-    const { isInitialized: alreadyInitialized } = get();
-    if (alreadyInitialized) return;
+    /* eslint-disable-next-line no-console */
+    if (__DEV__) console.log('[LocalizationStore] Starting initialization...');
+    
+    try {
+      // ✅ CRITICAL FIX: Don't reset isInitialized if already initialized
+      // This prevents UI flash on re-initialization
+      const { isInitialized: alreadyInitialized } = get();
+      if (alreadyInitialized) {
+        /* eslint-disable-next-line no-console */
+        if (__DEV__) console.log('[LocalizationStore] Already initialized, skipping...');
+        return;
+      }
 
-    // Get saved language preference
-    const savedLanguage = await StorageWrapper.getString(STORAGE_KEYS.LANGUAGE, DEFAULT_LANGUAGE);
+      /* eslint-disable-next-line no-console */
+      if (__DEV__) console.log('[LocalizationStore] Getting saved language preference...');
+      // Get saved language preference
+      const savedLanguage = await StorageWrapper.getString(STORAGE_KEYS.LANGUAGE, DEFAULT_LANGUAGE);
+      /* eslint-disable-next-line no-console */
+      if (__DEV__) console.log('[LocalizationStore] Saved language:', savedLanguage);
 
-    // ✅ DEVICE LOCALE DETECTION: Use device locale on first launch
-    let languageCode: string;
-    if (savedLanguage && savedLanguage !== DEFAULT_LANGUAGE) {
-      // User has previously selected a language → Use their choice
-      languageCode = savedLanguage;
-    } else {
-      // First launch → Detect device locale automatically
-      languageCode = getDeviceLocale();
-      // Save detected locale for future launches
-      await StorageWrapper.setString(STORAGE_KEYS.LANGUAGE, languageCode);
+      // ✅ DEVICE LOCALE DETECTION: Use device locale on first launch
+      let languageCode: string;
+      if (savedLanguage && savedLanguage !== DEFAULT_LANGUAGE) {
+        // User has previously selected a language → Use their choice
+        /* eslint-disable-next-line no-console */
+        if (__DEV__) console.log('[LocalizationStore] Using saved language preference:', savedLanguage);
+        languageCode = savedLanguage;
+      } else {
+        // First launch → Detect device locale automatically
+        /* eslint-disable-next-line no-console */
+        if (__DEV__) console.log('[LocalizationStore] First launch, detecting device locale...');
+        languageCode = getDeviceLocale();
+        /* eslint-disable-next-line no-console */
+        if (__DEV__) console.log('[LocalizationStore] Detected device locale:', languageCode);
+        // Save detected locale for future launches
+        await StorageWrapper.setString(STORAGE_KEYS.LANGUAGE, languageCode);
+        /* eslint-disable-next-line no-console */
+        if (__DEV__) console.log('[LocalizationStore] Saved detected locale to storage');
+      }
+
+      // ✅ DEFENSIVE: Validate language exists, fallback to default
+      /* eslint-disable-next-line no-console */
+      if (__DEV__) console.log('[LocalizationStore] Validating language code:', languageCode);
+      const language = getLanguageByCode(languageCode);
+      const finalLanguage = language ? languageCode : DEFAULT_LANGUAGE;
+      const finalLanguageObj = getLanguageByCode(finalLanguage);
+      
+      if (!language) {
+        /* eslint-disable-next-line no-console */
+        console.warn('[LocalizationStore] ⚠️ Language not found:', languageCode, 'falling back to:', DEFAULT_LANGUAGE);
+      }
+
+      /* eslint-disable-next-line no-console */
+      if (__DEV__) console.log('[LocalizationStore] Changing i18n language to:', finalLanguage);
+      await i18n.changeLanguage(finalLanguage);
+      
+      /* eslint-disable-next-line no-console */
+      if (__DEV__) console.log('[LocalizationStore] Setting store state...');
+      set({
+        currentLanguage: finalLanguage,
+        isRTL: finalLanguageObj?.rtl || false,
+        isInitialized: true, // ✅ Always set true to unblock UI
+      });
+      
+      /* eslint-disable-next-line no-console */
+      if (__DEV__) console.log('[LocalizationStore] ✅ Initialization complete. Language:', finalLanguage, 'RTL:', finalLanguageObj?.rtl || false);
+    } catch (error) {
+      /* eslint-disable-next-line no-console */
+      console.error('[LocalizationStore] ❌ FATAL: Initialization failed:', error);
+      /* eslint-disable-next-line no-console */
+      if (error instanceof Error) {
+        /* eslint-disable-next-line no-console */
+        console.error('[LocalizationStore] Error name:', error.name);
+        /* eslint-disable-next-line no-console */
+        console.error('[LocalizationStore] Error message:', error.message);
+        /* eslint-disable-next-line no-console */
+        console.error('[LocalizationStore] Error stack:', error.stack);
+      }
+      // Set to default language even on error to prevent app from breaking
+      try {
+        await i18n.changeLanguage(DEFAULT_LANGUAGE);
+        set({
+          currentLanguage: DEFAULT_LANGUAGE,
+          isRTL: false,
+          isInitialized: true, // Set true even on error to unblock UI
+        });
+        /* eslint-disable-next-line no-console */
+        console.warn('[LocalizationStore] ⚠️ Fallback to default language due to error');
+      } catch (fallbackError) {
+        /* eslint-disable-next-line no-console */
+        console.error('[LocalizationStore] ❌ CRITICAL: Even fallback failed:', fallbackError);
+        throw fallbackError;
+      }
     }
-
-    // ✅ DEFENSIVE: Validate language exists, fallback to default
-    const language = getLanguageByCode(languageCode);
-    const finalLanguage = language ? languageCode : DEFAULT_LANGUAGE;
-    const finalLanguageObj = getLanguageByCode(finalLanguage);
-
-    await i18n.changeLanguage(finalLanguage);
-    set({
-      currentLanguage: finalLanguage,
-      isRTL: finalLanguageObj?.rtl || false,
-      isInitialized: true, // ✅ Always set true to unblock UI
-    });
   },
 
   /**
@@ -70,22 +133,44 @@ export const useLocalizationStore = create<LocalizationState>((set, get) => ({
    * Updates i18n, state, and persists to AsyncStorage
    */
   setLanguage: async (languageCode: string) => {
-    const language = getLanguageByCode(languageCode);
+    /* eslint-disable-next-line no-console */
+    if (__DEV__) console.log('[LocalizationStore] Changing language to:', languageCode);
+    
+    try {
+      const language = getLanguageByCode(languageCode);
 
-    // ✅ DEFENSIVE: Early return if unsupported language
-    if (!language) return;
+      // ✅ DEFENSIVE: Early return if unsupported language
+      if (!language) {
+        /* eslint-disable-next-line no-console */
+        console.warn('[LocalizationStore] ⚠️ Unsupported language code:', languageCode);
+        return;
+      }
 
-    // Update i18n
-    await i18n.changeLanguage(languageCode);
+      /* eslint-disable-next-line no-console */
+      if (__DEV__) console.log('[LocalizationStore] Updating i18n language...');
+      // Update i18n
+      await i18n.changeLanguage(languageCode);
 
-    // Update state
-    set({
-      currentLanguage: languageCode,
-      isRTL: language.rtl || false,
-    });
+      /* eslint-disable-next-line no-console */
+      if (__DEV__) console.log('[LocalizationStore] Updating store state...');
+      // Update state
+      set({
+        currentLanguage: languageCode,
+        isRTL: language.rtl || false,
+      });
 
-    // Persist language preference
-    await StorageWrapper.setString(STORAGE_KEYS.LANGUAGE, languageCode);
+      /* eslint-disable-next-line no-console */
+      if (__DEV__) console.log('[LocalizationStore] Persisting language preference...');
+      // Persist language preference
+      await StorageWrapper.setString(STORAGE_KEYS.LANGUAGE, languageCode);
+      
+      /* eslint-disable-next-line no-console */
+      if (__DEV__) console.log('[LocalizationStore] ✅ Language changed successfully to:', languageCode);
+    } catch (error) {
+      /* eslint-disable-next-line no-console */
+      console.error('[LocalizationStore] ❌ Error changing language:', error);
+      throw error;
+    }
   },
 }));
 
