@@ -69,7 +69,9 @@ const initializeI18n = () => {
         useSuspense: false, // Disable suspense for React Native
       },
 
-      compatibilityJSON: 'v4', // Use i18next v4 JSON format
+      compatibilityJSON: 'v3', // Use v3 format for React Native (no Intl.PluralRules support)
+      pluralSeparator: '_', // Use underscore separator for plural keys
+      keySeparator: '.', // Use dot separator for nested keys
     });
     
     isInitialized = true;
