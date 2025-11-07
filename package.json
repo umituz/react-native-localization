@@ -1,6 +1,6 @@
 {
   "name": "@umituz/react-native-localization",
-  "version": "1.3.3",
+  "version": "1.3.6",
   "description": "Universal localization system for React Native apps with i18n support",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -19,6 +19,7 @@
     "i18n:setup": "node scripts/setup-languages.js",
     "i18n:translate": "node scripts/translate-missing.js",
     "i18n:check": "node scripts/check-translations.js",
+    "i18n:analyze": "node scripts/analyze-keys.js",
     "i18n:remove-unused": "node scripts/remove-unused-keys.js"
   },
   "keywords": [

@@ -81,14 +81,15 @@ function createAutoLoader(languageCode) {
     return false;
   }
 
-  // Create import statements and namespace mapping
-  const imports = [];
+  // Create require statements and namespace mapping
+  // Use require instead of import for JSON files to ensure proper Metro bundler handling
+  const requires = [];
   const namespaces = [];
   const descriptions = [];
 
   files.forEach(file => {
     const moduleName = file.replace('.json', '');
-    imports.push(`import ${moduleName} from './${file}';`);
+    requires.push(`const ${moduleName} = require('./${file}');`);
     namespaces.push(moduleName);
     descriptions.push(` * - ${moduleName}: ${file}`);
   });
@@ -109,7 +110,8 @@ ${descriptions.join('\n')}
  */
 
 // Import all translation modules
-${imports.join('\n')}
+// Use require for JSON files to ensure proper Metro bundler handling
+${requires.join('\n')}
 
 // Merge all modules into a single translation object
 // Using nested structure for better namespace organization

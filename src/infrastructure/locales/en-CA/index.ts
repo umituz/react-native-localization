@@ -16,18 +16,19 @@
  * - onboarding: onboarding.json
  * - settings: settings.json
  *
- * Generated: 2025-11-06T15:59:47.180Z
+ * Generated: 2025-11-06T20:57:31.289Z
  */
 
 // Import all translation modules
-import branding from './branding.json';
-import datetime from './datetime.json';
-import errors from './errors.json';
-import flashcards from './flashcards.json';
-import general from './general.json';
-import navigation from './navigation.json';
-import onboarding from './onboarding.json';
-import settings from './settings.json';
+// Use require for JSON files to ensure proper Metro bundler handling
+const branding = require('./branding.json');
+const datetime = require('./datetime.json');
+const errors = require('./errors.json');
+const flashcards = require('./flashcards.json');
+const general = require('./general.json');
+const navigation = require('./navigation.json');
+const onboarding = require('./onboarding.json');
+const settings = require('./settings.json');
 
 // Merge all modules into a single translation object
 // Using nested structure for better namespace organization
