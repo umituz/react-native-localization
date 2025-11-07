@@ -15,11 +15,13 @@ export { useLanguageNavigation } from './infrastructure/components/useLanguageNa
 export { default as i18n } from './infrastructure/config/i18n';
 export {
   SUPPORTED_LANGUAGES,
+  LANGUAGES, // Alias for SUPPORTED_LANGUAGES (backward compatibility)
   DEFAULT_LANGUAGE,
   getLanguageByCode,
   isLanguageSupported,
   getDefaultLanguage,
   getDeviceLocale,
+  searchLanguages,
 } from './infrastructure/config/languages';
 
 // Types

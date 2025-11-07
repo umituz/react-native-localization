@@ -14,11 +14,14 @@
  */
 
 import * as Localization from 'expo-localization';
-import { LANGUAGES } from './languagesData';
+import { LANGUAGES as LANGUAGES_DATA } from './languagesData';
 import { Language } from '../../domain/repositories/ILocalizationRepository';
 
 // Single source of truth for supported languages
-export const SUPPORTED_LANGUAGES: Language[] = LANGUAGES;
+export const SUPPORTED_LANGUAGES: Language[] = LANGUAGES_DATA;
+
+// Export LANGUAGES as alias for SUPPORTED_LANGUAGES for backward compatibility
+export const LANGUAGES = SUPPORTED_LANGUAGES;
 
 export const DEFAULT_LANGUAGE = 'en-US';
 
@@ -242,4 +245,16 @@ export const getDeviceLocale = (): string => {
     console.warn('[Localization] Failed to detect device locale:', error);
     return DEFAULT_LANGUAGE;
   }
+};
+
+/**
+ * Search languages by name or native name
+ */
+export const searchLanguages = (query: string): Language[] => {
+  const lowerQuery = query.toLowerCase();
+  return SUPPORTED_LANGUAGES.filter(
+    (lang) =>
+      lang.name.toLowerCase().includes(lowerQuery) ||
+      lang.nativeName.toLowerCase().includes(lowerQuery)
+  );
 };
