@@ -1,16 +1,12 @@
 {
   "name": "@umituz/react-native-localization",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Universal localization system for React Native apps with i18n support",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "scripts": {
-    "build": "tsc",
     "typecheck": "tsc --noEmit",
     "lint": "tsc --noEmit",
-    "clean": "rm -rf lib",
-    "prebuild": "npm run clean",
-    "prepublishOnly": "npm run build",
     "locales:generate": "node scripts/createLocaleLoaders.js",
     "locales:generate:lang": "node scripts/createLocaleLoaders.js",
     "version:patch": "npm version patch -m 'chore: release v%s'",
@@ -71,7 +67,6 @@
     "access": "public"
   },
   "files": [
-    "lib",
     "src",
     "scripts",
     "README.md",

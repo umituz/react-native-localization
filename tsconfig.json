@@ -11,13 +11,12 @@
     "resolveJsonModule": true,
 
     /* Emit */
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "outDir": "./lib",
+    "declaration": false,
+    "declarationMap": false,
+    "sourceMap": false,
     "rootDir": "./src",
     "removeComments": false,
-    "noEmit": false,
+    "noEmit": true,
 
     /* Interop Constraints */
     "esModuleInterop": true,
@@ -46,7 +45,6 @@
   ],
   "exclude": [
     "node_modules",
-    "lib",
     "**/*.test.ts",
     "**/*.test.tsx",
     "**/*.spec.ts",
