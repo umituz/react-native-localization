@@ -47,29 +47,84 @@ const LANGUAGES = [
   "zh-TW", // Chinese Traditional
 ];
 
+// Default translation files from package
+const DEFAULT_FILES = [
+  'auth.json',
+  'branding.json',
+  'datetime.json',
+  'errors.json',
+  'flashcards.json',
+  'general.json',
+  'navigation.json',
+  'onboarding.json',
+  'settings.json',
+];
+
+// Get path to package's default en-US files
+function getPackageEnUSPath() {
+  // Script is in: node_modules/@umituz/react-native-localization/scripts/setup-languages.js
+  // Package en-US is in: node_modules/@umituz/react-native-localization/src/infrastructure/locales/en-US
+  const scriptDir = __dirname;
+  const packageRoot = path.resolve(scriptDir, '..');
+  return path.join(packageRoot, 'src/infrastructure/locales/en-US');
+}
+
 async function setupLanguages() {
   // Find or create project's locales directory
   const localesDir = getLocalesDir(true); // Create if not exists
   const enUSDir = path.join(localesDir, "en-US");
+  const packageEnUSPath = getPackageEnUSPath();
 
   console.log("🚀 Setting up language directories and files...\n");
 
-  // Check if en-US directory exists
+  // Create en-US directory if it doesn't exist
   if (!fs.existsSync(enUSDir)) {
-    console.error("❌ en-US directory not found!");
-    console.error("   Expected path:", enUSDir);
-    process.exit(1);
+    fs.mkdirSync(enUSDir, { recursive: true });
+    console.log(`📁 Created directory: en-US/`);
   }
 
-  // Automatically discover all JSON files in en-US directory
-  const files = fs
-    .readdirSync(enUSDir)
-    .filter((file) => file.endsWith(".json"))
-    .sort();
+  // Check if en-US directory has any JSON files
+  let files = [];
+  if (fs.existsSync(enUSDir)) {
+    files = fs
+      .readdirSync(enUSDir)
+      .filter((file) => file.endsWith(".json"))
+      .sort();
+  }
 
+  // If no files found, copy default files from package
   if (files.length === 0) {
-    console.error("❌ No JSON files found in en-US directory!");
-    process.exit(1);
+    console.log("📦 No JSON files found in en-US directory.");
+    console.log("   Copying default files from package...\n");
+    
+    if (!fs.existsSync(packageEnUSPath)) {
+      console.error("❌ Package default files not found!");
+      console.error("   Expected path:", packageEnUSPath);
+      console.error("   Please ensure @umituz/react-native-localization is installed.");
+      process.exit(1);
+    }
+
+    // Copy default files from package
+    for (const file of DEFAULT_FILES) {
+      const packageFile = path.join(packageEnUSPath, file);
+      const targetFile = path.join(enUSDir, file);
+      
+      if (fs.existsSync(packageFile)) {
+        const content = fs.readFileSync(packageFile, "utf8");
+        fs.writeFileSync(targetFile, content);
+        console.log(`   📄 Created: en-US/${file}`);
+        files.push(file);
+      } else {
+        console.warn(`   ⚠️  Warning: Default file not found in package: ${file}`);
+      }
+    }
+    
+    if (files.length === 0) {
+      console.error("❌ Failed to copy default files from package!");
+      process.exit(1);
+    }
+    
+    console.log("");
   }
 
   console.log(`📄 Found ${files.length} translation files in en-US:`);
