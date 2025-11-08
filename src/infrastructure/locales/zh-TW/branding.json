@@ -1,9 +1,0 @@
-{
-  "appName": "抽認卡製作器",
-  "tagline": "歡迎來到您的旅程",
-  "poweredBy": "由 UmitUZ 應用工廠提供支持",
-  "version": "版本 {{版本}}",
-  "splash": {
-    "loading": "載入中..."
-  }
-}

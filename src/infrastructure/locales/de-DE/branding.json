@@ -1,9 +1,0 @@
-{
-  "appName": "Karteikarten-Ersteller",
-  "tagline": "Willkommen auf Ihrer Reise",
-  "poweredBy": "Unterstützt von UmitUZ App Factory",
-  "version": "Version {{version}}",
-  "splash": {
-    "loading": "Laden..."
-  }
-}

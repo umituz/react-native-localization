@@ -1,9 +1,0 @@
-{
-  "appName": "Tanulókártya készítő",
-  "tagline": "Üdvözöljük az utazáson",
-  "poweredBy": "Az UmitUZ App Factory által üzemeltetett",
-  "version": "Verzió {{version}}",
-  "splash": {
-    "loading": "Terhelés..."
-  }
-}

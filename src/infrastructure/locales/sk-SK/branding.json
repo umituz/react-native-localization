@@ -1,9 +1,0 @@
-{
-  "appName": "Tvorca kartičiek",
-  "tagline": "Vitajte na vašej ceste",
-  "poweredBy": "Beží na UmitUZ App Factory",
-  "version": "Verzia {{version}}",
-  "splash": {
-    "loading": "Načítava sa..."
-  }
-}

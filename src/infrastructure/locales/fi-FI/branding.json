@@ -1,9 +1,0 @@
-{
-  "appName": "Flashcard Maker",
-  "tagline": "Tervetuloa matkallesi",
-  "poweredBy": "Palvelun tarjoaa UmitUZ App Factory",
-  "version": "Versio {{versio}}",
-  "splash": {
-    "loading": "Ladataan..."
-  }
-}

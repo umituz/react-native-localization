@@ -4,6 +4,7 @@
  */
 
 import { create } from 'zustand';
+import { useTranslation } from 'react-i18next';
 import { StorageWrapper, STORAGE_KEYS } from './AsyncStorageWrapper';
 import i18n from '../config/i18n';
 import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE, getLanguageByCode, getDeviceLocale } from '../config/languages';
@@ -177,6 +178,7 @@ export const useLocalizationStore = create<LocalizationState>((set, get) => ({
 /**
  * Hook to use localization
  * Provides current language, RTL state, language switching, and translation function
+ * Uses react-i18next's useTranslation hook to ensure proper i18n instance
  */
 export const useLocalization = () => {
   const {
@@ -190,8 +192,12 @@ export const useLocalization = () => {
 
   const currentLanguageObject = getLanguageByCode(currentLanguage);
 
+  // Use react-i18next's useTranslation hook to ensure proper i18n instance
+  // This ensures that react-i18next knows about the i18n instance
+  const { t } = useTranslation();
+
   return {
-    t: i18n.t.bind(i18n), // Translation function
+    t, // Translation function from react-i18next
     currentLanguage,
     currentLanguageObject,
     isRTL,

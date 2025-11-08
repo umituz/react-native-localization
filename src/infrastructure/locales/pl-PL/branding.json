@@ -1,9 +1,0 @@
-{
-  "appName": "Kreator fiszek",
-  "tagline": "Witamy w Twojej podróży",
-  "poweredBy": "Obsługiwane przez fabrykę aplikacji UmitUZ",
-  "version": "Wersja {{wersja}}",
-  "splash": {
-    "loading": "Załadunek..."
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "appName": "Izrađivač kartica",
-  "tagline": "Dobrodošli na svoje putovanje",
-  "poweredBy": "Pokreće UmitUZ App Factory",
-  "version": "Verzija {{version}}",
-  "splash": {
-    "loading": "Učitavanje..."
-  }
-}

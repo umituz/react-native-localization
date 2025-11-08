@@ -1,9 +1,0 @@
-{
-  "appName": "Créateur de cartes mémoire",
-  "tagline": "Bienvenue dans votre voyage",
-  "poweredBy": "Propulsé par UmitUZ App Factory",
-  "version": "Version {{version}}",
-  "splash": {
-    "loading": "Chargement..."
-  }
-}

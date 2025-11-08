@@ -1,9 +1,0 @@
-{
-  "appName": "Създател на флаш карти",
-  "tagline": "Добре дошли на вашето пътуване",
-  "poweredBy": "Осъществено от UmitUZ App Factory",
-  "version": "Версия {{version}}",
-  "splash": {
-    "loading": "Зареждане..."
-  }
-}

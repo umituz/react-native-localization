@@ -1,9 +1,0 @@
-{
-  "appName": "Criador de cartões flash",
-  "tagline": "Bem-vindo à sua jornada",
-  "poweredBy": "Desenvolvido por UmitUZ App Factory",
-  "version": "Versão {{versão}}",
-  "splash": {
-    "loading": "Carregando..."
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "appName": "Створювач карток",
-  "tagline": "Ласкаво просимо у вашу подорож",
-  "poweredBy": "Працює на UmitUZ App Factory",
-  "version": "Версія {{version}}",
-  "splash": {
-    "loading": "Завантаження..."
-  }
-}
