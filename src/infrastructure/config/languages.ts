@@ -242,7 +242,6 @@ export const getDeviceLocale = (): string => {
     return DEFAULT_LANGUAGE;
   } catch (error) {
     // If any error occurs, fallback to default
-    console.warn('[Localization] Failed to detect device locale:', error);
     return DEFAULT_LANGUAGE;
   }
 };

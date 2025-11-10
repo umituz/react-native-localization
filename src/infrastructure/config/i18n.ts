@@ -46,11 +46,8 @@ const loadPackageTranslations = (): Record<string, any> => {
       try {
         const translations = packageLocalesContext(key);
         packageTranslations[languageCode] = translations.default || translations;
-        /* eslint-disable-next-line no-console */
-        if (__DEV__) console.log(`[i18n] ✅ Loaded package translations: ${languageCode}`);
       } catch (error) {
-        /* eslint-disable-next-line no-console */
-        if (__DEV__) console.warn(`[i18n] ⚠️  Failed to load package translations for ${languageCode}:`, error);
+        // Ignore individual language loading errors
       }
     }
   });
@@ -84,17 +81,11 @@ try {
           projectTranslations[languageCode] = {};
         }
         projectTranslations[languageCode] = translations.default || translations;
-        /* eslint-disable-next-line no-console */
-        if (__DEV__) console.log(`[i18n] ✅ Loaded project translations: ${languageCode}`);
       } catch (error) {
-        /* eslint-disable-next-line no-console */
-        if (__DEV__) console.warn(`[i18n] ⚠️  Failed to load project translations for ${languageCode}:`, error);
+        // Ignore individual language loading errors
       }
     }
   });
-  
-  /* eslint-disable-next-line no-console */
-  if (__DEV__) console.log('[i18n] ✅ Loaded project translations from DDD structure');
 } catch (e1) {
   try {
     // Try alternative DDD structure path
@@ -116,9 +107,6 @@ try {
         }
       }
     });
-    
-    /* eslint-disable-next-line no-console */
-    if (__DEV__) console.log('[i18n] ✅ Loaded project translations from alternative DDD structure');
   } catch (e2) {
     try {
       // Try simple structure path
@@ -140,13 +128,8 @@ try {
           }
         }
       });
-      
-      /* eslint-disable-next-line no-console */
-      if (__DEV__) console.log('[i18n] ✅ Loaded project translations from simple structure');
     } catch (e3) {
       // No project translations found - this is OK, use package defaults only
-      /* eslint-disable-next-line no-console */
-      if (__DEV__) console.log('[i18n] ℹ️  No project-specific translations found, using package defaults only');
     }
   }
 }
@@ -209,9 +192,6 @@ const buildResources = (): Record<string, { translation: any }> => {
     };
   });
   
-  /* eslint-disable-next-line no-console */
-  if (__DEV__) console.log(`[i18n] 📦 Loaded ${Object.keys(resources).length} languages:`, Object.keys(resources).join(', '));
-  
   return resources;
 };
 
@@ -227,16 +207,10 @@ const initializeI18n = () => {
   if (isInitialized) return;
 
   try {
-    /* eslint-disable-next-line no-console */
-    if (__DEV__) console.log('[i18n] Initializing i18next...');
-    
     // Check if initReactI18next is available
     if (!initReactI18next) {
       throw new Error('initReactI18next is undefined');
     }
-    
-    /* eslint-disable-next-line no-console */
-    if (__DEV__) console.log('[i18n] initReactI18next found, initializing...');
     
     i18n.use(initReactI18next).init({
       resources,
@@ -257,14 +231,8 @@ const initializeI18n = () => {
     });
     
     isInitialized = true;
-    /* eslint-disable-next-line no-console */
-    if (__DEV__) console.log('[i18n] i18next initialized successfully');
   } catch (error) {
-    /* eslint-disable-next-line no-console */
-    if (__DEV__) console.error('[i18n] Initialization error:', error);
     // Don't throw - allow app to continue without i18n
-    /* eslint-disable-next-line no-console */
-    if (__DEV__) console.warn('[i18n] Continuing without i18n initialization');
   }
 };
 

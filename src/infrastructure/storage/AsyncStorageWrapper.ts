@@ -15,7 +15,6 @@ export const StorageWrapper = {
       const value = await AsyncStorage.getItem(key);
       return value ?? defaultValue;
     } catch (error) {
-      console.warn('[Localization] Failed to get storage value:', error);
       return defaultValue;
     }
   },
@@ -24,7 +23,7 @@ export const StorageWrapper = {
     try {
       await AsyncStorage.setItem(key, value);
     } catch (error) {
-      console.warn('[Localization] Failed to set storage value:', error);
+      // Ignore storage errors
     }
   },
 };
