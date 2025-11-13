@@ -214,6 +214,9 @@ if (typeof global !== 'undefined' && !(global as any).__i18n_resources_logged) {
   }
 }
 
+// Global flag to ensure initReactI18next is only used once
+let reactI18nextInitialized = false;
+
 /**
  * Initialize i18next
  * CRITICAL: Check i18n.isInitialized to prevent multiple initializations
@@ -231,7 +234,13 @@ const initializeI18n = () => {
       throw new Error('initReactI18next is undefined');
     }
     
-    i18n.use(initReactI18next).init({
+    // CRITICAL: Only use initReactI18next once (prevents context registration issues)
+    if (!reactI18nextInitialized) {
+      i18n.use(initReactI18next);
+      reactI18nextInitialized = true;
+    }
+    
+    i18n.init({
       resources,
       lng: DEFAULT_LANGUAGE,
       fallbackLng: DEFAULT_LANGUAGE,
