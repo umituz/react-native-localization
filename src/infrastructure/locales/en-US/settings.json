@@ -12,11 +12,6 @@
     "contactEmail": "Contact Email",
     "website": "Website"
   },
-  "disclaimer": {
-    "title": "Health Disclaimer",
-    "shortMessage": "Tap to read important health information",
-    "message": "This app is for informational and wellness support purposes only. It is NOT a substitute for professional medical or mental health care.\n\nIf you're experiencing a health crisis or emergency, contact your local emergency services or healthcare provider immediately.\n\nAlways consult qualified healthcare professionals for medical advice, diagnosis, or treatment. The content in this app should not be used as a substitute for professional medical judgment.\n\nYour privacy is important. All data stays private on your device unless you explicitly choose to share it."
-  },
   "legal": {
     "title": "Legal",
     "description": "Privacy policy, terms of use, and EULA",

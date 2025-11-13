@@ -45,16 +45,6 @@
   "personalization": {
     "title": "Personalize Your Experience",
     "subtitle": "Tell us about yourself",
-    "goals": {
-      "title": "What are your goals?",
-      "options": [
-        "Stay healthy",
-        "Be productive",
-        "Learn new skills",
-        "Connect with others",
-        "Have fun"
-      ]
-    },
     "preferences": {
       "title": "Set your preferences",
       "theme": "Choose Theme",
