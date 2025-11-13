@@ -266,16 +266,9 @@ const initializeI18n = () => {
   }
 };
 
-// Defer initialization until React is ready
-// React Native doesn't have window, so we check for global
-if (typeof global !== 'undefined') {
-  // Use setTimeout to defer initialization
-  setTimeout(() => {
-    initializeI18n();
-  }, 0);
-} else {
-  // Fallback: initialize immediately
-  initializeI18n();
-}
+// Initialize immediately - no need to defer
+// React Native and React are ready when this module loads
+// Deferring causes race conditions with useTranslation hook
+initializeI18n();
 
 export default i18n;
