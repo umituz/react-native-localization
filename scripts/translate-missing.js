@@ -81,8 +81,12 @@ const SKIP_WORDS = new Set([
 /**
  * Simple Google Translate API call using free endpoint
  * Note: This uses Google's unofficial API. For production, use official API with key.
+ * Includes retry mechanism for rate limiting and HTML error responses.
  */
-async function translateText(text, targetLang) {
+async function translateText(text, targetLang, retryCount = 0) {
+  const MAX_RETRIES = 3;
+  const RETRY_DELAY = 1000; // 1 second
+
   return new Promise((resolve, _reject) => {
     if (SKIP_WORDS.has(text)) {
       resolve(text);
@@ -99,28 +103,96 @@ async function translateText(text, targetLang) {
           data += chunk;
         });
         res.on('end', () => {
+          // Check if response is HTML (error page)
+          if (data.trim().startsWith('<') || data.trim().startsWith('<!')) {
+            // HTML response - likely rate limit or error page
+            if (retryCount < MAX_RETRIES) {
+              if (options.verbose) {
+                console.warn(
+                  `   ⚠️ HTML response received for "${text}" to ${targetLang}, retrying... (${retryCount + 1}/${MAX_RETRIES})`
+                );
+              }
+              // Retry after delay
+              setTimeout(() => {
+                translateText(text, targetLang, retryCount + 1).then(resolve);
+              }, RETRY_DELAY * (retryCount + 1)); // Exponential backoff
+              return;
+            } else {
+              console.warn(
+                `⚠️ Translation failed for "${text}" to ${targetLang}: HTML response (rate limit or API error)`
+              );
+              resolve(text); // Fallback to original
+              return;
+            }
+          }
+
+          // Check HTTP status code
+          if (res.statusCode !== 200) {
+            if (retryCount < MAX_RETRIES) {
+              if (options.verbose) {
+                console.warn(
+                  `   ⚠️ HTTP ${res.statusCode} for "${text}" to ${targetLang}, retrying... (${retryCount + 1}/${MAX_RETRIES})`
+                );
+              }
+              setTimeout(() => {
+                translateText(text, targetLang, retryCount + 1).then(resolve);
+              }, RETRY_DELAY * (retryCount + 1));
+              return;
+            } else {
+              console.warn(
+                `⚠️ Translation failed for "${text}" to ${targetLang}: HTTP ${res.statusCode}`
+              );
+              resolve(text);
+              return;
+            }
+          }
+
           try {
             const parsed = JSON.parse(data);
+            if (!parsed || !parsed[0] || !Array.isArray(parsed[0])) {
+              throw new Error('Invalid response format');
+            }
             const translated = parsed[0]
               .map(item => item[0])
               .join('')
               .trim();
             resolve(translated || text);
           } catch (error) {
-            console.warn(
-              `⚠️ Translation failed for "${text}" to ${targetLang}:`,
-              error.message
-            );
-            resolve(text); // Fallback to original
+            // JSON parse error - might be HTML or malformed response
+            if (retryCount < MAX_RETRIES) {
+              if (options.verbose) {
+                console.warn(
+                  `   ⚠️ Parse error for "${text}" to ${targetLang}, retrying... (${retryCount + 1}/${MAX_RETRIES}): ${error.message}`
+                );
+              }
+              setTimeout(() => {
+                translateText(text, targetLang, retryCount + 1).then(resolve);
+              }, RETRY_DELAY * (retryCount + 1));
+            } else {
+              console.warn(
+                `⚠️ Translation failed for "${text}" to ${targetLang}: ${error.message}`
+              );
+              resolve(text); // Fallback to original
+            }
           }
         });
       })
       .on('error', err => {
-        console.warn(
-          `⚠️ Network error translating "${text}" to ${targetLang}:`,
-          err.message
-        );
-        resolve(text); // Fallback to original
+        if (retryCount < MAX_RETRIES) {
+          if (options.verbose) {
+            console.warn(
+              `   ⚠️ Network error for "${text}" to ${targetLang}, retrying... (${retryCount + 1}/${MAX_RETRIES}): ${err.message}`
+            );
+          }
+          setTimeout(() => {
+            translateText(text, targetLang, retryCount + 1).then(resolve);
+          }, RETRY_DELAY * (retryCount + 1));
+        } else {
+          console.warn(
+            `⚠️ Network error translating "${text}" to ${targetLang}: ${err.message}`
+          );
+          resolve(text); // Fallback to original
+        }
       });
   });
 }
@@ -276,8 +348,8 @@ async function translateObject(enObj, targetObj, targetLang, path = '') {
           translatedCount++;
           stats.translated++;
 
-          // Add delay to avoid rate limiting (200ms between requests)
-          await delay(200);
+          // Add delay to avoid rate limiting (300ms between requests - increased for stability)
+          await delay(300);
         } catch (error) {
           console.error(`   ❌ Failed to translate "${currentPath}":`, error.message);
           stats.errors++;
