@@ -197,27 +197,33 @@ const buildResources = (): Record<string, { translation: any }> => {
 
 const resources = buildResources();
 
-// Debug: Log loaded resources in development
-/* eslint-disable-next-line no-console */
-if (typeof __DEV__ !== 'undefined' && __DEV__) {
-  console.log('🌍 i18n Resources loaded:', {
-    languages: Object.keys(resources),
-    enUSKeys: resources['en-US']?.translation ? Object.keys(resources['en-US'].translation) : [],
-    hasGoals: !!resources['en-US']?.translation?.goals,
-    navigationKeys: resources['en-US']?.translation?.navigation ? Object.keys(resources['en-US'].translation.navigation) : [],
-    hasMilestones: !!resources['en-US']?.translation?.navigation?.milestones,
-    hasStatistics: !!resources['en-US']?.translation?.navigation?.statistics,
-  });
+// Debug: Log loaded resources in development (only once to prevent spam)
+// Use global flag to prevent multiple logs when module is imported multiple times
+if (typeof global !== 'undefined' && !(global as any).__i18n_resources_logged) {
+  /* eslint-disable-next-line no-console */
+  if (typeof __DEV__ !== 'undefined' && __DEV__) {
+    console.log('🌍 i18n Resources loaded:', {
+      languages: Object.keys(resources),
+      enUSKeys: resources['en-US']?.translation ? Object.keys(resources['en-US'].translation) : [],
+      hasGoals: !!resources['en-US']?.translation?.goals,
+      navigationKeys: resources['en-US']?.translation?.navigation ? Object.keys(resources['en-US'].translation.navigation) : [],
+      hasMilestones: !!resources['en-US']?.translation?.navigation?.milestones,
+      hasStatistics: !!resources['en-US']?.translation?.navigation?.statistics,
+    });
+    (global as any).__i18n_resources_logged = true;
+  }
 }
 
 /**
  * Initialize i18next
- * Deferred initialization to avoid React Native renderer conflicts
+ * CRITICAL: Check i18n.isInitialized to prevent multiple initializations
+ * This prevents "i18next is already initialized" warnings when module is imported multiple times
  */
-let isInitialized = false;
-
 const initializeI18n = () => {
-  if (isInitialized) return;
+  // CRITICAL: Check if i18n is already initialized (prevents multiple init calls)
+  if (i18n.isInitialized) {
+    return;
+  }
 
   try {
     // Check if initReactI18next is available
@@ -246,8 +252,6 @@ const initializeI18n = () => {
       debug: typeof __DEV__ !== 'undefined' && __DEV__,
     });
     
-    isInitialized = true;
-    
     // Debug: Verify initialization
     /* eslint-disable-next-line no-console */
     if (typeof __DEV__ !== 'undefined' && __DEV__) {
@@ -269,6 +273,7 @@ const initializeI18n = () => {
 // Initialize immediately - no need to defer
 // React Native and React are ready when this module loads
 // Deferring causes race conditions with useTranslation hook
+// CRITICAL: i18n.isInitialized check prevents multiple initializations
 initializeI18n();
 
 export default i18n;
