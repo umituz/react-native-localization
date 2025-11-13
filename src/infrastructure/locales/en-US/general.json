@@ -38,6 +38,7 @@
   "apply": "Apply",
   "yes": "Yes",
   "no": "No",
+  "or": "or",
   "all": "All",
   "none": "None",
   "of": "of",
@@ -53,9 +54,5 @@
   "viewAll": "View all",
   "showMore": "Show more",
   "showLess": "Show less",
-  "start": "Start",
-  "study": "Study",
-  "cards": "Cards",
-  "correct": "Correct",
-  "incorrect": "Incorrect"
+  "start": "Start"
 }

@@ -197,6 +197,19 @@ const buildResources = (): Record<string, { translation: any }> => {
 
 const resources = buildResources();
 
+// Debug: Log loaded resources in development
+/* eslint-disable-next-line no-console */
+if (typeof __DEV__ !== 'undefined' && __DEV__) {
+  console.log('🌍 i18n Resources loaded:', {
+    languages: Object.keys(resources),
+    enUSKeys: resources['en-US']?.translation ? Object.keys(resources['en-US'].translation) : [],
+    hasGoals: !!resources['en-US']?.translation?.goals,
+    navigationKeys: resources['en-US']?.translation?.navigation ? Object.keys(resources['en-US'].translation.navigation) : [],
+    hasMilestones: !!resources['en-US']?.translation?.navigation?.milestones,
+    hasStatistics: !!resources['en-US']?.translation?.navigation?.statistics,
+  });
+}
+
 /**
  * Initialize i18next
  * Deferred initialization to avoid React Native renderer conflicts
@@ -228,10 +241,27 @@ const initializeI18n = () => {
       compatibilityJSON: 'v3', // Use v3 format for React Native (no Intl.PluralRules support)
       pluralSeparator: '_', // Use underscore separator for plural keys
       keySeparator: '.', // Use dot separator for nested keys
+      
+      // Debug options
+      debug: typeof __DEV__ !== 'undefined' && __DEV__,
     });
     
     isInitialized = true;
+    
+    // Debug: Verify initialization
+    /* eslint-disable-next-line no-console */
+    if (typeof __DEV__ !== 'undefined' && __DEV__) {
+      console.log('✅ i18n initialized:', {
+        language: i18n.language,
+        hasResource: !!i18n.getResourceBundle(i18n.language, 'translation'),
+        goalsTitle: i18n.t('goals.list.title', { defaultValue: 'NOT_FOUND' }),
+      });
+    }
   } catch (error) {
+    /* eslint-disable-next-line no-console */
+    if (typeof __DEV__ !== 'undefined' && __DEV__) {
+      console.error('❌ i18n initialization error:', error);
+    }
     // Don't throw - allow app to continue without i18n
   }
 };
