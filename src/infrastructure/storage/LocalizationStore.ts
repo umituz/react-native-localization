@@ -134,17 +134,22 @@ export const useLocalization = () => {
   // Always call useTranslation hook (React hooks rules - must be unconditional)
   // Pass i18n instance explicitly to ensure react-i18next finds it
   // This fixes the "NO_I18NEXT_INSTANCE" error
+  // Even if i18n is not fully initialized, useTranslation will handle it gracefully
+  // with the explicit i18n instance passed
   const translationResult = useTranslation(undefined, { i18n });
   
-  // Use translation function from react-i18next
-  // If it fails, fallback to direct i18n.t
-  const t: (key: string, options?: any) => string = translationResult?.t || ((key: string, options?: any) => {
-    if (i18n.isInitialized && typeof i18n.t === 'function') {
-      return i18n.t(key, options);
-    }
-    // Final fallback: return key if i18n is not ready
-    return key;
-  });
+  // Use translation function from react-i18next if available and valid
+  // Otherwise fallback to direct i18n.t
+  const t: (key: string, options?: any) => string = (translationResult?.t && typeof translationResult.t === 'function' && i18n.isInitialized)
+    ? translationResult.t 
+    : ((key: string, options?: any) => {
+        // Fallback to direct i18n.t if react-i18next is not ready
+        if (i18n.isInitialized && typeof i18n.t === 'function') {
+          return i18n.t(key, options);
+        }
+        // Final fallback: return key if i18n is not ready
+        return key;
+      });
 
   return {
     t, // Translation function from react-i18next or i18n fallback
