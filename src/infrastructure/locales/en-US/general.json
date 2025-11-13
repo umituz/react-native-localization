@@ -19,7 +19,6 @@
   "skip": "Skip",
   "retry": "Retry",
   "refresh": "Refresh",
-  "search": "Search",
   "filter": "Filter",
   "sort": "Sort",
   "add": "Add",
@@ -53,5 +52,6 @@
   "viewAll": "View all",
   "showMore": "Show more",
   "showLess": "Show less",
+  "back": "Back",
   "start": "Start"
 }

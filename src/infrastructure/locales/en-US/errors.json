@@ -29,14 +29,12 @@
     "photosNotAvailable": "Photo library not available"
   },
   "common": {
-    "somethingWentWrong": "Something went wrong",
     "tryAgainLater": "Please try again later",
     "unexpectedError": "An unexpected error occurred"
   },
   "actions": {
     "dismiss": "Dismiss",
     "retry": "Retry",
-    "cancel": "Cancel",
     "goBack": "Go Back",
     "contactSupport": "Contact Support"
   }

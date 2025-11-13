@@ -61,7 +61,6 @@
   "relative": {
     "now": "Now",
     "justNow": "Just now",
-    "today": "Today",
     "yesterday": "Yesterday",
     "tomorrow": "Tomorrow",
     "thisWeek": "This week",
@@ -134,7 +133,6 @@
     "clearDate": "Clear Date",
     "clearTime": "Clear Time",
     "confirmDate": "Confirm Date",
-    "confirmTime": "Confirm Time",
-    "cancel": "Cancel"
+    "confirmTime": "Confirm Time"
   }
 }

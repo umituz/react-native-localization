@@ -1,6 +1,4 @@
 {
-  "skip": "Skip",
-  "getStarted": "Get Started",
   "welcome": {
     "title": "Welcome!",
     "subtitle": "Get started",
@@ -56,11 +54,5 @@
     "title": "You're All Set!",
     "subtitle": "Let's get started!",
     "startButton": "Start Using App"
-  },
-  "navigation": {
-    "next": "Next",
-    "back": "Back",
-    "skip": "Skip",
-    "done": "Done"
   }
 }

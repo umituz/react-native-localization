@@ -1,7 +1,5 @@
 {
   "home": "Home",
-  "settings": "Settings",
-  "about": "About",
   "explore": "Explore",
   "search": "Search",
   "favorites": "Favorites",
@@ -15,9 +13,11 @@
   "categories": "Categories",
   "saved": "Saved",
   "history": "History",
-  "today": "Today",
   "statistics": "Statistics",
   "reminders": "Reminders",
   "profile": "Profile",
-  "account": "Account"
+  "account": "Account",
+  "settings": "Settings",
+  "about": "About",
+  "today": "Today"
 }

@@ -1,7 +1,6 @@
 {
   "appName": "App Name",
   "tagline": "Welcome",
-  "version": "Version {{version}}",
   "splash": {
     "loading": "Loading..."
   }
