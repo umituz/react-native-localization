@@ -117,6 +117,7 @@ export const useLocalizationStore = create<LocalizationState>((set, get) => ({
  * Hook to use localization
  * Provides current language, RTL state, language switching, and translation function
  * Uses react-i18next's useTranslation hook to ensure proper i18n instance
+ * Falls back to direct i18n.t if react-i18next is not ready
  */
 export const useLocalization = () => {
   const {
@@ -130,12 +131,31 @@ export const useLocalization = () => {
 
   const currentLanguageObject = getLanguageByCode(currentLanguage);
 
-  // Use react-i18next's useTranslation hook to ensure proper i18n instance
-  // This ensures that react-i18next knows about the i18n instance
-  const { t } = useTranslation();
+  // Check if i18n is initialized and react-i18next is ready
+  // If not, use direct i18n.t as fallback
+  const isI18nReady = i18n.isInitialized && typeof i18n.t === 'function';
+  
+  // Always call useTranslation hook (React hooks rules)
+  // But use fallback if i18n is not ready
+  let translationResult;
+  try {
+    translationResult = useTranslation();
+  } catch (error) {
+    // If useTranslation fails, we'll use direct i18n.t
+    translationResult = null;
+  }
+
+  // Use translation function from react-i18next if available, otherwise use direct i18n.t
+  const t: (key: string, options?: any) => string = translationResult?.t || ((key: string, options?: any) => {
+    if (isI18nReady) {
+      return i18n.t(key, options);
+    }
+    // Final fallback: return key if i18n is not ready
+    return key;
+  });
 
   return {
-    t, // Translation function from react-i18next
+    t, // Translation function from react-i18next or i18n fallback
     currentLanguage,
     currentLanguageObject,
     isRTL,
