@@ -140,16 +140,21 @@ export const useLocalization = () => {
   
   // Use translation function from react-i18next if available and valid
   // Otherwise fallback to direct i18n.t
-  const t: (key: string, options?: any) => string = (translationResult?.t && typeof translationResult.t === 'function' && i18n.isInitialized)
-    ? translationResult.t 
-    : ((key: string, options?: any) => {
+  // Type assertion needed because react-i18next's TFunction can return string | object
+  const t = (translationResult?.t && typeof translationResult.t === 'function' && i18n.isInitialized)
+    ? ((key: string, options?: any): string => {
+        const result = translationResult.t(key, options);
+        return typeof result === 'string' ? result : String(result);
+      })
+    : ((key: string, options?: any): string => {
         // Fallback to direct i18n.t if react-i18next is not ready
         if (i18n.isInitialized && typeof i18n.t === 'function') {
-          return i18n.t(key, options);
+          const result = i18n.t(key, options);
+          return typeof result === 'string' ? result : String(result);
         }
         // Final fallback: return key if i18n is not ready
         return key;
-      });
+      }) as (key: string, options?: any) => string;
 
   return {
     t, // Translation function from react-i18next or i18n fallback
