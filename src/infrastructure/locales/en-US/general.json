@@ -1,5 +1,4 @@
 {
-  "back": "Back",
   "cancel": "Cancel",
   "confirm": "Confirm",
   "continue": "Continue",
@@ -11,7 +10,7 @@
   "ok": "OK",
   "optional": "Optional",
   "save": "Save",
-  "something_went_wrong": "Something went wrong",
+  "somethingWentWrong": "Something went wrong",
   "success": "Success",
   "close": "Close",
   "done": "Done",

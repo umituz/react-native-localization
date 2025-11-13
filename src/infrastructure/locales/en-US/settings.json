@@ -2,13 +2,10 @@
   "lightMode": "Light Mode",
   "darkMode": "Dark Mode",
   "language": "Language",
-  "aboutDescription": "App information and version",
   "about": {
     "title": "About",
     "description": "App information and version",
     "appVersion": "App Version",
-    "moreApps": "More Apps",
-    "moreAppsDescription": "Check out our other apps",
     "contactEmail": "Contact Email",
     "website": "Website"
   },
@@ -36,7 +33,7 @@
     "darkMode": "Dark Mode",
     "darkTheme": "Dark Theme",
     "lightTheme": "Light Theme",
-    "themeDescription": "Language and theme settings"
+    "themeDescription": "Theme settings"
   },
   "notifications": {
     "title": "Notifications",

@@ -1,11 +1,8 @@
 {
   "appName": "App Name",
-  "tagline": "Welcome to your journey",
-  "poweredBy": "Powered by UmitUZ App Factory",
+  "tagline": "Welcome",
   "version": "Version {{version}}",
   "splash": {
     "loading": "Loading..."
   }
 }
-
-

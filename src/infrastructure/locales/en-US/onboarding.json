@@ -3,22 +3,22 @@
   "getStarted": "Get Started",
   "welcome": {
     "title": "Welcome!",
-    "subtitle": "Your journey starts here",
+    "subtitle": "Get started",
     "getStarted": "Get Started",
     "skip": "Skip"
   },
   "slides": {
     "slide1": {
-      "title": "Discover Amazing Features",
-      "description": "Explore everything our app has to offer"
+      "title": "Welcome",
+      "description": "Get started with our app"
     },
     "slide2": {
-      "title": "Stay Organized",
-      "description": "Keep track of what matters most"
+      "title": "Features",
+      "description": "Discover what we offer"
     },
     "slide3": {
-      "title": "Achieve Your Goals",
-      "description": "We're here to help you succeed"
+      "title": "Ready",
+      "description": "Let's begin"
     }
   },
   "permissions": {
@@ -26,17 +26,17 @@
     "subtitle": "We need some permissions to provide the best experience",
     "location": {
       "title": "Location",
-      "description": "Provide location-based features",
+      "description": "Enable location services",
       "enable": "Enable Location"
     },
     "camera": {
       "title": "Camera",
-      "description": "Take photos and scan documents",
+      "description": "Enable camera access",
       "enable": "Enable Camera"
     },
     "photos": {
       "title": "Photos",
-      "description": "Access your photo library",
+      "description": "Enable photo library access",
       "enable": "Enable Photos"
     },
     "later": "I'll do this later",
@@ -44,7 +44,7 @@
   },
   "personalization": {
     "title": "Personalize Your Experience",
-    "subtitle": "Tell us about yourself",
+    "subtitle": "Set your preferences",
     "preferences": {
       "title": "Set your preferences",
       "theme": "Choose Theme",
