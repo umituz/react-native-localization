@@ -67,15 +67,62 @@ const LANGUAGE_MAP = {
   'zh-TW': 'zh-TW', // Chinese Traditional
 };
 
-// Only skip actual brand names - everything else should be translated
-// Note: Even common words like "Email", "OK", "Premium" should be localized
+// Skip brand names and common words that are the same in most languages
+// These words don't need translation and should be preserved as-is
 const SKIP_WORDS = new Set([
+  // Brand names
   'Google',
   'Apple',
   'Facebook',
   'Instagram',
   'Twitter',
   'WhatsApp',
+
+  // Common UI words that are often the same
+  'OK',
+  'Yes',
+  'No',
+  'Cancel',
+  'Save',
+  'Delete',
+  'Edit',
+  'Back',
+  'Next',
+  'Previous',
+  'Close',
+  'Open',
+  'Menu',
+  'Settings',
+  'Help',
+  'Info',
+  'Error',
+  'Warning',
+  'Success',
+  'Loading',
+  'Search',
+  'Filter',
+  'Sort',
+  'View',
+  'Show',
+  'Hide',
+
+  // Technical terms
+  'API',
+  'URL',
+  'HTTP',
+  'HTTPS',
+  'JSON',
+  'XML',
+  'PDF',
+  'CSV',
+  'ID',
+
+  // Common abbreviations
+  'etc.',
+  'e.g.',
+  'i.e.',
+  'vs.',
+  'etc',
 ]);
 
 /**
@@ -169,10 +216,10 @@ async function translateText(text, targetLang, retryCount = 0) {
                 translateText(text, targetLang, retryCount + 1).then(resolve);
               }, RETRY_DELAY * (retryCount + 1));
             } else {
-              console.warn(
+            console.warn(
                 `⚠️ Translation failed for "${text}" to ${targetLang}: ${error.message}`
-              );
-              resolve(text); // Fallback to original
+            );
+            resolve(text); // Fallback to original
             }
           }
         });
@@ -188,10 +235,10 @@ async function translateText(text, targetLang, retryCount = 0) {
             translateText(text, targetLang, retryCount + 1).then(resolve);
           }, RETRY_DELAY * (retryCount + 1));
         } else {
-          console.warn(
+        console.warn(
             `⚠️ Network error translating "${text}" to ${targetLang}: ${err.message}`
-          );
-          resolve(text); // Fallback to original
+        );
+        resolve(text); // Fallback to original
         }
       });
   });
@@ -284,7 +331,7 @@ function needsTranslation(key, value, enValue) {
   }
 
   // Skip if already translated (value is different from English)
-  // This protects manual translations!
+  // This protects manual translations and prevents re-translation of auto-translated strings!
   if (value !== enValue) {
     if (options.verbose) {
       console.log(`   ⏭️  Skipping "${key}": already translated (manual or previous auto)`);
