@@ -1,6 +1,7 @@
 {
   "appName": "App Name",
   "tagline": "Welcome",
+  "poweredBy": "Powered by",
   "splash": {
     "loading": "Loading..."
   }
