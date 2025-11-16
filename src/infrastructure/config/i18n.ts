@@ -199,7 +199,7 @@ const resources = buildResources();
 
 // Debug: Log loaded resources in development (only once to prevent spam)
 // Use global flag to prevent multiple logs when module is imported multiple times
-if (typeof global !== 'undefined' && !(global as any).__i18n_resources_logged) {
+if (typeof globalThis !== 'undefined' && !(globalThis as any).__i18n_resources_logged) {
   /* eslint-disable-next-line no-console */
   if (typeof __DEV__ !== 'undefined' && __DEV__) {
     console.log('🌍 i18n Resources loaded:', {
@@ -210,7 +210,7 @@ if (typeof global !== 'undefined' && !(global as any).__i18n_resources_logged) {
       hasMilestones: !!resources['en-US']?.translation?.navigation?.milestones,
       hasStatistics: !!resources['en-US']?.translation?.navigation?.statistics,
     });
-    (global as any).__i18n_resources_logged = true;
+    (globalThis as any).__i18n_resources_logged = true;
   }
 }
 

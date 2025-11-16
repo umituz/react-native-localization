@@ -1,0 +1,20 @@
+{
+  "title": "AI Video Generator",
+  "subtitle": "Create stunning videos with AI - from text to video, images to video, and templates",
+  "testAlerts": {
+    "success": "Test Success Alert",
+    "error": "Test Error Alert",
+    "warning": "Test Warning Alert",
+    "info": "Test Info Alert"
+  },
+  "alertMessages": {
+    "successTitle": "Test Success",
+    "successMessage": "This is a success alert!",
+    "errorTitle": "Test Error",
+    "errorMessage": "This is an error alert!",
+    "warningTitle": "Test Warning",
+    "warningMessage": "This is a warning alert!",
+    "infoTitle": "Test Info",
+    "infoMessage": "This is an info alert!"
+  }
+}
