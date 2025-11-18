@@ -1,13 +1,13 @@
 # @umituz/react-native-localization
 
-Universal localization system for React Native apps with i18n support. Built with Domain-Driven Design principles and TypeScript.
+English-only localization system for React Native apps with i18n support. Built with Domain-Driven Design principles and TypeScript.
 
 ## Features
 
-- **29+ Language Support**: Pre-configured support for 29 languages including RTL languages (Arabic)
-- **Automatic Device Locale Detection**: Automatically detects and applies device language on first launch
+- **English-Only Support**: Optimized for English (en-US) language only
+- **Automatic Device Locale Detection**: Maps all device locales to English (en-US)
 - **Persistent Language Preferences**: Saves user's language choice using AsyncStorage
-- **Translation Management Scripts**: Built-in scripts for setup, translation, and validation
+- **Simple Translation Management**: Easy-to-use translation files for English content
 - **Type-Safe**: Full TypeScript support with type definitions
 - **Zero Configuration**: Works out of the box with sensible defaults
 - **Production Ready**: Battle-tested in production apps
@@ -26,8 +26,10 @@ yarn add @umituz/react-native-localization
 Make sure you have the following peer dependencies installed:
 
 ```bash
-npm install zustand i18next react-i18next expo-localization @react-native-async-storage/async-storage
+npm install zustand i18next react-i18next expo-localization @umituz/react-native-storage
 ```
+
+**Note:** `@umituz/react-native-storage` is required for persistent language preferences. It provides type-safe storage operations following Domain-Driven Design principles.
 
 ## Quick Start
 

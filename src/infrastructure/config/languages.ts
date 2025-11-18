@@ -27,42 +27,13 @@ export const DEFAULT_LANGUAGE = 'en-US';
 
 /**
  * Locale mapping for device locales to supported app locales
- * Maps short codes (e.g., "en") and iOS variants (e.g., "en-GB", "zh-Hans") to our supported locales
+ * Maps short codes and regional variants to en-US
  *
- * COMPREHENSIVE MAPPING:
- * - Short codes (ar, bg, cs, da, de, etc.) → Full locale codes (ar-SA, bg-BG, etc.)
- * - iOS regional variants → Our standard locales
- * - All 29 supported languages included
+ * SIMPLE MAPPING:
+ * - All variants map to en-US (only supported language)
  */
 const LOCALE_MAPPING: Record<string, string> = {
-  // Arabic
-  'ar': 'ar-SA',
-  'ar-SA': 'ar-SA',
-  'ar-AE': 'ar-SA',
-  'ar-EG': 'ar-SA',
-
-  // Bulgarian
-  'bg': 'bg-BG',
-  'bg-BG': 'bg-BG',
-
-  // Czech
-  'cs': 'cs-CZ',
-  'cs-CZ': 'cs-CZ',
-
-  // Danish
-  'da': 'da-DK',
-  'da-DK': 'da-DK',
-
-  // German
-  'de': 'de-DE',
-  'de-DE': 'de-DE',
-  'de-AT': 'de-DE',
-  'de-CH': 'de-DE',
-
-  // Greek (iOS has el, we map to en-US fallback since we don't support Greek)
-  'el': 'en-US',
-
-  // English variants
+  // All English variants map to en-US
   'en': 'en-US',
   'en-US': 'en-US',
   'en-GB': 'en-US',
@@ -72,119 +43,84 @@ const LOCALE_MAPPING: Record<string, string> = {
   'en-IE': 'en-US',
   'en-ZA': 'en-US',
 
-  // Spanish
-  'es': 'es-ES',
-  'es-ES': 'es-ES',
-  'es-MX': 'es-ES',
-  'es-AR': 'es-ES',
-
-  // Finnish
-  'fi': 'fi-FI',
-  'fi-FI': 'fi-FI',
-
-  // French
-  'fr': 'fr-FR',
-  'fr-FR': 'fr-FR',
-  'fr-CA': 'fr-FR',
-  'fr-BE': 'fr-FR',
-  'fr-CH': 'fr-FR',
-
-  // Hindi
-  'hi': 'hi-IN',
-  'hi-IN': 'hi-IN',
-
-  // Croatian (iOS has hr, we map to en-US fallback since we don't support Croatian)
+  // All other languages map to en-US (fallback)
+  'ar': 'en-US',
+  'ar-SA': 'en-US',
+  'ar-AE': 'en-US',
+  'ar-EG': 'en-US',
+  'bg': 'en-US',
+  'bg-BG': 'en-US',
+  'cs': 'en-US',
+  'cs-CZ': 'en-US',
+  'da': 'en-US',
+  'da-DK': 'en-US',
+  'de': 'en-US',
+  'de-DE': 'en-US',
+  'de-AT': 'en-US',
+  'de-CH': 'en-US',
+  'el': 'en-US',
+  'es': 'en-US',
+  'es-ES': 'en-US',
+  'es-MX': 'en-US',
+  'es-AR': 'en-US',
+  'fi': 'en-US',
+  'fi-FI': 'en-US',
+  'fr': 'en-US',
+  'fr-FR': 'en-US',
+  'fr-CA': 'en-US',
+  'fr-BE': 'en-US',
+  'fr-CH': 'en-US',
+  'hi': 'en-US',
+  'hi-IN': 'en-US',
   'hr': 'en-US',
-
-  // Hungarian
-  'hu': 'hu-HU',
-  'hu-HU': 'hu-HU',
-
-  // Indonesian
-  'id': 'id-ID',
-  'id-ID': 'id-ID',
-
-  // Italian
-  'it': 'it-IT',
-  'it-IT': 'it-IT',
-
-  // Japanese
-  'ja': 'ja-JP',
-  'ja-JP': 'ja-JP',
-
-  // Korean
-  'ko': 'ko-KR',
-  'ko-KR': 'ko-KR',
-
-  // Malay
-  'ms': 'ms-MY',
-  'ms-MY': 'ms-MY',
-
-  // Norwegian (iOS uses nb for Norwegian Bokmål)
-  'nb': 'no-NO',
-  'no': 'no-NO',
-  'no-NO': 'no-NO',
-
-  // Dutch
-  'nl': 'nl-NL',
-  'nl-NL': 'nl-NL',
-  'nl-BE': 'nl-NL',
-
-  // Polish
-  'pl': 'pl-PL',
-  'pl-PL': 'pl-PL',
-
-  // Portuguese
-  'pt': 'pt-PT',
-  'pt-PT': 'pt-PT',
-  'pt-BR': 'pt-PT',
-
-  // Romanian
-  'ro': 'ro-RO',
-  'ro-RO': 'ro-RO',
-
-  // Russian
-  'ru': 'ru-RU',
-  'ru-RU': 'ru-RU',
-
-  // Slovak (iOS has sk, we map to en-US fallback since we don't support Slovak)
+  'hu': 'en-US',
+  'hu-HU': 'en-US',
+  'id': 'en-US',
+  'id-ID': 'en-US',
+  'it': 'en-US',
+  'it-IT': 'en-US',
+  'ja': 'en-US',
+  'ja-JP': 'en-US',
+  'ko': 'en-US',
+  'ko-KR': 'en-US',
+  'ms': 'en-US',
+  'ms-MY': 'en-US',
+  'nb': 'en-US',
+  'no': 'en-US',
+  'no-NO': 'en-US',
+  'nl': 'en-US',
+  'nl-NL': 'en-US',
+  'nl-BE': 'en-US',
+  'pl': 'en-US',
+  'pl-PL': 'en-US',
+  'pt': 'en-US',
+  'pt-PT': 'en-US',
+  'pt-BR': 'en-US',
+  'ro': 'en-US',
+  'ro-RO': 'en-US',
+  'ru': 'en-US',
+  'ru-RU': 'en-US',
   'sk': 'en-US',
-
-  // Swedish
-  'sv': 'sv-SE',
-  'sv-SE': 'sv-SE',
-
-  // Thai
-  'th': 'th-TH',
-  'th-TH': 'th-TH',
-
-  // Filipino/Tagalog
-  'tl': 'tl-PH',
-  'tl-PH': 'tl-PH',
-  'fil': 'tl-PH',
-
-  // Turkish
-  'tr': 'tr-TR',
-  'tr-TR': 'tr-TR',
-
-  // Ukrainian
-  'uk': 'uk-UA',
-  'uk-UA': 'uk-UA',
-
-  // Vietnamese
-  'vi': 'vi-VN',
-  'vi-VN': 'vi-VN',
-
-  // Chinese Simplified (iOS uses zh-Hans)
-  'zh': 'zh-CN',
-  'zh-CN': 'zh-CN',
-  'zh-Hans': 'zh-CN',
-  'zh-Hans-CN': 'zh-CN',
-
-  // Chinese Traditional (iOS uses zh-Hant, we map to zh-CN since we only support Simplified)
-  'zh-Hant': 'zh-CN',
-  'zh-TW': 'zh-CN',
-  'zh-HK': 'zh-CN',
+  'sv': 'en-US',
+  'sv-SE': 'en-US',
+  'th': 'en-US',
+  'th-TH': 'en-US',
+  'tl': 'en-US',
+  'tl-PH': 'en-US',
+  'fil': 'en-US',
+  'tr': 'en-US',
+  'tr-TR': 'en-US',
+  'uk': 'en-US',
+  'uk-UA': 'en-US',
+  'vi': 'en-US',
+  'vi-VN': 'en-US',
+  'zh': 'en-US',
+  'zh-CN': 'en-US',
+  'zh-Hans': 'en-US',
+  'zh-Hans-CN': 'en-US',
+  'zh-Hant': 'en-US',
+  'zh-TW': 'en-US',
+  'zh-HK': 'en-US',
 };
 
 export const getLanguageByCode = (code: string): Language | undefined => {

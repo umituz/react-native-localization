@@ -1,0 +1,28 @@
+{
+  "categories": {
+    "all": "All Templates",
+    "social_media": "Social Media",
+    "business": "Business",
+    "education": "Education",
+    "marketing": "Marketing",
+    "event": "Events",
+    "intro_outro": "Intro/Outro"
+  },
+  "screen": {
+    "title": "Templates",
+    "search_placeholder": "Search templates...",
+    "no_results": "No templates found",
+    "no_results_description": "Try adjusting your search or browse by category"
+  },
+  "card": {
+    "duration": "{{duration}}s",
+    "premium": "Premium",
+    "use_template": "Use Template"
+  },
+  "filters": {
+    "all": "All",
+    "favorites": "Favorites",
+    "free": "Free",
+    "premium": "Premium"
+  }
+}

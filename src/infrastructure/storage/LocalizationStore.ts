@@ -1,14 +1,22 @@
 /**
  * Localization Store
  * Zustand state management for language preferences with AsyncStorage persistence
+ *
+ * DDD ARCHITECTURE: Uses @umituz/react-native-storage for all storage operations
+ * - Type-safe storage with StorageKey
+ * - Result pattern for error handling
+ * - Single source of truth for all storage
  */
 
 import { create } from 'zustand';
 import { useTranslation } from 'react-i18next';
-import { StorageWrapper, STORAGE_KEYS } from './AsyncStorageWrapper';
+import { storageRepository, unwrap } from '@umituz/react-native-storage';
 import i18n from '../config/i18n';
 import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE, getLanguageByCode, getDeviceLocale } from '../config/languages';
 import type { Language } from '../../domain/repositories/ILocalizationRepository';
+
+// Storage key for language preference
+const LANGUAGE_STORAGE_KEY = '@localization:language';
 
 interface LocalizationState {
   currentLanguage: string;
@@ -42,7 +50,8 @@ export const useLocalizationStore = create<LocalizationState>((set, get) => ({
       }
 
       // Get saved language preference
-      const savedLanguage = await StorageWrapper.getString(STORAGE_KEYS.LANGUAGE, DEFAULT_LANGUAGE);
+      const result = await storageRepository.getString(LANGUAGE_STORAGE_KEY, DEFAULT_LANGUAGE);
+      const savedLanguage = unwrap(result, DEFAULT_LANGUAGE);
 
       // ✅ DEVICE LOCALE DETECTION: Use device locale on first launch
       let languageCode: string;
@@ -53,7 +62,7 @@ export const useLocalizationStore = create<LocalizationState>((set, get) => ({
         // First launch → Detect device locale automatically
         languageCode = getDeviceLocale();
         // Save detected locale for future launches
-        await StorageWrapper.setString(STORAGE_KEYS.LANGUAGE, languageCode);
+        await storageRepository.setString(LANGUAGE_STORAGE_KEY, languageCode);
       }
 
       // ✅ DEFENSIVE: Validate language exists, fallback to default
@@ -106,7 +115,7 @@ export const useLocalizationStore = create<LocalizationState>((set, get) => ({
       });
 
       // Persist language preference
-      await StorageWrapper.setString(STORAGE_KEYS.LANGUAGE, languageCode);
+      await storageRepository.setString(LANGUAGE_STORAGE_KEY, languageCode);
     } catch (error) {
       throw error;
     }

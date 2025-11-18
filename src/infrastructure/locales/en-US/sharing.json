@@ -1,0 +1,8 @@
+{
+  "sharing": {
+    "share": "Share",
+    "shareWith": "Share with",
+    "shareFailed": "Failed to share",
+    "notAvailable": "Sharing not available on this device"
+  }
+}

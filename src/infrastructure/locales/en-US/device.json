@@ -1,0 +1,14 @@
+{
+  "device": {
+    "deviceInfo": "Device Information",
+    "appInfo": "App Information",
+    "model": "Model",
+    "os": "Operating System",
+    "version": "Version",
+    "build": "Build",
+    "memory": "Memory",
+    "installed": "Installed",
+    "updated": "Last Updated",
+    "unknown": "Unknown"
+  }
+}

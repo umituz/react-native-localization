@@ -13,35 +13,7 @@ export interface Language {
 }
 
 export const LANGUAGES: Language[] = [
-  { code: 'ar-SA', name: 'Arabic', nativeName: 'العربية', flag: '🇸🇦' },
-  { code: 'bg-BG', name: 'Bulgarian', nativeName: 'Български', flag: '🇧🇬' },
-  { code: 'cs-CZ', name: 'Czech', nativeName: 'Čeština', flag: '🇨🇿' },
-  { code: 'da-DK', name: 'Danish', nativeName: 'Dansk', flag: '🇩🇰' },
-  { code: 'de-DE', name: 'German', nativeName: 'Deutsch', flag: '🇩🇪' },
   { code: 'en-US', name: 'English', nativeName: 'English', flag: '🇺🇸' },
-  { code: 'es-ES', name: 'Spanish', nativeName: 'Español', flag: '🇪🇸' },
-  { code: 'fi-FI', name: 'Finnish', nativeName: 'Suomi', flag: '🇫🇮' },
-  { code: 'fr-FR', name: 'French', nativeName: 'Français', flag: '🇫🇷' },
-  { code: 'hi-IN', name: 'Hindi', nativeName: 'हिन्दी', flag: '🇮🇳' },
-  { code: 'hu-HU', name: 'Hungarian', nativeName: 'Magyar', flag: '🇭🇺' },
-  { code: 'id-ID', name: 'Indonesian', nativeName: 'Bahasa Indonesia', flag: '🇮🇩' },
-  { code: 'it-IT', name: 'Italian', nativeName: 'Italiano', flag: '🇮🇹' },
-  { code: 'ja-JP', name: 'Japanese', nativeName: '日本語', flag: '🇯🇵' },
-  { code: 'ko-KR', name: 'Korean', nativeName: '한국어', flag: '🇰🇷' },
-  { code: 'ms-MY', name: 'Malay', nativeName: 'Bahasa Melayu', flag: '🇲🇾' },
-  { code: 'nl-NL', name: 'Dutch', nativeName: 'Nederlands', flag: '🇳🇱' },
-  { code: 'no-NO', name: 'Norwegian', nativeName: 'Norsk', flag: '🇳🇴' },
-  { code: 'pl-PL', name: 'Polish', nativeName: 'Polski', flag: '🇵🇱' },
-  { code: 'pt-PT', name: 'Portuguese', nativeName: 'Português', flag: '🇵🇹' },
-  { code: 'ro-RO', name: 'Romanian', nativeName: 'Română', flag: '🇷🇴' },
-  { code: 'ru-RU', name: 'Russian', nativeName: 'Русский', flag: '🇷🇺' },
-  { code: 'sv-SE', name: 'Swedish', nativeName: 'Svenska', flag: '🇸🇪' },
-  { code: 'th-TH', name: 'Thai', nativeName: 'ไทย', flag: '🇹🇭' },
-  { code: 'tl-PH', name: 'Filipino', nativeName: 'Filipino', flag: '🇵🇭' },
-  { code: 'tr-TR', name: 'Turkish', nativeName: 'Türkçe', flag: '🇹🇷' },
-  { code: 'uk-UA', name: 'Ukrainian', nativeName: 'Українська', flag: '🇺🇦' },
-  { code: 'vi-VN', name: 'Vietnamese', nativeName: 'Tiếng Việt', flag: '🇻🇳' },
-  { code: 'zh-CN', name: 'Chinese (Simplified)', nativeName: '简体中文', flag: '🇨🇳' },
 ];
 
 /**

@@ -1,23 +1,6 @@
 {
   "home": "Home",
-  "explore": "Explore",
-  "search": "Search",
-  "favorites": "Favorites",
-  "activity": "Activity",
-  "discover": "Discover",
-  "library": "Library",
-  "stats": "Stats",
-  "progress": "Progress",
-  "dashboard": "Dashboard",
-  "calendar": "Calendar",
-  "categories": "Categories",
-  "saved": "Saved",
-  "history": "History",
-  "statistics": "Statistics",
-  "reminders": "Reminders",
-  "profile": "Profile",
-  "account": "Account",
-  "settings": "Settings",
-  "about": "About",
-  "today": "Today"
+  "templates": "Templates",
+  "projects": "Projects",
+  "settings": "Settings"
 }

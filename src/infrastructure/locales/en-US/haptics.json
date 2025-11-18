@@ -1,0 +1,6 @@
+{
+  "haptics": {
+    "notSupported": "Haptics not supported on this device",
+    "disabled": "Haptic feedback disabled"
+  }
+}

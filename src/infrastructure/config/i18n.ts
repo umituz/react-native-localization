@@ -1,133 +1,58 @@
 /**
- * i18next Configuration
- * Nested translation structure - common translations spread, domain translations nested
+ * i18next Configuration for English-only
+ * Simple translation structure - only en-US supported
  *
- * AUTOMATIC LANGUAGE LOADING:
- * - Uses require.context to auto-discover all language directories
- * - No manual imports needed - all languages loaded automatically
+ * SINGLE LANGUAGE LOADING:
+ * - Only loads en-US translations
  * - Project translations merged with package defaults
  */
 
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE } from './languages';
+import { DEFAULT_LANGUAGE } from './languages';
 
 /**
- * AUTOMATIC LANGUAGE LOADING
- * 
- * Uses Metro bundler's require.context to automatically discover and load
- * all language directories. No manual imports needed!
- * 
- * Structure:
- * locales/
- *   ar-SA/index.ts
- *   bg-BG/index.ts
- *   en-US/index.ts
- *   ... (all languages auto-discovered)
- */
-
-// Auto-load all package locale directories using require.context
-// This automatically discovers all language folders (ar-SA, bg-BG, en-US, etc.)
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-const packageLocalesContext = (require as any).context('../locales', true, /\/index\.ts$/);
-
-/**
- * Load all package translations automatically
- * Extracts language code from path (e.g., './ar-SA/index.ts' -> 'ar-SA')
+ * Load en-US package translations
  */
 const loadPackageTranslations = (): Record<string, any> => {
-  const packageTranslations: Record<string, any> = {};
-  
-  packageLocalesContext.keys().forEach((key: string) => {
-    // Extract language code from path: './ar-SA/index.ts' -> 'ar-SA'
-    const match = key.match(/\.\/([^/]+)\/index\.ts$/);
-    if (match) {
-      const languageCode = match[1];
-      try {
-        const translations = packageLocalesContext(key);
-        packageTranslations[languageCode] = translations.default || translations;
-      } catch (error) {
-        // Ignore individual language loading errors
-      }
-    }
-  });
-  
-  return packageTranslations;
+  try {
+    // Load only en-US translations
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const translations = require('../locales/en-US');
+    return { 'en-US': translations.default || translations };
+  } catch (error) {
+    // Fallback to empty translations
+    return { 'en-US': {} };
+  }
 };
 
 const packageTranslations = loadPackageTranslations();
 
 /**
- * Try to load project-specific translations
+ * Try to load project-specific en-US translations
  * Metro bundler will resolve these at build time if they exist
  * If they don't exist, the require will fail gracefully
  */
 let projectTranslations: Record<string, any> = {};
 
 // Try to load project translations from common paths
-// Metro bundler will include these if they exist at build time
 try {
-  // Try DDD structure path with require.context for automatic discovery
+  // Try DDD structure path
   // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const projectLocalesContext = (require as any).context('../../../../../../src/domains/localization/infrastructure/locales', true, /\/index\.ts$/);
-  
-  projectLocalesContext.keys().forEach((key: string) => {
-    const match = key.match(/\.\/([^/]+)\/index\.ts$/);
-    if (match) {
-      const languageCode = match[1];
-      try {
-        const translations = projectLocalesContext(key);
-        if (!projectTranslations[languageCode]) {
-          projectTranslations[languageCode] = {};
-        }
-        projectTranslations[languageCode] = translations.default || translations;
-      } catch (error) {
-        // Ignore individual language loading errors
-      }
-    }
-  });
+  const translations = require('../../../../../../src/domains/localization/infrastructure/locales/en-US');
+  projectTranslations['en-US'] = translations.default || translations;
 } catch (e1) {
   try {
     // Try alternative DDD structure path
     // eslint-disable-next-line @typescript-eslint/no-require-imports
-    const projectLocalesContext = (require as any).context('../../../../../../domains/localization/infrastructure/locales', true, /\/index\.ts$/);
-    
-    projectLocalesContext.keys().forEach((key: string) => {
-      const match = key.match(/\.\/([^/]+)\/index\.ts$/);
-      if (match) {
-        const languageCode = match[1];
-        try {
-          const translations = projectLocalesContext(key);
-          if (!projectTranslations[languageCode]) {
-            projectTranslations[languageCode] = {};
-          }
-          projectTranslations[languageCode] = translations.default || translations;
-        } catch (error) {
-          // Ignore individual language errors
-        }
-      }
-    });
+    const translations = require('../../../../../../domains/localization/infrastructure/locales/en-US');
+    projectTranslations['en-US'] = translations.default || translations;
   } catch (e2) {
     try {
       // Try simple structure path
       // eslint-disable-next-line @typescript-eslint/no-require-imports
-      const projectLocalesContext = (require as any).context('../../../../../../src/locales', true, /\/index\.ts$/);
-      
-      projectLocalesContext.keys().forEach((key: string) => {
-        const match = key.match(/\.\/([^/]+)\/index\.ts$/);
-        if (match) {
-          const languageCode = match[1];
-          try {
-            const translations = projectLocalesContext(key);
-            if (!projectTranslations[languageCode]) {
-              projectTranslations[languageCode] = {};
-            }
-            projectTranslations[languageCode] = translations.default || translations;
-          } catch (error) {
-            // Ignore individual language errors
-          }
-        }
-      });
+      const translations = require('../../../../../../src/locales/en-US');
+      projectTranslations['en-US'] = translations.default || translations;
     } catch (e3) {
       // No project translations found - this is OK, use package defaults only
     }
@@ -170,45 +95,28 @@ const mergeTranslations = (packageTranslations: any, projectTranslations: any): 
 };
 
 /**
- * Build resources object for all languages
- * Automatically includes all package languages + project languages
+ * Build resources object for en-US only
  */
 const buildResources = (): Record<string, { translation: any }> => {
-  const resources: Record<string, { translation: any }> = {};
-  
-  // Get all unique language codes from both package and project translations
-  const allLanguageCodes = new Set([
-    ...Object.keys(packageTranslations),
-    ...Object.keys(projectTranslations),
-  ]);
-  
-  // Build resources for each language
-  allLanguageCodes.forEach((languageCode) => {
-    const packageTranslation = packageTranslations[languageCode] || {};
-    const projectTranslation = projectTranslations[languageCode] || {};
-    
-    resources[languageCode] = {
+  const packageTranslation = packageTranslations['en-US'] || {};
+  const projectTranslation = projectTranslations['en-US'] || {};
+
+  return {
+    'en-US': {
       translation: mergeTranslations(packageTranslation, projectTranslation),
-    };
-  });
-  
-  return resources;
+    },
+  };
 };
 
 const resources = buildResources();
 
 // Debug: Log loaded resources in development (only once to prevent spam)
-// Use global flag to prevent multiple logs when module is imported multiple times
 if (typeof globalThis !== 'undefined' && !(globalThis as any).__i18n_resources_logged) {
   /* eslint-disable-next-line no-console */
   if (typeof __DEV__ !== 'undefined' && __DEV__) {
     console.log('🌍 i18n Resources loaded:', {
       languages: Object.keys(resources),
       enUSKeys: resources['en-US']?.translation ? Object.keys(resources['en-US'].translation) : [],
-      hasGoals: !!resources['en-US']?.translation?.goals,
-      navigationKeys: resources['en-US']?.translation?.navigation ? Object.keys(resources['en-US'].translation.navigation) : [],
-      hasMilestones: !!resources['en-US']?.translation?.navigation?.milestones,
-      hasStatistics: !!resources['en-US']?.translation?.navigation?.statistics,
     });
     (globalThis as any).__i18n_resources_logged = true;
   }
@@ -267,7 +175,6 @@ const initializeI18n = () => {
       console.log('✅ i18n initialized:', {
         language: i18n.language,
         hasResource: !!i18n.getResourceBundle(i18n.language, 'translation'),
-        goalsTitle: i18n.t('goals.list.title', { defaultValue: 'NOT_FOUND' }),
       });
     }
   } catch (error) {
