@@ -12,6 +12,36 @@ English-only localization system for React Native apps with i18n support. Built 
 - **Zero Configuration**: Works out of the box with sensible defaults
 - **Production Ready**: Battle-tested in production apps
 - **Lightweight**: Minimal dependencies with tree-shakeable exports
+- **Domain-Driven Design**: Follows DDD principles with clear separation of concerns
+
+## Architecture Overview
+
+This package follows Domain-Driven Design principles:
+
+```
+📁 src/
+├── domain/           # Business entities and interfaces
+├── infrastructure/   # Storage, config, and external services
+└── presentation/     # Hooks and components for UI
+```
+
+### Package vs Project Translations
+
+**Package Translations (This Package):**
+- Core UI translations (buttons, alerts, navigation)
+- Device-specific translations (camera, location, etc.)
+- Generic business logic translations
+
+**Project Translations (Your App):**
+- App-specific translations
+- Business domain translations
+- Feature-specific content
+
+**Why This Separation?**
+- Package stays lightweight and reusable
+- Projects maintain full control over their translations
+- Easy updates without affecting project-specific content
+- Clear separation of concerns
 
 ## Installation
 
@@ -33,10 +63,143 @@ npm install zustand i18next react-i18next expo-localization @umituz/react-native
 
 ## Quick Start
 
-### 1. Wrap Your App with LocalizationProvider
+### Step 1: Install Package Translations (Core UI)
+
+```bash
+npm install @umituz/react-native-localization
+```
+
+### Step 2: Create Your Project's Localization Domain
+
+Create a localization domain in your project following DDD principles:
+
+```
+📁 src/domains/localization/
+├── index.ts                    # Domain exports
+├── infrastructure/
+│   ├── locales/
+│   │   ├── en-US/
+│   │   │   ├── index.ts        # Auto-loader (uses filesystem package)
+│   │   │   ├── auth.json       # Authentication translations
+│   │   │   ├── home.json       # Home screen translations
+│   │   │   ├── settings.json   # Settings translations
+│   │   │   └── [feature].json  # Feature-specific translations
+│   │   └── [other-languages]/  # Future language support
+│   └── config/
+│       └── i18n.ts             # Project i18n configuration
+└── presentation/
+    └── hooks/
+        └── useLocalization.ts  # Project-specific hooks (optional)
+```
+
+**Example from Vivoim App:**
+```
+📁 src/domains/localization/
+├── index.ts
+└── infrastructure/
+    └── locales/
+        └── en-US/
+            ├── auth.json       # Login, signup, password
+            ├── chat.json       # Chat messages, typing
+            ├── common.json     # Shared UI elements
+            ├── community.json  # Social features
+            ├── creations.json  # Content creation
+            ├── editor.json     # Image/video editing
+            ├── home.json       # Dashboard, navigation
+            ├── index.ts        # Auto-loader
+            ├── navigation.json # App navigation
+            ├── paywall.json    # Subscription features
+            ├── premium.json    # Premium content
+            ├── profile.json    # User profiles
+            ├── projects.json   # Project management
+            ├── settings.json   # App settings
+            ├── support.json    # Help & support
+            ├── templates.json  # Content templates
+            ├── text2image.json # AI image generation
+            └── wallet.json     # Payments, credits
+```
+
+**Why This Structure?**
+- **Separation of Concerns**: Package handles core UI, project handles business logic
+- **Scalability**: Easy to add new features without touching core package
+- **Maintainability**: Clear ownership of translations
+- **Reusability**: Same package works across hundreds of apps
+
+### Step 3: Set Up Project Translations
+
+**src/domains/localization/infrastructure/locales/en-US/index.ts:**
+```typescript
+import { loadJsonModules } from "@umituz/react-native-filesystem";
+
+// Metro bundler require.context - auto-discover all .json files
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const translationContext = (require as any).context("./", false, /\.json$/);
+
+// Load all JSON modules using filesystem package utilities
+const translations = loadJsonModules(translationContext);
+
+export default translations;
+```
+
+**src/domains/localization/infrastructure/locales/en-US/your-feature.json:**
+```json
+{
+  "title": "Your Feature Title",
+  "description": "Feature description",
+  "button": {
+    "save": "Save Changes",
+    "cancel": "Cancel"
+  }
+}
+```
+
+### Step 4: Configure Project i18n
+
+**src/domains/localization/infrastructure/config/i18n.ts:**
+```typescript
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import { DEFAULT_LANGUAGE } from '@umituz/react-native-localization';
+
+// Load project translations
+const loadProjectTranslations = () => {
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    return require('../locales/en-US');
+  } catch {
+    return {};
+  }
+};
+
+const projectTranslations = loadProjectTranslations();
+
+// Configure i18n with project translations
+i18n
+  .use(initReactI18next)
+  .init({
+    resources: {
+      'en-US': {
+        translation: projectTranslations.default || projectTranslations
+      }
+    },
+    lng: DEFAULT_LANGUAGE,
+    fallbackLng: DEFAULT_LANGUAGE,
+    interpolation: {
+      escapeValue: false,
+    },
+    react: {
+      useSuspense: false,
+    },
+  });
+
+export default i18n;
+```
+
+### Step 5: Wrap Your App
 
 ```tsx
 import { LocalizationProvider } from '@umituz/react-native-localization';
+import './domains/localization/infrastructure/config/i18n'; // Initialize project i18n
 
 export default function App() {
   return (
@@ -47,7 +210,89 @@ export default function App() {
 }
 ```
 
-### 2. Use Localization in Your Components
+### Step 6: Use in Components
+
+**Option A: Use Package Localization (Recommended for UI components)**
+```tsx
+import { useLocalization } from '@umituz/react-native-localization';
+
+function MyComponent() {
+  const { t } = useLocalization();
+
+  return (
+    <View>
+      <Text>{t('general.save')}</Text> {/* From package */}
+      <Text>{t('yourFeature.title')}</Text> {/* From your project */}
+    </View>
+  );
+}
+```
+
+**Option B: Use Project Localization (For business logic)**
+```tsx
+import { useTranslation } from 'react-i18next';
+
+function MyComponent() {
+  const { t } = useTranslation();
+
+  return (
+    <View>
+      <Text>{t('yourFeature.title')}</Text> {/* From your project */}
+    </View>
+  );
+}
+```
+
+### Step 7: Translation Management
+
+#### Adding New Translations
+
+1. **Create JSON file** in `src/domains/localization/infrastructure/locales/en-US/`
+2. **Add translations** following flat or nested structure
+3. **Auto-loading** happens automatically via `index.ts`
+
+#### Translation File Structure
+
+**Flat Structure (Recommended for simple features):**
+```json
+// settings.json
+{
+  "title": "Settings",
+  "language": "Language",
+  "theme": "Theme",
+  "notifications": "Notifications"
+}
+```
+
+**Nested Structure (For complex features):**
+```json
+// auth.json
+{
+  "login": {
+    "title": "Welcome Back",
+    "email": "Email Address",
+    "password": "Password",
+    "forgotPassword": "Forgot Password?",
+    "signIn": "Sign In"
+  },
+  "register": {
+    "title": "Create Account",
+    "confirmPassword": "Confirm Password",
+    "signUp": "Sign Up"
+  }
+}
+```
+
+#### Usage in Components
+
+```tsx
+// Flat structure
+t('settings.title') // "Settings"
+
+// Nested structure
+t('auth.login.title') // "Welcome Back"
+t('auth.register.signUp') // "Sign Up"
+```
 
 ```tsx
 import { useLocalization } from '@umituz/react-native-localization';

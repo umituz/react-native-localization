@@ -31,45 +31,14 @@ const packageTranslations = loadPackageTranslations();
 
 /**
  * Load project translations for all supported languages
- * Uses filesystem package for dynamic module loading
+ * This function is a placeholder for future extensibility
+ * Currently returns empty translations as projects should manage their own translations
  */
 const loadProjectTranslations = (): Record<string, any> => {
-  const translations: Record<string, any> = {};
-
-  // Try to load translations using filesystem package utilities
-  // This allows dynamic loading without hardcoded paths
-  try {
-    // Dynamic loading through filesystem package
-    const { loadJsonModules } = require('@umituz/react-native-filesystem');
-
-    // Try to load each language dynamically
-    const supportedLanguages = [
-      'en-US', 'ar-SA', 'bg-BG', 'cs-CZ', 'da-DK', 'de-DE', 'el-GR',
-      'en-AU', 'en-CA', 'en-GB', 'es-ES', 'es-MX', 'fi-FI', 'fr-CA',
-      'fr-FR', 'hi-IN', 'hr-HR', 'hu-HU', 'id-ID', 'it-IT', 'ja-JP',
-      'ko-KR', 'ms-MY', 'nl-NL', 'no-NO', 'pl-PL', 'pt-BR', 'pt-PT',
-      'ro-RO', 'ru-RU', 'sk-SK', 'sv-SE', 'th-TH', 'tl-PH', 'tr-TR',
-      'uk-UA', 'vi-VN', 'zh-CN', 'zh-TW'
-    ];
-
-    for (const langCode of supportedLanguages) {
-      try {
-        // Attempt to load language module dynamically
-        // This will work if the project has set up locales properly
-        const langModule = require(`../../../../../../src/locales/${langCode}`);
-        if (langModule?.default || langModule) {
-          translations[langCode] = langModule.default || langModule;
-        }
-      } catch {
-        // Language not available - skip silently
-      }
-    }
-  } catch (error) {
-    // Filesystem package not available or dynamic loading failed
-    // Fallback to no project translations
-  }
-
-  return translations;
+  // Projects should create their own localization domains
+  // and manage translations within their app structure
+  // This package provides only the core i18n infrastructure
+  return {};
 };
 
 const projectTranslations = loadProjectTranslations();
@@ -114,13 +83,13 @@ const mergeTranslations = (packageTranslations: any, projectTranslations: any): 
  */
 const buildResources = (): Record<string, { translation: any }> => {
   const resources: Record<string, { translation: any }> = {};
-  
+
   // Build resources for each supported language
   for (const lang of SUPPORTED_LANGUAGES) {
     const langCode = lang.code;
     const packageTranslation = langCode === 'en-US' ? (packageTranslations['en-US'] || {}) : {};
     const projectTranslation = projectTranslations[langCode] || {};
-    
+
     // For en-US, merge package and project translations
     // For other languages, use project translations only (fallback to en-US handled by i18n)
     if (langCode === 'en-US') {
@@ -133,14 +102,14 @@ const buildResources = (): Record<string, { translation: any }> => {
       };
     }
   }
-  
+
   // Ensure en-US is always present
   if (!resources['en-US']) {
     resources['en-US'] = {
       translation: packageTranslations['en-US'] || {},
     };
   }
-  
+
   return resources;
 };
 
