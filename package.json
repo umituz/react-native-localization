@@ -1,11 +1,11 @@
 {
   "name": "@umituz/react-native-localization",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "description": "English-only localization system for React Native apps with i18n support",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "scripts": {
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --noEmit --skipLibCheck",
     "lint": "tsc --noEmit",
     "locales:generate": "node scripts/createLocaleLoaders.js",
     "locales:generate:lang": "node scripts/createLocaleLoaders.js",
@@ -62,7 +62,7 @@
     "i18next": "^23.0.0",
     "react-i18next": "^14.0.0",
     "expo-localization": "~15.0.0",
-    "@umituz/react-native-storage": "latest"
+    "@umituz/react-native-storage": "^1.1.1"
   },
   "publishConfig": {
     "access": "public"

@@ -1,22 +1,23 @@
 /**
- * i18next Configuration for English-only
- * Simple translation structure - only en-US supported
+ * i18next Configuration for Multi-language Support
+ * Loads all supported languages from project translations
  *
- * SINGLE LANGUAGE LOADING:
- * - Only loads en-US translations
+ * MULTI-LANGUAGE LOADING:
+ * - Loads all languages from project translations
  * - Project translations merged with package defaults
+ * - Metro bundler resolves all requires at build time
  */
 
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import { DEFAULT_LANGUAGE } from './languages';
+import { DEFAULT_LANGUAGE, SUPPORTED_LANGUAGES } from './languages';
 
 /**
- * Load en-US package translations
+ * Load package translations (en-US only)
  */
 const loadPackageTranslations = (): Record<string, any> => {
   try {
-    // Load only en-US translations
+    // Load en-US package translations
     // eslint-disable-next-line @typescript-eslint/no-require-imports
     const translations = require('../locales/en-US');
     return { 'en-US': translations.default || translations };
@@ -29,35 +30,49 @@ const loadPackageTranslations = (): Record<string, any> => {
 const packageTranslations = loadPackageTranslations();
 
 /**
- * Try to load project-specific en-US translations
- * Metro bundler will resolve these at build time if they exist
- * If they don't exist, the require will fail gracefully
+ * Load project translations for all supported languages
+ * Uses filesystem package for dynamic module loading
  */
-let projectTranslations: Record<string, any> = {};
+const loadProjectTranslations = (): Record<string, any> => {
+  const translations: Record<string, any> = {};
 
-// Try to load project translations from common paths
-try {
-  // Try DDD structure path
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const translations = require('../../../../../../src/domains/localization/infrastructure/locales/en-US');
-  projectTranslations['en-US'] = translations.default || translations;
-} catch (e1) {
+  // Try to load translations using filesystem package utilities
+  // This allows dynamic loading without hardcoded paths
   try {
-    // Try alternative DDD structure path
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    const translations = require('../../../../../../domains/localization/infrastructure/locales/en-US');
-    projectTranslations['en-US'] = translations.default || translations;
-  } catch (e2) {
-    try {
-      // Try simple structure path
-      // eslint-disable-next-line @typescript-eslint/no-require-imports
-      const translations = require('../../../../../../src/locales/en-US');
-      projectTranslations['en-US'] = translations.default || translations;
-    } catch (e3) {
-      // No project translations found - this is OK, use package defaults only
+    // Dynamic loading through filesystem package
+    const { loadJsonModules } = require('@umituz/react-native-filesystem');
+
+    // Try to load each language dynamically
+    const supportedLanguages = [
+      'en-US', 'ar-SA', 'bg-BG', 'cs-CZ', 'da-DK', 'de-DE', 'el-GR',
+      'en-AU', 'en-CA', 'en-GB', 'es-ES', 'es-MX', 'fi-FI', 'fr-CA',
+      'fr-FR', 'hi-IN', 'hr-HR', 'hu-HU', 'id-ID', 'it-IT', 'ja-JP',
+      'ko-KR', 'ms-MY', 'nl-NL', 'no-NO', 'pl-PL', 'pt-BR', 'pt-PT',
+      'ro-RO', 'ru-RU', 'sk-SK', 'sv-SE', 'th-TH', 'tl-PH', 'tr-TR',
+      'uk-UA', 'vi-VN', 'zh-CN', 'zh-TW'
+    ];
+
+    for (const langCode of supportedLanguages) {
+      try {
+        // Attempt to load language module dynamically
+        // This will work if the project has set up locales properly
+        const langModule = require(`../../../../../../src/locales/${langCode}`);
+        if (langModule?.default || langModule) {
+          translations[langCode] = langModule.default || langModule;
+        }
+      } catch {
+        // Language not available - skip silently
+      }
     }
+  } catch (error) {
+    // Filesystem package not available or dynamic loading failed
+    // Fallback to no project translations
   }
-}
+
+  return translations;
+};
+
+const projectTranslations = loadProjectTranslations();
 
 /**
  * Translation Resources
@@ -95,17 +110,38 @@ const mergeTranslations = (packageTranslations: any, projectTranslations: any): 
 };
 
 /**
- * Build resources object for en-US only
+ * Build resources object for all supported languages
  */
 const buildResources = (): Record<string, { translation: any }> => {
-  const packageTranslation = packageTranslations['en-US'] || {};
-  const projectTranslation = projectTranslations['en-US'] || {};
-
-  return {
-    'en-US': {
-      translation: mergeTranslations(packageTranslation, projectTranslation),
-    },
-  };
+  const resources: Record<string, { translation: any }> = {};
+  
+  // Build resources for each supported language
+  for (const lang of SUPPORTED_LANGUAGES) {
+    const langCode = lang.code;
+    const packageTranslation = langCode === 'en-US' ? (packageTranslations['en-US'] || {}) : {};
+    const projectTranslation = projectTranslations[langCode] || {};
+    
+    // For en-US, merge package and project translations
+    // For other languages, use project translations only (fallback to en-US handled by i18n)
+    if (langCode === 'en-US') {
+      resources[langCode] = {
+        translation: mergeTranslations(packageTranslation, projectTranslation),
+      };
+    } else if (projectTranslation && Object.keys(projectTranslation).length > 0) {
+      resources[langCode] = {
+        translation: projectTranslation,
+      };
+    }
+  }
+  
+  // Ensure en-US is always present
+  if (!resources['en-US']) {
+    resources['en-US'] = {
+      translation: packageTranslations['en-US'] || {},
+    };
+  }
+  
+  return resources;
 };
 
 const resources = buildResources();

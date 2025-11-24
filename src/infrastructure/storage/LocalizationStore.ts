@@ -8,9 +8,9 @@
  * - Single source of truth for all storage
  */
 
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { create } from 'zustand';
 import { useTranslation } from 'react-i18next';
-import { storageRepository, unwrap } from '@umituz/react-native-storage';
 import i18n from '../config/i18n';
 import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE, getLanguageByCode, getDeviceLocale } from '../config/languages';
 import type { Language } from '../../domain/repositories/ILocalizationRepository';
@@ -50,8 +50,7 @@ export const useLocalizationStore = create<LocalizationState>((set, get) => ({
       }
 
       // Get saved language preference
-      const result = await storageRepository.getString(LANGUAGE_STORAGE_KEY, DEFAULT_LANGUAGE);
-      const savedLanguage = unwrap(result, DEFAULT_LANGUAGE);
+      const savedLanguage = await AsyncStorage.getItem(LANGUAGE_STORAGE_KEY) || DEFAULT_LANGUAGE;
 
       // ✅ DEVICE LOCALE DETECTION: Use device locale on first launch
       let languageCode: string;
@@ -62,7 +61,7 @@ export const useLocalizationStore = create<LocalizationState>((set, get) => ({
         // First launch → Detect device locale automatically
         languageCode = getDeviceLocale();
         // Save detected locale for future launches
-        await storageRepository.setString(LANGUAGE_STORAGE_KEY, languageCode);
+        await AsyncStorage.setItem(LANGUAGE_STORAGE_KEY, languageCode);
       }
 
       // ✅ DEFENSIVE: Validate language exists, fallback to default
@@ -95,6 +94,7 @@ export const useLocalizationStore = create<LocalizationState>((set, get) => ({
   /**
    * Change language
    * Updates i18n, state, and persists to AsyncStorage
+   * Dynamically loads language resources if not already loaded
    */
   setLanguage: async (languageCode: string) => {
     try {
@@ -103,6 +103,41 @@ export const useLocalizationStore = create<LocalizationState>((set, get) => ({
       // ✅ DEFENSIVE: Early return if unsupported language
       if (!language) {
         return;
+      }
+
+      // ✅ DYNAMIC RESOURCE LOADING: Load language resource if not already loaded
+      if (!i18n.hasResourceBundle(languageCode, 'translation')) {
+        try {
+          // Try to load project translations from common paths
+          let translations: any = null;
+          
+          try {
+            // Try DDD structure path
+            // eslint-disable-next-line @typescript-eslint/no-require-imports
+            translations = require(`../../../../../../src/domains/localization/infrastructure/locales/${languageCode}`);
+          } catch (e1) {
+            try {
+              // Try alternative DDD structure path
+              // eslint-disable-next-line @typescript-eslint/no-require-imports
+              translations = require(`../../../../../../domains/localization/infrastructure/locales/${languageCode}`);
+            } catch (e2) {
+              try {
+                // Try simple structure path
+                // eslint-disable-next-line @typescript-eslint/no-require-imports
+                translations = require(`../../../../../../src/locales/${languageCode}`);
+              } catch (e3) {
+                // No translations found - will fallback to en-US
+              }
+            }
+          }
+
+          if (translations) {
+            const translationData = translations.default || translations;
+            i18n.addResourceBundle(languageCode, 'translation', translationData, true, true);
+          }
+        } catch (loadError) {
+          // If loading fails, continue with changeLanguage (will fallback to en-US)
+        }
       }
 
       // Update i18n
@@ -115,7 +150,7 @@ export const useLocalizationStore = create<LocalizationState>((set, get) => ({
       });
 
       // Persist language preference
-      await storageRepository.setString(LANGUAGE_STORAGE_KEY, languageCode);
+      await AsyncStorage.setItem(LANGUAGE_STORAGE_KEY, languageCode);
     } catch (error) {
       throw error;
     }
