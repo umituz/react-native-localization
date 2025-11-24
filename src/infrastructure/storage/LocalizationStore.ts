@@ -88,7 +88,12 @@ export const useLocalization = () => {
 
   const currentLanguageObject = getLanguageByCode(currentLanguage);
 
+  // Import translation function here to avoid circular dependencies
+  const { useTranslationFunction } = require('../hooks/useTranslation');
+  const t = useTranslationFunction();
+
   return {
+    t,
     currentLanguage,
     currentLanguageObject,
     isRTL,
