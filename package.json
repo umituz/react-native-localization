@@ -1,6 +1,6 @@
 {
   "name": "@umituz/react-native-localization",
-  "version": "1.14.0",
+  "version": "1.15.0",
   "description": "English-only localization system for React Native apps with i18n support",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
