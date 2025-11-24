@@ -5,6 +5,7 @@
 
 // Hooks
 export { useLocalization, useLocalizationStore } from './infrastructure/storage/LocalizationStore';
+export { useTranslationFunction } from './infrastructure/hooks/useTranslation';
 
 // Components
 export { LocalizationProvider } from './infrastructure/components/LocalizationProvider';
