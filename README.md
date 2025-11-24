@@ -243,6 +243,26 @@ function MyComponent() {
 }
 ```
 
+#### **Add Project Translations to Package i18n**
+
+For better integration, add your project translations to the package i18n instance:
+
+```typescript
+import { addTranslationResources } from '@umituz/react-native-localization';
+
+// In your project's i18n config
+const projectTranslations = require('./locales/en-US');
+
+addTranslationResources({
+  'en-US': {
+    translation: projectTranslations.default || projectTranslations,
+  },
+  // Add other languages as needed
+});
+```
+
+This ensures all translations work through the same i18n instance, preventing conflicts.
+
 ### Step 7: Translation Management
 
 #### Adding New Translations

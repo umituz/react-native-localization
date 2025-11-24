@@ -197,4 +197,19 @@ const initializeI18n = () => {
 // CRITICAL: i18n.isInitialized check prevents multiple initializations
 initializeI18n();
 
+/**
+ * Add additional translation resources to the existing i18n instance
+ * This allows projects to add their own translations to the package translations
+ */
+export const addTranslationResources = (resources: Record<string, { translation: any }>) => {
+  for (const [langCode, resource] of Object.entries(resources)) {
+    if (resource.translation) {
+      // Merge with existing translations if any
+      const existingTranslations = i18n.getResourceBundle(langCode, 'translation') || {};
+      const mergedTranslations = { ...existingTranslations, ...resource.translation };
+      i18n.addResourceBundle(langCode, 'translation', mergedTranslations, true, true);
+    }
+  }
+};
+
 export default i18n;
