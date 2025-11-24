@@ -12,7 +12,7 @@ export { LanguageSwitcher } from './infrastructure/components/LanguageSwitcher';
 export { useLanguageNavigation } from './infrastructure/components/useLanguageNavigation';
 
 // Configuration
-export { default as i18n } from './infrastructure/config/i18n';
+export { default as i18n, addTranslationResources } from './infrastructure/config/i18n';
 export {
   SUPPORTED_LANGUAGES,
   LANGUAGES, // Alias for SUPPORTED_LANGUAGES (backward compatibility)
