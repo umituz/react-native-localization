@@ -2,7 +2,7 @@
  * i18n Initializer
  *
  * Handles i18n configuration and initialization
- * - Resource building
+ * - Auto-discovers project translations
  * - i18n setup
  * - React i18next integration
  */
@@ -16,38 +16,43 @@ export class I18nInitializer {
   private static reactI18nextInitialized = false;
 
   /**
+   * Auto-discover project translations from common paths
+   */
+  private static loadProjectTranslations(): Record<string, any> {
+    const possiblePaths = [
+      './src/locales/en-US',           // App structure
+      './locales/en-US',               // Alternative app structure
+      '../src/locales/en-US',          // Relative from package
+    ];
+
+    for (const path of possiblePaths) {
+      try {
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
+        const translations = require(path);
+        return translations.default || translations;
+      } catch {
+        // Try next path
+      }
+    }
+
+    return {};
+  }
+
+  /**
    * Build resources object for all supported languages
    */
   private static buildResources(): Record<string, { translation: any }> {
     const resources: Record<string, { translation: any }> = {};
     const packageTranslations = TranslationLoader.loadPackageTranslations();
-    const projectTranslations = TranslationLoader.loadProjectTranslations();
+    const projectTranslations = this.loadProjectTranslations();
 
-    // Build resources for each supported language
-    for (const lang of SUPPORTED_LANGUAGES) {
-      const langCode = lang.code;
-      const packageTranslation = langCode === 'en-US' ? (packageTranslations['en-US'] || {}) : {};
-      const projectTranslation = projectTranslations[langCode] || {};
-
-      // For en-US, merge package and project translations
-      // For other languages, use project translations only (fallback to en-US handled by i18n)
-      if (langCode === 'en-US') {
-        resources[langCode] = {
-          translation: TranslationLoader.mergeTranslations(packageTranslation, projectTranslation),
-        };
-      } else if (projectTranslation && Object.keys(projectTranslation).length > 0) {
-        resources[langCode] = {
-          translation: projectTranslation,
-        };
-      }
-    }
-
-    // Ensure en-US is always present
-    if (!resources['en-US']) {
-      resources['en-US'] = {
-        translation: packageTranslations['en-US'] || {},
-      };
-    }
+    // For en-US, merge package and project translations
+    resources['en-US'] = {
+      translation: TranslationLoader.mergeTranslations(
+        packageTranslations['en-US'] || {},
+        projectTranslations
+      ),
+    };
 
     return resources;
   }

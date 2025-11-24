@@ -1,10 +1,7 @@
 /**
  * Translation Loader
  *
- * Handles loading of translations from different sources
- * - Package translations
- * - Project translations
- * - Resource merging
+ * Handles loading of translations from package only
  */
 
 export class TranslationLoader {
@@ -19,14 +16,6 @@ export class TranslationLoader {
     } catch (error) {
       return { 'en-US': {} };
     }
-  }
-
-  /**
-   * Load project translations for all supported languages
-   * Currently returns empty as projects manage their own translations
-   */
-  static loadProjectTranslations(): Record<string, any> {
-    return {};
   }
 
   /**

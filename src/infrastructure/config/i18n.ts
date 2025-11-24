@@ -1,17 +1,15 @@
 /**
- * i18n Configuration Entry Point
+ * i18n Configuration
  *
- * Delegates to I18nInitializer for setup
- * Exports i18n instance and utility functions
+ * Auto-initializes i18n with project translations
  */
 
-import i18n from 'i18next';
 import { I18nInitializer } from './I18nInitializer';
+import i18n from 'i18next';
 
-// Initialize i18n immediately
+// Initialize i18n automatically
 I18nInitializer.initialize();
 
-// Export utility functions
+// Export for advanced usage
 export const addTranslationResources = I18nInitializer.addTranslationResources;
-
 export default i18n;
