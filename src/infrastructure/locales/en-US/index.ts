@@ -18,7 +18,33 @@ import { loadJsonModules } from '@umituz/react-native-filesystem';
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const translationContext = (require as any).context('./', false, /\.json$/);
 
+/**
+ * Flatten nested objects with dot notation
+ */
+const flattenObject = (
+  obj: Record<string, any>,
+  prefix = '',
+): Record<string, string> => {
+  const flattened: Record<string, string> = {};
+
+  Object.keys(obj).forEach((key) => {
+    const newKey = prefix ? `${prefix}.${key}` : key;
+
+    if (obj[key] && typeof obj[key] === 'object' && !Array.isArray(obj[key])) {
+      Object.assign(flattened, flattenObject(obj[key], newKey));
+    } else {
+      flattened[newKey] = obj[key];
+    }
+  });
+
+  return flattened;
+};
+
 // Load all JSON modules automatically using filesystem utility
-const translations = loadJsonModules(translationContext);
+const modules = loadJsonModules(translationContext);
+
+// Flatten all translations with dot notation
+// Creates keys like: home.title, goals.title, progress.title
+const translations = flattenObject(modules);
 
 export default translations;
