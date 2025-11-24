@@ -7,17 +7,7 @@
   "scripts": {
     "typecheck": "tsc --noEmit --skipLibCheck",
     "lint": "tsc --noEmit",
-    "locales:generate": "node scripts/createLocaleLoaders.js",
-    "locales:generate:lang": "node scripts/createLocaleLoaders.js",
-    "prepublishOnly": "node scripts/prepublish.js",
-    "version:patch": "npm version patch -m 'chore: release v%s'",
-    "version:minor": "npm version minor -m 'chore: release v%s'",
-    "version:major": "npm version major -m 'chore: release v%s'",
-    "i18n:setup": "node scripts/setup-languages.js",
-    "i18n:translate": "node scripts/translate-missing.js",
-    "i18n:check": "node scripts/check-translations.js",
-    "i18n:analyze": "node scripts/analyze-keys.js",
-    "i18n:remove-unused": "node scripts/remove-unused-keys.js"
+    "prepublishOnly": "node scripts/prepublish.js"
   },
   "keywords": [
     "react-native",
