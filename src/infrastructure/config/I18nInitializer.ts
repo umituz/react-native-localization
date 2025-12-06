@@ -1,10 +1,8 @@
 /**
  * i18n Initializer
  *
- * Handles i18n configuration with namespace support
- * - Loads package translations
- * - Loads app translations (merges with package)
- * - Namespace-based organization (common, auth, etc.)
+ * Namespace-based i18n configuration
+ * Usage: t('namespace:key') e.g., t('common:cancel')
  */
 
 import i18n from 'i18next';
@@ -16,13 +14,20 @@ const DEFAULT_NAMESPACE = 'common';
 
 export class I18nInitializer {
   private static reactI18nextInitialized = false;
+  private static appTranslations: Record<string, any> = {};
 
   /**
-   * Build resources with package + app translations merged
+   * Register app translations (call before initialize)
+   */
+  static registerAppTranslations(translations: Record<string, any>): void {
+    this.appTranslations = translations;
+  }
+
+  /**
+   * Build resources with package + registered app translations
    */
   private static buildResources(): Record<string, Record<string, any>> {
     const packageTranslations = TranslationLoader.loadPackageTranslations();
-    const appTranslations = TranslationLoader.loadAppTranslations();
 
     const resources: Record<string, Record<string, any>> = {
       'en-US': {},
@@ -35,8 +40,8 @@ export class I18nInitializer {
       resources['en-US'][namespace] = translations;
     }
 
-    // Merge app namespaces (app overrides package)
-    for (const [namespace, translations] of Object.entries(appTranslations)) {
+    // Merge app translations (app overrides package)
+    for (const [namespace, translations] of Object.entries(this.appTranslations)) {
       if (resources['en-US'][namespace]) {
         resources['en-US'][namespace] = TranslationLoader.mergeTranslations(
           resources['en-US'][namespace],
@@ -52,12 +57,11 @@ export class I18nInitializer {
 
   private static getNamespaces(): string[] {
     const packageTranslations = TranslationLoader.loadPackageTranslations();
-    const appTranslations = TranslationLoader.loadAppTranslations();
-
     const enUSPackage = packageTranslations['en-US'] || {};
+
     const namespaces = new Set([
       ...Object.keys(enUSPackage),
-      ...Object.keys(appTranslations),
+      ...Object.keys(this.appTranslations),
     ]);
 
     if (!namespaces.has(DEFAULT_NAMESPACE)) {
@@ -106,9 +110,9 @@ export class I18nInitializer {
   }
 
   /**
-   * Add translation resources at runtime
+   * Add translations at runtime
    */
-  static addTranslationResources(
+  static addTranslations(
     languageCode: string,
     namespaceResources: Record<string, any>
   ): void {

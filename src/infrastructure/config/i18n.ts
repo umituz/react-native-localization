@@ -1,14 +1,9 @@
 /**
- * i18n Configuration
+ * i18n Instance
  *
- * Auto-initializes i18n with namespace support
- * Usage: t('namespace:key') e.g., t('common:cancel')
+ * Raw i18n instance - use I18nInitializer for configuration
  */
 
-import { I18nInitializer } from './I18nInitializer';
 import i18n from 'i18next';
 
-I18nInitializer.initialize();
-
-export const addTranslationResources = I18nInitializer.addTranslationResources;
 export default i18n;

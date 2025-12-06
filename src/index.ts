@@ -1,6 +1,6 @@
 /**
  * React Native Localization
- * Universal localization system with i18n support for React Native apps
+ * i18n with namespace support for React Native apps
  */
 
 // Hooks
@@ -13,10 +13,11 @@ export { LanguageSwitcher } from './infrastructure/components/LanguageSwitcher';
 export { useLanguageNavigation } from './infrastructure/components/useLanguageNavigation';
 
 // Configuration
-export { default as i18n, addTranslationResources } from './infrastructure/config/i18n';
+export { default as i18n } from './infrastructure/config/i18n';
+export { I18nInitializer } from './infrastructure/config/I18nInitializer';
 export {
   SUPPORTED_LANGUAGES,
-  LANGUAGES, // Alias for SUPPORTED_LANGUAGES (backward compatibility)
+  LANGUAGES,
   DEFAULT_LANGUAGE,
   getLanguageByCode,
   isLanguageSupported,

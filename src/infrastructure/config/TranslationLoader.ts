@@ -1,7 +1,7 @@
 /**
  * Translation Loader
  *
- * Loads translations from package and app
+ * Loads package translations
  */
 
 export class TranslationLoader {
@@ -19,30 +19,7 @@ export class TranslationLoader {
   }
 
   /**
-   * Load app translations from common paths
-   */
-  static loadAppTranslations(): Record<string, any> {
-    const paths = [
-      '@/domains/localization/infrastructure/locales/en-US',
-      './src/domains/localization/infrastructure/locales/en-US',
-      '../../../src/domains/localization/infrastructure/locales/en-US',
-    ];
-
-    for (const path of paths) {
-      try {
-        // eslint-disable-next-line @typescript-eslint/no-require-imports
-        const translations = require(path);
-        return translations.default || translations;
-      } catch {
-        continue;
-      }
-    }
-
-    return {};
-  }
-
-  /**
-   * Deep merge translations (app overrides package)
+   * Deep merge translations (override wins)
    */
   static mergeTranslations(base: any, override: any): any {
     if (!override || Object.keys(override).length === 0) {
