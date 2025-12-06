@@ -1,16 +1,19 @@
 /**
- * en-US Translation Module
+ * Translation loader for en-US with namespace support
  *
- * Direct loading for maximum compatibility across platforms
- * - Explicit imports for reliable bundling
- * - Flattened with dot notation
- * - Production-ready and tested
+ * Each JSON file represents a namespace that can be accessed via:
+ *   t('namespace:key') or t('namespace:nested.key')
+ *
+ * Example:
+ *   t('common:cancel') -> "Cancel"
+ *   t('auth:login.title') -> "Sign In"
  */
 
 import alerts from './alerts.json';
 import auth from './auth.json';
 import branding from './branding.json';
 import clipboard from './clipboard.json';
+import common from './common.json';
 import datetime from './datetime.json';
 import device from './device.json';
 import editor from './editor.json';
@@ -26,48 +29,26 @@ import settings from './settings.json';
 import sharing from './sharing.json';
 import templates from './templates.json';
 
-/**
- * Flatten nested objects with dot notation
- */
-const flattenObject = (
-  obj: Record<string, any>,
-  prefix = '',
-): Record<string, string> => {
-  const flattened: Record<string, string> = {};
-
-  Object.keys(obj).forEach((key) => {
-    const newKey = prefix ? `${prefix}.${key}` : key;
-
-    if (obj[key] && typeof obj[key] === 'object' && !Array.isArray(obj[key])) {
-      Object.assign(flattened, flattenObject(obj[key], newKey));
-    } else {
-      flattened[newKey] = obj[key];
-    }
-  });
-
-  return flattened;
-};
-
-// Create flattened translations object
 const translations = {
-  ...flattenObject(alerts, 'alerts'),
-  ...flattenObject(auth, 'auth'),
-  ...flattenObject(branding, 'branding'),
-  ...flattenObject(clipboard, 'clipboard'),
-  ...flattenObject(datetime, 'datetime'),
-  ...flattenObject(device, 'device'),
-  ...flattenObject(editor, 'editor'),
-  ...flattenObject(errors, 'errors'),
-  ...flattenObject(general, 'general'),
-  ...flattenObject(goals, 'goals'),
-  ...flattenObject(haptics, 'haptics'),
-  ...flattenObject(home, 'home'),
-  ...flattenObject(navigation, 'navigation'),
-  ...flattenObject(onboarding, 'onboarding'),
-  ...flattenObject(projects, 'projects'),
-  ...flattenObject(settings, 'settings'),
-  ...flattenObject(sharing, 'sharing'),
-  ...flattenObject(templates, 'templates'),
+  alerts,
+  auth,
+  branding,
+  clipboard,
+  common,
+  datetime,
+  device,
+  editor,
+  errors,
+  general,
+  goals,
+  haptics,
+  home,
+  navigation,
+  onboarding,
+  projects,
+  settings,
+  sharing,
+  templates,
 };
 
 export default translations;

@@ -90,13 +90,7 @@ export const useLocalization = () => {
 
   // Import translation function here to avoid circular dependencies
   const { useTranslationFunction } = require('../hooks/useTranslation');
-  let t = useTranslationFunction();
-
-  // Guarantee t is always a function
-  if (typeof t !== 'function') {
-    console.error('❌ useLocalization: t is not a function, using fallback', { t, isInitialized });
-    t = (key: string) => key; // fallback function
-  }
+  const t = useTranslationFunction();
 
   return {
     t,

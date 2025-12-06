@@ -1,117 +1,123 @@
 /**
  * i18n Initializer
  *
- * Handles i18n configuration and initialization
+ * Handles i18n configuration and initialization with namespace support
  * - Auto-discovers project translations
- * - i18n setup
+ * - Namespace-based organization (common, auth, etc.)
  * - React i18next integration
  */
 
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import { DEFAULT_LANGUAGE, SUPPORTED_LANGUAGES } from './languages';
+import { DEFAULT_LANGUAGE } from './languages';
 import { TranslationLoader } from './TranslationLoader';
+
+const DEFAULT_NAMESPACE = 'common';
 
 export class I18nInitializer {
   private static reactI18nextInitialized = false;
 
   /**
-   * Auto-discover project translations from common paths
+   * Build resources object with namespace support
    */
-  private static loadProjectTranslations(): Record<string, any> {
-    const possiblePaths = [
-      './src/locales/en-US',           // App structure
-      './locales/en-US',               // Alternative app structure
-      '../src/locales/en-US',          // Relative from package
-    ];
-
-    for (const path of possiblePaths) {
-      try {
-        // eslint-disable-next-line @typescript-eslint/no-require-imports
-        const translations = require(path);
-        return translations.default || translations;
-      } catch {
-        // Try next path
-      }
-    }
-
-    return {};
-  }
-
-  /**
-   * Build resources object for all supported languages
-   */
-  private static buildResources(): Record<string, { translation: any }> {
-    const resources: Record<string, { translation: any }> = {};
+  private static buildResources(): Record<string, Record<string, any>> {
     const packageTranslations = TranslationLoader.loadPackageTranslations();
-    const projectTranslations = this.loadProjectTranslations();
 
-    // For en-US, merge package and project translations
-    resources['en-US'] = {
-      translation: TranslationLoader.mergeTranslations(
-        packageTranslations['en-US'] || {},
-        projectTranslations
-      ),
+    // Create namespace-based resources structure
+    const resources: Record<string, Record<string, any>> = {
+      'en-US': {},
     };
+
+    // Package translations are already in namespace format (alerts, auth, etc.)
+    const enUSPackage = packageTranslations['en-US'] || {};
+
+    // Each key in packageTranslations is a namespace
+    for (const [namespace, translations] of Object.entries(enUSPackage)) {
+      resources['en-US'][namespace] = translations;
+    }
 
     return resources;
   }
 
   /**
-   * Initialize i18next
+   * Get all available namespaces from package translations
+   */
+  private static getNamespaces(): string[] {
+    const packageTranslations = TranslationLoader.loadPackageTranslations();
+    const enUSPackage = packageTranslations['en-US'] || {};
+    const namespaces = Object.keys(enUSPackage);
+
+    // Ensure default namespace is included
+    if (!namespaces.includes(DEFAULT_NAMESPACE)) {
+      namespaces.unshift(DEFAULT_NAMESPACE);
+    }
+
+    return namespaces;
+  }
+
+  /**
+   * Initialize i18next with namespace support
    */
   static initialize(): void {
-    // Prevent multiple initializations
     if (i18n.isInitialized) {
       return;
     }
 
     try {
-      // Use initReactI18next once
       if (!this.reactI18nextInitialized) {
         i18n.use(initReactI18next);
         this.reactI18nextInitialized = true;
       }
 
       const resources = this.buildResources();
+      const namespaces = this.getNamespaces();
 
       i18n.init({
         resources,
         lng: DEFAULT_LANGUAGE,
         fallbackLng: DEFAULT_LANGUAGE,
+        ns: namespaces,
+        defaultNS: DEFAULT_NAMESPACE,
+        fallbackNS: DEFAULT_NAMESPACE,
 
         interpolation: {
-          escapeValue: false, // React already escapes values
+          escapeValue: false,
         },
 
         react: {
-          useSuspense: false, // Disable suspense for React Native
+          useSuspense: false,
         },
 
-        compatibilityJSON: 'v3', // Use v3 format for React Native
-        pluralSeparator: '_', // Use underscore separator for plural keys
-        keySeparator: '.', // Use dot separator for nested keys
+        compatibilityJSON: 'v3',
+        pluralSeparator: '_',
+        keySeparator: '.',
+        nsSeparator: ':',
 
-        debug: typeof __DEV__ !== 'undefined' && __DEV__,
+        saveMissing: false,
+        missingKeyHandler: false,
+
+        debug: false,
       });
 
     } catch (error) {
-      // Don't throw - allow app to continue without i18n
       if (typeof __DEV__ !== 'undefined' && __DEV__) {
-        console.error('❌ i18n initialization error:', error);
+        console.error('[Localization] i18n initialization error:', error);
       }
     }
   }
 
   /**
-   * Add additional translation resources
+   * Add additional translation resources with namespace support
+   * @param languageCode - Language code (e.g., 'en-US')
+   * @param namespaceResources - Object with namespace keys and translation objects
    */
-  static addTranslationResources(resources: Record<string, { translation: any }>): void {
-    for (const [langCode, resource] of Object.entries(resources)) {
-      if (resource.translation) {
-        const existingTranslations = i18n.getResourceBundle(langCode, 'translation') || {};
-        const mergedTranslations = { ...existingTranslations, ...resource.translation };
-        i18n.addResourceBundle(langCode, 'translation', mergedTranslations, true, true);
+  static addTranslationResources(
+    languageCode: string,
+    namespaceResources: Record<string, any>
+  ): void {
+    for (const [namespace, translations] of Object.entries(namespaceResources)) {
+      if (translations && typeof translations === 'object') {
+        i18n.addResourceBundle(languageCode, namespace, translations, true, true);
       }
     }
   }
