@@ -8,70 +8,16 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import { DEFAULT_LANGUAGE } from './languages';
-import { TranslationLoader } from './TranslationLoader';
-
-const DEFAULT_NAMESPACE = 'common';
+import { ResourceBuilder } from './ResourceBuilder';
+import { NamespaceResolver } from './NamespaceResolver';
 
 export class I18nInitializer {
   private static reactI18nextInitialized = false;
-  private static appTranslations: Record<string, any> = {};
 
-  /**
-   * Register app translations (call before initialize)
-   */
-  static registerAppTranslations(translations: Record<string, any>): void {
-    this.appTranslations = translations;
-  }
-
-  /**
-   * Build resources with package + registered app translations
-   */
-  private static buildResources(): Record<string, Record<string, any>> {
-    const packageTranslations = TranslationLoader.loadPackageTranslations();
-
-    const resources: Record<string, Record<string, any>> = {
-      'en-US': {},
-    };
-
-    const enUSPackage = packageTranslations['en-US'] || {};
-
-    // Add package namespaces
-    for (const [namespace, translations] of Object.entries(enUSPackage)) {
-      resources['en-US'][namespace] = translations;
-    }
-
-    // Merge app translations (app overrides package)
-    for (const [namespace, translations] of Object.entries(this.appTranslations)) {
-      if (resources['en-US'][namespace]) {
-        resources['en-US'][namespace] = TranslationLoader.mergeTranslations(
-          resources['en-US'][namespace],
-          translations
-        );
-      } else {
-        resources['en-US'][namespace] = translations;
-      }
-    }
-
-    return resources;
-  }
-
-  private static getNamespaces(): string[] {
-    const packageTranslations = TranslationLoader.loadPackageTranslations();
-    const enUSPackage = packageTranslations['en-US'] || {};
-
-    const namespaces = new Set([
-      ...Object.keys(enUSPackage),
-      ...Object.keys(this.appTranslations),
-    ]);
-
-    if (!namespaces.has(DEFAULT_NAMESPACE)) {
-      namespaces.add(DEFAULT_NAMESPACE);
-    }
-
-    return Array.from(namespaces);
-  }
-
-  static initialize(): void {
+  static initialize(
+    appTranslations: Record<string, any>,
+    languageCode: string = DEFAULT_LANGUAGE
+  ): void {
     if (i18n.isInitialized) {
       return;
     }
@@ -82,16 +28,17 @@ export class I18nInitializer {
         this.reactI18nextInitialized = true;
       }
 
-      const resources = this.buildResources();
-      const namespaces = this.getNamespaces();
+      const resources = ResourceBuilder.buildResources(appTranslations, languageCode);
+      const namespaces = NamespaceResolver.getNamespaces(appTranslations, languageCode);
+      const defaultNamespace = NamespaceResolver.getDefaultNamespace();
 
       i18n.init({
         resources,
-        lng: DEFAULT_LANGUAGE,
-        fallbackLng: DEFAULT_LANGUAGE,
+        lng: languageCode,
+        fallbackLng: languageCode,
         ns: namespaces,
-        defaultNS: DEFAULT_NAMESPACE,
-        fallbackNS: DEFAULT_NAMESPACE,
+        defaultNS: defaultNamespace,
+        fallbackNS: defaultNamespace,
         interpolation: { escapeValue: false },
         react: { useSuspense: false },
         compatibilityJSON: 'v3',
