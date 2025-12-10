@@ -26,5 +26,8 @@ export {
   searchLanguages,
 } from './infrastructure/config/languages';
 
+// Presentation
+export { LanguageSelectionScreen } from './presentation/screens/LanguageSelectionScreen';
+
 // Types
 export type { Language, ILocalizationRepository } from './domain/repositories/ILocalizationRepository';
