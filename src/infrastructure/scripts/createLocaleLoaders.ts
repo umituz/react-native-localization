@@ -17,17 +17,17 @@
  *
  * Usage:
  *   npm run localization:create-loaders        # Generate all
- *   node scripts/createLocaleLoaders.js en-US  # Generate single language
+ *   node scripts/createLocaleLoaders.ts en-US  # Generate single language
  *
  * Factory-First: This script is auto-copied to all generated apps
  */
 
-const fs = require('fs');
-const path = require('path');
+import * as fs from 'fs';
+import * as path from 'path';
 
 // Get the locales directory (works from scripts/ or root)
-const getLocalesDir = () => {
-  const possiblePaths = [
+const getLocalesDir = (): string => {
+  const possiblePaths: string[] = [
     path.join(__dirname, '../locales'),                    // From scripts/
     path.join(__dirname, 'domains/localization/infrastructure/locales'),  // From root
     path.join(process.cwd(), 'domains/localization/infrastructure/locales'),
@@ -47,7 +47,7 @@ const localesDir = getLocalesDir();
 /**
  * Get all language directories dynamically
  */
-function getLanguageDirectories() {
+function getLanguageDirectories(): string[] {
   return fs
     .readdirSync(localesDir)
     .filter(item => {
@@ -60,7 +60,7 @@ function getLanguageDirectories() {
 /**
  * Create auto-loader for a single language
  */
-function createAutoLoader(languageCode) {
+function createAutoLoader(languageCode: string): boolean {
   const languageDir = path.join(localesDir, languageCode);
 
   // Check if directory exists
@@ -81,9 +81,9 @@ function createAutoLoader(languageCode) {
   }
 
   // Create import statements and namespace mapping
-  const imports = [];
-  const namespaces = [];
-  const descriptions = [];
+  const imports: string[] = [];
+  const namespaces: string[] = [];
+  const descriptions: string[] = [];
 
   files.forEach(file => {
     const moduleName = file.replace('.json', '');
@@ -130,7 +130,7 @@ export default translations;
 /**
  * Create auto-loaders for all languages
  */
-function createAllAutoLoaders() {
+function createAllAutoLoaders(): void {
   const languages = getLanguageDirectories();
 
   if (languages.length === 0) {
@@ -168,10 +168,10 @@ if (args[0] === 'all' || args.length === 0) {
     process.exit(1);
   }
 } else {
-  console.log('Usage: node createLocaleLoaders.js [language-code|all]');
+  console.log('Usage: node createLocaleLoaders.ts [language-code|all]');
   console.log('\nExamples:');
-  console.log('  node createLocaleLoaders.js           # Generate all');
-  console.log('  node createLocaleLoaders.js all       # Generate all');
-  console.log('  node createLocaleLoaders.js en-US     # Generate single language');
-  console.log('  node createLocaleLoaders.js tr-TR     # Generate single language');
+  console.log('  node createLocaleLoaders.ts           # Generate all');
+  console.log('  node createLocaleLoaders.ts all       # Generate all');
+  console.log('  node createLocaleLoaders.ts en-US     # Generate single language');
+  console.log('  node createLocaleLoaders.ts tr-TR     # Generate single language');
 }

@@ -15,7 +15,7 @@
 
 import * as Localization from 'expo-localization';
 import { LANGUAGES as LANGUAGES_DATA } from './languagesData';
-import { Language } from '../../domain/repositories/ILocalizationRepository';
+import type { Language } from '../storage/types/LocalizationState';
 
 // Single source of truth for supported languages
 export const SUPPORTED_LANGUAGES: Language[] = LANGUAGES_DATA;

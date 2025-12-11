@@ -7,8 +7,8 @@
  * Basic checks before publishing
  */
 
-const fs = require('fs');
-const path = require('path');
+import * as fs from 'fs';
+import * as path from 'path';
 
 const PACKAGE_ROOT = path.resolve(__dirname, '..');
 const EN_US_DIR = path.join(PACKAGE_ROOT, 'src/infrastructure/locales/en-US');
@@ -32,4 +32,3 @@ if (jsonFiles.length === 0) {
 
 console.log(`✅ Found ${jsonFiles.length} translation files`);
 console.log('✅ Pre-publish checks passed!\n');
-

@@ -1,105 +1,114 @@
 /**
- * Localization Store
- * Zustand state management for language preferences
- *
- * Uses separate classes for initialization, switching, and translation
- * Follows Single Responsibility Principle
+ * Localization Store Factory
+ * Creates and manages localization state with proper separation of concerns
  */
 
 import { create } from 'zustand';
-import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE, getLanguageByCode } from '../config/languages';
+import type { LocalizationState, LocalizationActions, LocalizationGetters, Language } from '../types/LocalizationState';
 import { LanguageInitializer } from './LanguageInitializer';
 import { LanguageSwitcher } from './LanguageSwitcher';
-import type { Language } from '../../domain/repositories/ILocalizationRepository';
+import { languageRegistry } from '../../config/languagesData';
 
-interface LocalizationState {
-  currentLanguage: string;
-  isRTL: boolean;
-  isInitialized: boolean;
-  supportedLanguages: Language[];
-  setLanguage: (languageCode: string) => Promise<void>;
-  initialize: () => Promise<void>;
+interface LocalizationStore extends LocalizationState, LocalizationActions, LocalizationGetters {
+  // Additional properties can be added here if needed
 }
 
-export const useLocalizationStore = create<LocalizationState>((set, get) => ({
-  currentLanguage: DEFAULT_LANGUAGE,
-  isRTL: false,
-  isInitialized: false,
-  supportedLanguages: SUPPORTED_LANGUAGES,
-
-  /**
-   * Initialize localization system
-   */
-  initialize: async () => {
-    // Prevent re-initialization
-    const { isInitialized: alreadyInitialized } = get();
-    if (alreadyInitialized) {
-      return;
-    }
-
-    try {
-      const result = await LanguageInitializer.initialize();
-
-      set({
-        currentLanguage: result.languageCode,
-        isRTL: result.isRTL,
-        isInitialized: true,
-      });
-    } catch (error) {
-      // Set fallback state even on error
-      set({
-        currentLanguage: DEFAULT_LANGUAGE,
-        isRTL: false,
-        isInitialized: true,
-      });
-    }
-  },
-
-  /**
-   * Change language
-   */
-  setLanguage: async (languageCode: string) => {
-    try {
-      const result = await LanguageSwitcher.switchLanguage(languageCode);
-
-      set({
-        currentLanguage: result.languageCode,
-        isRTL: result.isRTL,
-      });
-    } catch (error) {
-      throw error;
-    }
-  },
-}));
-
 /**
- * Hook to use localization
- * Provides current language, RTL state, language switching, and translation function
+ * Create localization store with proper dependency injection
  */
-export const useLocalization = () => {
-  const {
-    currentLanguage,
-    isRTL,
-    isInitialized,
-    supportedLanguages,
-    setLanguage,
-    initialize,
-  } = useLocalizationStore();
+export const createLocalizationStore = () => {
+  return create<LocalizationStore>()(
+    (set, get) => ({
+      // State
+      currentLanguage: 'en-US',
+      isRTL: false,
+      isInitialized: false,
+      supportedLanguages: languageRegistry.getLanguages(),
 
-  const currentLanguageObject = getLanguageByCode(currentLanguage);
+      // Actions
+      initialize: async () => {
+        const { isInitialized: alreadyInitialized } = get();
+        if (alreadyInitialized) {
+          if (__DEV__) {
+            console.log('[Localization] Already initialized');
+          }
+          return;
+        }
 
-  // Import translation function here to avoid circular dependencies
-  const { useTranslationFunction } = require('../hooks/useTranslation');
-  const t = useTranslationFunction();
+        try {
+          const result = await LanguageInitializer.initialize();
 
-  return {
-    t,
-    currentLanguage,
-    currentLanguageObject,
-    isRTL,
-    isInitialized,
-    supportedLanguages,
-    setLanguage,
-    initialize,
-  };
+          set({
+            currentLanguage: result.languageCode,
+            isRTL: result.isRTL,
+            isInitialized: true,
+          });
+
+          if (__DEV__) {
+            console.log(`[Localization] Initialized with language: ${result.languageCode}`);
+          }
+        } catch (error) {
+          // Set fallback state even on error
+          set({
+            currentLanguage: 'en-US',
+            isRTL: false,
+            isInitialized: true,
+          });
+
+          if (__DEV__) {
+            console.error('[Localization] Initialization failed, using fallback:', error);
+          }
+        }
+      },
+
+      setLanguage: async (languageCode: string) => {
+        try {
+          const result = await LanguageSwitcher.switchLanguage(languageCode);
+
+          set({
+            currentLanguage: result.languageCode,
+            isRTL: result.isRTL,
+          });
+
+          if (__DEV__) {
+            console.log(`[Localization] Language changed to: ${result.languageCode}`);
+          }
+        } catch (error) {
+          if (__DEV__) {
+            console.error('[Localization] Language change failed:', error);
+          }
+          throw error;
+        }
+      },
+
+      reset: () => {
+        set({
+          currentLanguage: 'en-US',
+          isRTL: false,
+          isInitialized: false,
+        });
+
+        if (__DEV__) {
+          console.log('[Localization] Store reset');
+        }
+      },
+
+      // Getters
+      getCurrentLanguage: () => {
+        const { currentLanguage } = get();
+        return languageRegistry.getLanguageByCode(currentLanguage);
+      },
+
+      isLanguageSupported: (code: string) => {
+        return languageRegistry.isLanguageSupported(code);
+      },
+
+      getSupportedLanguages: () => {
+        return languageRegistry.getLanguages();
+      },
+    })
+  );
 };
+
+// Create singleton instance
+export const useLocalizationStore = createLocalizationStore();

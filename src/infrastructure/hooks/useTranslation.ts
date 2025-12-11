@@ -1,14 +1,50 @@
 /**
  * Translation Hook
  *
- * Provides translation function with proper fallbacks
+ * Provides translation function with proper fallbacks and performance optimization
  * - React i18next integration
- * - Direct i18n fallback
+ * - Memoized translation function
  * - Type-safe translation function
  * - Auto-namespace detection from dot notation
+ * - Performance optimizations
  */
 
+import { useCallback, useMemo } from 'react';
 import i18n from '../config/i18n';
+
+export interface TranslationOptions {
+  count?: number;
+  ns?: string | string[];
+  defaultValue?: string;
+  [key: string]: any;
+}
+
+/**
+ * Translation cache for performance optimization
+ */
+class TranslationCache {
+  private cache = new Map<string, string>();
+  private maxSize = 1000;
+
+  get(key: string): string | undefined {
+    return this.cache.get(key);
+  }
+
+  set(key: string, value: string): void {
+    if (this.cache.size >= this.maxSize) {
+      // Remove oldest entry
+      const firstKey = this.cache.keys().next().value;
+      this.cache.delete(firstKey);
+    }
+    this.cache.set(key, value);
+  }
+
+  clear(): void {
+    this.cache.clear();
+  }
+}
+
+const translationCache = new TranslationCache();
 
 /**
  * Hook for translation functionality
@@ -16,40 +52,82 @@ import i18n from '../config/i18n';
  * - t('namespace:key.subkey') - explicit namespace
  * - t('namespace.key.subkey') - auto-detected namespace (first segment before dot)
  */
-export const useTranslationFunction = (): ((key: string, options?: any) => string) => {
-  return (key: string, options?: any): string => {
-    if (!i18n.isInitialized || typeof i18n.t !== 'function') {
-      return key;
+export const useTranslationFunction = () => {
+  const isInitialized = useMemo(() => i18n.isInitialized, []);
+
+  const translate = useCallback((key: string, options: TranslationOptions = {}): string => {
+    if (!isInitialized || typeof i18n.t !== 'function') {
+      if (__DEV__) {
+        console.warn(`[Localization] i18n not initialized, returning key: ${key}`);
+      }
+      return options.defaultValue || key;
     }
+
+    // Create cache key
+    const cacheKey = `${key}:${JSON.stringify(options)}`;
+    
+    // Check cache first
+    const cached = translationCache.get(cacheKey);
+    if (cached) {
+      return cached;
+    }
+
+    let result: string;
 
     // If key already has namespace separator (:), use as-is
     if (key.includes(':')) {
-      const result = i18n.t(key, options);
-      return typeof result === 'string' ? result : String(result);
-    }
+      const tempResult = i18n.t(key, options);
+      result = typeof tempResult === 'string' ? tempResult : String(tempResult);
+    } else {
+      // Auto-detect namespace from first dot segment
+      const firstDotIndex = key.indexOf('.');
+      if (firstDotIndex > 0) {
+        const potentialNamespace = key.substring(0, firstDotIndex);
+        const restOfKey = key.substring(firstDotIndex + 1);
 
-    // Auto-detect namespace from first dot segment
-    // e.g., 'settings.appearance.title' -> namespace: 'settings', key: 'appearance.title'
-    const firstDotIndex = key.indexOf('.');
-    if (firstDotIndex > 0) {
-      const potentialNamespace = key.substring(0, firstDotIndex);
-      const restOfKey = key.substring(firstDotIndex + 1);
+        // Check if this namespace exists in i18n resources
+        const hasNamespace = i18n.hasResourceBundle(i18n.language, potentialNamespace);
 
-      // Check if this namespace exists in i18n resources
-      const hasNamespace = i18n.hasResourceBundle(i18n.language, potentialNamespace);
-
-      if (hasNamespace) {
-        const namespacedKey = `${potentialNamespace}:${restOfKey}`;
-        const result = i18n.t(namespacedKey, options);
-        // If translation found (not same as key), return it
-        if (result !== namespacedKey && result !== restOfKey) {
-          return typeof result === 'string' ? result : String(result);
+        if (hasNamespace) {
+          const namespacedKey = `${potentialNamespace}:${restOfKey}`;
+          const namespacedResult = i18n.t(namespacedKey, options);
+          
+          // If translation found (not same as key), use it
+          if (namespacedResult !== namespacedKey && namespacedResult !== restOfKey) {
+            result = typeof namespacedResult === 'string' ? namespacedResult : String(namespacedResult);
+          } else {
+            // Fallback to original key
+            const fallbackResult = i18n.t(key, options);
+            result = typeof fallbackResult === 'string' ? fallbackResult : String(fallbackResult);
+          }
+        } else {
+          // Fallback to original key
+          result = i18n.t(key, options);
         }
+      } else {
+        // No dot, use as-is
+        const noDotResult = i18n.t(key, options);
+        result = typeof noDotResult === 'string' ? noDotResult : String(noDotResult);
       }
     }
 
-    // Fallback: try original key as-is
-    const result = i18n.t(key, options);
-    return typeof result === 'string' ? result : String(result);
+    // Convert to string and cache
+    const finalResult: string = typeof result === 'string' ? result : String(result);
+    translationCache.set(cacheKey, finalResult);
+
+    return finalResult;
+  }, [isInitialized]);
+
+  // Clear cache when language changes
+  const clearCache = useCallback(() => {
+    translationCache.clear();
+    if (__DEV__) {
+      console.log('[Localization] Translation cache cleared');
+    }
+  }, []);
+
+  return {
+    t: translate,
+    clearCache,
   };
 };

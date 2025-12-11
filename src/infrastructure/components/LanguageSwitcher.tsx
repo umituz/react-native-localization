@@ -1,64 +1,110 @@
-import React from 'react';
-import { TouchableOpacity, Text, View, StyleSheet } from 'react-native';
-// @ts-ignore - Optional peer dependency
-import { useNavigation } from '@react-navigation/native';
-import { useLocalization } from '../storage/LocalizationStore';
-import { getLanguageByCode, getDefaultLanguage } from '../config/languages';
-import { Language } from '../../domain/repositories/ILocalizationRepository';
+import React, { useCallback, useMemo } from 'react';
+import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { useLocalization } from '../hooks/useLocalization';
+import { languageRegistry } from '../config/languagesData';
+import type { Language } from '../storage/types/LocalizationState';
 
-interface LanguageSwitcherProps {
+export interface LanguageSwitcherProps {
   showName?: boolean;
   showFlag?: boolean;
   color?: string;
-  navigationScreen?: string;
+  onPress?: () => void;
   style?: any;
   textStyle?: any;
+  iconStyle?: any;
+  testID?: string;
+  disabled?: boolean;
+  accessibilityLabel?: string;
 }
 
-const languageSwitcherConfig = {
+const DEFAULT_CONFIG = {
   defaultIconSize: 20,
-  defaultNavigationScreen: 'LanguageSelection',
-  hitSlop: { top: 10, bottom: 10, left: 10, right: 10 },
+  hitSlop: { top: 10, bottom: 10, left: 10, right: 10 } as const,
+  defaultColor: '#000000',
+  activeOpacity: 0.7,
 };
 
 export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   showName = false,
   showFlag = true,
   color,
-  navigationScreen = languageSwitcherConfig.defaultNavigationScreen,
+  onPress,
   style,
   textStyle,
+  iconStyle,
+  testID = 'language-switcher',
+  disabled = false,
+  accessibilityLabel,
 }) => {
-  const navigation = useNavigation();
   const { currentLanguage } = useLocalization();
-  const currentLang = getLanguageByCode(currentLanguage) || getDefaultLanguage();
 
-  const navigateToLanguageSelection = () => {
-    if (navigation && navigationScreen) {
-      navigation.navigate(navigationScreen as never);
+  const currentLang = useMemo((): Language => {
+    return languageRegistry.getLanguageByCode(currentLanguage) || languageRegistry.getDefaultLanguage();
+  }, [currentLanguage]);
+
+  const handlePress = useCallback(() => {
+    if (disabled) {
+      return;
     }
-  };
+    
+    if (__DEV__) {
+      console.log('[LanguageSwitcher] Pressed, current language:', currentLanguage);
+    }
+    
+    onPress?.();
+  }, [disabled, onPress, currentLanguage]);
 
-  const iconColor = color || '#000000';
+  const iconColor = useMemo(() => color || DEFAULT_CONFIG.defaultColor, [color]);
 
-  return (
-    <TouchableOpacity
-      style={[styles.container, style]}
-      onPress={navigateToLanguageSelection}
-      activeOpacity={0.7}
-      hitSlop={languageSwitcherConfig.hitSlop}
-    >
-      {showFlag && (
-        <Text style={[styles.flag, textStyle]}>{currentLang.flag}</Text>
-      )}
-      {showName && (
+  const accessibilityProps = useMemo(() => ({
+    accessibilityRole: 'button' as const,
+    accessibilityLabel: accessibilityLabel || `Current language: ${currentLang.nativeName}`,
+    accessibilityHint: disabled ? undefined : 'Double tap to change language',
+    accessible: true,
+  }), [accessibilityLabel, currentLang.nativeName, disabled]);
+
+  const content = useMemo(() => {
+    if (showFlag && showName) {
+      return (
+        <>
+          <Text style={[styles.flag, iconStyle]}>{currentLang.flag}</Text>
+          <Text style={[styles.languageName, { color: iconColor }, textStyle]}>
+            {currentLang.nativeName}
+          </Text>
+        </>
+      );
+    }
+
+    if (showFlag) {
+      return (
+        <Text style={[styles.flag, iconStyle]}>{currentLang.flag}</Text>
+      );
+    }
+
+    if (showName) {
+      return (
         <Text style={[styles.languageName, { color: iconColor }, textStyle]}>
           {currentLang.nativeName}
         </Text>
-      )}
-      {!showName && !showFlag && (
-        <Text style={[styles.icon, { color: iconColor }]}>🌐</Text>
-      )}
+      );
+    }
+
+    return (
+      <Text style={[styles.icon, { color: iconColor }, iconStyle]}>🌐</Text>
+    );
+  }, [showFlag, showName, currentLang, iconColor, textStyle, iconStyle]);
+
+  return (
+    <TouchableOpacity
+      style={[styles.container, style, disabled && styles.disabled]}
+      onPress={handlePress}
+      activeOpacity={disabled ? 1 : DEFAULT_CONFIG.activeOpacity}
+      hitSlop={DEFAULT_CONFIG.hitSlop}
+      testID={testID}
+      disabled={disabled}
+      {...accessibilityProps}
+    >
+      {content}
     </TouchableOpacity>
   );
 };
@@ -69,16 +115,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 8,
     paddingHorizontal: 4,
+    paddingVertical: 4,
+  },
+  disabled: {
+    opacity: 0.5,
   },
   flag: {
-    fontSize: 20,
+    fontSize: DEFAULT_CONFIG.defaultIconSize,
+    textAlign: 'center',
   },
   languageName: {
     fontSize: 14,
     fontWeight: '600',
+    textAlign: 'center',
   },
   icon: {
-    fontSize: 20,
+    fontSize: DEFAULT_CONFIG.defaultIconSize,
+    textAlign: 'center',
   },
 });
 

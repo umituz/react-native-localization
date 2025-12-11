@@ -8,7 +8,7 @@
 
 import { storageRepository } from '@umituz/react-native-storage';
 import i18n from '../config/i18n';
-import { getLanguageByCode } from '../config/languages';
+import { languageRegistry } from '../config/languagesData';
 
 const LANGUAGE_STORAGE_KEY = '@localization:language';
 
@@ -20,7 +20,7 @@ export class LanguageSwitcher {
     languageCode: string;
     isRTL: boolean;
   }> {
-    const language = getLanguageByCode(languageCode);
+    const language = languageRegistry.getLanguageByCode(languageCode);
 
     if (!language) {
       throw new Error(`Unsupported language: ${languageCode}`);
@@ -31,7 +31,7 @@ export class LanguageSwitcher {
 
     return {
       languageCode,
-      isRTL: language.rtl || false,
+      isRTL: language.rtl || language.isRTL || false,
     };
   }
 }

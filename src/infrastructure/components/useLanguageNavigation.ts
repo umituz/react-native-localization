@@ -1,13 +1,13 @@
 // @ts-ignore - Optional peer dependency
 import { useNavigation } from '@react-navigation/native';
-import { useLocalization } from '../storage/LocalizationStore';
-import { getLanguageByCode, getDefaultLanguage } from '../config/languages';
-import { Language } from '../../domain/repositories/ILocalizationRepository';
+import { useLocalization } from '../hooks/useLocalization';
+import { languageRegistry } from '../config/languagesData';
+import type { Language } from '../storage/types/LocalizationState';
 
 export const useLanguageNavigation = (navigationScreen: string) => {
   const navigation = useNavigation();
   const { currentLanguage } = useLocalization();
-  const currentLang = getLanguageByCode(currentLanguage) || getDefaultLanguage();
+  const currentLang = languageRegistry.getLanguageByCode(currentLanguage) || languageRegistry.getDefaultLanguage();
 
   const navigateToLanguageSelection = () => {
     if (navigation && navigationScreen) {

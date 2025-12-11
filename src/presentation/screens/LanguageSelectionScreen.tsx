@@ -13,23 +13,67 @@ import {
   FlatList,
   TouchableOpacity,
   TextInput,
+  Text,
 } from 'react-native';
+// @ts-ignore - Optional peer dependency
 import { useNavigation } from '@react-navigation/native';
-import { useAppDesignTokens, withAlpha, STATIC_TOKENS, type DesignTokens } from '@umituz/react-native-design-system-theme';
-import { AtomicIcon, AtomicText } from '@umituz/react-native-design-system-atoms';
-import { ScreenLayout } from '@umituz/react-native-design-system-organisms';
 import { useLocalization, searchLanguages, Language, LANGUAGES } from '@umituz/react-native-localization';
+
+interface LanguageSelectionScreenProps {
+  /**
+   * Custom component for rendering language items
+   */
+  renderLanguageItem?: (item: Language, isSelected: boolean, onSelect: (code: string) => void) => React.ReactNode;
+  /**
+   * Custom component for search input
+   */
+  renderSearchInput?: (value: string, onChange: (value: string) => void, placeholder: string) => React.ReactNode;
+  /**
+   * Custom component for container
+   */
+  containerComponent?: React.ComponentType<{ children: React.ReactNode }>;
+  /**
+   * Custom styles
+   */
+  styles?: {
+    container?: any;
+    searchContainer?: any;
+    languageItem?: any;
+    languageContent?: any;
+    languageText?: any;
+    flag?: any;
+    nativeName?: any;
+    searchInput?: any;
+    searchIcon?: any;
+    clearButton?: any;
+    listContent?: any;
+  };
+  /**
+   * Search placeholder text
+   */
+  searchPlaceholder?: string;
+  /**
+   * Test ID for testing
+   */
+  testID?: string;
+}
 
 /**
  * Language Selection Screen Component
+ * Generic language selector that can be customized by consuming applications
  */
-export const LanguageSelectionScreen: React.FC = () => {
+export const LanguageSelectionScreen: React.FC<LanguageSelectionScreenProps> = ({
+  renderLanguageItem,
+  renderSearchInput,
+  containerComponent: Container,
+  styles: customStyles,
+  searchPlaceholder = 'Search languages...',
+  testID = 'language-selection-screen',
+}) => {
   const navigation = useNavigation();
   const { t, currentLanguage, setLanguage } = useLocalization();
-  const tokens = useAppDesignTokens();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCode, setSelectedCode] = useState(currentLanguage);
-  const [isFocused, setIsFocused] = useState(false);
 
   const filteredLanguages = useMemo(() => {
     return searchLanguages(searchQuery);
@@ -41,133 +85,124 @@ export const LanguageSelectionScreen: React.FC = () => {
     navigation.goBack();
   };
 
-  const renderLanguageItem = ({ item }: { item: Language }) => {
+  const defaultRenderLanguageItem = ({ item }: { item: Language }) => {
     const isSelected = selectedCode === item.code;
+
+    if (renderLanguageItem) {
+      return renderLanguageItem(item, isSelected, handleLanguageSelect);
+    }
 
     return (
       <TouchableOpacity
-        style={StyleSheet.flatten([
+        style={[
           styles.languageItem,
-          {
-            borderColor: isSelected
-              ? tokens.colors.primary
-              : tokens.colors.borderLight,
-            backgroundColor: isSelected
-              ? withAlpha(tokens.colors.primary, 0.1)
-              : tokens.colors.surface,
-          },
-        ])}
+          customStyles?.languageItem,
+          isSelected && styles.selectedLanguageItem,
+        ]}
         onPress={() => handleLanguageSelect(item.code)}
         activeOpacity={0.7}
       >
-        <View style={styles.languageContent}>
-          <AtomicText style={StyleSheet.flatten([STATIC_TOKENS.typography.headingLarge, styles.flag])}>
-            {item.flag}
-          </AtomicText>
-          <View style={styles.languageText}>
-            <AtomicText
-              style={StyleSheet.flatten([
-                STATIC_TOKENS.typography.bodyMedium,
-                styles.nativeName,
-              ])}
-            >
+        <View style={[styles.languageContent, customStyles?.languageContent]}>
+          <Text style={[styles.flag, customStyles?.flag]}>
+            {item.flag || '🌐'}
+          </Text>
+          <View style={[styles.languageText, customStyles?.languageText]}>
+            <Text style={[styles.nativeName, customStyles?.nativeName]}>
               {item.nativeName}
-            </AtomicText>
-            <AtomicText style={StyleSheet.flatten([{ color: tokens.colors.textSecondary }])}>
+            </Text>
+            <Text style={[styles.languageName, customStyles?.nativeName]}>
               {item.name}
-            </AtomicText>
+            </Text>
           </View>
         </View>
         {isSelected && (
-          <AtomicIcon
-            name="CircleCheck"
-            size="md"
-            color="primary"
-          />
+          <Text style={[styles.checkIcon, customStyles?.flag]}>✓</Text>
         )}
       </TouchableOpacity>
     );
   };
 
-  return (
-    <ScreenLayout scrollable={false} testID="language-selection-screen">
-      {/* Search Input */}
-      <View
-        style={StyleSheet.flatten([
-          styles.searchContainer,
-          {
-            borderColor: isFocused ? tokens.colors.primary : tokens.colors.borderLight,
-            borderWidth: isFocused ? 2 : 1.5,
-            backgroundColor: tokens.colors.surface,
-          },
-        ])}
-      >
-        <AtomicIcon
-          name="Search"
-          size="md"
-          color="secondary"
-          style={styles.searchIcon}
-        />
+  const defaultRenderSearchInput = () => {
+    if (renderSearchInput) {
+      return renderSearchInput(searchQuery, setSearchQuery, searchPlaceholder);
+    }
+
+    return (
+      <View style={[styles.searchContainer, customStyles?.searchContainer]}>
+        <Text style={[styles.searchIcon, customStyles?.searchIcon]}>🔍</Text>
         <TextInput
-          style={StyleSheet.flatten([styles.searchInput, { color: tokens.colors.textPrimary }])}
-          placeholder={t('settings.languageSelection.searchPlaceholder')}
-          placeholderTextColor={tokens.colors.textSecondary}
+          style={[styles.searchInput, customStyles?.searchInput]}
+          placeholder={searchPlaceholder}
+          placeholderTextColor="#666"
           value={searchQuery}
           onChangeText={setSearchQuery}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
           autoCapitalize="none"
           autoCorrect={false}
         />
         {searchQuery.length > 0 && (
           <TouchableOpacity
             onPress={() => setSearchQuery('')}
-            style={styles.clearButton}
+            style={[styles.clearButton, customStyles?.clearButton]}
             hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
           >
-            <AtomicIcon
-              name="X"
-              size="sm"
-              color="secondary"
-            />
+            <Text style={[styles.clearIcon, customStyles?.searchIcon]}>✕</Text>
           </TouchableOpacity>
         )}
       </View>
+    );
+  };
 
-      {/* Language List */}
+  const content = (
+    <View style={[styles.container, customStyles?.container]} testID={testID}>
+      {defaultRenderSearchInput()}
       <FlatList
         data={filteredLanguages}
-        renderItem={renderLanguageItem}
+        renderItem={defaultRenderLanguageItem}
         keyExtractor={item => item.code}
-        contentContainerStyle={styles.listContent}
+        contentContainerStyle={[styles.listContent, customStyles?.listContent]}
         showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled"
       />
-    </ScreenLayout>
+    </View>
   );
+
+  return Container ? <Container>{content}</Container> : content;
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     marginHorizontal: 20,
     marginBottom: 24,
     paddingHorizontal: 16,
-    paddingVertical: 8,
-    borderRadius: STATIC_TOKENS.borders.radius.lg,
+    paddingVertical: 12,
+    backgroundColor: '#f5f5f5',
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#e0e0e0',
   },
   searchIcon: {
-    marginRight: 8,
+    marginRight: 12,
+    fontSize: 16,
   },
   searchInput: {
     flex: 1,
-    fontSize: STATIC_TOKENS.typography.bodyMedium.fontSize,
+    fontSize: 16,
     padding: 0,
     fontWeight: '500',
+    color: '#333',
   },
   clearButton: {
-    padding: STATIC_TOKENS.spacing.xs,
+    padding: 4,
+  },
+  clearIcon: {
+    fontSize: 14,
+    color: '#666',
   },
   listContent: {
     paddingHorizontal: 20,
@@ -177,26 +212,43 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: STATIC_TOKENS.spacing.md,
-    borderRadius: STATIC_TOKENS.borders.radius.lg,
-    borderWidth: 2,
+    padding: 16,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#e0e0e0',
     marginBottom: 8,
+    backgroundColor: '#fff',
+  },
+  selectedLanguageItem: {
+    borderColor: '#007AFF',
+    backgroundColor: '#f0f8ff',
   },
   languageContent: {
     flexDirection: 'row',
     alignItems: 'center',
     flex: 1,
-    gap: 16,
   },
   flag: {
-    fontSize: STATIC_TOKENS.typography.headingLarge.fontSize,
+    fontSize: 24,
+    marginRight: 16,
   },
   languageText: {
     flex: 1,
-    gap: 2,
   },
   nativeName: {
+    fontSize: 16,
     fontWeight: '600',
+    color: '#333',
+    marginBottom: 2,
+  },
+  languageName: {
+    fontSize: 14,
+    color: '#666',
+  },
+  checkIcon: {
+    fontSize: 18,
+    color: '#007AFF',
+    fontWeight: 'bold',
   },
 });
 
