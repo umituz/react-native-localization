@@ -2,10 +2,20 @@
  * Jest setup file
  */
 
-import 'react-native-gesture-handler/jestSetup';
-
 // Mock react-native modules
-jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
+jest.mock('react-native', () => ({
+  Platform: {
+    OS: 'ios',
+    select: jest.fn((obj) => obj.ios),
+  },
+  NativeModules: {
+    RNCNetInfo: {
+      getCurrentState: jest.fn(() => Promise.resolve()),
+      addListener: jest.fn(),
+      removeListeners: jest.fn(),
+    },
+  },
+}));
 
 // Mock expo-localization
 jest.mock('expo-localization', () => ({
@@ -13,10 +23,7 @@ jest.mock('expo-localization', () => ({
   getLocales: () => [{ languageCode: 'en', textDirection: 'ltr' }],
 }));
 
-// Mock AsyncStorage
-jest.mock('@react-native-async-storage/async-storage', () =>
-  require('@react-native-async-storage/async-storage/jest/async-storage-mock')
-);
+// Mock AsyncStorage - remove this mock since it's not installed
 
 // Mock i18next
 jest.mock('i18next', () => ({
@@ -54,6 +61,15 @@ jest.mock('zustand', () => ({
     );
     return jest.fn(() => initialState);
   }),
+}));
+
+// Mock storage package
+jest.mock('@umituz/react-native-storage', () => ({
+  storageRepository: {
+    getString: jest.fn(() => Promise.resolve(null)),
+    setString: jest.fn(() => Promise.resolve()),
+    remove: jest.fn(() => Promise.resolve()),
+  },
 }));
 
 // Global test utilities
