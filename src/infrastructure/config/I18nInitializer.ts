@@ -69,4 +69,14 @@ export class I18nInitializer {
       }
     }
   }
+
+  /**
+   * @deprecated Use initialize instead
+   */
+  static registerAppTranslations(
+    appTranslations: Record<string, any>,
+    languageCode: string = DEFAULT_LANGUAGE
+  ): void {
+    this.initialize(appTranslations, languageCode);
+  }
 }

@@ -15,26 +15,43 @@ export class ResourceBuilder {
   ): Record<string, Record<string, any>> {
     const packageTranslations = TranslationLoader.loadPackageTranslations();
 
-    const resources: Record<string, Record<string, any>> = {
-      [languageCode]: {},
-    };
+    // Initialize with package translations
+    const resources: Record<string, Record<string, any>> = { ...packageTranslations };
 
-    const packageLang = packageTranslations[languageCode] || {};
-
-    // Add package namespaces
-    for (const [namespace, translations] of Object.entries(packageLang)) {
-      resources[languageCode][namespace] = translations;
+    // Ensure initial language exists
+    if (!resources[languageCode]) {
+      resources[languageCode] = {};
     }
 
-    // Merge app translations (app overrides package)
-    for (const [namespace, translations] of Object.entries(appTranslations)) {
-      if (resources[languageCode][namespace]) {
-        resources[languageCode][namespace] = TranslationLoader.mergeTranslations(
-          resources[languageCode][namespace],
-          translations
-        );
+    // Process app translations
+    for (const [key, value] of Object.entries(appTranslations)) {
+      // Check if the key is a language code (format: xx-XX)
+      const isLanguageKey = /^[a-z]{2}-[A-Z]{2}$/.test(key);
+
+      if (isLanguageKey) {
+        // It's a language key (e.g., "en-US")
+        const lang = key;
+        if (!resources[lang]) {
+          resources[lang] = {};
+        }
+
+        // Merge namespaces for this language
+        if (value && typeof value === 'object') {
+          for (const [namespace, translations] of Object.entries(value)) {
+            resources[lang][namespace] = TranslationLoader.mergeTranslations(
+              resources[lang][namespace] || {},
+              translations
+            );
+          }
+        }
       } else {
-        resources[languageCode][namespace] = translations;
+        // It's a namespace for the default/current language (backward compatibility)
+        if (value && typeof value === 'object') {
+          resources[languageCode][key] = TranslationLoader.mergeTranslations(
+            resources[languageCode][key] || {},
+            value
+          );
+        }
       }
     }
 

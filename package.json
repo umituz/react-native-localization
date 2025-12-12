@@ -1,6 +1,6 @@
 {
   "name": "@umituz/react-native-localization",
-  "version": "3.1.2",
+  "version": "3.2.2",
   "description": "Generic localization system for React Native apps with i18n support",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
@@ -38,7 +38,9 @@
     "zustand": "^5.0.2"
   },
   "peerDependencies": {
+    "@expo/vector-icons": ">=14.0.0",
     "@react-navigation/native": ">=6.0.0",
+    "@umituz/react-native-design-system-theme": "*",
     "@umituz/react-native-filesystem": "latest",
     "@umituz/react-native-storage": "latest",
     "react": ">=18.2.0",
@@ -53,6 +55,7 @@
     "@babel/preset-env": "^7.28.5",
     "@babel/preset-react": "^7.28.5",
     "@babel/preset-typescript": "^7.28.5",
+    "@expo/vector-icons": "^15.0.3",
     "@react-native-async-storage/async-storage": "^2.2.0",
     "@testing-library/jest-native": "^5.4.3",
     "@testing-library/react": "^16.3.0",
@@ -60,6 +63,7 @@
     "@testing-library/react-native": "^13.3.3",
     "@types/react": "^18.2.45",
     "@types/react-native": "^0.73.0",
+    "@umituz/react-native-design-system-theme": "^1.8.0",
     "@umituz/react-native-filesystem": "^1.4.0",
     "@umituz/react-native-storage": "^1.1.1",
     "expo-localization": "~15.0.0",

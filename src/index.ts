@@ -29,6 +29,8 @@ export {
 
 // Presentation
 export { LanguageSelectionScreen } from './presentation/screens/LanguageSelectionScreen';
+export { LanguageSection } from './presentation/components/LanguageSection';
+export type { LanguageSectionProps, LanguageSectionConfig } from './presentation/components/LanguageSection';
 
 // Types
 export type { Language, ILocalizationRepository } from './domain/repositories/ILocalizationRepository';
