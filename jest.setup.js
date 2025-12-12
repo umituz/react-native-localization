@@ -21,14 +21,24 @@ jest.mock('react-native', () => {
     },
     View: ({ children, testID, ...props }) => React.createElement('View', { testID, ...props }, children),
     Text: ({ children, testID, ...props }) => React.createElement('Text', { testID, ...props }, children),
-    TouchableOpacity: ({ children, testID, onPress, ...props }) => 
+    TouchableOpacity: ({ children, testID, onPress, ...props }) =>
       React.createElement('TouchableOpacity', { testID, onPress, ...props }, children),
     TextInput: ({ testID, ...props }) => React.createElement('TextInput', { testID, ...props }),
-    FlatList: ({ data, renderItem, ...props }) => 
-      React.createElement('FlatList', { data, renderItem, ...props }),
+    FlatList: ({ data, renderItem, keyExtractor, ...props }) =>
+      React.createElement('FlatList', { data, renderItem, ...props },
+        data && data.map((item, index) => {
+          const key = keyExtractor ? keyExtractor(item, index) : String(index);
+          return React.createElement(React.Fragment, { key }, renderItem({ item, index }));
+        })
+      ),
     StyleSheet: {
       create: jest.fn(() => ({})),
-      flatten: jest.fn((style) => style),
+      flatten: jest.fn((style) => {
+        if (Array.isArray(style)) {
+          return Object.assign({}, ...style.map(s => typeof s === 'object' ? s : {}));
+        }
+        return style;
+      }),
     },
   };
 });
@@ -71,6 +81,17 @@ jest.mock('react-i18next', () => ({
 // Mock Zustand
 jest.mock('zustand', () => ({
   create: jest.fn((createFn) => {
+    // Support curried version: create()(...) which passes undefined first
+    if (!createFn) {
+      return (actualCreateFn) => {
+        const initialState = actualCreateFn(
+          jest.fn(),
+          jest.fn(() => ({}))
+        );
+        return jest.fn(() => initialState);
+      };
+    }
+    // Support non-curried version: create(...)
     const initialState = createFn(
       jest.fn(),
       jest.fn(() => ({}))

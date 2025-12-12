@@ -33,7 +33,7 @@ export const DEFAULT_LANGUAGE = 'en-US';
  * - All variants map to en-US (only supported language)
  */
 const LOCALE_MAPPING: Record<string, string> = {
-  // All English variants map to en-US
+  // English variants map to en-US
   'en': 'en-US',
   'en-US': 'en-US',
   'en-GB': 'en-US',
@@ -42,85 +42,68 @@ const LOCALE_MAPPING: Record<string, string> = {
   'en-NZ': 'en-US',
   'en-IE': 'en-US',
   'en-ZA': 'en-US',
+  'en-SG': 'en-US',
+  'en-IN': 'en-US',
 
-  // All other languages map to en-US (fallback)
-  'ar': 'en-US',
-  'ar-SA': 'en-US',
-  'ar-AE': 'en-US',
-  'ar-EG': 'en-US',
-  'bg': 'en-US',
-  'bg-BG': 'en-US',
-  'cs': 'en-US',
-  'cs-CZ': 'en-US',
-  'da': 'en-US',
-  'da-DK': 'en-US',
-  'de': 'en-US',
-  'de-DE': 'en-US',
-  'de-AT': 'en-US',
-  'de-CH': 'en-US',
-  'el': 'en-US',
-  'es': 'en-US',
-  'es-ES': 'en-US',
-  'es-MX': 'en-US',
-  'es-AR': 'en-US',
-  'fi': 'en-US',
-  'fi-FI': 'en-US',
-  'fr': 'en-US',
-  'fr-FR': 'en-US',
-  'fr-CA': 'en-US',
-  'fr-BE': 'en-US',
-  'fr-CH': 'en-US',
-  'hi': 'en-US',
-  'hi-IN': 'en-US',
-  'hr': 'en-US',
-  'hu': 'en-US',
-  'hu-HU': 'en-US',
-  'id': 'en-US',
-  'id-ID': 'en-US',
-  'it': 'en-US',
-  'it-IT': 'en-US',
-  'ja': 'en-US',
-  'ja-JP': 'en-US',
-  'ko': 'en-US',
-  'ko-KR': 'en-US',
-  'ms': 'en-US',
-  'ms-MY': 'en-US',
-  'nb': 'en-US',
-  'no': 'en-US',
-  'no-NO': 'en-US',
-  'nl': 'en-US',
-  'nl-NL': 'en-US',
-  'nl-BE': 'en-US',
-  'pl': 'en-US',
-  'pl-PL': 'en-US',
-  'pt': 'en-US',
-  'pt-PT': 'en-US',
-  'pt-BR': 'en-US',
-  'ro': 'en-US',
-  'ro-RO': 'en-US',
-  'ru': 'en-US',
-  'ru-RU': 'en-US',
-  'sk': 'en-US',
-  'sv': 'en-US',
-  'sv-SE': 'en-US',
-  'th': 'en-US',
-  'th-TH': 'en-US',
-  'tl': 'en-US',
-  'tl-PH': 'en-US',
-  'fil': 'en-US',
-  'tr': 'en-US',
-  'tr-TR': 'en-US',
-  'uk': 'en-US',
-  'uk-UA': 'en-US',
-  'vi': 'en-US',
-  'vi-VN': 'en-US',
-  'zh': 'en-US',
-  'zh-CN': 'en-US',
-  'zh-Hans': 'en-US',
-  'zh-Hans-CN': 'en-US',
-  'zh-Hant': 'en-US',
-  'zh-TW': 'en-US',
-  'zh-HK': 'en-US',
+  // Portuguese mappings
+  'pt': 'pt-PT', // Default to European Portuguese if ambiguous, or use pt-BR if preferred.
+  'pt-BR': 'pt-BR', // Now natively supported
+  'pt-PT': 'pt-PT',
+
+  // Spanish variants
+  'es': 'es-ES',
+  'es-ES': 'es-ES',
+  'es-MX': 'es-ES', // Fallback to ES until MX is explicitly added
+  'es-AR': 'es-ES',
+  'es-US': 'es-ES', // Common in US
+
+  // French variants
+  'fr': 'fr-FR',
+  'fr-FR': 'fr-FR',
+  'fr-CA': 'fr-FR', // Fallback to FR until CA is explicitly added
+  'fr-BE': 'fr-FR',
+  'fr-CH': 'fr-FR',
+
+  // Norwegian (Bokmål to no-NO)
+  'no': 'no-NO',
+  'nb': 'no-NO',
+  'nn': 'no-NO', // Nynorsk fallback
+
+  // Chinese variants
+  'zh': 'zh-CN',
+  'zh-CN': 'zh-CN',
+  'zh-Hans': 'zh-CN',
+  'zh-Hans-CN': 'zh-CN',
+  'zh-Hant': 'zh-TW', // Map Traditional to zh-TW
+  'zh-TW': 'zh-TW',
+  'zh-HK': 'zh-TW', // Map HK to TW for Traditional
+
+  // Others
+  'ar': 'ar-SA',
+  'bg': 'bg-BG',
+  'cs': 'cs-CZ',
+  'da': 'da-DK',
+  'de': 'de-DE',
+  'el': 'el-GR', // Greek
+  'fi': 'fi-FI',
+  'hi': 'hi-IN',
+  'hr': 'hr-HR', // Croatian
+  'hu': 'hu-HU',
+  'id': 'id-ID',
+  'it': 'it-IT',
+  'ja': 'ja-JP',
+  'ko': 'ko-KR',
+  'ms': 'ms-MY',
+  'nl': 'nl-NL',
+  'pl': 'pl-PL',
+  'ro': 'ro-RO',
+  'ru': 'ru-RU',
+  'sk': 'sk-SK', // Slovak
+  'sv': 'sv-SE',
+  'th': 'th-TH',
+  'tr': 'tr-TR',
+  'uk': 'uk-UA',
+  'vi': 'vi-VN',
 };
 
 export const getLanguageByCode = (code: string): Language | undefined => {

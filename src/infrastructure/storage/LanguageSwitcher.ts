@@ -23,7 +23,7 @@ export class LanguageSwitcher {
     const language = languageRegistry.getLanguageByCode(languageCode);
 
     if (!language) {
-      throw new Error(`Unsupported language: ${languageCode}`);
+      console.warn(`[LanguageSwitcher] Language ${languageCode} not found in registry, proceeding anyway.`);
     }
 
     await i18n.changeLanguage(languageCode);
@@ -31,7 +31,7 @@ export class LanguageSwitcher {
 
     return {
       languageCode,
-      isRTL: language.isRTL || false,
+      isRTL: language?.isRTL || false,
     };
   }
 }

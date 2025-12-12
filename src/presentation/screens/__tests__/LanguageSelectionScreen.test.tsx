@@ -5,17 +5,17 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 import { LanguageSelectionScreen } from '../LanguageSelectionScreen';
-import { useLocalization } from '../../infrastructure/hooks/useLocalization';
-import { searchLanguages } from '../../infrastructure/config/languagesData';
+import { useLocalization } from '../../../infrastructure/hooks/useLocalization';
+import { searchLanguages } from '../../../infrastructure/config/languages';
 
 // Mock dependencies
-jest.mock('../../infrastructure/hooks/useLocalization');
-jest.mock('../../infrastructure/config/languagesData');
+jest.mock('../../../infrastructure/hooks/useLocalization');
+jest.mock('../../../infrastructure/config/languages');
 jest.mock('@react-navigation/native', () => ({
   useNavigation: () => ({
     goBack: jest.fn(),
   }),
-}));
+}), { virtual: true });
 
 const mockUseLocalization = useLocalization as jest.MockedFunction<typeof useLocalization>;
 const mockSearchLanguages = searchLanguages as jest.MockedFunction<typeof searchLanguages>;
@@ -23,7 +23,7 @@ const mockSearchLanguages = searchLanguages as jest.MockedFunction<typeof search
 const mockLanguage = {
   code: 'en-US',
   name: 'English',
-  nativeName: 'English',
+  nativeName: 'Native English',
   flag: '🇺🇸',
   isRTL: false,
 };
@@ -34,7 +34,7 @@ describe('LanguageSelectionScreen', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
-    
+
     mockUseLocalization.mockReturnValue({
       currentLanguage: 'en-US',
       setLanguage: mockSetLanguage,
@@ -90,7 +90,7 @@ describe('LanguageSelectionScreen', () => {
 
   it('should use custom render function when provided', () => {
     const customRender = jest.fn().mockReturnValue(<div>Custom Item</div>);
-    
+
     render(
       <LanguageSelectionScreen
         searchPlaceholder="Search languages..."
@@ -107,7 +107,7 @@ describe('LanguageSelectionScreen', () => {
 
   it('should use custom search input when provided', () => {
     const customSearchInput = jest.fn().mockReturnValue(<div>Custom Search</div>);
-    
+
     render(
       <LanguageSelectionScreen
         searchPlaceholder="Search languages..."
@@ -126,7 +126,7 @@ describe('LanguageSelectionScreen', () => {
     const CustomContainer = ({ children }: { children: React.ReactNode }) => (
       <div testID="custom-container">{children}</div>
     );
-    
+
     const { getByTestId } = render(
       <LanguageSelectionScreen
         searchPlaceholder="Search languages..."

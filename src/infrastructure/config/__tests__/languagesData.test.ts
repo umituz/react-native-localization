@@ -45,5 +45,25 @@ describe('LanguageRegistry', () => {
     const languages = languageRegistry.getLanguages();
     expect(Array.isArray(languages)).toBe(true);
     expect(languages.length).toBeGreaterThan(0);
+    // Should now support many languages (29+)
+    expect(languages.length).toBeGreaterThan(20);
+  });
+
+  it('should support newly added languages', () => {
+    expect(languageRegistry.isLanguageSupported('cs-CZ')).toBe(true);
+    expect(languageRegistry.isLanguageSupported('pt-BR')).toBe(true);
+    expect(languageRegistry.isLanguageSupported('zh-TW')).toBe(true);
+    expect(languageRegistry.isLanguageSupported('el-GR')).toBe(true);
+  });
+
+  it('should find language attributes correctly', () => {
+    const czech = languageRegistry.getLanguageByCode('cs-CZ');
+    expect(czech).toBeDefined();
+    expect(czech?.name).toBe('Czech');
+    expect(czech?.flag).toBe('🇨🇿');
+
+    const brazil = languageRegistry.getLanguageByCode('pt-BR');
+    expect(brazil).toBeDefined();
+    expect(brazil?.name).toBe('Portuguese (Brazil)');
   });
 });
