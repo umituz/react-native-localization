@@ -34,6 +34,7 @@ export const LanguageItem: React.FC<LanguageItemProps> = ({
 }) => {
   return (
     <TouchableOpacity
+      testID="language-item-test"
       style={[
         styles.languageItem,
         customStyles?.languageItem,

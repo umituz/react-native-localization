@@ -48,7 +48,6 @@
     "**/*.test.ts",
     "**/*.test.tsx",
     "**/*.spec.ts",
-    "**/*.spec.tsx",
-    "src/infrastructure/storage/LocalizationStore.ts"
+    "**/*.spec.tsx"
   ]
 }

@@ -2,28 +2,36 @@
  * Jest setup file
  */
 
+import React from 'react';
+
 // Mock react-native modules
-jest.mock('react-native', () => ({
-  Platform: {
-    OS: 'ios',
-    select: jest.fn((obj) => obj.ios),
-  },
-  NativeModules: {
-    RNCNetInfo: {
-      getCurrentState: jest.fn(() => Promise.resolve()),
-      addListener: jest.fn(),
-      removeListeners: jest.fn(),
+jest.mock('react-native', () => {
+  const React = require('react');
+  return {
+    Platform: {
+      OS: 'ios',
+      select: jest.fn((obj) => obj.ios),
     },
-  },
-  View: 'View',
-  Text: 'Text',
-  TouchableOpacity: 'TouchableOpacity',
-  TextInput: 'TextInput',
-  FlatList: 'FlatList',
-  StyleSheet: {
-    create: jest.fn(() => ({})),
-  },
-}));
+    NativeModules: {
+      RNCNetInfo: {
+        getCurrentState: jest.fn(() => Promise.resolve()),
+        addListener: jest.fn(),
+        removeListeners: jest.fn(),
+      },
+    },
+    View: ({ children, testID, ...props }) => React.createElement('View', { testID, ...props }, children),
+    Text: ({ children, testID, ...props }) => React.createElement('Text', { testID, ...props }, children),
+    TouchableOpacity: ({ children, testID, onPress, ...props }) => 
+      React.createElement('TouchableOpacity', { testID, onPress, ...props }, children),
+    TextInput: ({ testID, ...props }) => React.createElement('TextInput', { testID, ...props }),
+    FlatList: ({ data, renderItem, ...props }) => 
+      React.createElement('FlatList', { data, renderItem, ...props }),
+    StyleSheet: {
+      create: jest.fn(() => ({})),
+      flatten: jest.fn((style) => style),
+    },
+  };
+});
 
 // Mock expo-localization
 jest.mock('expo-localization', () => ({

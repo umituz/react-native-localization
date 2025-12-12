@@ -5,8 +5,8 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 import { LanguageSelectionScreen } from '../LanguageSelectionScreen';
-import { useLocalization } from '../../../infrastructure/hooks/useLocalization';
-import { searchLanguages } from '../../../infrastructure/config/languagesData';
+import { useLocalization } from '../../infrastructure/hooks/useLocalization';
+import { searchLanguages } from '../../infrastructure/config/languagesData';
 
 // Mock dependencies
 jest.mock('../../infrastructure/hooks/useLocalization');
