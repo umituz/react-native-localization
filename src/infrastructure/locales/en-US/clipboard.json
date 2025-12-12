@@ -1,9 +1,0 @@
-{
-  "clipboard": {
-    "copied": "Copied",
-    "copyFailed": "Failed to copy",
-    "pasteFailed": "Failed to paste",
-    "cleared": "Clipboard cleared",
-    "empty": "Clipboard is empty"
-  }
-}

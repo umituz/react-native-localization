@@ -31,7 +31,7 @@ export class LanguageSwitcher {
 
     return {
       languageCode,
-      isRTL: language.rtl || language.isRTL || false,
+      isRTL: language.isRTL || false,
     };
   }
 }

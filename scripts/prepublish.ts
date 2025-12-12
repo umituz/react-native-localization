@@ -2,9 +2,9 @@
 /* eslint-disable no-console */
 
 /**
- * Pre-Publish Script - Minimal Version
+ * Pre-Publish Script - Generic Package Version
  *
- * Basic checks before publishing
+ * Basic checks before publishing for generic localization package
  */
 
 import * as fs from 'fs';
@@ -14,24 +14,35 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const PACKAGE_ROOT = path.resolve(__dirname, '..');
-const EN_US_DIR = path.join(PACKAGE_ROOT, 'src/infrastructure/locales/en-US');
+const SRC_DIR = path.join(PACKAGE_ROOT, 'src');
 
 console.log('🔍 Pre-publish checks...\n');
 
-// Check if en-US directory exists
-if (!fs.existsSync(EN_US_DIR)) {
-  console.error('❌ en-US directory not found!');
+// Check if src directory exists
+if (!fs.existsSync(SRC_DIR)) {
+  console.error('❌ src directory not found!');
   process.exit(1);
 }
 
-// Check if en-US has JSON files
-const jsonFiles = fs.readdirSync(EN_US_DIR)
-  .filter(file => file.endsWith('.json'));
+// Check if main files exist
+const mainFiles = [
+  'src/index.ts',
+  'src/infrastructure/config/i18n.ts',
+  'src/infrastructure/storage/LocalizationStore.ts',
+];
 
-if (jsonFiles.length === 0) {
-  console.error('❌ No JSON translation files found!');
+let allFilesExist = true;
+for (const file of mainFiles) {
+  const filePath = path.join(PACKAGE_ROOT, file);
+  if (!fs.existsSync(filePath)) {
+    console.error(`❌ Required file not found: ${file}`);
+    allFilesExist = false;
+  }
+}
+
+if (!allFilesExist) {
   process.exit(1);
 }
 
-console.log(`✅ Found ${jsonFiles.length} translation files`);
+console.log('✅ All required files found');
 console.log('✅ Pre-publish checks passed!\n');

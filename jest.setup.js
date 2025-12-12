@@ -15,6 +15,14 @@ jest.mock('react-native', () => ({
       removeListeners: jest.fn(),
     },
   },
+  View: 'View',
+  Text: 'Text',
+  TouchableOpacity: 'TouchableOpacity',
+  TextInput: 'TextInput',
+  FlatList: 'FlatList',
+  StyleSheet: {
+    create: jest.fn(() => ({})),
+  },
 }));
 
 // Mock expo-localization

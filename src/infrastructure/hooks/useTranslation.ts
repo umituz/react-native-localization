@@ -11,37 +11,13 @@
 
 import { useCallback, useMemo } from 'react';
 import i18n from '../config/i18n';
+import { TranslationCache } from '../config/TranslationCache';
 
 export interface TranslationOptions {
   count?: number;
   ns?: string | string[];
   defaultValue?: string;
   [key: string]: any;
-}
-
-/**
- * Translation cache for performance optimization
- */
-class TranslationCache {
-  private cache = new Map<string, string>();
-  private maxSize = 1000;
-
-  get(key: string): string | undefined {
-    return this.cache.get(key);
-  }
-
-  set(key: string, value: string): void {
-    if (this.cache.size >= this.maxSize) {
-      // Remove oldest entry
-      const firstKey = this.cache.keys().next().value;
-      this.cache.delete(firstKey);
-    }
-    this.cache.set(key, value);
-  }
-
-  clear(): void {
-    this.cache.clear();
-  }
 }
 
 const translationCache = new TranslationCache();
@@ -77,7 +53,7 @@ export const useTranslationFunction = () => {
     // If key already has namespace separator (:), use as-is
     if (key.includes(':')) {
       const tempResult = i18n.t(key, options);
-      result = typeof tempResult === 'string' ? tempResult : String(tempResult);
+      result = typeof tempResult === 'string' ? tempResult : key;
     } else {
       // Auto-detect namespace from first dot segment
       const firstDotIndex = key.indexOf('.');
@@ -94,25 +70,26 @@ export const useTranslationFunction = () => {
           
           // If translation found (not same as key), use it
           if (namespacedResult !== namespacedKey && namespacedResult !== restOfKey) {
-            result = typeof namespacedResult === 'string' ? namespacedResult : String(namespacedResult);
+            result = typeof namespacedResult === 'string' ? namespacedResult : key;
           } else {
             // Fallback to original key
             const fallbackResult = i18n.t(key, options);
-            result = typeof fallbackResult === 'string' ? fallbackResult : String(fallbackResult);
+            result = typeof fallbackResult === 'string' ? fallbackResult : key;
           }
         } else {
           // Fallback to original key
-          result = i18n.t(key, options);
+          const tempResult = i18n.t(key, options);
+          result = typeof tempResult === 'string' ? tempResult : key;
         }
       } else {
         // No dot, use as-is
         const noDotResult = i18n.t(key, options);
-        result = typeof noDotResult === 'string' ? noDotResult : String(noDotResult);
+        result = typeof noDotResult === 'string' ? noDotResult : key;
       }
     }
 
     // Convert to string and cache
-    const finalResult: string = typeof result === 'string' ? result : String(result);
+    const finalResult: string = typeof result === 'string' ? result : key;
     translationCache.set(cacheKey, finalResult);
 
     return finalResult;

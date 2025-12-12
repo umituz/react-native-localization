@@ -4,10 +4,10 @@
  */
 
 import { create } from 'zustand';
-import type { LocalizationState, LocalizationActions, LocalizationGetters, Language } from '../types/LocalizationState';
+import type { LocalizationState, LocalizationActions, LocalizationGetters, Language } from './types/LocalizationState';
 import { LanguageInitializer } from './LanguageInitializer';
 import { LanguageSwitcher } from './LanguageSwitcher';
-import { languageRegistry } from '../../config/languagesData';
+import { languageRegistry } from '../config/languagesData';
 
 interface LocalizationStore extends LocalizationState, LocalizationActions, LocalizationGetters {
   // Additional properties can be added here if needed

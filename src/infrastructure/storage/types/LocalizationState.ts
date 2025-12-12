@@ -9,7 +9,6 @@ export interface Language {
   nativeName: string;
   flag?: string;
   isRTL?: boolean;
-  rtl?: boolean;
 }
 
 export interface LocalizationState {
@@ -17,8 +16,6 @@ export interface LocalizationState {
   isRTL: boolean;
   isInitialized: boolean;
   supportedLanguages: Language[];
-  setLanguage: (languageCode: string) => Promise<void>;
-  initialize: () => Promise<void>;
 }
 
 export interface LocalizationActions {

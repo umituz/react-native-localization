@@ -6,16 +6,12 @@
 
 export class TranslationLoader {
   /**
-   * Load package translations (en-US)
+   * Load package translations (empty by default - apps provide their own)
    */
   static loadPackageTranslations(): Record<string, any> {
-    try {
-      // eslint-disable-next-line @typescript-eslint/no-require-imports
-      const translations = require('../locales/en-US');
-      return { 'en-US': translations.default || translations };
-    } catch {
-      return { 'en-US': {} };
-    }
+    // Package doesn't include any translations by default
+    // Consuming applications should provide their own translations
+    return { 'en-US': {} };
   }
 
   /**

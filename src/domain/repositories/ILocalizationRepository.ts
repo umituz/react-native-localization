@@ -7,8 +7,8 @@ export interface Language {
   code: string;
   name: string;
   nativeName: string;
-  flag: string;
-  rtl?: boolean;
+  flag?: string;
+  isRTL?: boolean;
 }
 
 export interface ILocalizationRepository {
