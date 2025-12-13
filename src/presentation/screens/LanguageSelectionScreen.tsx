@@ -137,7 +137,6 @@ export const LanguageSelectionScreen: React.FC<LanguageSelectionScreenProps> = (
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
   },
   listContent: {
     paddingHorizontal: 20,

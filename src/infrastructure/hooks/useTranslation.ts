@@ -11,7 +11,7 @@
 
 import { useCallback, useMemo } from 'react';
 import i18n from '../config/i18n';
-import { TranslationCache } from '../config/TranslationCache';
+import { translationCache } from '../config/TranslationCache';
 
 export interface TranslationOptions {
   count?: number;
@@ -20,7 +20,6 @@ export interface TranslationOptions {
   [key: string]: any;
 }
 
-const translationCache = new TranslationCache();
 
 /**
  * Hook for translation functionality
@@ -41,7 +40,7 @@ export const useTranslationFunction = () => {
 
     // Create cache key
     const cacheKey = `${key}:${JSON.stringify(options)}`;
-    
+
     // Check cache first
     const cached = translationCache.get(cacheKey);
     if (cached) {
@@ -67,7 +66,7 @@ export const useTranslationFunction = () => {
         if (hasNamespace) {
           const namespacedKey = `${potentialNamespace}:${restOfKey}`;
           const namespacedResult = i18n.t(namespacedKey, options);
-          
+
           // If translation found (not same as key), use it
           if (namespacedResult !== namespacedKey && namespacedResult !== restOfKey) {
             result = typeof namespacedResult === 'string' ? namespacedResult : key;

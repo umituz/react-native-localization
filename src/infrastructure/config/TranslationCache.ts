@@ -27,3 +27,5 @@ export class TranslationCache {
     this.cache.clear();
   }
 }
+
+export const translationCache = new TranslationCache();
