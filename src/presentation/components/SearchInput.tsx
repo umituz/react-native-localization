@@ -1,27 +1,33 @@
 /**
  * Search Input Component
- * 
+ *
  * Renders search input for language filtering
+ * Theme-aware component that adapts to light/dark mode
  */
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import {
   View,
   TextInput,
   TouchableOpacity,
   Text,
   StyleSheet,
+  type StyleProp,
+  type ViewStyle,
+  type TextStyle,
 } from 'react-native';
+// @ts-ignore - Optional peer dependency
+import { useAppDesignTokens } from '@umituz/react-native-design-system-theme';
 
 interface SearchInputProps {
   value: string;
   onChange: (value: string) => void;
   placeholder: string;
   customStyles?: {
-    searchContainer?: any;
-    searchInput?: any;
-    searchIcon?: any;
-    clearButton?: any;
+    searchContainer?: StyleProp<ViewStyle>;
+    searchInput?: StyleProp<TextStyle>;
+    searchIcon?: StyleProp<TextStyle>;
+    clearButton?: StyleProp<ViewStyle>;
   };
 }
 
@@ -31,13 +37,28 @@ export const SearchInput: React.FC<SearchInputProps> = ({
   placeholder,
   customStyles,
 }) => {
+  const tokens = useAppDesignTokens();
+
+  const themedStyles = useMemo(() => ({
+    searchContainer: {
+      backgroundColor: tokens.colors.backgroundSecondary,
+      borderColor: tokens.colors.border,
+    } as ViewStyle,
+    searchInput: {
+      color: tokens.colors.textPrimary,
+    } as TextStyle,
+    clearIcon: {
+      color: tokens.colors.textSecondary,
+    } as TextStyle,
+  }), [tokens]);
+
   return (
-    <View style={[styles.searchContainer, customStyles?.searchContainer]}>
+    <View style={[styles.searchContainer, themedStyles.searchContainer, customStyles?.searchContainer]}>
       <Text style={[styles.searchIcon, customStyles?.searchIcon]}>🔍</Text>
       <TextInput
-        style={[styles.searchInput, customStyles?.searchInput]}
+        style={[styles.searchInput, themedStyles.searchInput, customStyles?.searchInput]}
         placeholder={placeholder}
-        placeholderTextColor="#666"
+        placeholderTextColor={tokens.colors.textTertiary}
         value={value}
         onChangeText={onChange}
         autoCapitalize="none"
@@ -49,7 +70,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
           style={[styles.clearButton, customStyles?.clearButton]}
           hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
         >
-          <Text style={[styles.clearIcon, customStyles?.searchIcon]}>✕</Text>
+          <Text style={[styles.clearIcon, themedStyles.clearIcon, customStyles?.searchIcon]}>✕</Text>
         </TouchableOpacity>
       )}
     </View>
@@ -64,10 +85,8 @@ const styles = StyleSheet.create({
     marginBottom: 24,
     paddingHorizontal: 16,
     paddingVertical: 12,
-    backgroundColor: '#f5f5f5',
     borderRadius: 12,
     borderWidth: 1,
-    borderColor: '#e0e0e0',
   },
   searchIcon: {
     marginRight: 12,
@@ -78,13 +97,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
     padding: 0,
     fontWeight: '500',
-    color: '#333',
   },
   clearButton: {
     padding: 4,
   },
   clearIcon: {
     fontSize: 14,
-    color: '#666',
   },
 });

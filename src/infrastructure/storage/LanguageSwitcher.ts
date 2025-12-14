@@ -22,7 +22,7 @@ export class LanguageSwitcher {
   }> {
     const language = languageRegistry.getLanguageByCode(languageCode);
 
-    if (!language) {
+    if (!language && __DEV__) {
       console.warn(`[LanguageSwitcher] Language ${languageCode} not found in registry, proceeding anyway.`);
     }
 

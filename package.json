@@ -1,19 +1,22 @@
 {
   "name": "@umituz/react-native-localization",
-  "version": "3.2.5",
+  "version": "3.5.0",
   "description": "Generic localization system for React Native apps with i18n support",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "scripts": {
     "typecheck": "tsc --noEmit --skipLibCheck",
-    "lint": "tsc --noEmit",
+    "lint": "tsc --noEmit --skipLibCheck",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "prepublishOnly": "node scripts/prepublish.js",
     "version:patch": "npm version patch -m 'chore: release v%s'",
     "version:minor": "npm version minor -m 'chore: release v%s'",
-    "version:major": "npm version major -m 'chore: release v%s'"
+    "version:major": "npm version major -m 'chore: release v%s'",
+    "i18n:setup": "node scripts/setup-languages.js",
+    "i18n:sync": "node scripts/sync-translations.js",
+    "i18n:translate": "node scripts/translate-missing.js"
   },
   "keywords": [
     "react-native",

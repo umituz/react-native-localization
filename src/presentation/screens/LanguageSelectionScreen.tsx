@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 // @ts-ignore - Optional peer dependency
 import { useNavigation } from '@react-navigation/native';
+import { useAppDesignTokens } from '@umituz/react-native-design-system-theme';
 import { useLocalization, searchLanguages, Language } from '../../index';
 import { LanguageItem } from '../components/LanguageItem';
 import { SearchInput } from '../components/SearchInput';
@@ -70,6 +71,7 @@ export const LanguageSelectionScreen: React.FC<LanguageSelectionScreenProps> = (
   testID = 'language-selection-screen',
 }) => {
   const navigation = useNavigation();
+  const tokens = useAppDesignTokens();
   const { t, currentLanguage, setLanguage } = useLocalization();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCode, setSelectedCode] = useState(currentLanguage);
@@ -118,7 +120,7 @@ export const LanguageSelectionScreen: React.FC<LanguageSelectionScreenProps> = (
   };
 
   const content = (
-    <View style={[styles.container, customStyles?.container]} testID={testID}>
+    <View style={[styles.container, { backgroundColor: tokens.colors.backgroundPrimary }, customStyles?.container]} testID={testID}>
       {renderSearchInputComponent()}
       <FlatList
         data={filteredLanguages}

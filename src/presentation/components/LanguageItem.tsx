@@ -1,16 +1,22 @@
 /**
  * Language Item Component
- * 
+ *
  * Renders a single language item in the language selection list
+ * Theme-aware component that adapts to light/dark mode
  */
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import {
   View,
   TouchableOpacity,
   Text,
   StyleSheet,
+  type StyleProp,
+  type ViewStyle,
+  type TextStyle,
 } from 'react-native';
+// @ts-ignore - Optional peer dependency
+import { useAppDesignTokens } from '@umituz/react-native-design-system-theme';
 import type { Language } from '../../infrastructure/storage/types/LocalizationState';
 
 interface LanguageItemProps {
@@ -18,11 +24,11 @@ interface LanguageItemProps {
   isSelected: boolean;
   onSelect: (code: string) => void;
   customStyles?: {
-    languageItem?: any;
-    languageContent?: any;
-    languageText?: any;
-    flag?: any;
-    nativeName?: any;
+    languageItem?: StyleProp<ViewStyle>;
+    languageContent?: StyleProp<ViewStyle>;
+    languageText?: StyleProp<ViewStyle>;
+    flag?: StyleProp<TextStyle>;
+    nativeName?: StyleProp<TextStyle>;
   };
 }
 
@@ -32,13 +38,36 @@ export const LanguageItem: React.FC<LanguageItemProps> = ({
   onSelect,
   customStyles,
 }) => {
+  const tokens = useAppDesignTokens();
+
+  const themedStyles = useMemo(() => ({
+    languageItem: {
+      backgroundColor: tokens.colors.backgroundSecondary,
+      borderColor: tokens.colors.border,
+    } as ViewStyle,
+    selectedLanguageItem: {
+      borderColor: tokens.colors.primary,
+      backgroundColor: tokens.colors.primaryLight,
+    } as ViewStyle,
+    nativeName: {
+      color: tokens.colors.textPrimary,
+    } as TextStyle,
+    languageName: {
+      color: tokens.colors.textSecondary,
+    } as TextStyle,
+    checkIcon: {
+      color: tokens.colors.primary,
+    } as TextStyle,
+  }), [tokens]);
+
   return (
     <TouchableOpacity
       testID="language-item-test"
       style={[
         styles.languageItem,
+        themedStyles.languageItem,
         customStyles?.languageItem,
-        isSelected && styles.selectedLanguageItem,
+        isSelected ? [styles.selectedLanguageItem, themedStyles.selectedLanguageItem] : undefined,
       ]}
       onPress={() => onSelect(item.code)}
       activeOpacity={0.7}
@@ -48,16 +77,16 @@ export const LanguageItem: React.FC<LanguageItemProps> = ({
           {item.flag || '🌐'}
         </Text>
         <View style={[styles.languageText, customStyles?.languageText]}>
-          <Text style={[styles.nativeName, customStyles?.nativeName]}>
+          <Text style={[styles.nativeName, themedStyles.nativeName, customStyles?.nativeName]}>
             {item.nativeName}
           </Text>
-          <Text style={[styles.languageName, customStyles?.nativeName]}>
+          <Text style={[styles.languageName, themedStyles.languageName, customStyles?.nativeName]}>
             {item.name}
           </Text>
         </View>
       </View>
       {isSelected && (
-        <Text style={[styles.checkIcon, customStyles?.flag]}>✓</Text>
+        <Text style={[styles.checkIcon, themedStyles.checkIcon, customStyles?.flag]}>✓</Text>
       )}
     </TouchableOpacity>
   );
@@ -71,13 +100,10 @@ const styles = StyleSheet.create({
     padding: 16,
     borderRadius: 12,
     borderWidth: 1,
-    borderColor: '#e0e0e0',
     marginBottom: 8,
-    backgroundColor: '#fff',
   },
   selectedLanguageItem: {
-    borderColor: '#007AFF',
-    backgroundColor: '#f0f8ff',
+    borderWidth: 2,
   },
   languageContent: {
     flexDirection: 'row',
@@ -94,16 +120,13 @@ const styles = StyleSheet.create({
   nativeName: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#333',
     marginBottom: 2,
   },
   languageName: {
     fontSize: 14,
-    color: '#666',
   },
   checkIcon: {
     fontSize: 18,
-    color: '#007AFF',
     fontWeight: 'bold',
   },
 });

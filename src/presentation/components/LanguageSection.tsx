@@ -1,7 +1,10 @@
 import React from 'react';
-import { View, Text, Pressable, StyleSheet, ViewStyle } from 'react-native';
+import { View, Text, Pressable, StyleSheet, type ViewStyle } from 'react-native';
+// @ts-ignore - Optional peer dependency
 import { Feather } from '@expo/vector-icons';
+// @ts-ignore - Optional peer dependency
 import { useNavigation } from '@react-navigation/native';
+// @ts-ignore - Optional peer dependency
 import { useAppDesignTokens } from '@umituz/react-native-design-system-theme';
 import { useLocalization } from '../../infrastructure/hooks/useLocalization';
 import { getLanguageByCode } from '../../infrastructure/config/languages';
@@ -29,7 +32,7 @@ export const LanguageSection: React.FC<LanguageSectionProps> = ({
     const { t, currentLanguage } = useLocalization();
 
     const route = config?.route || 'LanguageSelection';
-    const title = config?.title || t('settings.language') || 'Language';
+    const title = config?.title || t('settings.languageSelection.title') || 'Language';
     const description = config?.description || '';
 
     const currentLang = getLanguageByCode(currentLanguage);
@@ -44,7 +47,7 @@ export const LanguageSection: React.FC<LanguageSectionProps> = ({
 
     return (
         <View style={[styles.sectionContainer, { backgroundColor: colors.surface }, containerStyle]}>
-            <Text style={[styles.sectionTitle, { color: colors.textPrimary }]}>{t("settings.sections.app.title") || "App"}</Text>
+            <Text style={[styles.sectionTitle, { color: colors.textPrimary }]}>{title}</Text>
 
             <Pressable
                 style={({ pressed }) => [

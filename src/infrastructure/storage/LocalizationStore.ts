@@ -4,11 +4,10 @@
  */
 
 import { create } from 'zustand';
-import type { LocalizationState, LocalizationActions, LocalizationGetters, Language } from './types/LocalizationState';
+import type { LocalizationState, LocalizationActions, LocalizationGetters } from './types/LocalizationState';
 import { LanguageInitializer } from './LanguageInitializer';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { languageRegistry } from '../config/languagesData';
-import { translationCache } from '../config/TranslationCache';
 
 interface LocalizationStore extends LocalizationState, LocalizationActions, LocalizationGetters {
   // Additional properties can be added here if needed
@@ -67,9 +66,6 @@ export const createLocalizationStore = () => {
       setLanguage: async (languageCode: string) => {
         try {
           const result = await LanguageSwitcher.switchLanguage(languageCode);
-
-          // Clear translation cache to ensure new keys are fetched
-          translationCache.clear();
 
           set({
             currentLanguage: result.languageCode,
