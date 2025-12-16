@@ -117,15 +117,22 @@ function generateTypeScriptContent(obj, langCode) {
     }
 
     if (typeof value === 'object' && value !== null) {
+      const entries = Object.entries(value);
+
+      // Handle empty objects
+      if (entries.length === 0) {
+        return '{}';
+      }
+
       const spaces = ' '.repeat(indent);
       const innerSpaces = ' '.repeat(indent + 2);
-      const entries = Object.entries(value)
+      const entriesStr = entries
         .map(([k, v]) => {
           const key = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(k) ? k : `"${k}"`;
           return `${innerSpaces}${key}: ${stringifyValue(v, indent + 2)}`;
         })
         .join(',\n');
-      return `{\n${entries},\n${spaces}}`;
+      return `{\n${entriesStr},\n${spaces}}`;
     }
 
     return String(value);

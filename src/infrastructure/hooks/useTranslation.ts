@@ -15,7 +15,7 @@ export interface TranslationOptions {
   count?: number;
   ns?: string | string[];
   defaultValue?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 /**
@@ -29,11 +29,12 @@ export interface TranslationOptions {
 export const useTranslationFunction = () => {
   const { t: i18nextT, ready } = useTranslation(undefined, { i18n });
 
-  const translate = useCallback((key: string, options: TranslationOptions = {}): string => {
+  const translate = useCallback((key: string, defaultValueOrOptions?: string | TranslationOptions): string => {
+    const options: TranslationOptions = typeof defaultValueOrOptions === 'string'
+      ? { defaultValue: defaultValueOrOptions }
+      : defaultValueOrOptions || {};
+
     if (!ready || !i18n.isInitialized) {
-      if (__DEV__) {
-        console.warn(`[Localization] i18n not ready, returning key: ${key}`);
-      }
       return options.defaultValue || key;
     }
 
