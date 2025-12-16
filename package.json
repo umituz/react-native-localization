@@ -10,13 +10,13 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "prepublishOnly": "node scripts/prepublish.js",
+    "prepublishOnly": "ts-node src/scripts/prepublish.ts",
     "version:patch": "npm version patch -m 'chore: release v%s'",
     "version:minor": "npm version minor -m 'chore: release v%s'",
     "version:major": "npm version major -m 'chore: release v%s'",
-    "i18n:setup": "node scripts/setup-languages.js",
-    "i18n:sync": "node scripts/sync-translations.js",
-    "i18n:translate": "node scripts/translate-missing.js"
+    "i18n:setup": "ts-node src/scripts/setup-languages.ts",
+    "i18n:sync": "ts-node src/scripts/sync-translations.ts",
+    "i18n:translate": "ts-node src/scripts/translate-missing.ts"
   },
   "keywords": [
     "react-native",
@@ -90,7 +90,6 @@
   },
   "files": [
     "src",
-    "scripts",
     "README.md",
     "LICENSE"
   ]
