@@ -35,9 +35,6 @@ export const useTranslationFunction = () => {
       : defaultValueOrOptions || {};
 
     if (!ready || !i18n.isInitialized) {
-      if (__DEV__) {
-        console.log(`[i18n] ⏳ Not ready - Key: "${key}" → Fallback: "${options.defaultValue || key}"`);
-      }
       return options.defaultValue || key;
     }
 
