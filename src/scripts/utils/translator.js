@@ -48,9 +48,12 @@ async function translateText(text, targetLang) {
 }
 
 function needsTranslation(value, enValue) {
-  if (typeof value !== 'string' || typeof enValue !== 'string') return false;
+  if (typeof enValue !== 'string') return false;
+
+  if (!value || typeof value !== 'string') return true;
+
   if (value === enValue) return true;
-  if (shouldSkipWord(value)) return false;
+
   return false;
 }
 
