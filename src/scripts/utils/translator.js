@@ -64,7 +64,6 @@ async function translateObject(enObj, targetObj, targetLang, path = '', stats = 
     const currentPath = path ? `${path}.${key}` : key;
     const enValue = enObj[key];
     const targetValue = targetObj[key];
-    const isNewKey = !Object.prototype.hasOwnProperty.call(targetObj, key);
 
     if (Array.isArray(enValue)) {
       if (!Array.isArray(targetValue)) {
@@ -74,6 +73,7 @@ async function translateObject(enObj, targetObj, targetLang, path = '', stats = 
         if (typeof enValue[i] === 'string') {
           if (needsTranslation(targetObj[key][i], enValue[i])) {
             const preview = enValue[i].length > 40 ? enValue[i].substring(0, 40) + '...' : enValue[i];
+            const isNewKey = targetObj[key][i] === enValue[i];
             const prefix = isNewKey ? '🆕 NEW' : '🔄';
             console.log(`   ${prefix} ${currentPath}[${i}]: "${preview}"`);
             targetObj[key][i] = await translateText(enValue[i], targetLang);
@@ -91,6 +91,7 @@ async function translateObject(enObj, targetObj, targetLang, path = '', stats = 
     } else if (typeof enValue === 'string') {
       if (needsTranslation(targetValue, enValue)) {
         const preview = enValue.length > 40 ? enValue.substring(0, 40) + '...' : enValue;
+        const isNewKey = targetValue === enValue;
         const prefix = isNewKey ? '🆕 NEW' : '🔄';
         console.log(`   ${prefix} ${currentPath}: "${preview}"`);
         targetObj[key] = await translateText(enValue, targetLang);
