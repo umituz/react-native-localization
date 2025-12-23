@@ -50,6 +50,8 @@ async function translateText(text, targetLang) {
 function needsTranslation(value, enValue) {
   if (typeof enValue !== 'string') return false;
 
+  if (shouldSkipWord(enValue)) return false;
+
   if (!value || typeof value !== 'string') return true;
 
   if (value === enValue) return true;
