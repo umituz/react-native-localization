@@ -78,14 +78,14 @@ async function translateObject(enObj, targetObj, targetLang, path = '', stats = 
       for (let i = 0; i < enValue.length; i++) {
         if (typeof enValue[i] === 'string') {
           if (needsTranslation(targetObj[key][i], enValue[i])) {
-            const preview = enValue[i].length > 40 ? enValue[i].substring(0, 40) + '...' : enValue[i];
-            const isNewKey = targetObj[key][i] === enValue[i];
-            const prefix = isNewKey ? '🆕 NEW' : '🔄';
-            console.log(`   ${prefix} ${currentPath}[${i}]: "${preview}"`);
-
             const translated = await translateText(enValue[i], targetLang);
 
             if (translated !== enValue[i]) {
+              const preview = enValue[i].length > 40 ? enValue[i].substring(0, 40) + '...' : enValue[i];
+              const isNewKey = targetObj[key][i] === enValue[i];
+              const prefix = isNewKey ? '🆕 NEW' : '🔄';
+              console.log(`   ${prefix} ${currentPath}[${i}]: "${preview}"`);
+
               targetObj[key][i] = translated;
               stats.count++;
               if (isNewKey) stats.newKeys.push(`${currentPath}[${i}]`);
@@ -102,14 +102,14 @@ async function translateObject(enObj, targetObj, targetLang, path = '', stats = 
       await translateObject(enValue, targetObj[key], targetLang, currentPath, stats);
     } else if (typeof enValue === 'string') {
       if (needsTranslation(targetValue, enValue)) {
-        const preview = enValue.length > 40 ? enValue.substring(0, 40) + '...' : enValue;
-        const isNewKey = targetValue === enValue;
-        const prefix = isNewKey ? '🆕 NEW' : '🔄';
-        console.log(`   ${prefix} ${currentPath}: "${preview}"`);
-
         const translated = await translateText(enValue, targetLang);
 
         if (translated !== enValue) {
+          const preview = enValue.length > 40 ? enValue.substring(0, 40) + '...' : enValue;
+          const isNewKey = targetValue === enValue;
+          const prefix = isNewKey ? '🆕 NEW' : '🔄';
+          console.log(`   ${prefix} ${currentPath}: "${preview}"`);
+
           targetObj[key] = translated;
           stats.count++;
           if (isNewKey) stats.newKeys.push(currentPath);
