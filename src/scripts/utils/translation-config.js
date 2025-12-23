@@ -47,15 +47,13 @@ const LANGUAGE_MAP = {
 };
 
 const SKIP_WORDS = new Set([
-  'OK',
-  'Email',
   'Google',
   'Apple',
   'Facebook',
-  'Premium',
-  'Pro',
-  'Plus',
-  'BPM',
+  'Instagram',
+  'Twitter',
+  'YouTube',
+  'WhatsApp',
 ]);
 
 const LANGUAGE_NAMES = {

@@ -76,9 +76,17 @@ async function translateObject(enObj, targetObj, targetLang, path = '', stats = 
             const isNewKey = targetObj[key][i] === enValue[i];
             const prefix = isNewKey ? '🆕 NEW' : '🔄';
             console.log(`   ${prefix} ${currentPath}[${i}]: "${preview}"`);
-            targetObj[key][i] = await translateText(enValue[i], targetLang);
-            stats.count++;
-            if (isNewKey) stats.newKeys.push(`${currentPath}[${i}]`);
+
+            const translated = await translateText(enValue[i], targetLang);
+
+            if (translated !== enValue[i]) {
+              targetObj[key][i] = translated;
+              stats.count++;
+              if (isNewKey) stats.newKeys.push(`${currentPath}[${i}]`);
+            } else {
+              console.log(`   ⏭️  Skipped (universal word): ${currentPath}[${i}]`);
+            }
+
             await delay(200);
           }
         }
@@ -94,9 +102,17 @@ async function translateObject(enObj, targetObj, targetLang, path = '', stats = 
         const isNewKey = targetValue === enValue;
         const prefix = isNewKey ? '🆕 NEW' : '🔄';
         console.log(`   ${prefix} ${currentPath}: "${preview}"`);
-        targetObj[key] = await translateText(enValue, targetLang);
-        stats.count++;
-        if (isNewKey) stats.newKeys.push(currentPath);
+
+        const translated = await translateText(enValue, targetLang);
+
+        if (translated !== enValue) {
+          targetObj[key] = translated;
+          stats.count++;
+          if (isNewKey) stats.newKeys.push(currentPath);
+        } else {
+          console.log(`   ⏭️  Skipped (universal word): ${currentPath}`);
+        }
+
         await delay(200);
       }
     }
