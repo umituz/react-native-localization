@@ -17,12 +17,12 @@ async function translateLanguageFile(enUSPath, targetPath, langCode) {
 
   if (!targetLang) {
     console.log(`   ⚠️  No language mapping for ${langCode}, skipping`);
-    return 0;
+    return { count: 0, newKeys: [] };
   }
 
   if (isEnglishVariant(langCode)) {
     console.log(`   ⏭️  Skipping English variant: ${langCode}`);
-    return 0;
+    return { count: 0, newKeys: [] };
   }
 
   const enUS = parseTypeScriptFile(enUSPath);
@@ -34,7 +34,7 @@ async function translateLanguageFile(enUSPath, targetPath, langCode) {
     target = {};
   }
 
-  const stats = { count: 0 };
+  const stats = { count: 0, newKeys: [] };
   await translateObject(enUS, target, targetLang, '', stats);
 
   if (stats.count > 0) {
@@ -42,12 +42,12 @@ async function translateLanguageFile(enUSPath, targetPath, langCode) {
     fs.writeFileSync(targetPath, content);
   }
 
-  return stats.count;
+  return stats;
 }
 
 async function main() {
   const targetDir = process.argv[2] || 'src/domains/localization/translations';
-  const targetLangCode = process.argv[3]; // Optional specific language to translate
+  const targetLangCode = process.argv[3];
   const localesDir = path.resolve(process.cwd(), targetDir);
 
   console.log('🚀 Starting automatic translation...\n');
@@ -87,6 +87,7 @@ async function main() {
   console.log('⚡ Running with 200ms delay between API calls\n');
 
   let totalTranslated = 0;
+  let totalNewKeys = 0;
 
   for (const file of files) {
     const langCode = file.replace('.ts', '');
@@ -94,11 +95,15 @@ async function main() {
 
     console.log(`\n🌍 Translating ${langCode} (${getLangDisplayName(langCode)})...`);
 
-    const count = await translateLanguageFile(enUSPath, targetPath, langCode);
-    totalTranslated += count;
+    const stats = await translateLanguageFile(enUSPath, targetPath, langCode);
+    totalTranslated += stats.count;
+    totalNewKeys += stats.newKeys.length;
 
-    if (count > 0) {
-      console.log(`   ✅ Translated ${count} strings`);
+    if (stats.count > 0) {
+      console.log(`   ✅ Translated ${stats.count} strings`);
+      if (stats.newKeys.length > 0) {
+        console.log(`   🆕 ${stats.newKeys.length} new keys translated`);
+      }
     } else {
       console.log(`   ✓ Already complete`);
     }
@@ -106,6 +111,9 @@ async function main() {
 
   console.log(`\n✅ Translation completed!`);
   console.log(`   Total strings translated: ${totalTranslated}`);
+  if (totalNewKeys > 0) {
+    console.log(`   New keys translated: ${totalNewKeys}`);
+  }
   console.log(`\n📝 Next: Run 'npm run i18n:setup' to update index.ts`);
 }
 

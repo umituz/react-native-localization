@@ -1,11 +1,9 @@
 import React from 'react';
 import { View, Text, Pressable, StyleSheet, type ViewStyle } from 'react-native';
 // @ts-ignore - Optional peer dependency
-import { Feather } from '@expo/vector-icons';
-// @ts-ignore - Optional peer dependency
 import { useNavigation } from '@react-navigation/native';
 // @ts-ignore - Optional peer dependency
-import { useAppDesignTokens } from '@umituz/react-native-design-system';
+import { useAppDesignTokens, AtomicIcon } from '@umituz/react-native-design-system';
 import { useLocalization } from '../../infrastructure/hooks/useLocalization';
 import { getLanguageByCode } from '../../infrastructure/config/languages';
 
@@ -67,7 +65,7 @@ export const LanguageSection: React.FC<LanguageSectionProps> = ({
                             { backgroundColor: `${colors.primary}15` },
                         ]}
                     >
-                        <Feather name="globe" size={24} color={colors.primary} />
+                        <AtomicIcon name="globe-outline" customSize={24} customColor={colors.primary} />
                     </View>
                     <View style={styles.textContainer}>
                         <Text style={[styles.title, { color: colors.textPrimary }]}>{title}</Text>
@@ -75,7 +73,7 @@ export const LanguageSection: React.FC<LanguageSectionProps> = ({
                             {languageDisplay}
                         </Text>
                     </View>
-                    <Feather name="chevron-right" size={20} color={colors.textSecondary} />
+                    <AtomicIcon name="chevron-forward-outline" customSize={20} customColor={colors.textSecondary} />
                 </View>
             </Pressable>
         </View>

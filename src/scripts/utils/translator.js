@@ -48,17 +48,18 @@ async function translateText(text, targetLang) {
 }
 
 function needsTranslation(value, enValue) {
-  if (typeof value !== 'string') return false;
+  if (typeof value !== 'string' || typeof enValue !== 'string') return false;
   if (value === enValue) return true;
   if (shouldSkipWord(value)) return false;
   return false;
 }
 
-async function translateObject(enObj, targetObj, targetLang, path = '', stats = { count: 0 }) {
+async function translateObject(enObj, targetObj, targetLang, path = '', stats = { count: 0, newKeys: [] }) {
   for (const key in enObj) {
     const currentPath = path ? `${path}.${key}` : key;
     const enValue = enObj[key];
     const targetValue = targetObj[key];
+    const isNewKey = !Object.prototype.hasOwnProperty.call(targetObj, key);
 
     if (Array.isArray(enValue)) {
       if (!Array.isArray(targetValue)) {
@@ -68,9 +69,11 @@ async function translateObject(enObj, targetObj, targetLang, path = '', stats = 
         if (typeof enValue[i] === 'string') {
           if (needsTranslation(targetObj[key][i], enValue[i])) {
             const preview = enValue[i].length > 40 ? enValue[i].substring(0, 40) + '...' : enValue[i];
-            console.log(`   🔄 ${currentPath}[${i}]: "${preview}"`);
+            const prefix = isNewKey ? '🆕 NEW' : '🔄';
+            console.log(`   ${prefix} ${currentPath}[${i}]: "${preview}"`);
             targetObj[key][i] = await translateText(enValue[i], targetLang);
             stats.count++;
+            if (isNewKey) stats.newKeys.push(`${currentPath}[${i}]`);
             await delay(200);
           }
         }
@@ -83,9 +86,11 @@ async function translateObject(enObj, targetObj, targetLang, path = '', stats = 
     } else if (typeof enValue === 'string') {
       if (needsTranslation(targetValue, enValue)) {
         const preview = enValue.length > 40 ? enValue.substring(0, 40) + '...' : enValue;
-        console.log(`   🔄 ${currentPath}: "${preview}"`);
+        const prefix = isNewKey ? '🆕 NEW' : '🔄';
+        console.log(`   ${prefix} ${currentPath}: "${preview}"`);
         targetObj[key] = await translateText(enValue, targetLang);
         stats.count++;
+        if (isNewKey) stats.newKeys.push(currentPath);
         await delay(200);
       }
     }

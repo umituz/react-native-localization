@@ -5,39 +5,46 @@
  * Helper functions for synchronizing translation keys
  */
 
-function addMissingKeys(enObj, targetObj, stats = { added: 0 }) {
-  for (const key in enObj) {
-    if (!Object.prototype.hasOwnProperty.call(targetObj, key)) {
-      targetObj[key] = enObj[key];
+function addMissingKeys(sourceObj, targetObj, stats = { added: 0, newKeys: [] }) {
+  for (const key in sourceObj) {
+    const sourceValue = sourceObj[key];
+    const isNewKey = !Object.prototype.hasOwnProperty.call(targetObj, key);
+
+    if (isNewKey) {
+      targetObj[key] = sourceValue;
       stats.added++;
+      stats.newKeys.push(key);
     } else if (
-      typeof enObj[key] === 'object' &&
-      enObj[key] !== null &&
-      !Array.isArray(enObj[key])
+      typeof sourceValue === 'object' &&
+      sourceValue !== null &&
+      !Array.isArray(sourceValue)
     ) {
       if (!targetObj[key] || typeof targetObj[key] !== 'object') {
         targetObj[key] = {};
       }
-      addMissingKeys(enObj[key], targetObj[key], stats);
+      addMissingKeys(sourceValue, targetObj[key], stats);
     }
   }
   return stats;
 }
 
-function removeExtraKeys(enObj, targetObj, stats = { removed: 0 }) {
+function removeExtraKeys(sourceObj, targetObj, stats = { removed: 0, removedKeys: [] }) {
   for (const key in targetObj) {
-    if (!Object.prototype.hasOwnProperty.call(enObj, key)) {
+    const isExtraKey = !Object.prototype.hasOwnProperty.call(sourceObj, key);
+
+    if (isExtraKey) {
       delete targetObj[key];
       stats.removed++;
+      stats.removedKeys.push(key);
     } else if (
-      typeof enObj[key] === 'object' &&
-      enObj[key] !== null &&
-      !Array.isArray(enObj[key]) &&
+      typeof sourceObj[key] === 'object' &&
+      sourceObj[key] !== null &&
+      !Array.isArray(sourceObj[key]) &&
       typeof targetObj[key] === 'object' &&
       targetObj[key] !== null &&
       !Array.isArray(targetObj[key])
     ) {
-      removeExtraKeys(enObj[key], targetObj[key], stats);
+      removeExtraKeys(sourceObj[key], targetObj[key], stats);
     }
   }
   return stats;
