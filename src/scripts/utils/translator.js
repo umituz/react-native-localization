@@ -89,8 +89,6 @@ async function translateObject(enObj, targetObj, targetLang, path = '', stats = 
               targetObj[key][i] = translated;
               stats.count++;
               if (isNewKey) stats.newKeys.push(`${currentPath}[${i}]`);
-            } else {
-              console.log(`   ⏭️  Skipped (universal word): ${currentPath}[${i}]`);
             }
 
             await delay(200);
@@ -115,8 +113,6 @@ async function translateObject(enObj, targetObj, targetLang, path = '', stats = 
           targetObj[key] = translated;
           stats.count++;
           if (isNewKey) stats.newKeys.push(currentPath);
-        } else {
-          console.log(`   ⏭️  Skipped (universal word): ${currentPath}`);
         }
 
         await delay(200);
