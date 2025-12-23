@@ -54,7 +54,13 @@ function needsTranslation(value, enValue) {
 
   if (!value || typeof value !== 'string') return true;
 
-  if (value === enValue) return true;
+  if (value === enValue) {
+    const isSingleWord = !enValue.includes(' ') && enValue.length < 20;
+    if (isSingleWord) {
+      return false;
+    }
+    return true;
+  }
 
   return false;
 }
