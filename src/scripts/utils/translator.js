@@ -103,10 +103,10 @@ async function translateObject(enObj, targetObj, targetLang, path = '', stats = 
     } else if (typeof enValue === 'string') {
       if (needsTranslation(targetValue, enValue)) {
         const translated = await translateText(enValue, targetLang);
+        const isNewKey = targetValue === undefined;
 
-        if (translated !== enValue) {
+        if (translated !== enValue || isNewKey) {
           const preview = enValue.length > 40 ? enValue.substring(0, 40) + '...' : enValue;
-          const isNewKey = targetValue === enValue;
           const prefix = isNewKey ? '🆕 NEW' : '🔄';
           console.log(`   ${prefix} ${currentPath}: "${preview}"`);
 
