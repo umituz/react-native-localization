@@ -1,9 +1,13 @@
 import React from 'react';
-import { View, Text, Pressable, StyleSheet, type ViewStyle } from 'react-native';
+import { View, StyleSheet, type ViewStyle } from 'react-native';
 // @ts-ignore - Optional peer dependency
 import { useNavigation } from '@react-navigation/native';
 // @ts-ignore - Optional peer dependency
-import { useAppDesignTokens, AtomicIcon } from '@umituz/react-native-design-system';
+import {
+    useAppDesignTokens,
+    AtomicText,
+    ListItem
+} from '@umituz/react-native-design-system';
 import { useLocalization } from '../../infrastructure/hooks/useLocalization';
 import { getLanguageByCode } from '../../infrastructure/config/languages';
 
@@ -12,7 +16,6 @@ export interface LanguageSectionConfig {
     title?: string;
     description?: string;
     defaultLanguageDisplay?: string;
-    // actions?
 }
 
 export interface LanguageSectionProps {
@@ -28,7 +31,6 @@ export const LanguageSection: React.FC<LanguageSectionProps> = ({
 }) => {
     const navigation = useNavigation();
     const tokens = useAppDesignTokens();
-    const colors = tokens.colors;
     const { t, currentLanguage } = useLocalization();
 
     const route = config?.route || 'LanguageSelection';
@@ -46,36 +48,19 @@ export const LanguageSection: React.FC<LanguageSectionProps> = ({
     };
 
     return (
-        <View style={[styles.sectionContainer, { backgroundColor: colors.surface }, containerStyle]}>
-            <Text style={[styles.sectionTitle, { color: colors.textPrimary }]}>{displaySectionTitle}</Text>
-
-            <Pressable
-                style={({ pressed }) => [
-                    styles.itemContainer,
-                    {
-                        backgroundColor: pressed ? `${colors.primary}08` : 'transparent',
-                    },
-                ]}
+        <View style={[styles.sectionContainer, { backgroundColor: tokens.colors.surface }, containerStyle]}>
+            <View style={styles.headerContainer}>
+                <AtomicText type="titleMedium" color="primary">
+                    {displaySectionTitle}
+                </AtomicText>
+            </View>
+            <ListItem
+                title={title}
+                subtitle={languageDisplay}
+                leftIcon="globe"
+                rightIcon="chevron-forward"
                 onPress={handlePress}
-            >
-                <View style={styles.content}>
-                    <View
-                        style={[
-                            styles.iconContainer,
-                            { backgroundColor: `${colors.primary}15` },
-                        ]}
-                    >
-                        <AtomicIcon name="globe-outline" customSize={24} customColor={colors.primary} />
-                    </View>
-                    <View style={styles.textContainer}>
-                        <Text style={[styles.title, { color: colors.textPrimary }]}>{title}</Text>
-                        <Text style={[styles.description, { color: colors.textSecondary }]}>
-                            {languageDisplay}
-                        </Text>
-                    </View>
-                    <AtomicIcon name="chevron-forward-outline" customSize={20} customColor={colors.textSecondary} />
-                </View>
-            </Pressable>
+            />
         </View>
     );
 };
@@ -86,43 +71,9 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         overflow: 'hidden',
     },
-    sectionTitle: {
-        fontSize: 18,
-        fontWeight: '600',
+    headerContainer: {
         paddingHorizontal: 16,
         paddingTop: 16,
         paddingBottom: 8,
-    },
-    itemContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        paddingHorizontal: 16,
-        paddingVertical: 16,
-        minHeight: 72,
-    },
-    content: {
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    iconContainer: {
-        width: 48,
-        height: 48,
-        borderRadius: 12,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginRight: 16,
-    },
-    textContainer: {
-        flex: 1,
-        marginRight: 8,
-    },
-    title: {
-        fontSize: 16,
-        fontWeight: '500',
-        marginBottom: 4,
-    },
-    description: {
-        fontSize: 14,
     },
 });
