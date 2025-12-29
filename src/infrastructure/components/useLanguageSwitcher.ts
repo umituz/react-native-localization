@@ -24,13 +24,8 @@ export const useLanguageSwitcher = ({ onPress, disabled }: UseLanguageSwitcherPr
         if (disabled) {
             return;
         }
-
-        if (__DEV__) {
-            console.log('[LanguageSwitcher] Pressed, current language:', currentLanguage);
-        }
-
         onPress?.();
-    }, [disabled, onPress, currentLanguage]);
+    }, [disabled, onPress]);
 
     return {
         currentLang,

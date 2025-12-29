@@ -87,11 +87,6 @@ export const useTranslationFunction = () => {
       }
     }
 
-    // Development mode logging - only log missing translations
-    if (__DEV__ && !translationFound) {
-      console.warn(`[i18n] ⚠️  Missing - Key: "${usedKey}" → Fallback: "${finalResult}"`);
-    }
-
     return finalResult;
   }, [i18nextT, ready]);
 

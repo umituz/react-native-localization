@@ -23,7 +23,6 @@ export interface LanguageSwitcherProps {
 const DEFAULT_CONFIG = {
   defaultIconSize: 20,
   hitSlop: { top: 10, bottom: 10, left: 10, right: 10 } as const,
-  defaultColor: '#000000',
   activeOpacity: 0.7,
 };
 
@@ -41,7 +40,7 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
 }) => {
   const { currentLang, handlePress } = useLanguageSwitcher({ onPress, disabled });
 
-  const iconColor = useMemo(() => color || DEFAULT_CONFIG.defaultColor, [color]);
+  const iconColor = color;
 
   const accessibilityProps = useMemo(() => ({
     accessibilityRole: 'button' as const,

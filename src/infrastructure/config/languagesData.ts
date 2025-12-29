@@ -64,9 +64,6 @@ class LanguageRegistry {
    */
   registerLanguages(languages: Language[]): void {
     this.languages = [...this.languages, ...languages];
-    if (__DEV__) {
-      console.log(`[Localization] Registered ${languages.length} languages`);
-    }
   }
 
   /**
@@ -81,9 +78,6 @@ class LanguageRegistry {
    */
   clearLanguages(): void {
     this.languages = [...DEFAULT_LANGUAGES];
-    if (__DEV__) {
-      console.log('[Localization] Cleared language registry');
-    }
   }
 
   /**
