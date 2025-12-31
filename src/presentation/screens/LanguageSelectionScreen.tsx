@@ -30,7 +30,7 @@ interface LanguageSelectionScreenProps {
     clearButton?: any;
     listContent?: any;
   };
-  searchPlaceholder: string;
+  searchPlaceholder?: string;
   testID?: string;
 }
 
@@ -39,7 +39,7 @@ export const LanguageSelectionScreen: React.FC<LanguageSelectionScreenProps> = (
   renderSearchInput,
   containerComponent: Container,
   styles: customStyles,
-  searchPlaceholder,
+  searchPlaceholder = "settings.languageSelection.searchPlaceholder",
   testID = 'language-selection-screen',
 }) => {
   const navigation = useNavigation();

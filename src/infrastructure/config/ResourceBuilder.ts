@@ -37,11 +37,24 @@ export class ResourceBuilder {
 
         // Merge namespaces for this language
         if (value && typeof value === 'object') {
-          for (const [namespace, translations] of Object.entries(value)) {
-            resources[lang][namespace] = TranslationLoader.mergeTranslations(
-              resources[lang][namespace] || {},
-              translations
+          const namespaces = Object.keys(value);
+          const isFlatMap = namespaces.every(nsKey => typeof value[nsKey] === 'string');
+          
+          if (isFlatMap) {
+            // It's a flat map (e.g. { hello: 'Hello' }), wrap in 'common'
+            const defaultNs = 'common';
+            resources[lang][defaultNs] = TranslationLoader.mergeTranslations(
+              resources[lang][defaultNs] || {},
+              value
             );
+          } else {
+            // It's already namespaced (e.g. { auth: {...} })
+            for (const [namespace, translations] of Object.entries(value)) {
+              resources[lang][namespace] = TranslationLoader.mergeTranslations(
+                resources[lang][namespace] || {},
+                translations as Record<string, any>
+              );
+            }
           }
         }
       } else {
