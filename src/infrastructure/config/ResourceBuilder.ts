@@ -18,10 +18,8 @@ export class ResourceBuilder {
     // Initialize with package translations
     const resources: Record<string, Record<string, any>> = { ...packageTranslations };
 
-    // Ensure initial language exists
-    if (!resources[languageCode]) {
-      resources[languageCode] = {};
-    }
+    // Note: Do NOT create empty resources for unsupported languages
+    // i18next will properly fallback to fallbackLng when language not in resources
 
     // Process app translations
     for (const [key, value] of Object.entries(appTranslations)) {
@@ -31,12 +29,12 @@ export class ResourceBuilder {
       if (isLanguageKey) {
         // It's a language key (e.g., "en-US")
         const lang = key;
-        if (!resources[lang]) {
-          resources[lang] = {};
-        }
 
-        // Merge namespaces for this language
-        if (value && typeof value === 'object') {
+        // Only process if value has actual content
+        if (value && typeof value === 'object' && Object.keys(value).length > 0) {
+          if (!resources[lang]) {
+            resources[lang] = {};
+          }
           const namespaces = Object.keys(value);
           const isFlatMap = namespaces.every(nsKey => typeof value[nsKey] === 'string');
           
@@ -59,7 +57,8 @@ export class ResourceBuilder {
         }
       } else {
         // It's a namespace for the default/current language (backward compatibility)
-        if (value && typeof value === 'object') {
+        // Only add if the language exists in resources (to prevent creating empty resources)
+        if (value && typeof value === 'object' && resources[languageCode]) {
           resources[languageCode][key] = TranslationLoader.mergeTranslations(
             resources[languageCode][key] || {},
             value

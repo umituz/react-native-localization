@@ -38,7 +38,6 @@ export class I18nInitializer {
         fallbackLng: DEFAULT_LANGUAGE,
         ns: namespaces,
         defaultNS: defaultNamespace,
-
         fallbackNS: defaultNamespace,
         interpolation: { escapeValue: false },
         react: { useSuspense: false },
@@ -49,6 +48,8 @@ export class I18nInitializer {
         saveMissing: false,
         missingKeyHandler: false,
         debug: false,
+        returnEmptyString: false,
+        returnNull: false,
       });
     } catch {
       // Silent error handling
