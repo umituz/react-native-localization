@@ -10,7 +10,6 @@ import {
   View,
   TouchableOpacity,
   Text,
-  StyleSheet,
   type StyleProp,
   type ViewStyle,
   type TextStyle,
