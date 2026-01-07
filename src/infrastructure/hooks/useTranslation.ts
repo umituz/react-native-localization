@@ -40,14 +40,12 @@ export const useTranslationFunction = () => {
 
     let finalResult: string;
     let translationFound = false;
-    let usedKey = key;
 
     // If key already has namespace separator (:), use as-is
     if (key.includes(':')) {
       const result = i18nextT(key, options);
       finalResult = typeof result === 'string' ? result : key;
       translationFound = finalResult !== key && finalResult !== options.defaultValue;
-      usedKey = key;
     } else {
       // Auto-detect namespace from first dot segment
       const firstDotIndex = key.indexOf('.');
@@ -63,27 +61,23 @@ export const useTranslationFunction = () => {
           if (namespacedResult !== namespacedKey && namespacedResult !== restOfKey) {
             finalResult = typeof namespacedResult === 'string' ? namespacedResult : key;
             translationFound = true;
-            usedKey = namespacedKey;
           } else {
             // Fallback to original key
             const result = i18nextT(key, options);
             finalResult = typeof result === 'string' ? result : key;
             translationFound = finalResult !== key && finalResult !== options.defaultValue;
-            usedKey = key;
           }
         } else {
           // Fallback to original key
           const result = i18nextT(key, options);
           finalResult = typeof result === 'string' ? result : key;
           translationFound = finalResult !== key && finalResult !== options.defaultValue;
-          usedKey = key;
         }
       } else {
         // Fallback to original key
         const result = i18nextT(key, options);
         finalResult = typeof result === 'string' ? result : key;
         translationFound = finalResult !== key && finalResult !== options.defaultValue;
-        usedKey = key;
       }
     }
 
