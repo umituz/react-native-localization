@@ -24,8 +24,8 @@ jest.mock('../../hooks/useLocalization', () => ({
   }),
 }));
 
-jest.mock('../../config/languagesData', () => ({
-  languageRegistry: {
+jest.mock('../../repository/LanguageRepository', () => ({
+  languageRepository: {
     getLanguageByCode: jest.fn(() => ({
       code: 'en-US',
       name: 'English',

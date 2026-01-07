@@ -3,31 +3,31 @@
  * Provides functions to query and search languages
  */
 
-import { languageRegistry } from './languagesData';
-import type { Language } from '../storage/types/LocalizationState';
+import { languageRepository } from '../repository/LanguageRepository';
+import type { Language } from '../storage/types/Language';
 
-export const getSupportedLanguages = () => languageRegistry.getLanguages();
+export const getSupportedLanguages = () => languageRepository.getLanguages();
 
 export const getLanguageByCode = (code: string): Language | undefined => {
-    return languageRegistry.getLanguageByCode(code);
+    return languageRepository.getLanguageByCode(code);
 };
 
 export const isLanguageSupported = (code: string): boolean => {
-    return languageRegistry.isLanguageSupported(code);
+    return languageRepository.isLanguageSupported(code);
 };
 
 export const getDefaultLanguage = (): Language => {
-    const langs = languageRegistry.getLanguages();
+    const langs = languageRepository.getLanguages();
     const firstLang = langs[0];
     if (firstLang) return firstLang;
 
-    // Final fallback to system defaults if registry is empty
-    return languageRegistry.getDefaultLanguage();
+    // Final fallback to system defaults if repository is empty
+    return languageRepository.getDefaultLanguage();
 };
 
 export const searchLanguages = (query: string): Language[] => {
     const lowerQuery = query.toLowerCase();
-    return languageRegistry.getLanguages().filter(
+    return languageRepository.getLanguages().filter(
         (lang) =>
             lang.name.toLowerCase().includes(lowerQuery) ||
             lang.nativeName.toLowerCase().includes(lowerQuery)

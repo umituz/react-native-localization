@@ -3,8 +3,8 @@
  * Central export point for all language-related functionality
  */
 
-import { languageRegistry } from './languagesData';
-import type { Language } from '../storage/types/LocalizationState';
+import { languageRepository } from '../repository/LanguageRepository';
+import type { Language } from '../storage/types/Language';
 
 // Re-export from DeviceLocale
 export { DEFAULT_LANGUAGE, getDeviceLocale } from './DeviceLocale';
@@ -22,7 +22,7 @@ export {
 export { LOCALE_MAPPING } from './LocaleMapping';
 
 // Backward compatibility
-export const getSUPPORTED_LANGUAGES = () => languageRegistry.getLanguages();
-export const getLANGUAGES = () => languageRegistry.getLanguages();
-export const SUPPORTED_LANGUAGES: Language[] = languageRegistry.getLanguages();
+export const getSUPPORTED_LANGUAGES = () => languageRepository.getLanguages();
+export const getLANGUAGES = () => languageRepository.getLanguages();
+export const SUPPORTED_LANGUAGES: Language[] = languageRepository.getLanguages();
 export const LANGUAGES = SUPPORTED_LANGUAGES;

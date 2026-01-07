@@ -3,13 +3,9 @@
  * Defines the shape of localization state management
  */
 
-export interface Language {
-  code: string;
-  name: string;
-  nativeName: string;
-  flag?: string;
-  isRTL?: boolean;
-}
+import type { Language } from './Language';
+
+export type { Language };
 
 export interface LocalizationState {
   currentLanguage: string;

@@ -11,7 +11,8 @@ import { useAppDesignTokens } from '@umituz/react-native-design-system';
 import { useLanguageSelection } from '../../infrastructure/hooks/useLanguageSelection';
 import { LanguageItem } from '../components/LanguageItem';
 import { SearchInput } from '../components/SearchInput';
-import type { Language } from '../../infrastructure/storage/types/LocalizationState';
+import type { Language } from '../../infrastructure/storage/types/Language';
+import { styles } from './LanguageSelectionScreen.styles';
 
 interface LanguageSelectionScreenProps {
   renderLanguageItem?: (item: Language, isSelected: boolean, onSelect: (code: string) => void) => React.ReactNode;
@@ -104,15 +105,5 @@ export const LanguageSelectionScreen: React.FC<LanguageSelectionScreenProps> = (
 
   return Container ? <Container>{content}</Container> : content;
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  listContent: {
-    paddingHorizontal: 20,
-    paddingBottom: 32,
-  },
-});
 
 export default LanguageSelectionScreen;

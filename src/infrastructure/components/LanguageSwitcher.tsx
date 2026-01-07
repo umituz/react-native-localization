@@ -4,8 +4,9 @@
  */
 
 import React, { useMemo } from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
 import { useLanguageSwitcher } from './useLanguageSwitcher';
+import { styles, DEFAULT_CONFIG_VALUES } from './LanguageSwitcher.styles';
 
 export interface LanguageSwitcherProps {
   showName?: boolean;
@@ -20,10 +21,39 @@ export interface LanguageSwitcherProps {
   accessibilityLabel?: string;
 }
 
-const DEFAULT_CONFIG = {
-  defaultIconSize: 20,
-  hitSlop: { top: 10, bottom: 10, left: 10, right: 10 } as const,
-  activeOpacity: 0.7,
+const renderContent = (
+  showFlag: boolean,
+  showName: boolean,
+  flag: string | undefined,
+  nativeName: string,
+  color: string | undefined,
+  iconStyle: any,
+  textStyle: any
+) => {
+  if (showFlag && showName) {
+    return (
+      <>
+        <Text style={[styles.flag, iconStyle]}>{flag}</Text>
+        <Text style={[styles.languageName, { color }, textStyle]}>
+          {nativeName}
+        </Text>
+      </>
+    );
+  }
+
+  if (showFlag) {
+    return <Text style={[styles.flag, iconStyle]}>{flag}</Text>;
+  }
+
+  if (showName) {
+    return (
+      <Text style={[styles.languageName, { color }, textStyle]}>
+        {nativeName}
+      </Text>
+    );
+  }
+
+  return <Text style={[styles.icon, { color }, iconStyle]}>🌐</Text>;
 };
 
 export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
@@ -40,8 +70,6 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
 }) => {
   const { currentLang, handlePress } = useLanguageSwitcher({ onPress, disabled });
 
-  const iconColor = color;
-
   const accessibilityProps = useMemo(() => ({
     accessibilityRole: 'button' as const,
     accessibilityLabel: accessibilityLabel || `Current language: ${currentLang.nativeName}`,
@@ -49,72 +77,19 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
     accessible: true,
   }), [accessibilityLabel, currentLang.nativeName, disabled]);
 
-  const renderContent = () => {
-    if (showFlag && showName) {
-      return (
-        <>
-          <Text style={[styles.flag, iconStyle]}>{currentLang.flag}</Text>
-          <Text style={[styles.languageName, { color: iconColor }, textStyle]}>
-            {currentLang.nativeName}
-          </Text>
-        </>
-      );
-    }
-
-    if (showFlag) {
-      return <Text style={[styles.flag, iconStyle]}>{currentLang.flag}</Text>;
-    }
-
-    if (showName) {
-      return (
-        <Text style={[styles.languageName, { color: iconColor }, textStyle]}>
-          {currentLang.nativeName}
-        </Text>
-      );
-    }
-
-    return <Text style={[styles.icon, { color: iconColor }, iconStyle]}>🌐</Text>;
-  };
-
   return (
     <TouchableOpacity
       style={[styles.container, style, disabled && styles.disabled]}
       onPress={handlePress}
-      activeOpacity={disabled ? 1 : DEFAULT_CONFIG.activeOpacity}
-      hitSlop={DEFAULT_CONFIG.hitSlop}
+      activeOpacity={disabled ? 1 : DEFAULT_CONFIG_VALUES.activeOpacity}
+      hitSlop={DEFAULT_CONFIG_VALUES.hitSlop}
       testID={testID}
       disabled={disabled}
       {...accessibilityProps}
     >
-      {renderContent()}
+      {renderContent(showFlag, showName, currentLang.flag, currentLang.nativeName, color, iconStyle, textStyle)}
     </TouchableOpacity>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-    paddingHorizontal: 4,
-    paddingVertical: 4,
-  },
-  disabled: {
-    opacity: 0.5,
-  },
-  flag: {
-    fontSize: DEFAULT_CONFIG.defaultIconSize,
-    textAlign: 'center',
-  },
-  languageName: {
-    fontSize: 14,
-    fontWeight: '600',
-    textAlign: 'center',
-  },
-  icon: {
-    fontSize: DEFAULT_CONFIG.defaultIconSize,
-    textAlign: 'center',
-  },
-});
 
 export default LanguageSwitcher;

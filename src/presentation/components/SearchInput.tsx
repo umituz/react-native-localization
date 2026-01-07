@@ -11,13 +11,13 @@ import {
   TextInput,
   TouchableOpacity,
   Text,
-  StyleSheet,
   type StyleProp,
   type ViewStyle,
   type TextStyle,
 } from 'react-native';
 // @ts-ignore - Optional peer dependency
 import { useAppDesignTokens } from '@umituz/react-native-design-system';
+import { styles } from './SearchInput.styles';
 
 interface SearchInputProps {
   value: string;
@@ -76,32 +76,3 @@ export const SearchInput: React.FC<SearchInputProps> = ({
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  searchContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginHorizontal: 20,
-    marginBottom: 24,
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    borderRadius: 12,
-    borderWidth: 1,
-  },
-  searchIcon: {
-    marginRight: 12,
-    fontSize: 16,
-  },
-  searchInput: {
-    flex: 1,
-    fontSize: 16,
-    padding: 0,
-    fontWeight: '500',
-  },
-  clearButton: {
-    padding: 4,
-  },
-  clearIcon: {
-    fontSize: 14,
-  },
-});

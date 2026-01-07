@@ -9,7 +9,7 @@
 
 import { storageRepository } from '@umituz/react-native-storage';
 import i18n from '../config/i18n';
-import { languageRegistry } from '../config/languagesData';
+import { languageRepository } from '../repository/LanguageRepository';
 import { getDeviceLocale } from '../config/languages';
 
 const LANGUAGE_STORAGE_KEY = '@localization:language';
@@ -49,9 +49,9 @@ export class LanguageInitializer {
     languageCode: string;
     isRTL: boolean;
   }> {
-    const language = languageRegistry.getLanguageByCode(languageCode);
+    const language = languageRepository.getLanguageByCode(languageCode);
     const finalLanguageCode = language ? languageCode : 'en-US';
-    const finalLanguageObj = languageRegistry.getLanguageByCode(finalLanguageCode);
+    const finalLanguageObj = languageRepository.getLanguageByCode(finalLanguageCode);
 
     await i18n.changeLanguage(finalLanguageCode);
 

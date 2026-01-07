@@ -5,8 +5,8 @@
 
 import { useMemo, useCallback } from 'react';
 import { useLocalization } from '../hooks/useLocalization';
-import { languageRegistry } from '../config/languagesData';
-import type { Language } from '../storage/types/LocalizationState';
+import { languageRepository } from '../repository/LanguageRepository';
+import type { Language } from '../storage/types/Language';
 
 export interface UseLanguageSwitcherProps {
     onPress?: () => void;
@@ -17,7 +17,7 @@ export const useLanguageSwitcher = ({ onPress, disabled }: UseLanguageSwitcherPr
     const { currentLanguage } = useLocalization();
 
     const currentLang = useMemo((): Language => {
-        return languageRegistry.getLanguageByCode(currentLanguage) || languageRegistry.getDefaultLanguage();
+        return languageRepository.getLanguageByCode(currentLanguage) || languageRepository.getDefaultLanguage();
     }, [currentLanguage]);
 
     const handlePress = useCallback(() => {

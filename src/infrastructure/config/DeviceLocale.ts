@@ -5,7 +5,7 @@
 
 import * as Localization from 'expo-localization';
 import { LOCALE_MAPPING } from './LocaleMapping';
-import { languageRegistry } from './languagesData';
+import { languageRepository } from '../repository/LanguageRepository';
 
 export const DEFAULT_LANGUAGE = 'en-US';
 
@@ -36,7 +36,7 @@ export const getDeviceLocale = (): string => {
         }
 
         // Check if directly supported
-        if (languageRegistry.isLanguageSupported(deviceLocale)) {
+        if (languageRepository.isLanguageSupported(deviceLocale)) {
             return deviceLocale;
         }
 

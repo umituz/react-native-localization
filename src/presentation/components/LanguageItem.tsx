@@ -17,7 +17,8 @@ import {
 } from 'react-native';
 // @ts-ignore - Optional peer dependency
 import { useAppDesignTokens } from '@umituz/react-native-design-system';
-import type { Language } from '../../infrastructure/storage/types/LocalizationState';
+import type { Language } from '../../infrastructure/storage/types/Language';
+import { styles } from './LanguageItem.styles';
 
 interface LanguageItemProps {
   item: Language;
@@ -91,42 +92,3 @@ export const LanguageItem: React.FC<LanguageItemProps> = ({
     </TouchableOpacity>
   );
 };
-
-const styles = StyleSheet.create({
-  languageItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: 16,
-    borderRadius: 12,
-    borderWidth: 1,
-    marginBottom: 8,
-  },
-  selectedLanguageItem: {
-    borderWidth: 2,
-  },
-  languageContent: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    flex: 1,
-  },
-  flag: {
-    fontSize: 24,
-    marginRight: 16,
-  },
-  languageText: {
-    flex: 1,
-  },
-  nativeName: {
-    fontSize: 16,
-    fontWeight: '600',
-    marginBottom: 2,
-  },
-  languageName: {
-    fontSize: 14,
-  },
-  checkIcon: {
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-});
