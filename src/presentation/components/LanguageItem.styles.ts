@@ -28,11 +28,13 @@ export const styles = StyleSheet.create({
   },
   languageText: {
     flex: 1,
+    flexShrink: 1,
+    marginRight: 12,
   },
   nativeName: {
     fontSize: 16,
     fontWeight: '600',
-    marginBottom: 2,
+    marginBottom: 4,
   },
   languageName: {
     fontSize: 14,
