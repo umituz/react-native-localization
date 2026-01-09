@@ -6,40 +6,18 @@
 import React from 'react';
 import { FlatList } from 'react-native';
 // @ts-ignore - Optional peer dependency
-import { useNavigation } from '@react-navigation/native';
-// @ts-ignore - Optional peer dependency
 import { 
   useAppDesignTokens, 
   SearchBar, 
   ScreenLayout,
-  NavigationHeader
+  NavigationHeader,
+  useAppNavigation,
 } from '@umituz/react-native-design-system';
 import { useLanguageSelection } from '../../infrastructure/hooks/useLanguageSelection';
 import { LanguageItem } from '../components/LanguageItem';
 import type { Language } from '../../infrastructure/storage/types/Language';
+import type { LanguageSelectionScreenProps } from './LanguageSelectionScreen.types';
 import { styles } from './LanguageSelectionScreen.styles';
-
-interface LanguageSelectionScreenProps {
-  renderLanguageItem?: (item: Language, isSelected: boolean, onSelect: (code: string) => void) => React.ReactNode;
-  renderSearchInput?: (value: string, onChange: (value: string) => void, placeholder: string) => React.ReactNode;
-  headerTitle?: string;
-  onBackPress?: () => void;
-  styles?: {
-    container?: any;
-    searchContainer?: any;
-    languageItem?: any;
-    languageContent?: any;
-    languageText?: any;
-    flag?: any;
-    nativeName?: any;
-    searchInput?: any;
-    searchIcon?: any;
-    clearButton?: any;
-    listContent?: any;
-  };
-  searchPlaceholder?: string;
-  testID?: string;
-}
 
 export const LanguageSelectionScreen: React.FC<LanguageSelectionScreenProps> = ({
   renderLanguageItem,
@@ -50,7 +28,7 @@ export const LanguageSelectionScreen: React.FC<LanguageSelectionScreenProps> = (
   searchPlaceholder = "settings.languageSelection.searchPlaceholder",
   testID = 'language-selection-screen',
 }) => {
-  const navigation = useNavigation();
+  const navigation = useAppNavigation();
   const tokens = useAppDesignTokens();
   const {
     searchQuery,

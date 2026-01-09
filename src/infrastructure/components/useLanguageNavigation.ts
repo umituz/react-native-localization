@@ -1,11 +1,11 @@
 // @ts-ignore - Optional peer dependency
-import { useNavigation } from '@react-navigation/native';
+import { useAppNavigation } from '@umituz/react-native-design-system';
 import { useLocalization } from '../hooks/useLocalization';
 import { languageRepository } from '../repository/LanguageRepository';
 
 
 export const useLanguageNavigation = (navigationScreen: string) => {
-  const navigation = useNavigation();
+  const navigation = useAppNavigation();
   const { currentLanguage } = useLocalization();
   const currentLang = languageRepository.getLanguageByCode(currentLanguage) || languageRepository.getDefaultLanguage();
 

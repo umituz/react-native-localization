@@ -32,6 +32,7 @@ export {
 
 // Presentation
 export { LanguageSelectionScreen } from './presentation/screens/LanguageSelectionScreen';
+export type { LanguageSelectionScreenProps } from './presentation/screens/LanguageSelectionScreen.types';
 export { LanguageSection } from './presentation/components/LanguageSection';
 export type { LanguageSectionProps, LanguageSectionConfig } from './presentation/components/LanguageSection';
 

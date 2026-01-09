@@ -1,12 +1,11 @@
 import React from 'react';
 import { View, StyleSheet, type ViewStyle } from 'react-native';
 // @ts-ignore - Optional peer dependency
-import { useNavigation } from '@react-navigation/native';
-// @ts-ignore - Optional peer dependency
 import {
     useAppDesignTokens,
     AtomicText,
-    ListItem
+    ListItem,
+    useAppNavigation,
 } from '@umituz/react-native-design-system';
 import { useLocalization } from '../../infrastructure/hooks/useLocalization';
 import { getLanguageByCode } from '../../infrastructure/config/languages';
@@ -29,7 +28,7 @@ export const LanguageSection: React.FC<LanguageSectionProps> = ({
     containerStyle,
     sectionTitle,
 }) => {
-    const navigation = useNavigation();
+    const navigation = useAppNavigation();
     const tokens = useAppDesignTokens();
     const { t, currentLanguage } = useLocalization();
 
