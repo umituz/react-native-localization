@@ -4,7 +4,9 @@
  */
 
 import React, { useMemo } from 'react';
-import { TouchableOpacity, Text } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
+// @ts-ignore - Optional peer dependency
+import { useAppDesignTokens, AtomicText } from '@umituz/react-native-design-system';
 import { useLanguageSwitcher } from './useLanguageSwitcher';
 import { styles, DEFAULT_CONFIG_VALUES } from './LanguageSwitcher.styles';
 
@@ -21,41 +23,6 @@ export interface LanguageSwitcherProps {
   accessibilityLabel?: string;
 }
 
-const renderContent = (
-  showFlag: boolean,
-  showName: boolean,
-  flag: string | undefined,
-  nativeName: string,
-  color: string | undefined,
-  iconStyle: any,
-  textStyle: any
-) => {
-  if (showFlag && showName) {
-    return (
-      <>
-        <Text style={[styles.flag, iconStyle]}>{flag}</Text>
-        <Text style={[styles.languageName, { color }, textStyle]}>
-          {nativeName}
-        </Text>
-      </>
-    );
-  }
-
-  if (showFlag) {
-    return <Text style={[styles.flag, iconStyle]}>{flag}</Text>;
-  }
-
-  if (showName) {
-    return (
-      <Text style={[styles.languageName, { color }, textStyle]}>
-        {nativeName}
-      </Text>
-    );
-  }
-
-  return <Text style={[styles.icon, { color }, iconStyle]}>🌐</Text>;
-};
-
 export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   showName = false,
   showFlag = true,
@@ -68,6 +35,7 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   disabled = false,
   accessibilityLabel,
 }) => {
+  const tokens = useAppDesignTokens();
   const { currentLang, handlePress } = useLanguageSwitcher({ onPress, disabled });
 
   const accessibilityProps = useMemo(() => ({
@@ -77,9 +45,16 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
     accessible: true,
   }), [accessibilityLabel, currentLang.nativeName, disabled]);
 
+  const textColor = color || tokens.colors.textPrimary;
+
   return (
     <TouchableOpacity
-      style={[styles.container, style, disabled && styles.disabled]}
+      style={[
+        styles.container, 
+        { gap: tokens.spacing.xs },
+        style, 
+        disabled && styles.disabled
+      ]}
       onPress={handlePress}
       activeOpacity={disabled ? 1 : DEFAULT_CONFIG_VALUES.activeOpacity}
       hitSlop={DEFAULT_CONFIG_VALUES.hitSlop}
@@ -87,9 +62,27 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
       disabled={disabled}
       {...accessibilityProps}
     >
-      {renderContent(showFlag, showName, currentLang.flag, currentLang.nativeName, color, iconStyle, textStyle)}
+      {showFlag && (
+        <AtomicText style={[styles.flag, iconStyle]}>
+          {currentLang.flag || '🌐'}
+        </AtomicText>
+      )}
+      {showName && (
+        <AtomicText 
+          type="bodySmall" 
+          style={[styles.languageName, { color: textColor, fontWeight: '600' }, textStyle]}
+        >
+          {currentLang.nativeName}
+        </AtomicText>
+      )}
+      {!showFlag && !showName && (
+        <AtomicText style={[styles.icon, { color: textColor }, iconStyle]}>
+          🌐
+        </AtomicText>
+      )}
     </TouchableOpacity>
   );
 };
 
 export default LanguageSwitcher;
+

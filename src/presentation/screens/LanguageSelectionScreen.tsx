@@ -4,11 +4,16 @@
  */
 
 import React from 'react';
-import { View, FlatList } from 'react-native';
+import { FlatList } from 'react-native';
 // @ts-ignore - Optional peer dependency
 import { useNavigation } from '@react-navigation/native';
 // @ts-ignore - Optional peer dependency
-import { useAppDesignTokens, SearchBar } from '@umituz/react-native-design-system';
+import { 
+  useAppDesignTokens, 
+  SearchBar, 
+  ScreenLayout,
+  NavigationHeader
+} from '@umituz/react-native-design-system';
 import { useLanguageSelection } from '../../infrastructure/hooks/useLanguageSelection';
 import { LanguageItem } from '../components/LanguageItem';
 import type { Language } from '../../infrastructure/storage/types/Language';
@@ -17,7 +22,8 @@ import { styles } from './LanguageSelectionScreen.styles';
 interface LanguageSelectionScreenProps {
   renderLanguageItem?: (item: Language, isSelected: boolean, onSelect: (code: string) => void) => React.ReactNode;
   renderSearchInput?: (value: string, onChange: (value: string) => void, placeholder: string) => React.ReactNode;
-  containerComponent?: React.ComponentType<{ children: React.ReactNode }>;
+  headerTitle?: string;
+  onBackPress?: () => void;
   styles?: {
     container?: any;
     searchContainer?: any;
@@ -38,7 +44,8 @@ interface LanguageSelectionScreenProps {
 export const LanguageSelectionScreen: React.FC<LanguageSelectionScreenProps> = ({
   renderLanguageItem,
   renderSearchInput,
-  containerComponent: Container,
+  headerTitle,
+  onBackPress,
   styles: customStyles,
   searchPlaceholder = "settings.languageSelection.searchPlaceholder",
   testID = 'language-selection-screen',
@@ -84,27 +91,53 @@ export const LanguageSelectionScreen: React.FC<LanguageSelectionScreenProps> = (
         value={searchQuery}
         onChangeText={setSearchQuery}
         placeholder={searchPlaceholder}
-        containerStyle={customStyles?.searchContainer}
+        containerStyle={[
+          { marginBottom: tokens.spacing.md },
+          customStyles?.searchContainer
+        ]}
         inputStyle={customStyles?.searchInput}
       />
     );
   };
 
-  const content = (
-    <View style={[styles.container, { backgroundColor: tokens.colors.backgroundPrimary }, customStyles?.container]} testID={testID}>
+  const handleBack = () => {
+    if (onBackPress) {
+      onBackPress();
+    } else {
+      navigation.goBack();
+    }
+  };
+
+  return (
+    <ScreenLayout
+      testID={testID}
+      scrollable={false}
+      edges={['top', 'bottom', 'left', 'right']}
+      backgroundColor={tokens.colors.backgroundPrimary}
+      header={
+        <NavigationHeader 
+          title={headerTitle || ""} 
+          onBackPress={handleBack} 
+        />
+      }
+      containerStyle={customStyles?.container}
+    >
       {renderSearchComponent()}
       <FlatList
         data={filteredLanguages}
         renderItem={renderItem}
         keyExtractor={item => item.code}
-        contentContainerStyle={[styles.listContent, customStyles?.listContent]}
+        contentContainerStyle={[
+          styles.listContent, 
+          { paddingBottom: tokens.spacing.xl },
+          customStyles?.listContent
+        ]}
         showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled"
       />
-    </View>
+    </ScreenLayout>
   );
-
-  return Container ? <Container>{content}</Container> : content;
 };
 
 export default LanguageSelectionScreen;
+

@@ -9,10 +9,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: 16,
-    borderRadius: 12,
     borderWidth: 1,
-    marginBottom: 8,
   },
   selectedLanguageItem: {
     borderWidth: 2,
@@ -29,18 +26,15 @@ export const styles = StyleSheet.create({
   languageText: {
     flex: 1,
     flexShrink: 1,
-    marginRight: 12,
   },
   nativeName: {
-    fontSize: 16,
-    fontWeight: '600',
-    marginBottom: 4,
+    // Styling moved to themedStyles in component for token support
   },
   languageName: {
-    fontSize: 14,
+    // Styling moved to themedStyles in component for token support
   },
   checkIcon: {
-    fontSize: 18,
-    fontWeight: 'bold',
+    // Replaced by AtomicIcon
   },
 });
+

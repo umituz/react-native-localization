@@ -6,10 +6,11 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // Styling handled by ScreenLayout
   },
   listContent: {
-    paddingHorizontal: 20,
-    paddingBottom: 32,
+    // Horizontal padding handled by ScreenLayout contentWrapper
+    // Bottom padding handled in component using tokens
   },
 });
+
