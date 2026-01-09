@@ -6,7 +6,7 @@
  * - Persistence
  */
 
-import { storageRepository } from '@umituz/react-native-storage';
+import { storageRepository } from '@umituz/react-native-design-system';
 import i18n from '../config/i18n';
 import { languageRepository } from '../repository/LanguageRepository';
 

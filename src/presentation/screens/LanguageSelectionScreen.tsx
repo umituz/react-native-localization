@@ -7,10 +7,10 @@ import React from 'react';
 import { View, FlatList } from 'react-native';
 // @ts-ignore - Optional peer dependency
 import { useNavigation } from '@react-navigation/native';
-import { useAppDesignTokens } from '@umituz/react-native-design-system';
+// @ts-ignore - Optional peer dependency
+import { useAppDesignTokens, SearchBar } from '@umituz/react-native-design-system';
 import { useLanguageSelection } from '../../infrastructure/hooks/useLanguageSelection';
 import { LanguageItem } from '../components/LanguageItem';
-import { SearchInput } from '../components/SearchInput';
 import type { Language } from '../../infrastructure/storage/types/Language';
 import { styles } from './LanguageSelectionScreen.styles';
 
@@ -80,11 +80,12 @@ export const LanguageSelectionScreen: React.FC<LanguageSelectionScreenProps> = (
     }
 
     return (
-      <SearchInput
+      <SearchBar
         value={searchQuery}
-        onChange={setSearchQuery}
+        onChangeText={setSearchQuery}
         placeholder={searchPlaceholder}
-        customStyles={customStyles}
+        containerStyle={customStyles?.searchContainer}
+        inputStyle={customStyles?.searchInput}
       />
     );
   };

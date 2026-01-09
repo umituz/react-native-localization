@@ -1,9 +1,9 @@
 /**
  * Storage Wrapper
- * Uses @umituz/react-native-storage for persistence
+ * Uses @umituz/react-native-design-system for persistence
  */
 
-import { storageRepository } from '@umituz/react-native-storage';
+import { storageRepository } from '@umituz/react-native-design-system';
 
 export const STORAGE_KEYS = {
   LANGUAGE: '@localization:language',

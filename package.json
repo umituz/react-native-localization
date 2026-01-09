@@ -1,6 +1,6 @@
 {
   "name": "@umituz/react-native-localization",
-  "version": "3.5.54",
+  "version": "3.5.55",
   "description": "Generic localization system for React Native apps with i18n support",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
@@ -26,25 +26,37 @@
   },
   "peerDependencies": {
     "@react-native-async-storage/async-storage": ">=2.0.0",
-    "@umituz/react-native-storage": "latest",
+    "@umituz/react-native-design-system": "latest",
     "expo-localization": ">=16.0.0",
     "i18next": ">=23.0.0",
     "react": ">=18.2.0",
     "react-i18next": ">=15.0.0",
     "react-native": ">=0.74.0",
-    "zustand": ">=4.0.0"
+    "zustand": ">=4.0.0",
+    "@umituz/react-native-design-system": "latest"
   },
   "devDependencies": {
     "@react-native-async-storage/async-storage": "~2.1.2",
     "@types/react": "~19.1.10",
-    "@umituz/react-native-storage": "latest",
     "expo-localization": "~16.0.1",
     "i18next": "^24.2.0",
     "react": "19.1.0",
     "react-i18next": "^15.2.0",
     "react-native": "0.81.5",
     "typescript": "~5.9.2",
-    "zustand": "^4.5.0"
+    "zustand": "^5.0.0",
+    "@umituz/react-native-design-system": "latest",
+    "expo-clipboard": "^8.0.0",
+    "expo-sharing": "^12.0.0",
+    "expo-application": "^5.0.0",
+    "expo-device": "^5.0.0",
+    "react-native-safe-area-context": "latest",
+    "@react-navigation/native": "latest",
+    "@react-navigation/stack": "latest",
+    "@react-navigation/bottom-tabs": "latest",
+    "react-native-gesture-handler": "latest",
+    "expo-font": "^12.0.0",
+    "expo-file-system": "^17.0.0"
   },
   "publishConfig": {
     "access": "public"
