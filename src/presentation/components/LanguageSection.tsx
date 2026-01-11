@@ -5,7 +5,7 @@ import {
     useAppDesignTokens,
     AtomicText,
     ListItem,
-    useAppNavigation,
+    AppNavigation,
 } from '@umituz/react-native-design-system';
 import { useLocalization } from '../../infrastructure/hooks/useLocalization';
 import { getLanguageByCode } from '../../infrastructure/config/languages';
@@ -28,7 +28,6 @@ export const LanguageSection: React.FC<LanguageSectionProps> = ({
     containerStyle,
     sectionTitle,
 }) => {
-    const navigation = useAppNavigation();
     const tokens = useAppDesignTokens();
     const { t, currentLanguage } = useLocalization();
 
@@ -43,7 +42,7 @@ export const LanguageSection: React.FC<LanguageSectionProps> = ({
         : defaultLanguageDisplay;
 
     const handlePress = () => {
-        navigation.navigate(route as never);
+        AppNavigation.navigate(route as never);
     };
 
     return (

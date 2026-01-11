@@ -6,12 +6,12 @@
 import React from 'react';
 import { FlatList } from 'react-native';
 // @ts-ignore - Optional peer dependency
-import { 
-  useAppDesignTokens, 
-  SearchBar, 
+import {
+  useAppDesignTokens,
+  SearchBar,
   ScreenLayout,
   NavigationHeader,
-  useAppNavigation,
+  AppNavigation,
 } from '@umituz/react-native-design-system';
 import { useLanguageSelection } from '../../infrastructure/hooks/useLanguageSelection';
 import { LanguageItem } from '../components/LanguageItem';
@@ -28,7 +28,6 @@ export const LanguageSelectionScreen: React.FC<LanguageSelectionScreenProps> = (
   searchPlaceholder = "settings.languageSelection.searchPlaceholder",
   testID = 'language-selection-screen',
 }) => {
-  const navigation = useAppNavigation();
   const tokens = useAppDesignTokens();
   const {
     searchQuery,
@@ -39,7 +38,7 @@ export const LanguageSelectionScreen: React.FC<LanguageSelectionScreenProps> = (
   } = useLanguageSelection();
 
   const onSelect = (code: string) => {
-    handleLanguageSelect(code, () => navigation.goBack());
+    handleLanguageSelect(code, () => AppNavigation.goBack());
   };
 
   const renderItem = ({ item }: { item: Language }) => {
@@ -82,7 +81,7 @@ export const LanguageSelectionScreen: React.FC<LanguageSelectionScreenProps> = (
     if (onBackPress) {
       onBackPress();
     } else {
-      navigation.goBack();
+      AppNavigation.goBack();
     }
   };
 
