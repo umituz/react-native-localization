@@ -43,12 +43,15 @@ export const useLocalizationStore = create<LocalizationStoreType>((set, get) => 
   },
 
   setLanguage: async (languageCode: string) => {
+    console.log('[LocalizationStore] setLanguage called:', languageCode);
     const result = await LanguageSwitcher.switchLanguage(languageCode);
+    console.log('[LocalizationStore] LanguageSwitcher result:', result);
 
     set({
       currentLanguage: result.languageCode,
       isRTL: result.isRTL,
     });
+    console.log('[LocalizationStore] Store updated with new language:', result.languageCode);
   },
 
   reset: () => {

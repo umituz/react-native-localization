@@ -70,7 +70,10 @@ export const LanguageItem: React.FC<LanguageItemProps> = ({
         isSelected ? [styles.selectedLanguageItem, themedStyles.selectedLanguageItem] : undefined,
         customStyles?.languageItem,
       ]}
-      onPress={() => onSelect(item.code)}
+      onPress={() => {
+        console.log('[LanguageItem] TouchableOpacity pressed:', item.code, item.nativeName);
+        onSelect(item.code);
+      }}
       activeOpacity={0.7}
     >
       <View style={[styles.languageContent, customStyles?.languageContent]}>
