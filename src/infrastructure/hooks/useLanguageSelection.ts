@@ -17,13 +17,21 @@ export const useLanguageSelection = () => {
     }, [searchQuery]);
 
     const handleLanguageSelect = async (code: string, onComplete?: () => void) => {
-        console.log('[useLanguageSelection] handleLanguageSelect called:', { code, currentLanguage });
+        if (__DEV__) {
+            console.log('[useLanguageSelection] handleLanguageSelect called:', { code, currentLanguage });
+        }
         setSelectedCode(code);
-        console.log('[useLanguageSelection] Calling setLanguage...');
+        if (__DEV__) {
+            console.log('[useLanguageSelection] Calling setLanguage...');
+        }
         await setLanguage(code);
-        console.log('[useLanguageSelection] Language changed to:', code);
+        if (__DEV__) {
+            console.log('[useLanguageSelection] Language changed to:', code);
+        }
         onComplete?.();
-        console.log('[useLanguageSelection] onComplete callback executed');
+        if (__DEV__) {
+            console.log('[useLanguageSelection] onComplete callback executed');
+        }
     };
 
     return {
