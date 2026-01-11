@@ -11,7 +11,7 @@ import {
   SearchBar,
   ScreenLayout,
   NavigationHeader,
-  AppNavigation,
+  useAppNavigation,
 } from '@umituz/react-native-design-system';
 import { useLanguageSelection } from '../../infrastructure/hooks/useLanguageSelection';
 import { LanguageItem } from '../components/LanguageItem';
@@ -29,6 +29,7 @@ export const LanguageSelectionScreen: React.FC<LanguageSelectionScreenProps> = (
   testID = 'language-selection-screen',
 }) => {
   const tokens = useAppDesignTokens();
+  const navigation = useAppNavigation();
   const {
     searchQuery,
     setSearchQuery,
@@ -40,8 +41,8 @@ export const LanguageSelectionScreen: React.FC<LanguageSelectionScreenProps> = (
   const onSelect = async (code: string) => {
     console.log('[LanguageSelectionScreen] onSelect called with code:', code);
     await handleLanguageSelect(code, () => {
-      console.log('[LanguageSelectionScreen] Navigating back');
-      AppNavigation.goBack();
+      console.log('[LanguageSelectionScreen] Navigating back using context navigation');
+      navigation.goBack();
     });
     console.log('[LanguageSelectionScreen] Language change completed');
   };
@@ -86,7 +87,7 @@ export const LanguageSelectionScreen: React.FC<LanguageSelectionScreenProps> = (
     if (onBackPress) {
       onBackPress();
     } else {
-      AppNavigation.goBack();
+      navigation.goBack();
     }
   };
 
