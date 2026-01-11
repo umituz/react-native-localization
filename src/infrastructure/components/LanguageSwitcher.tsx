@@ -4,7 +4,7 @@
  */
 
 import React, { useMemo } from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 // @ts-ignore - Optional peer dependency
 import { useAppDesignTokens, AtomicText } from '@umituz/react-native-design-system';
 import { useLanguageSwitcher } from './useLanguageSwitcher';
