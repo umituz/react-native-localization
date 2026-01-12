@@ -30,7 +30,8 @@ export class LanguageInitializer {
       const finalLanguage = await this.validateAndSetupLanguage(languageCode);
 
       return finalLanguage;
-    } catch (error) {
+    } catch {
+      console.warn("[LanguageInitializer] Failed to restore language, falling back to device locale");
       return await this.setupFallbackLanguage();
     }
   }

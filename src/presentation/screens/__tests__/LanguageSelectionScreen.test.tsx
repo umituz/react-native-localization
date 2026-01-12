@@ -30,7 +30,6 @@ const mockLanguage = {
 
 describe('LanguageSelectionScreen', () => {
   const mockSetLanguage = jest.fn();
-  const mockGoBack = jest.fn();
 
   beforeEach(() => {
     jest.clearAllMocks();

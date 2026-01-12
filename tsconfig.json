@@ -37,7 +37,11 @@
 
     /* React Native specific */
     "allowJs": false,
-    "checkJs": false
+    "checkJs": false,
+    "baseUrl": ".",
+    "paths": {
+      "@umituz/react-native-localization": ["./src/index.ts"]
+    }
   },
   "include": [
     "src/**/*"
