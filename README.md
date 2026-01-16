@@ -47,8 +47,6 @@ This package follows Domain-Driven Design principles:
 
 ```bash
 npm install @umituz/react-native-localization
-# or
-yarn add @umituz/react-native-localization
 ```
 
 ### Peer Dependencies
