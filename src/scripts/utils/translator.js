@@ -1,56 +1,51 @@
-import https from 'https';
-import { shouldSkipWord } from './translation-config.js';
-
 /**
- * Translator
- * Google Translate API integration and translation logic
+ * Translation Utilities
+ * Handles call to translation APIs
  */
 
-export function delay(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
+import { getTargetLanguage, isSingleWord as checkSingleWord, shouldSkipWord } from './translation-config.js';
 
-export async function translateText(text, targetLang) {
-  return new Promise((resolve) => {
-    if (shouldSkipWord(text)) {
-      resolve(text);
-      return;
-    }
+let lastCallTime = 0;
+const MIN_DELAY = 100; // ms
 
+async function translateText(text, targetLang) {
+  if (!text || typeof text !== 'string') return text;
+  if (shouldSkipWord(text)) return text;
+
+  // Rate limiting
+  const now = Date.now();
+  const waitTime = Math.max(0, MIN_DELAY - (now - lastCallTime));
+  if (waitTime > 0) await new Promise(resolve => setTimeout(resolve, waitTime));
+  lastCallTime = Date.now();
+
+  try {
     const encodedText = encodeURIComponent(text);
     const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=${targetLang}&dt=t&q=${encodedText}`;
-
-    https
-      .get(url, res => {
-        let data = '';
-        res.on('data', chunk => {
-          data += chunk;
-        });
-        res.on('end', () => {
-          try {
-            const parsed = JSON.parse(data);
-            const translated = parsed[0]
-              .map(item => item[0])
-              .join('')
-              .trim();
-            resolve(translated || text);
-          } catch (error) {
-            resolve(text);
-          }
-        });
-      })
-      .on('error', () => {
-        resolve(text);
-      });
-  });
+    
+    const response = await fetch(url);
+    if (!response.ok) return text;
+    
+    const data = await response.json();
+    return data && data[0] && data[0][0] && data[0][0][0] ? data[0][0][0] : text;
+  } catch (error) {
+    if (__DEV__) console.error(`   ❌ Translation error for "${text}":`, error.message);
+    return text;
+  }
 }
 
 function needsTranslation(value, enValue) {
-  if (typeof enValue !== 'string') return false;
+  if (typeof enValue !== 'string' || !enValue.trim()) return false;
   if (shouldSkipWord(enValue)) return false;
+
+  // If value is missing or same as technical key
   if (!value || typeof value !== 'string') return true;
 
+  // Heuristic: If English value looks like a technical key (e.g. "scenario.xxx.title")
+  // and the target value is exactly the same, it definitely needs translation.
+  const isTechnicalKey = enValue.includes('.') && !enValue.includes(' ');
+  
   if (value === enValue) {
+    if (isTechnicalKey) return true;
     const isSingleWord = !enValue.includes(' ') && enValue.length < 20;
     return !isSingleWord;
   }
@@ -59,39 +54,28 @@ function needsTranslation(value, enValue) {
 }
 
 export async function translateObject(enObj, targetObj, targetLang, path = '', stats = { count: 0, newKeys: [] }) {
-  for (const key in enObj) {
-    const currentPath = path ? `${path}.${key}` : key;
+  const keys = Object.keys(enObj);
+  
+  for (const key of keys) {
     const enValue = enObj[key];
     const targetValue = targetObj[key];
+    const currentPath = path ? `${path}.${key}` : key;
 
-    if (Array.isArray(enValue)) {
-      if (!Array.isArray(targetValue)) targetObj[key] = [];
-      for (let i = 0; i < enValue.length; i++) {
-        if (typeof enValue[i] === 'string' && needsTranslation(targetObj[key][i], enValue[i])) {
-          const translated = await translateText(enValue[i], targetLang);
-          if (translated !== enValue[i]) {
-            const isNewKey = targetObj[key][i] === enValue[i];
-            console.log(`   ${isNewKey ? '🆕 NEW' : '🔄'} ${currentPath}[${i}]: "${enValue[i].substring(0, 40)}"`);
-            targetObj[key][i] = translated;
-            stats.count++;
-            if (isNewKey) stats.newKeys.push(`${currentPath}[${i}]`);
-          }
-          await delay(200);
-        }
-      }
-    } else if (typeof enValue === 'object' && enValue !== null) {
+    if (typeof enValue === 'object' && enValue !== null) {
       if (!targetObj[key] || typeof targetObj[key] !== 'object') targetObj[key] = {};
       await translateObject(enValue, targetObj[key], targetLang, currentPath, stats);
     } else if (typeof enValue === 'string' && needsTranslation(targetValue, enValue)) {
       const translated = await translateText(enValue, targetLang);
+      
       const isNewKey = targetValue === undefined;
-      if (translated !== enValue || isNewKey) {
-        console.log(`   ${isNewKey ? '🆕 NEW' : '🔄'} ${currentPath}: "${enValue.substring(0, 40)}"`);
+      // Force increment if it looks like a technical key that we just "translated" 
+      // even if the API returned the same string (placeholder)
+      const isTechnicalKey = enValue.includes('.') && !enValue.includes(' ');
+      
+      if (translated !== enValue || isNewKey || (isTechnicalKey && translated === enValue)) {
         targetObj[key] = translated;
         stats.count++;
-        if (isNewKey) stats.newKeys.push(currentPath);
       }
-      await delay(200);
     }
   }
 }
