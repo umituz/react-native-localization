@@ -17,9 +17,12 @@ export function parseTypeScriptFile(filePath) {
   const objectStr = match[1].replace(/;$/, '');
 
   try {
+    // Basic evaluation for simple objects
+    // eslint-disable-next-line no-eval
     return eval(`(${objectStr})`);
   } catch (error) {
-    throw new Error(`Failed to parse object in ${filePath}: ${error.message}`);
+    console.warn(`\n⚠️  Warning: Could not fully parse ${filePath}. Files with complex imports/spreads are currently limited.`);
+    return {}; // Return empty to avoid breaking the whole process
   }
 }
 

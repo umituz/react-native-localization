@@ -11,7 +11,6 @@ import path from 'path';
 import { parseTypeScriptFile, generateTypeScriptContent } from './utils/file-parser.js';
 import { addMissingKeys, removeExtraKeys } from './utils/sync-helper.js';
 import { detectNewKeys } from './utils/key-detector.js';
-import { getLangDisplayName } from './utils/translation-config.js';
 import { extractUsedKeys } from './utils/key-extractor.js';
 import { setDeep } from './utils/object-helper.js';
 
@@ -45,21 +44,47 @@ function syncLanguageFile(enUSPath, targetPath, langCode) {
 function processExtraction(srcDir, enUSPath) {
   if (!srcDir) return;
 
-  console.log(`🔍 Scanning source code: ${srcDir}...`);
-  const usedKeys = extractUsedKeys(srcDir);
-  console.log(`   Found ${usedKeys.size} unique keys in code.`);
+  console.log(`🔍 Scanning source code and dependencies: ${srcDir}...`);
+  const usedKeyMap = extractUsedKeys(srcDir);
+  console.log(`   Found ${usedKeyMap.size} unique keys.`);
 
-  const enUS = parseTypeScriptFile(enUSPath);
+  const oldEnUS = parseTypeScriptFile(enUSPath);
+  const newEnUS = {}; 
+  
   let addedCount = 0;
-  for (const key of usedKeys) {
-    if (setDeep(enUS, key, key)) addedCount++;
+  for (const [key, defaultValue] of usedKeyMap) {
+    // Try to keep existing translation if it exists
+    const existingValue = key.split('.').reduce((obj, k) => (obj && obj[k]), oldEnUS);
+    
+    // We treat it as "not translated" if the value is exactly the key string
+    const isActuallyTranslated = typeof existingValue === 'string' && existingValue !== key;
+    const valueToSet = isActuallyTranslated ? existingValue : defaultValue;
+    
+    if (setDeep(newEnUS, key, valueToSet)) {
+      if (!isActuallyTranslated) addedCount++;
+    }
   }
 
-  if (addedCount > 0) {
-    console.log(`   ✨ Added ${addedCount} new keys to en-US.ts`);
-    const content = generateTypeScriptContent(enUS, 'en-US');
-    fs.writeFileSync(enUSPath, content);
-  }
+  // Count keys in objects
+  const getKeysCount = (obj) => {
+    let count = 0;
+    const walk = (o) => {
+      for (const k in o) {
+        if (typeof o[k] === 'object' && o[k] !== null) walk(o[k]);
+        else count++;
+      }
+    };
+    walk(obj);
+    return count;
+  };
+  
+  const oldTotal = getKeysCount(oldEnUS);
+  const newTotal = getKeysCount(newEnUS);
+  const removedCount = oldTotal - (newTotal - addedCount);
+
+  console.log(`   ✨ Optimized en-US.ts: ${addedCount} keys populated/updated, pruned ${Math.max(0, removedCount)} unused.`);
+  const content = generateTypeScriptContent(newEnUS, 'en-US');
+  fs.writeFileSync(enUSPath, content);
 }
 
 export function syncTranslations(targetDir, srcDir) {

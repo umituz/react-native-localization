@@ -2,106 +2,91 @@
 
 /**
  * Translate Missing Script
- * Translates missing strings from en-US.ts to all other language files
- * Usage: node translate-missing.js [locales-dir] [src-dir-optional] [lang-code-optional]
+ * Automatically translates missing strings using Google Translate
  */
 
 import fs from 'fs';
 import path from 'path';
-import { getTargetLanguage, isEnglishVariant, getLangDisplayName } from './utils/translation-config.js';
 import { parseTypeScriptFile, generateTypeScriptContent } from './utils/file-parser.js';
+import { getTargetLanguage, getLangDisplayName } from './utils/translation-config.js';
 import { translateObject } from './utils/translator.js';
 import { setupLanguages } from './setup-languages.js';
 import { syncTranslations } from './sync-translations.js';
 
-async function translateLanguageFile(enUSPath, targetPath, langCode) {
-  const targetLang = getTargetLanguage(langCode);
-
-  if (!targetLang) {
-    console.log(`   ⚠️  No language mapping for ${langCode}, skipping`);
-    return { count: 0, newKeys: [] };
-  }
-
-  if (isEnglishVariant(langCode)) {
-    console.log(`   ⏭️  Skipping English variant: ${langCode}`);
-    return { count: 0, newKeys: [] };
-  }
-
-  const enUS = parseTypeScriptFile(enUSPath);
-  let target;
-
-  try {
-    target = parseTypeScriptFile(targetPath);
-  } catch {
-    target = {};
-  }
-
-  const stats = { count: 0, newKeys: [] };
-  await translateObject(enUS, target, targetLang, '', stats);
-
-  if (stats.count > 0) {
-    const content = generateTypeScriptContent(target, langCode);
-    fs.writeFileSync(targetPath, content);
-  }
-
-  return stats;
-}
-
-async function main() {
-  const targetDir = process.argv[2] || 'src/domains/localization/infrastructure/locales';
-  const srcDir = process.argv[3];
-  const targetLangCode = process.argv[4];
-  
+async function translateMissing(targetDir, srcDir) {
   const localesDir = path.resolve(process.cwd(), targetDir);
   const enUSPath = path.join(localesDir, 'en-US.ts');
-  const indexPath = path.join(localesDir, 'index.ts');
 
-  console.log('🚀 Starting integrated translation workflow...\n');
+  // Integrated Workflow: Ensure setup and sync
+  const skipSync = process.argv.includes('--no-sync');
 
-  // 1. Ensure setup exists (index.ts)
-  if (!fs.existsSync(indexPath)) {
-    console.log('📦 Setup (index.ts) missing. Generating...');
+  if (!fs.existsSync(path.join(localesDir, 'index.ts'))) {
+    console.log('🔄 Initializing localization setup...');
     setupLanguages(targetDir);
-    console.log('');
   }
 
-  // 2. Synchronize keys (includes code scanning if srcDir is provided)
-  console.log('🔄 Checking synchronization...');
-  syncTranslations(targetDir, srcDir);
-  console.log('');
-
-  if (!fs.existsSync(localesDir) || !fs.existsSync(enUSPath)) {
-    console.error(`❌ Localization files not found in: ${localesDir}`);
-    process.exit(1);
+  if (!skipSync) {
+    console.log('\n🔄 Checking synchronization...');
+    syncTranslations(targetDir, srcDir);
+  } else {
+    console.log('\n⏭️ Skipping synchronization check...');
   }
 
   const files = fs.readdirSync(localesDir)
-    .filter(f => {
-      const isLangFile = f.match(/^[a-z]{2}-[A-Z]{2}\.ts$/) && f !== 'en-US.ts';
-      return isLangFile && (!targetLangCode || f === `${targetLangCode}.ts`);
-    })
+    .filter(f => f.match(/^[a-z]{2}-[A-Z]{2}\.ts$/) && f !== 'en-US.ts')
     .sort();
 
-  console.log(`📊 Languages to translate: ${files.length}\n`);
+  console.log(`\n📊 Languages to translate: ${files.length}\n`);
 
-  let totalTranslated = 0;
+  const enUS = parseTypeScriptFile(enUSPath);
+
   for (const file of files) {
     const langCode = file.replace('.ts', '');
+    const targetLang = getTargetLanguage(langCode);
+    const langName = getLangDisplayName(langCode);
+
+    if (!targetLang || targetLang === 'en') continue;
+
+    console.log(`🌍 Translating ${langCode} (${langName})...`);
+    
     const targetPath = path.join(localesDir, file);
-    console.log(`🌍 Translating ${langCode} (${getLangDisplayName(langCode)})...`);
-    const stats = await translateLanguageFile(enUSPath, targetPath, langCode);
-    totalTranslated += stats.count;
+    const target = parseTypeScriptFile(targetPath);
+    
+    const stats = { count: 0, checked: 0, translatedKeys: [] };
+    await translateObject(enUS, target, targetLang, '', stats);
+    
+    // Clear progress line
+    process.stdout.write('\r' + ' '.repeat(80) + '\r');
+
     if (stats.count > 0) {
-      console.log(`   ✅ Translated ${stats.count} strings`);
+      const content = generateTypeScriptContent(target, langCode);
+      fs.writeFileSync(targetPath, content);
+      
+      console.log(`      ✅ Successfully translated ${stats.count} keys:`);
+      
+      // Detailed logging of translated keys
+      const displayCount = Math.min(stats.translatedKeys.length, 15);
+      stats.translatedKeys.slice(0, displayCount).forEach(item => {
+        console.log(`         • ${item.key}: "${item.from}" → "${item.to}"`);
+      });
+      
+      if (stats.translatedKeys.length > displayCount) {
+        console.log(`         ... and ${stats.translatedKeys.length - displayCount} more.`);
+      }
     } else {
-      console.log(`   ✓ Already complete`);
+      console.log(`      ✨ Already up to date.`);
     }
   }
 
-  console.log(`\n✅ Workflow completed! (Total translated: ${totalTranslated})`);
+  console.log('\n✅ All translations completed!');
 }
 
-main().catch(error => {
-  console.error('❌ Translation failed:', error.message);
-  process.exit(1);
-});
+if (import.meta.url === `file://${process.argv[1]}`) {
+  const targetDir = process.argv[2] || 'src/domains/localization/infrastructure/locales';
+  const srcDir = process.argv[3];
+  console.log('🚀 Starting integrated translation workflow...');
+  translateMissing(targetDir, srcDir).catch(err => {
+    console.error('\n❌ Translation workflow failed:', err.message);
+    process.exit(1);
+  });
+}
