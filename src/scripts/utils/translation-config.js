@@ -1,11 +1,9 @@
-#!/usr/bin/env node
-
 /**
  * Translation Configuration
  * Language mappings and constants for translation system
  */
 
-const LANGUAGE_MAP = {
+export const LANGUAGE_MAP = {
   'ar-SA': 'ar',
   'bg-BG': 'bg',
   'cs-CZ': 'cs',
@@ -47,7 +45,7 @@ const LANGUAGE_MAP = {
   'zh-TW': 'zh-TW',
 };
 
-const SKIP_WORDS = new Set([
+export const SKIP_WORDS = new Set([
   'Google',
   'Apple',
   'Facebook',
@@ -57,7 +55,7 @@ const SKIP_WORDS = new Set([
   'WhatsApp',
 ]);
 
-const LANGUAGE_NAMES = {
+export const LANGUAGE_NAMES = {
   'ar-SA': 'Arabic (Saudi Arabia)',
   'bg-BG': 'Bulgarian',
   'cs-CZ': 'Czech',
@@ -100,29 +98,19 @@ const LANGUAGE_NAMES = {
   'zh-TW': 'Chinese (Traditional)',
 };
 
-function getLangDisplayName(code) {
+export function getLangDisplayName(code) {
   return LANGUAGE_NAMES[code] || code;
 }
 
-function getTargetLanguage(langCode) {
+export function getTargetLanguage(langCode) {
   return LANGUAGE_MAP[langCode];
 }
 
-function shouldSkipWord(word) {
+export function shouldSkipWord(word) {
   return SKIP_WORDS.has(word);
 }
 
-function isEnglishVariant(langCode) {
+export function isEnglishVariant(langCode) {
   const targetLang = LANGUAGE_MAP[langCode];
   return targetLang === 'en';
 }
-
-module.exports = {
-  LANGUAGE_MAP,
-  SKIP_WORDS,
-  LANGUAGE_NAMES,
-  getLangDisplayName,
-  getTargetLanguage,
-  shouldSkipWord,
-  isEnglishVariant,
-};

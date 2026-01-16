@@ -1,14 +1,12 @@
-#!/usr/bin/env node
+import fs from 'fs';
+import { getLangDisplayName } from './translation-config.js';
 
 /**
  * File Parser
  * Parse and generate TypeScript translation files
  */
 
-const fs = require('fs');
-const { getLangDisplayName } = require('./translation-config');
-
-function parseTypeScriptFile(filePath) {
+export function parseTypeScriptFile(filePath) {
   const content = fs.readFileSync(filePath, 'utf8');
   const match = content.match(/export\s+default\s+(\{[\s\S]*\});?\s*$/);
 
@@ -25,7 +23,7 @@ function parseTypeScriptFile(filePath) {
   }
 }
 
-function stringifyValue(value, indent = 2) {
+export function stringifyValue(value, indent = 2) {
   if (typeof value === 'string') {
     const escaped = value
       .replace(/\\/g, '\\\\')
@@ -50,6 +48,7 @@ function stringifyValue(value, indent = 2) {
     const spaces = ' '.repeat(indent);
     const innerSpaces = ' '.repeat(indent + 2);
     const entriesStr = entries
+      .sort((a, b) => a[0].localeCompare(b[0]))
       .map(([k, v]) => {
         const key = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(k) ? k : `"${k}"`;
         return `${innerSpaces}${key}: ${stringifyValue(v, indent + 2)}`;
@@ -61,20 +60,16 @@ function stringifyValue(value, indent = 2) {
   return String(value);
 }
 
-function generateTypeScriptContent(obj, langCode) {
+export function generateTypeScriptContent(obj, langCode) {
   const langName = getLangDisplayName(langCode);
+  const isBase = langCode === 'en-US';
   const objString = stringifyValue(obj, 0);
 
   return `/**
  * ${langName} Translations
- * Auto-translated from en-US.ts
+ * ${isBase ? 'Base translations file' : 'Auto-synced from en-US.ts'}
  */
 
 export default ${objString};
 `;
 }
-
-module.exports = {
-  parseTypeScriptFile,
-  generateTypeScriptContent,
-};

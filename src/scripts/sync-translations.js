@@ -3,15 +3,17 @@
 /**
  * Sync Translations Script
  * Synchronizes translation keys from en-US.ts to all other language files
- * Usage: node sync-translations.js [locales-dir]
+ * Usage: node sync-translations.js [locales-dir] [src-dir-optional]
  */
 
-const fs = require('fs');
-const path = require('path');
-const { parseTypeScriptFile, generateTypeScriptContent } = require('./utils/file-parser');
-const { addMissingKeys, removeExtraKeys } = require('./utils/sync-helper');
-const { detectNewKeys } = require('./utils/key-detector');
-const { getLangDisplayName } = require('./utils/translation-config');
+import fs from 'fs';
+import path from 'path';
+import { parseTypeScriptFile, generateTypeScriptContent } from './utils/file-parser.js';
+import { addMissingKeys, removeExtraKeys } from './utils/sync-helper.js';
+import { detectNewKeys } from './utils/key-detector.js';
+import { getLangDisplayName } from './utils/translation-config.js';
+import { extractUsedKeys } from './utils/key-extractor.js';
+import { setDeep } from './utils/object-helper.js';
 
 function syncLanguageFile(enUSPath, targetPath, langCode) {
   const enUS = parseTypeScriptFile(enUSPath);
@@ -37,113 +39,61 @@ function syncLanguageFile(enUSPath, targetPath, langCode) {
     fs.writeFileSync(targetPath, content);
   }
 
-  return {
-    added: addStats.added,
-    removed: removeStats.removed,
-    newKeys,
-    removedKeys: removeStats.removedKeys,
-    changed,
-  };
+  return { ...addStats, ...removeStats, newKeys, changed };
+}
+
+function processExtraction(srcDir, enUSPath) {
+  if (!srcDir) return;
+
+  console.log(`🔍 Scanning source code: ${srcDir}...`);
+  const usedKeys = extractUsedKeys(srcDir);
+  console.log(`   Found ${usedKeys.size} unique keys in code.`);
+
+  const enUS = parseTypeScriptFile(enUSPath);
+  let addedCount = 0;
+  for (const key of usedKeys) {
+    if (setDeep(enUS, key, key)) addedCount++;
+  }
+
+  if (addedCount > 0) {
+    console.log(`   ✨ Added ${addedCount} new keys to en-US.ts`);
+    const content = generateTypeScriptContent(enUS, 'en-US');
+    fs.writeFileSync(enUSPath, content);
+  }
 }
 
 function main() {
-  const targetDir = process.argv[2] || 'src/domains/localization/translations';
-  const targetLangCode = process.argv[3];
+  const targetDir = process.argv[2] || 'src/domains/localization/infrastructure/locales';
+  const srcDir = process.argv[3];
   const localesDir = path.resolve(process.cwd(), targetDir);
+  const enUSPath = path.join(localesDir, 'en-US.ts');
 
   console.log('🚀 Starting translation synchronization...\n');
-  console.log(`📂 Locales directory: ${localesDir}`);
-  if (targetLangCode) {
-    console.log(`🎯 Target language: ${targetLangCode}`);
-  }
-  console.log('');
-
-  if (!fs.existsSync(localesDir)) {
-    console.error(`❌ Locales directory not found: ${localesDir}`);
+  if (!fs.existsSync(localesDir) || !fs.existsSync(enUSPath)) {
+    console.error(`❌ Localization files not found in: ${localesDir}`);
     process.exit(1);
   }
 
-  const enUSPath = path.join(localesDir, 'en-US.ts');
-  if (!fs.existsSync(enUSPath)) {
-    console.error(`❌ Base file not found: ${enUSPath}`);
-    process.exit(1);
-  }
+  processExtraction(srcDir, enUSPath);
 
   const files = fs.readdirSync(localesDir)
-    .filter(f => {
-      const isLangFile = f.match(/^[a-z]{2}-[A-Z]{2}\.ts$/) && f !== 'en-US.ts';
-      if (!isLangFile) return false;
-      if (targetLangCode) {
-        return f === `${targetLangCode}.ts`;
-      }
-      return true;
-    })
+    .filter(f => f.match(/^[a-z]{2}-[A-Z]{2}\.ts$/) && f !== 'en-US.ts')
     .sort();
 
-  if (targetLangCode && files.length === 0) {
-    console.warn(`⚠️  Target language file ${targetLangCode}.ts not found in ${targetDir}`);
-  }
-
   console.log(`📊 Languages to sync: ${files.length}\n`);
-
-  let totalAdded = 0;
-  let totalRemoved = 0;
-  let totalChanged = 0;
-  const allNewKeys = [];
-
-  for (const file of files) {
+  files.forEach(file => {
     const langCode = file.replace('.ts', '');
     const targetPath = path.join(localesDir, file);
-
     console.log(`🌍 Syncing ${langCode} (${getLangDisplayName(langCode)})...`);
-
     const result = syncLanguageFile(enUSPath, targetPath, langCode);
-
     if (result.changed) {
-      if (result.newKeys.length > 0) {
-        console.log(`   🆕 ${result.newKeys.length} new keys added:`);
-        result.newKeys.slice(0, 5).forEach(({ path }) => {
-          console.log(`      • ${path}`);
-        });
-        if (result.newKeys.length > 5) {
-          console.log(`      ... and ${result.newKeys.length - 5} more`);
-        }
-        allNewKeys.push(...result.newKeys.map(k => k.path));
-      }
-      if (result.removedKeys.length > 0) {
-        console.log(`   🗑️  ${result.removedKeys.length} obsolete keys removed`);
-      }
-      totalAdded += result.added;
-      totalRemoved += result.removed;
-      totalChanged++;
+      console.log(`   ✏️  +${result.added} keys, -${result.removed} keys`);
     } else {
       console.log(`   ✅ Already synchronized`);
     }
-  }
+  });
 
-  console.log(`\n📊 Summary:`);
-  console.log(`   Languages processed: ${files.length}`);
-  console.log(`   Files changed: ${totalChanged}`);
-  console.log(`   Keys added: ${totalAdded}`);
-  console.log(`   Keys removed: ${totalRemoved}`);
-
-  if (totalChanged > 0) {
-    console.log(`\n✅ Synchronization completed!`);
-    console.log(`   Next: Run 'npm run i18n:translate' to translate new keys`);
-
-    if (allNewKeys.length > 0) {
-      const uniqueKeys = [...new Set(allNewKeys)];
-      console.log(`\n📝 New keys that need translation (${uniqueKeys.length}):`);
-      uniqueKeys.slice(0, 10).forEach(key => {
-        console.log(`   • ${key}`);
-      });
-      if (uniqueKeys.length > 10) {
-        console.log(`   ... and ${uniqueKeys.length - 10} more`);
-      }
-    }
-  } else {
-    console.log(`\n✅ All languages were already synchronized!`);
-  }
+  console.log(`\n✅ Synchronization completed!`);
 }
 
 main();

@@ -37,6 +37,8 @@ function parseTypeScriptFile(filePath) {
  */
 function generateTypeScriptContent(obj, langCode) {
     const langName = getLangDisplayName(langCode);
+    const isBase = langCode === 'en-US';
+    
     function stringifyValue(value, indent = 2) {
         if (typeof value === 'string') {
             const escaped = value
@@ -59,6 +61,7 @@ function generateTypeScriptContent(obj, langCode) {
                 const key = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(k) ? k : `"${k}"`;
                 return `${innerSpaces}${key}: ${stringifyValue(v, indent + 2)}`;
             })
+                .sort((a, b) => a.trim().localeCompare(b.trim()))
                 .join(',\n');
             return `{\n${entries},\n${spaces}}`;
         }
@@ -67,11 +70,66 @@ function generateTypeScriptContent(obj, langCode) {
     const objString = stringifyValue(obj, 0);
     return `/**
  * ${langName} Translations
- * Auto-synced from en-US.ts
+ * ${isBase ? 'Base translations file' : 'Auto-synced from en-US.ts'}
  */
 
 export default ${objString};
 `;
+}
+/**
+ * Find all translation keys used in the source code
+ */
+function findUsedKeys(srcDir) {
+    const keys = new Set();
+    if (!srcDir) return keys;
+    
+    const absoluteSrcDir = path.resolve(process.cwd(), srcDir);
+    if (!fs.existsSync(absoluteSrcDir)) {
+        return keys;
+    }
+
+    function walk(dir) {
+        const files = fs.readdirSync(dir);
+        for (const file of files) {
+            const fullPath = path.join(dir, file);
+            const stat = fs.statSync(fullPath);
+            if (stat.isDirectory()) {
+                if (file !== 'node_modules' && file !== '.expo' && file !== '.git' && file !== 'build') {
+                    walk(fullPath);
+                }
+            } else if (/\.(ts|tsx|js|jsx)$/.test(file)) {
+                const content = fs.readFileSync(fullPath, 'utf8');
+                // Regex for t('key') or t("key") or i18n.t('key')
+                const regex = /(?:^|\W)t\(['"]([^'"]+)['"]\)/g;
+                let match;
+                while ((match = regex.exec(content)) !== null) {
+                    keys.add(match[1]);
+                }
+            }
+        }
+    }
+    walk(absoluteSrcDir);
+    return keys;
+}
+/**
+ * Set a value in a nested object, creating intermediate objects if necessary
+ */
+function setDeep(obj, path, value) {
+    const keys = path.split('.');
+    let current = obj;
+    for (let i = 0; i < keys.length - 1; i++) {
+        const key = keys[i];
+        if (!current[key] || typeof current[key] !== 'object' || Array.isArray(current[key])) {
+            current[key] = {};
+        }
+        current = current[key];
+    }
+    const lastKey = keys[keys.length - 1];
+    if (current[lastKey] === undefined) {
+        current[lastKey] = value;
+        return true;
+    }
+    return false;
 }
 /**
  * Get display name for language code
@@ -192,6 +250,7 @@ function syncLanguageFile(enUSPath, targetPath, langCode) {
  */
 function main() {
     const targetDir = process.argv[2] || 'src/domains/localization/infrastructure/locales';
+    const srcDir = process.argv[3]; // Optional source directory to scan
     const localesDir = path.resolve(process.cwd(), targetDir);
     console.log('🚀 Starting translation synchronization...\n');
     console.log(`📂 Locales directory: ${localesDir}\n`);
@@ -203,6 +262,27 @@ function main() {
     if (!fs.existsSync(enUSPath)) {
         console.error(`❌ Base file not found: ${enUSPath}`);
         process.exit(1);
+    }
+    // Step 0: Extract keys from source code if srcDir is provided
+    if (srcDir) {
+        console.log(`🔍 Scanning source code for keys in: ${srcDir}...`);
+        const usedKeys = findUsedKeys(srcDir);
+        console.log(`   Found ${usedKeys.size} unique keys in code.`);
+        const enUS = parseTypeScriptFile(enUSPath);
+        let addedCount = 0;
+        for (const key of usedKeys) {
+            if (setDeep(enUS, key, key)) {
+                addedCount++;
+            }
+        }
+        if (addedCount > 0) {
+            console.log(`   ✨ Added ${addedCount} new keys to en-US.ts`);
+            const content = generateTypeScriptContent(enUS, 'en-US');
+            fs.writeFileSync(enUSPath, content);
+        }
+        else {
+            console.log(`   ✅ No new keys found in code.`);
+        }
     }
     // Find all language files
     const files = fs.readdirSync(localesDir)

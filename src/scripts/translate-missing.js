@@ -3,14 +3,14 @@
 /**
  * Translate Missing Script
  * Translates missing strings from en-US.ts to all other language files
- * Usage: node translate-missing.js [locales-dir]
+ * Usage: node translate-missing.js [locales-dir] [lang-code-optional]
  */
 
-const fs = require('fs');
-const path = require('path');
-const { getTargetLanguage, isEnglishVariant, getLangDisplayName } = require('./utils/translation-config');
-const { parseTypeScriptFile, generateTypeScriptContent } = require('./utils/file-parser');
-const { translateObject } = require('./utils/translator');
+import fs from 'fs';
+import path from 'path';
+import { getTargetLanguage, isEnglishVariant, getLangDisplayName } from './utils/translation-config.js';
+import { parseTypeScriptFile, generateTypeScriptContent } from './utils/file-parser.js';
+import { translateObject } from './utils/translator.js';
 
 async function translateLanguageFile(enUSPath, targetPath, langCode) {
   const targetLang = getTargetLanguage(langCode);
@@ -46,78 +46,44 @@ async function translateLanguageFile(enUSPath, targetPath, langCode) {
 }
 
 async function main() {
-  const targetDir = process.argv[2] || 'src/domains/localization/translations';
+  const targetDir = process.argv[2] || 'src/domains/localization/infrastructure/locales';
   const targetLangCode = process.argv[3];
   const localesDir = path.resolve(process.cwd(), targetDir);
+  const enUSPath = path.join(localesDir, 'en-US.ts');
 
   console.log('🚀 Starting automatic translation...\n');
-  console.log(`📂 Locales directory: ${localesDir}`);
-  if (targetLangCode) {
-    console.log(`🎯 Target language: ${targetLangCode}`);
-  }
-  console.log('');
-
-  if (!fs.existsSync(localesDir)) {
-    console.error(`❌ Locales directory not found: ${localesDir}`);
-    process.exit(1);
-  }
-
-  const enUSPath = path.join(localesDir, 'en-US.ts');
-  if (!fs.existsSync(enUSPath)) {
-    console.error(`❌ Base file not found: ${enUSPath}`);
+  if (!fs.existsSync(localesDir) || !fs.existsSync(enUSPath)) {
+    console.error(`❌ Localization files not found in: ${localesDir}`);
     process.exit(1);
   }
 
   const files = fs.readdirSync(localesDir)
     .filter(f => {
       const isLangFile = f.match(/^[a-z]{2}-[A-Z]{2}\.ts$/) && f !== 'en-US.ts';
-      if (!isLangFile) return false;
-      if (targetLangCode) {
-        return f === `${targetLangCode}.ts`;
-      }
-      return true;
+      return isLangFile && (!targetLangCode || f === `${targetLangCode}.ts`);
     })
     .sort();
 
-  if (targetLangCode && files.length === 0) {
-    console.warn(`⚠️  Target language file ${targetLangCode}.ts not found in ${targetDir}`);
-  }
-
-  console.log(`📊 Languages to translate: ${files.length}`);
-  console.log('⚡ Running with 200ms delay between API calls\n');
+  console.log(`📊 Languages to translate: ${files.length}\n`);
 
   let totalTranslated = 0;
-  let totalNewKeys = 0;
-
   for (const file of files) {
     const langCode = file.replace('.ts', '');
     const targetPath = path.join(localesDir, file);
-
-    console.log(`\n🌍 Translating ${langCode} (${getLangDisplayName(langCode)})...`);
-
+    console.log(`🌍 Translating ${langCode} (${getLangDisplayName(langCode)})...`);
     const stats = await translateLanguageFile(enUSPath, targetPath, langCode);
     totalTranslated += stats.count;
-    totalNewKeys += stats.newKeys.length;
-
     if (stats.count > 0) {
       console.log(`   ✅ Translated ${stats.count} strings`);
-      if (stats.newKeys.length > 0) {
-        console.log(`   🆕 ${stats.newKeys.length} new keys translated`);
-      }
     } else {
       console.log(`   ✓ Already complete`);
     }
   }
 
-  console.log(`\n✅ Translation completed!`);
-  console.log(`   Total strings translated: ${totalTranslated}`);
-  if (totalNewKeys > 0) {
-    console.log(`   New keys translated: ${totalNewKeys}`);
-  }
-  console.log(`\n📝 Next: Run 'npm run i18n:setup' to update index.ts`);
+  console.log(`\n✅ Translation completed! (Total: ${totalTranslated})`);
 }
 
-main().catch((error) => {
+main().catch(error => {
   console.error('❌ Translation failed:', error.message);
   process.exit(1);
 });

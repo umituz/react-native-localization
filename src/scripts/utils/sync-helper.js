@@ -1,11 +1,9 @@
-#!/usr/bin/env node
-
 /**
  * Sync Helper
  * Helper functions for synchronizing translation keys
  */
 
-function addMissingKeys(sourceObj, targetObj, stats = { added: 0, newKeys: [] }) {
+export function addMissingKeys(sourceObj, targetObj, stats = { added: 0, newKeys: [] }) {
   for (const key in sourceObj) {
     const sourceValue = sourceObj[key];
     const isNewKey = !Object.prototype.hasOwnProperty.call(targetObj, key);
@@ -28,7 +26,7 @@ function addMissingKeys(sourceObj, targetObj, stats = { added: 0, newKeys: [] })
   return stats;
 }
 
-function removeExtraKeys(sourceObj, targetObj, stats = { removed: 0, removedKeys: [] }) {
+export function removeExtraKeys(sourceObj, targetObj, stats = { removed: 0, removedKeys: [] }) {
   for (const key in targetObj) {
     const isExtraKey = !Object.prototype.hasOwnProperty.call(sourceObj, key);
 
@@ -49,8 +47,3 @@ function removeExtraKeys(sourceObj, targetObj, stats = { removed: 0, removedKeys
   }
   return stats;
 }
-
-module.exports = {
-  addMissingKeys,
-  removeExtraKeys,
-};

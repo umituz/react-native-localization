@@ -6,16 +6,14 @@
  * Usage: node setup-languages.js [locales-dir]
  */
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 function main() {
-  const targetDir = process.argv[2] || 'src/domains/localization/translations';
+  const targetDir = process.argv[2] || 'src/domains/localization/infrastructure/locales';
   const localesDir = path.resolve(process.cwd(), targetDir);
 
   console.log('🚀 Setting up language files...\n');
-  console.log(`📂 Locales directory: ${localesDir}\n`);
-
   if (!fs.existsSync(localesDir)) {
     console.error(`❌ Locales directory not found: ${localesDir}`);
     process.exit(1);
@@ -25,16 +23,12 @@ function main() {
     .filter(f => f.match(/^[a-z]{2}-[A-Z]{2}\.ts$/))
     .sort();
 
-  console.log(`📊 Found ${files.length} language files:\n`);
-
   const imports = [];
   const exports = [];
 
   files.forEach(file => {
     const code = file.replace('.ts', '');
     const varName = code.replace(/-([a-z0-9])/g, (g) => g[1].toUpperCase()).replace('-', '');
-
-    console.log(`   📄 ${code}`);
     imports.push(`import ${varName} from "./${code}";`);
     exports.push(`  "${code}": ${varName},`);
   });
@@ -56,11 +50,8 @@ export type TranslationKey = keyof typeof translations;
 export default translations;
 `;
 
-  const indexPath = path.join(localesDir, 'index.ts');
-  fs.writeFileSync(indexPath, content);
-
-  console.log(`\n✅ Generated index.ts with ${files.length} languages`);
-  console.log(`   Output: ${indexPath}`);
+  fs.writeFileSync(path.join(localesDir, 'index.ts'), content);
+  console.log(`✅ Generated index.ts with ${files.length} languages`);
 }
 
 main();
