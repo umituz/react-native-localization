@@ -9,14 +9,12 @@
 import fs from 'fs';
 import path from 'path';
 
-function main() {
-  const targetDir = process.argv[2] || 'src/domains/localization/infrastructure/locales';
+export function setupLanguages(targetDir) {
   const localesDir = path.resolve(process.cwd(), targetDir);
 
-  console.log('🚀 Setting up language files...\n');
   if (!fs.existsSync(localesDir)) {
     console.error(`❌ Locales directory not found: ${localesDir}`);
-    process.exit(1);
+    return false;
   }
 
   const files = fs.readdirSync(localesDir)
@@ -52,6 +50,11 @@ export default translations;
 
   fs.writeFileSync(path.join(localesDir, 'index.ts'), content);
   console.log(`✅ Generated index.ts with ${files.length} languages`);
+  return true;
 }
 
-main();
+if (import.meta.url === `file://${process.argv[1]}`) {
+  const targetDir = process.argv[2] || 'src/domains/localization/infrastructure/locales';
+  console.log('🚀 Setting up language files...\n');
+  setupLanguages(targetDir);
+}

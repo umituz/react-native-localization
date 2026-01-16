@@ -3,7 +3,7 @@
 /**
  * Translate Missing Script
  * Translates missing strings from en-US.ts to all other language files
- * Usage: node translate-missing.js [locales-dir] [lang-code-optional]
+ * Usage: node translate-missing.js [locales-dir] [src-dir-optional] [lang-code-optional]
  */
 
 import fs from 'fs';
@@ -11,6 +11,8 @@ import path from 'path';
 import { getTargetLanguage, isEnglishVariant, getLangDisplayName } from './utils/translation-config.js';
 import { parseTypeScriptFile, generateTypeScriptContent } from './utils/file-parser.js';
 import { translateObject } from './utils/translator.js';
+import { setupLanguages } from './setup-languages.js';
+import { syncTranslations } from './sync-translations.js';
 
 async function translateLanguageFile(enUSPath, targetPath, langCode) {
   const targetLang = getTargetLanguage(langCode);
@@ -47,11 +49,27 @@ async function translateLanguageFile(enUSPath, targetPath, langCode) {
 
 async function main() {
   const targetDir = process.argv[2] || 'src/domains/localization/infrastructure/locales';
-  const targetLangCode = process.argv[3];
+  const srcDir = process.argv[3];
+  const targetLangCode = process.argv[4];
+  
   const localesDir = path.resolve(process.cwd(), targetDir);
   const enUSPath = path.join(localesDir, 'en-US.ts');
+  const indexPath = path.join(localesDir, 'index.ts');
 
-  console.log('🚀 Starting automatic translation...\n');
+  console.log('🚀 Starting integrated translation workflow...\n');
+
+  // 1. Ensure setup exists (index.ts)
+  if (!fs.existsSync(indexPath)) {
+    console.log('📦 Setup (index.ts) missing. Generating...');
+    setupLanguages(targetDir);
+    console.log('');
+  }
+
+  // 2. Synchronize keys (includes code scanning if srcDir is provided)
+  console.log('🔄 Checking synchronization...');
+  syncTranslations(targetDir, srcDir);
+  console.log('');
+
   if (!fs.existsSync(localesDir) || !fs.existsSync(enUSPath)) {
     console.error(`❌ Localization files not found in: ${localesDir}`);
     process.exit(1);
@@ -80,7 +98,7 @@ async function main() {
     }
   }
 
-  console.log(`\n✅ Translation completed! (Total: ${totalTranslated})`);
+  console.log(`\n✅ Workflow completed! (Total translated: ${totalTranslated})`);
 }
 
 main().catch(error => {

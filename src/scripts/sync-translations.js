@@ -62,16 +62,13 @@ function processExtraction(srcDir, enUSPath) {
   }
 }
 
-function main() {
-  const targetDir = process.argv[2] || 'src/domains/localization/infrastructure/locales';
-  const srcDir = process.argv[3];
+export function syncTranslations(targetDir, srcDir) {
   const localesDir = path.resolve(process.cwd(), targetDir);
   const enUSPath = path.join(localesDir, 'en-US.ts');
 
-  console.log('🚀 Starting translation synchronization...\n');
   if (!fs.existsSync(localesDir) || !fs.existsSync(enUSPath)) {
     console.error(`❌ Localization files not found in: ${localesDir}`);
-    process.exit(1);
+    return false;
   }
 
   processExtraction(srcDir, enUSPath);
@@ -84,16 +81,19 @@ function main() {
   files.forEach(file => {
     const langCode = file.replace('.ts', '');
     const targetPath = path.join(localesDir, file);
-    console.log(`🌍 Syncing ${langCode} (${getLangDisplayName(langCode)})...`);
     const result = syncLanguageFile(enUSPath, targetPath, langCode);
     if (result.changed) {
-      console.log(`   ✏️  +${result.added} keys, -${result.removed} keys`);
-    } else {
-      console.log(`   ✅ Already synchronized`);
+      console.log(`   🌍 ${langCode}: ✏️  +${result.added} keys, -${result.removed} keys`);
     }
   });
 
   console.log(`\n✅ Synchronization completed!`);
+  return true;
 }
 
-main();
+if (import.meta.url === `file://${process.argv[1]}`) {
+  const targetDir = process.argv[2] || 'src/domains/localization/infrastructure/locales';
+  const srcDir = process.argv[3];
+  console.log('🚀 Starting translation synchronization...\n');
+  syncTranslations(targetDir, srcDir);
+}

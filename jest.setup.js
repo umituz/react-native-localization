@@ -6,7 +6,6 @@ import React from 'react';
 
 // Mock react-native modules
 jest.mock('react-native', () => {
-  const React = require('react');
   return {
     Platform: {
       OS: 'ios',
