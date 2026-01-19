@@ -1,6 +1,6 @@
 {
   "name": "@umituz/react-native-localization",
-  "version": "3.7.15",
+  "version": "3.7.16",
   "type": "module",
   "description": "Generic localization system for React Native apps with i18n support",
   "main": "./src/index.ts",
