@@ -14,6 +14,9 @@ import type { Language } from '../../domain/repositories/ILocalizationRepository
  * Provides current language, RTL state, language switching, and translation function
  */
 export const useLocalization = () => {
+  if (typeof __DEV__ !== 'undefined' && __DEV__) {
+    console.log('[useLocalization] Hook called');
+  }
   const store = useLocalizationStore();
   const { t } = useTranslationFunction();
 
