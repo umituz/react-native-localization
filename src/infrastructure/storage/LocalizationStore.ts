@@ -9,7 +9,15 @@ import { LanguageInitializer } from './LanguageInitializer';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { languageRepository } from '../repository/LanguageRepository';
 
+declare const __DEV__: boolean;
+
 type LocalizationStoreType = LocalizationState & LocalizationActions & LocalizationGetters;
+
+// Mutex to prevent race condition in initialize
+let initializeInProgress = false;
+// Debounce timer for language switching
+let languageSwitchTimer: ReturnType<typeof setTimeout> | null = null;
+const LANGUAGE_SWITCH_DEBOUNCE_MS = 300;
 
 export const useLocalizationStore = create<LocalizationStoreType>((set, get) => ({
   // State
@@ -21,9 +29,14 @@ export const useLocalizationStore = create<LocalizationStoreType>((set, get) => 
   // Actions
   initialize: async () => {
     const { isInitialized: alreadyInitialized } = get();
-    if (alreadyInitialized) {
+
+    // Atomic check: both state flag AND in-progress mutex
+    if (alreadyInitialized || initializeInProgress) {
       return;
     }
+
+    // Set mutex immediately (synchronous)
+    initializeInProgress = true;
 
     try {
       const result = await LanguageInitializer.initialize();
@@ -39,19 +52,49 @@ export const useLocalizationStore = create<LocalizationStoreType>((set, get) => 
         isRTL: false,
         isInitialized: true,
       });
+    } finally {
+      // Reset mutex after completion (success or failure)
+      initializeInProgress = false;
     }
   },
 
   setLanguage: async (languageCode: string) => {
-    console.log('[LocalizationStore] setLanguage called:', languageCode);
-    const result = await LanguageSwitcher.switchLanguage(languageCode);
-    console.log('[LocalizationStore] LanguageSwitcher result:', result);
+    // Debounce rapid language switches
+    if (languageSwitchTimer) {
+      clearTimeout(languageSwitchTimer);
+    }
 
-    set({
-      currentLanguage: result.languageCode,
-      isRTL: result.isRTL,
+    return new Promise<void>((resolve) => {
+      languageSwitchTimer = setTimeout(async () => {
+        if (typeof __DEV__ !== "undefined" && __DEV__) {
+          console.log('[LocalizationStore] setLanguage called:', languageCode);
+        }
+
+        try {
+          const result = await LanguageSwitcher.switchLanguage(languageCode);
+
+          if (typeof __DEV__ !== "undefined" && __DEV__) {
+            console.log('[LocalizationStore] LanguageSwitcher result:', result);
+          }
+
+          set({
+            currentLanguage: result.languageCode,
+            isRTL: result.isRTL,
+          });
+
+          if (typeof __DEV__ !== "undefined" && __DEV__) {
+            console.log('[LocalizationStore] Store updated with new language:', result.languageCode);
+          }
+        } catch (error) {
+          if (typeof __DEV__ !== "undefined" && __DEV__) {
+            console.error('[LocalizationStore] Language switch failed:', error);
+          }
+        }
+
+        languageSwitchTimer = null;
+        resolve();
+      }, LANGUAGE_SWITCH_DEBOUNCE_MS);
     });
-    console.log('[LocalizationStore] Store updated with new language:', result.languageCode);
   },
 
   reset: () => {

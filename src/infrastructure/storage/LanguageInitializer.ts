@@ -7,6 +7,8 @@
  * - i18n setup
  */
 
+declare const __DEV__: boolean;
+
 import { storageRepository } from '@umituz/react-native-design-system';
 import i18n from '../config/i18n';
 import { languageRepository } from '../repository/LanguageRepository';
@@ -31,7 +33,9 @@ export class LanguageInitializer {
 
       return finalLanguage;
     } catch {
-      console.warn("[LanguageInitializer] Failed to restore language, falling back to device locale");
+      if (typeof __DEV__ !== "undefined" && __DEV__) {
+        console.warn("[LanguageInitializer] Failed to restore language, falling back to device locale");
+      }
       return await this.setupFallbackLanguage();
     }
   }
@@ -66,14 +70,12 @@ export class LanguageInitializer {
     languageCode: string;
     isRTL: boolean;
   }> {
-    try {
-      await i18n.changeLanguage(DEFAULT_LANGUAGE);
-      return {
-        languageCode: DEFAULT_LANGUAGE,
-        isRTL: false,
-      };
-    } catch (fallbackError) {
-      throw fallbackError;
-    }
+    // No try-catch needed - let errors propagate naturally
+    // This preserves the full stack trace
+    await i18n.changeLanguage(DEFAULT_LANGUAGE);
+    return {
+      languageCode: DEFAULT_LANGUAGE,
+      isRTL: false,
+    };
   }
 }
