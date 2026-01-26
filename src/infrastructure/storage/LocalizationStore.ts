@@ -18,6 +18,8 @@ let initializeInProgress = false;
 // Debounce timer for language switching
 let languageSwitchTimer: ReturnType<typeof setTimeout> | null = null;
 const LANGUAGE_SWITCH_DEBOUNCE_MS = 300;
+// Track pending promise resolvers to ensure all get resolved
+let pendingResolvers: Array<() => void> = [];
 
 export const useLocalizationStore = create<LocalizationStoreType>((set, get) => ({
   // State
@@ -65,6 +67,9 @@ export const useLocalizationStore = create<LocalizationStoreType>((set, get) => 
     }
 
     return new Promise<void>((resolve) => {
+      // Add this resolver to pending list
+      pendingResolvers.push(resolve);
+
       languageSwitchTimer = setTimeout(async () => {
         if (typeof __DEV__ !== "undefined" && __DEV__) {
           console.log('[LocalizationStore] setLanguage called:', languageCode);
@@ -92,12 +97,28 @@ export const useLocalizationStore = create<LocalizationStoreType>((set, get) => 
         }
 
         languageSwitchTimer = null;
-        resolve();
+
+        // Resolve ALL pending promises (not just the latest)
+        const resolvers = [...pendingResolvers];
+        pendingResolvers = [];
+        resolvers.forEach(r => r());
       }, LANGUAGE_SWITCH_DEBOUNCE_MS);
     });
   },
 
   reset: () => {
+    // Clear any pending language switch
+    if (languageSwitchTimer) {
+      clearTimeout(languageSwitchTimer);
+      languageSwitchTimer = null;
+    }
+    // Resolve any pending promises to prevent hanging
+    const resolvers = [...pendingResolvers];
+    pendingResolvers = [];
+    resolvers.forEach(r => r());
+    // Reset mutex
+    initializeInProgress = false;
+
     set({
       currentLanguage: 'en-US',
       isRTL: false,
